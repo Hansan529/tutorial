@@ -2189,3 +2189,25 @@ pre {
 .part-72__nav > li:hover::after {
   width: 90%;
 }
+
+/** part-73 */
+.part-73__main-banner > .part-73__banner img {
+  width: 100%;
+}
+.part-73__main-banner {
+}
+.part-73__banner {
+}
+.part-73__banner > li {
+  position: relative;
+}
+.part-73__banner > li .part-73__text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 24px;
+  padding: 30px 50px;
+  border-radius: 10px;
+}
