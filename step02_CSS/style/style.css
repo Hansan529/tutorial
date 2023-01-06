@@ -88,6 +88,7 @@ main > a:hover {
 }
 
 pre {
+  white-space: pre-line;
   padding: 0;
   margin: 0;
 }
