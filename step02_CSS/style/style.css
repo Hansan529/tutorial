@@ -2211,3 +2211,22 @@ pre {
   padding: 30px 50px;
   border-radius: 10px;
 }
+
+/** part-74 */
+.part-74__box-wrap {
+}
+.part-74__box-wrap > div {
+  float: left;
+  margin: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+.part-74__box-wrap > div > img {
+  width: 100%;
+}
+.part-74__box-wrap > div:hover {
+  opacity: 1;
+  border-radius: 0;
+}
