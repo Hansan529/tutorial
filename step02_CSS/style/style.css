@@ -2277,3 +2277,50 @@ pre {
 .part-74__more > a:hover::after {
   transform: translate(-50%, -50%) scale(1);
 }
+
+/** part-75  */
+.part-75__box {
+  width: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.part-75__img-box {
+  overflow: hidden;
+}
+.part-75__img-box > img {
+  transition: 1s ease-in-out;
+}
+.part-75__box:hover .part-75__img-box > img {
+  transform: scale(1.2);
+}
+
+.part-75__img-box {
+  transition: scale 1s;
+}
+.part-75__text-box {
+  text-align: center;
+  margin-top: 20px;
+}
+.part-75__text-box > strong {
+  font-size: 18px;
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.part-75__more {
+  display: inline-block;
+  background: #eee;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: 1s;
+}
+.part-75__box:hover .part-75__more {
+  background-color: #000;
+  color: #fff;
+}
