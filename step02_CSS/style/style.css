@@ -2222,6 +2222,7 @@ pre {
   overflow: hidden;
   opacity: 0.5;
   transition: 0.5s;
+  width: 23%;
 }
 .part-74__box-wrap > div > img {
   width: 100%;
@@ -2229,4 +2230,50 @@ pre {
 .part-74__box-wrap > div:hover {
   opacity: 1;
   border-radius: 0;
+}
+.part-74__more {
+  margin: 100px 0;
+  position: relative;
+}
+.part-74__more > a {
+  display: block;
+  width: 200px;
+  height: 65px;
+  background: white;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  border-radius: 50px;
+  text-align: center;
+  line-height: 65px;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  transition: 1s;
+}
+.part-74__more > a::after {
+  content: "";
+  display: block;
+  background: black;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  transform: translate(-50%, 0) scale(0);
+  transition: 1s;
+}
+.part-74__more > a::before {
+  content: "view all";
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 100;
+  opacity: 0;
+  transition: 1s;
+}
+.part-74__more > a:hover::before {
+  color: #fff;
+  opacity: 1;
+}
+.part-74__more > a:hover::after {
+  transform: translate(-50%, -50%) scale(1);
 }
