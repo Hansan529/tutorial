@@ -2097,3 +2097,18 @@ pre {
 .part-70__box5:hover {
   transform: scale(1.5) rotate(180deg);
 }
+
+/** part-71 */
+#part-71 .code-result > div {
+  position: relative;
+  height: 200px;
+  width: 400px;
+}
+.part-71__box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.after .part-71__box {
+  transform: translate(-50%, -50%);
+}
