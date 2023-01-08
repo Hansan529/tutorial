@@ -48,14 +48,11 @@ main > a:hover {
   padding: 10px;
   max-height: 800px;
   overflow-y: auto;
+  max-width: 1000px;
 }
 
 .code {
   background-color: gainsboro;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  overflow-y: auto;
 }
 .code-result {
   display: flex;
@@ -1810,42 +1807,43 @@ pre {
 }
 
 /** part-61 */
-#part-61 .after > div {
-  background: url("./img/rich-jones-DoqOEBicVA0-unsplash.jpg") no-repeat;
+#part-61 .one > div {
+  background: url("../images/img_service_main_02_mo.png") no-repeat;
+  color: #fff;
   width: 200px;
   height: 50px;
   margin: 20px;
   border: 15px dashed rgba(0, 0, 0, 0.2);
   padding: 40px;
 }
-#part-61 .after > .part-61__box2 {
+#part-61 .one > .part-61__box2 {
   background-origin: border-box;
 }
-#part-61 .after > .part-61__box3 {
+#part-61 .one > .part-61__box3 {
   background-origin: content-box;
 }
-#part-61 .after > .part-61__box4 {
+#part-61 .one > .part-61__box4 {
   background-origin: padding-box;
 }
 
 /** part-62 */
-#part-62 .after > div {
+#part-62 .one > div {
   width: 200px;
   height: 50px;
-  background: url("../src/img/marek-piwnicki-AJkz0_ZblRk-unsplash.jpg")
-    no-repeat;
+  background: url("../images/img_service_main_02_mo.png") no-repeat;
   border: 15px dashed rgba(0, 0, 0, 0.2);
-  margin: 20px;
+  margin: 20px 0;
   padding: 40px;
   background-origin: border-box;
+  color: #fff;
 }
-#part-62 .after > .part-62__box2 {
+#part-62 .one > .part-62__box2 {
   background-clip: border-box;
 }
-#part-62 .after > .part-62__box3 {
+#part-62 .one > .part-62__box3 {
   background-clip: content-box;
 }
-#part-62 .after > .part-62__box4 {
+#part-62 .one > .part-62__box4 {
   background-clip: padding-box;
 }
 
@@ -1888,10 +1886,10 @@ pre {
   display: inline-block;
   width: 24px;
   height: 24px;
-  background-image: url("./img/checkbox-30-24.png");
+  background-image: url("../CSS_markup/images/checkbox-30-24.png");
 }
 #part-64__checkbox:checked + label {
-  background-image: url("./img/checkbox-31-24.png");
+  background-image: url("../CSS_markup/images/checkbox-31-24.png");
 }
 #part-64 input[type="radio"] + label {
   color: skyblue;
@@ -1928,6 +1926,9 @@ pre {
   width: 200px;
   height: 200px;
   background-color: deepskyblue;
+}
+.part-65__nav > li > a:hover {
+  color: skyblue;
 }
 
 /** part-66 */
@@ -2280,37 +2281,35 @@ pre {
 
 /** part-75  */
 .part-75__box {
+  float: left;
+  margin: 0 10px;
   width: 300px;
   border-radius: 20px;
   overflow: hidden;
   background-color: #fff;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
 }
-
 .part-75__img-box {
   overflow: hidden;
+  height: 300px;
 }
 .part-75__img-box > img {
+  width: 100%;
   transition: 1s ease-in-out;
-}
-.part-75__box:hover .part-75__img-box > img {
-  transform: scale(1.2);
-}
-
-.part-75__img-box {
-  transition: scale 1s;
 }
 .part-75__text-box {
   text-align: center;
   margin-top: 20px;
 }
 .part-75__text-box > strong {
-  font-size: 18px;
+  font-size: 20px;
   display: block;
-  width: 150px;
+  width: 170px;
   margin: 0 auto;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  transition: 1.5s;
 }
 .part-75__more {
   display: inline-block;
@@ -2319,6 +2318,12 @@ pre {
   padding: 10px 20px;
   border-radius: 30px;
   transition: 1s;
+}
+.part-75__box:hover .part-75__img-box > img {
+  transform: scale(1.2);
+}
+.part-75__box:hover .part-75__text-box > strong {
+  width: 300px;
 }
 .part-75__box:hover .part-75__more {
   background-color: #000;
