@@ -2329,3 +2329,58 @@ pre {
   background-color: #000;
   color: #fff;
 }
+
+/** part-76 */
+/*^ 레이어 부모 설정 */
+.part-76__img-wrap {
+  position: relative;
+}
+/*^ 레이어 생성 */
+.part-76__img-wrap::before,
+.part-76__img-wrap::after,
+.part-76__img-wrap > a::before,
+.part-76__img-wrap > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  transition: all 0.5s;
+  background: red;
+}
+/*^ 가로선 */
+.part-76__img-wrap::before,
+.part-76__img-wrap::after {
+  width: 0;
+  height: 1px;
+}
+/*^ 세로선 */
+.part-76__img-wrap > a::before,
+.part-76__img-wrap > a::after {
+  width: 1px;
+  height: 0;
+}
+/*^ 가로선 위치 */
+.part-76__img-wrap::before {
+  left: 0;
+}
+.part-76__img-wrap::after {
+  right: 0;
+}
+/*^ 세로선 위치 */
+.part-76__img-wrap > a::before {
+  bottom: 0;
+  left: 0;
+}
+.part-76__img-wrap > a::after {
+  top: 0;
+  right: 0;
+}
+
+/*^ hover 시 width, height 값 증가 */
+.part-76__img-wrap:hover::before,
+.part-76__img-wrap:hover::after {
+  width: 100%;
+}
+.part-76__img-wrap:hover > a::before,
+.part-76__img-wrap:hover > a::after {
+  height: 100%;
+}

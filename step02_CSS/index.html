@@ -3975,6 +3975,70 @@
             </div>
           </div>
         </section>
+        <section id="part-76">
+          <hr class="margin" />
+          <h2 class="margin">76 border transition</h2>
+          <div class="code-box">
+            <pre class="code">
+               .img-wrap {
+               position: relative;
+               }
+               .img-wrap::before,
+               .img-wrap::after,
+               .img-wrap &gt; a::before,
+               .img-wrap &gt; a::after {
+               content: "";
+               display: block;
+               position: absolute;
+               transition: all 0.5s;
+               background: red;
+               }
+               .img-wrap::before,
+               .img-wrap::after {
+               width: 0;
+               height: 1px;
+               }
+               .img-wrap &gt; a::before,
+               .img-wrap &gt; a::after {
+               width: 1px;
+               height: 0;
+               }
+               .img-wrap::before {
+               left: 0;
+               }
+               .img-wrap::after {
+               right: 0;
+               }
+               .img-wrap &gt; a::before {
+               bottom: 0;
+               left: 0;
+               }
+               .img-wrap &gt; a::after {
+               top: 0;
+               right: 0;
+               }
+
+               .img-wrap:hover::before,
+               .img-wrap:hover::after {
+               width: 100%;
+               }
+               .img-wrap:hover &gt; a::before,
+               .img-wrap:hover &gt; a::after {
+               height: 100%;
+               }
+
+            </pre>
+            <div class="code-result">
+              <div class="one">
+                <div class="part-76__img-wrap">
+                  <a href="#void">
+                    <img src="./images/facilities_list01.jpg" alt="" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   </body>
