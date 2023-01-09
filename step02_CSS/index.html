@@ -4149,6 +4149,41 @@
             </div>
           </div>
         </section>
+        <section id="part-80">
+          <hr class="margin" />
+          <h2 class="margin">80 background-clip text bg</h2>
+          <p>텍스트에 배경 삽입하기</p>
+          <p>background-clip의 경우 background 뒤에 작성해야 정상 작동한다.</p>
+          <div class="code-box">
+            <pre class="code">
+                .image,.gradient {
+                font-size: 150px;
+                margin: 0;<span class="red">
+                  -webkit-background-clip: text;
+                  color: transparent; </span> }
+
+                .image { background-image: url("../CSS_markup/images/mainBanner_3.jpg"); }
+
+                .gradient { <span class="red">background:</span> linear-gradient(
+                  to right,
+                  rgba(255, 0, 0, 1) 0%,
+                  rgba(255, 157, 0, 1) 20%,
+                  rgba(255, 246, 0, 1) 40%,
+                  rgba(98, 229, 170, 1) 60%,
+                  rgba(29, 0, 255, 1) 77%,
+                  rgba(29, 0, 255, 1) 77%,
+                  rgba(182, 0, 255, 1) 100% );<span class="red">
+                  -webkit-background-clip: text;
+                  color: transparent;</span> }
+            </pre>
+            <div class="code-result">
+              <div class="one">
+                <h1 class="part-80__img-bg">image</h1>
+                <h1 class="part-80__gbg">gradient</h1>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   </body>

@@ -2479,3 +2479,29 @@ pre {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   padding: 20px 70px;
 }
+
+/** part-80 */
+.part-80__img-bg,
+.part-80__gbg {
+  font-size: 150px;
+  margin: 0;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.part-80__img-bg {
+  background-image: url("../CSS_markup/images/mainBanner_3.jpg");
+}
+.part-80__gbg {
+  background: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 157, 0, 1) 20%,
+    rgba(255, 246, 0, 1) 40%,
+    rgba(98, 229, 170, 1) 60%,
+    rgba(29, 0, 255, 1) 77%,
+    rgba(29, 0, 255, 1) 77%,
+    rgba(182, 0, 255, 1) 100%
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
