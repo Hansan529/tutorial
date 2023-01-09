@@ -3438,17 +3438,31 @@
         <section id="part-58">
           <hr class="margin" />
           <h2 class="margin">58 box shadow</h2>
-          <p>text-shadow &amp; box-shadow</p>
+          <p>shadow: x, y, blur, spread, color</p>
+          <p>inset: 내부 그림자 설정</p>
           <div class="code-box">
+            <pre class="code">
+              .text-shadow {
+                <span class="red">text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);</span>
+              }
+
+              .box-shadow {
+                width: 50px;
+                height: 50px;
+                <span class="red">box-shadow: <strong>inset</strong> 10px 10px 0px 15px red;</span>
+              }
+            </pre>
             <div class="code-result">
-              <div class="before"></div>
+              <div class="before">
+                <h1 class="part-58__title">shadow</h1>
+                <div class="part-58__box">shadow</div>
+              </div>
               <div class="after">
                 <h1 class="part-58__title">shadow</h1>
                 <div class="part-58__box">shadow</div>
               </div>
             </div>
           </div>
-          <p>box shadow: (inset 내부 그림자) x,y,블러,범위, 색상</p>
         </section>
         <section id="part-59">
           <hr class="margin" />
@@ -3637,6 +3651,7 @@
         <section id="part-65">
           <hr class="margin" />
           <h2 class="margin">65 target 속성</h2>
+          <p>대상이 선택되면 작동하는 선택자이다</p>
           <div class="code-box">
             <pre class="code">
                         div {
@@ -3671,6 +3686,7 @@
         <section id="part-66">
           <hr class="margin" />
           <h2 class="margin">66 transition</h2>
+          <p>transform(변화)가 있을 때, 그 변화 사이에 대한 설정이다.</p>
           <div class="code-box">
             <pre class="code">
                         .box1 {
@@ -3834,6 +3850,11 @@
         <section id="part-71">
           <hr class="margin" />
           <h2 class="margin">71 position center</h2>
+          <p>
+            position을 이용해 50% 50% 중앙으로 이동을 하면 왼쪽 위 기준으로
+            중앙에 오기 때문에 해당 블럭의 너비, 높이의 절반 값씩 이동시켜주어
+            중앙 정렬한다.
+          </p>
           <div class="code-box">
             <pre class="code">
                  p {
@@ -3978,6 +3999,10 @@
         <section id="part-76">
           <hr class="margin" />
           <h2 class="margin">76 border transition</h2>
+          <p>
+            before와 after를 이용해서 border를 1px 레이어를 만들어 transition을
+            사용할 수 있다.
+          </p>
           <div class="code-box">
             <pre class="code">
                .img-wrap {
@@ -4043,7 +4068,9 @@
           <hr class="margin" />
           <h2 class="margin">77 gradient</h2>
           <p>
-            <a href="https://www.colorzilla.com/gradient-editor/"
+            <a
+              href="https://www.colorzilla.com/gradient-editor/"
+              style="color: skyblue"
               >https://www.colorzilla.com/gradient-editor/</a
             >
             를 이용해 간단하게 그라이언트를 생성할 수 있다.
@@ -4060,10 +4087,10 @@
           <hr class="margin" />
           <h2 class="margin">78 trans gradient</h2>
           <div class="code-box">
-            <pre class="code"></pre>
             <div class="code-result">
-              <div class="before"></div>
-              <div class="after"></div>
+              <div class="one">
+                <div class="part-78__button">button</div>
+              </div>
             </div>
           </div>
         </section>
