@@ -54,6 +54,7 @@ main > a:hover {
 .code {
   background-color: gainsboro;
   padding: 10px 50px;
+  box-sizing: border-box;
 }
 .code-result {
   display: flex;
@@ -2504,4 +2505,34 @@ pre {
   );
   -webkit-background-clip: text;
   color: transparent;
+}
+
+/** part-81 */
+#part-81 .one {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.part-81__box {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: tomato;
+  position: absolute;
+  animation: part-81__animation 3s 1s linear infinite alternate;
+}
+
+@keyframes part-81__animation {
+  from {
+    left: 0;
+    top: 0;
+  }
+  50% {
+    left: 100px;
+    top: 200px;
+  }
+  to {
+    top: 0;
+    left: 200px;
+  }
 }
