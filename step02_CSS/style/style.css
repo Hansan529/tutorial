@@ -2899,3 +2899,18 @@ pre {
   column-count: 3;
   column-gap: 50px;
 }
+
+/** part-92 */
+.part-92__header {
+  border-top: 5px solid #d91126;
+}
+
+.part-92__container {
+  --red: rgba(255, 0, 0, 0.8);
+}
+.part-92__container > h2 {
+  color: #d91126;
+}
+.part-92__container > p {
+  color: var(--red);
+}
