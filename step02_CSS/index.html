@@ -4291,6 +4291,13 @@
         <section id="part-86">
           <hr class="margin" />
           <h2 class="margin">86 display: flex</h2>
+          <p>
+            부모 요소에 flex를 부여하면 자식들이 가로(row: 기본값)로 붙는다.
+          </p>
+          <p>
+            자식들 위치 정렬의 경우에는 가로 justify-content, 세로 align-items
+            를 통해 변경이 가능하다.
+          </p>
           <div class="code-box">
             <pre class="code"></pre>
             <div class="code-result">
@@ -4303,6 +4310,182 @@
                   <div class="part-86__box5">box5</div>
                   <div class="part-86__box6">box6</div>
                   <div class="part-86__box7">box7</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="part-87">
+          <hr class="margin" />
+          <h2 class="margin">87 flex-wrap</h2>
+          <p>
+            부모의 공간이 자식들의 크기보다 작아질 경우 밑으로 떨어지도록 만드는
+            것이 flex-wrap이다.
+          </p>
+          <p>
+            기본값이 'nowrap'이라 부모의 공간이 부족해도 떨어지지 않는 이유가
+            이것이다.
+          </p>
+          <div class="code-box">
+            <pre class="code"></pre>
+            <div class="code-result">
+              <div class="one">
+                <div class="part-87__wrap">
+                  <div class="part-87__box1">box1</div>
+                  <div class="part-87__box2">box2</div>
+                  <div class="part-87__box3">box3</div>
+                  <div class="part-87__box4">box4</div>
+                  <div class="part-87__box5">box5</div>
+                  <div class="part-87__box6">box6</div>
+                  <div class="part-87__box7">box7</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="part-88">
+          <hr class="margin" />
+          <h2 class="margin">88 order</h2>
+          <p>자식들에게 가장 많이 사용하는 속성이 order이다.</p>
+          <p>순서를 따로 지정할 수 있다</p>
+          <div class="code-box">
+            <pre class="code">
+              .box1 { order: 2; }
+
+              .box2 { order: 3; }
+
+              .box3 { order: 5; }
+
+              .box4 { order: 4; }
+
+              .box5 { order: 1; }
+
+              .box6 { order: 7; }
+
+              .box7 { order: 6; }
+            </pre>
+            <div class="code-result">
+              <div class="one">
+                <div class="part-88__wrap">
+                  <div class="part-88__box1">box1</div>
+                  <div class="part-88__box2">box2</div>
+                  <div class="part-88__box3">box3</div>
+                  <div class="part-88__box4">box4</div>
+                  <div class="part-88__box5">box5</div>
+                  <div class="part-88__box6">box6</div>
+                  <div class="part-88__box7">box7</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="part-89">
+          <hr class="margin" />
+          <h2 class="margin">89 flex-grow</h2>
+          <p>부모의 남은 너비를 자식들이 갖도록 한다.</p>
+          <p>"남은 너비 / 자식의 수" 로 구해서 배율로 넣어주면 된다.</p>
+          <div class="code-box">
+            <pre class="code">
+              .box1 { flex-grow: calc(1); }
+
+              .box2 { flex-grow: calc(1); }
+
+              .box3 { flex-grow: calc(0); }
+
+              .box4 { flex-grow: calc(2); }
+            </pre>
+            <div class="code-result">
+              <div class="before">
+                <div class="part-89__wrap">
+                  <div class="part-89__box1">box1</div>
+                  <div class="part-89__box2">box2</div>
+                  <div class="part-89__box3">box3</div>
+                  <div class="part-89__box4">box4</div>
+                </div>
+              </div>
+              <div class="after">
+                <div class="part-89__wrap">
+                  <div class="part-89__box1">box1</div>
+                  <div class="part-89__box2">box2</div>
+                  <div class="part-89__box3">box3</div>
+                  <div class="part-89__box4">box4</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="part-90">
+          <hr class="margin" />
+          <h2 class="margin">90 flex-shrink</h2>
+          <p>
+            부모가 자식 너비의 합보다 작을 때 자식들의 너비를 떼어다가 갖도록
+            한다.
+          </p>
+          <p>"부족한 너비 / 자식의 개수"</p>
+          <div class="code-box">
+            <pre class="code">
+              .box1 { flex-shrink: 1; }
+
+              .box2 { flex-shrink: 0; }
+
+              .box3 { flex-shrink: 1; }
+
+              .box4 { flex-shrink: 1; }
+            </pre>
+            <div class="code-result">
+              <div class="before">
+                <div class="part-90__wrap">
+                  <div class="part-90__box1">box1</div>
+                  <div class="part-90__box2">box2</div>
+                  <div class="part-90__box3">box3</div>
+                  <div class="part-90__box4">box4</div>
+                </div>
+              </div>
+              <div class="after">
+                <div class="part-90__wrap">
+                  <div class="part-90__box1">box1</div>
+                  <div class="part-90__box2">box2</div>
+                  <div class="part-90__box3">box3</div>
+                  <div class="part-90__box4">box4</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="part-91">
+          <hr class="margin" />
+          <h2 class="margin">91 column count</h2>
+          <p>단을 나누어 작성할 때 사용한다</p>
+          <div class="code-box">
+            <pre class="code">
+              column-count: 3;
+              column-gap: 50px;
+            </pre>
+            <div class="code-result">
+              <div class="before">
+                <div class="part-91__box">
+                  recognize product is create basis act fresh settlers
+                  themselves hole as sea came proper yesterday read pan finger
+                  better serious elephant pig shape breathing canal fog be time
+                  struggle her scene most enjoy fair tip transportation mental
+                  sell experience government explore definition important three
+                  tropical what apartment famous organized tail theory shallow
+                  satisfied herself calm snow lake key mighty indeed graph
+                  development wrong best metal victory bridge during article
+                  breathe chosen rich
+                </div>
+              </div>
+              <div class="after">
+                <div class="part-91__box">
+                  recognize product is create basis act fresh settlers
+                  themselves hole as sea came proper yesterday read pan finger
+                  better serious elephant pig shape breathing canal fog be time
+                  struggle her scene most enjoy fair tip transportation mental
+                  sell experience government explore definition important three
+                  tropical what apartment famous organized tail theory shallow
+                  satisfied herself calm snow lake key mighty indeed graph
+                  development wrong best metal victory bridge during article
+                  breathe chosen rich
                 </div>
               </div>
             </div>
