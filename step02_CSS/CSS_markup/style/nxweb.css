@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+li {
+  list-style: none;
+}
+.blind {
+  display: none;
+}
+
+:root {
+  --main-color: #c10004;
+  --dark: #333333;
+  --mid: #666666;
+  --light: #999999;
+}
+
+header {
+  background-color: var(--dark);
+}
+
+.gnv > li > a {
+  position: relative;
+}
+.gnv > li > a > span {
+  display: block;
+  width: 50px;
+  height: 1px;
+  background-color: var(--main-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
