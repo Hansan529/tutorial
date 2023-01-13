@@ -323,15 +323,14 @@ header.fixed {
 }
 
 /*^ 메인 */
-section {
-  position: relative;
+main section {
+  padding: 100px 0 70px;
 }
 /* 타이틀 */
 main .title {
   font-size: 2.7em;
   letter-spacing: 3px;
   text-align: center;
-  padding-top: 100px;
   font-weight: bold;
 }
 /* 타이틀 심볼 도형 */
@@ -342,28 +341,161 @@ main .title::before {
   height: 10px;
   background: var(--main-color);
   margin: 0 auto;
-  /* position: absolute;
-  top: 80px;
-  left: 50%; */
-  transform: skew(-30deg) /* translate(-50%, -50%) */;
+  transform: skew(-30deg);
 }
 /* 서브타이틀 */
 main .title + p {
   text-align: center;
   font-size: 1.1em;
   color: #888;
+  margin-bottom: 50px;
+}
+main section ul {
+  display: flex;
+  justify-content: space-between;
+}
+main section ul img {
+  width: 100%;
+}
+/*^ 서비스 */
+.service-list {
+  /* width: 100%; */
+}
+.service-list > li {
+  width: 16.66%;
+  position: relative;
+}
+/* 배경 */
+.service-list > li > a {
+  display: block;
+  height: 470px;
+  color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* 그림 */
+.service-list > li:first-child > a {
+  background-image: url("../images/main/sv_bg1.png");
+}
+.service-list > li:nth-child(2) > a {
+  background-image: url("../images/main/sv_bg2.png");
+}
+.service-list > li:nth-child(3) > a {
+  background-image: url("../images/main/sv_bg3.png");
+}
+.service-list > li:last-child > a {
+  background-image: url("../images/main/sv_bg4.png");
+}
+/* 너비 증가 */
+.service-list > li.on {
+  width: 48%;
+}
+/* 보이지 않음 */
+.service-list > li > a .text-box {
+  display: none;
+  padding: 100px 60px 0;
+}
+/* 활성화 된 리스트 텍스트 on */
+.service-list > li.on > a .text-box {
+  display: block;
+}
+/* 타이틀 영문 */
+.service-list > li > a .text-box > span {
+  font-weight: 900;
+}
+/* 타이틀 */
+.service-list > li > a .text-box > h4 {
+  font-size: 2.4em;
+  font-weight: 400;
+  margin: 15px 0;
+}
+/* 타이틀 설명 */
+.service-list > li > a .text-box > P {
+  max-width: 80%;
+  word-break: keep-all;
+}
+/* 타이틀 하위 리스트 */
+.service-list > li > a .text-box > ul {
+  display: block;
+  margin: 20px 0 0 0;
+  font-size: 0.9em;
+}
+/* 숏 타이틀 위치 정렬 */
+.service-list > li > a > .show-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* 활성화 된 리스트 타이틀 제거 */
+.service-list > li.on > a > .show-title {
+  display: none;
+}
+/* 활성화 된 리스트 화살표 */
+.service-list > li.on > a > .text-box::after {
+  content: "";
+  display: block;
+  margin-top: 30px;
+  width: 120px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+  transition: 0.5s;
+}
+/* 활성화 된 리스트 화살표-2 */
+.service-list > li.on > a > .text-box::before {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 1px;
+  position: absolute;
+  bottom: 51px;
+  left: 155px;
+  background: rgba(255, 255, 255, 0.5);
+  transform-origin: right bottom;
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+/* 활성화 된 리스트 hover 시 색상 변경 */
+.service-list > li.on:hover > a > .text-box::after,
+.service-list > li.on:hover > a > .text-box::before {
+  background: rgba(255, 255, 255, 1);
 }
 
 /*^ 포트폴리오 */
+.portfolio-list {
+  overflow: hidden;
+  flex-wrap: wrap;
+  gap: 50px 30px;
+}
+.portfolio-list > li {
+  width: 30%;
+}
 /* 버튼 */
 .portfolio-list .btn > span {
   border: 1px solid var(--light);
+  background: #fff;
   border-radius: 20px;
   padding: 5px 10px;
   margin-right: 8px;
+  white-space: nowrap;
 }
-
+.port-more {
+  background: var(--main-color);
+  color: #fff;
+  width: 300px;
+  height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 100px;
+  transform: skew(-30deg);
+}
 /*^ 인증/수상 */
+.partner-list,
+.award-list {
+  width: 100%;
+  overflow: hidden;
+}
 .award-list img {
   display: block;
 }
