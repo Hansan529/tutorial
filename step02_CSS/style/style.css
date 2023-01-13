@@ -2914,3 +2914,19 @@ pre {
 .part-92__container > p {
   color: var(--red);
 }
+
+/** part-93 */
+#part-93 .code-result > div {
+  padding: 100px;
+}
+.part-93__box {
+  width: 100px;
+  height: 100px;
+  background: skyblue;
+  transition: 1s;
+}
+
+.part-93__box:hover {
+  transform: scale(1.5);
+  transform-origin: center top;
+}
