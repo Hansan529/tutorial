@@ -176,3 +176,23 @@ git remote remove name
 /* 새로운 remote에 push하기 */
 git push name branch
 ```
+
+<br>
+
+## git clone
+
+github descktop을 사용하지 않고 콘솔만으로
+
+fork 한 저장소를 clone 하여 작업하기.
+
+```CSS
+/* url을 clone한다. 뒤에 이름을 지정하여 다른 이름으로 저장 가능하다. */
+git clone url name
+
+/* 해당 파일로 들어간 뒤 작업을 진행한다. */
+git add .
+git commit -m ""
+git push origin master
+
+/* 그 후 pull request를 하여 저장소 주인에게 merge 요청을 한다. */
+```
