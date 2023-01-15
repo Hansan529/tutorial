@@ -144,3 +144,7 @@ touch .gitignore
 .gitignore 파일이 생성되는데 해당 시스템 파일에서 추가하지 않고자 하는 파일들의 이름과 확장자를 입력하면 된다.
 
 `.DS_Store` `.env` `.psd` `images/` `.txt`
+
+이미 stage되었다면 `git rm -r file.ext` 하면 삭제된다.
+
+캐시되었다면 --cached를 추가한다. `git rm -r file.ext --cached`
