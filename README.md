@@ -65,12 +65,13 @@ HEAD의 위치를 변경한다. ^를 입력하면 1단계 이전의 커밋으로
 
 reset에는 여러가지 리셋 방법들이 있다.
 
-- git reset --hard HEAD^
+```CSS
+/* 기본값: commit을 취소하고 파일을 untracked 파일로 unstated 영역에 보존한다. */
+    git reset HEAD^
 
-  완전히 과거로 돌아간다. stage 영역으로 옮기는 것이 아닌 파일 변경 내역을 유지하지 않는다.
+/* commit을 취소하고 파일을 state 영역으로 보존한다. */
+    git reset --soft HEAD^
 
-- git reset --soft HEAD^
-
-- git reset HEAD^
-
-  변경사항 삭제하지는 않은채로 커밋한 파일을 stage 영역으로 옮겨서 untracked 상태로 만든다.
+/* commit을 취소하고 파일을 stage 영역으로 옮기지 않고 삭제한다. */
+    git reset --hard HEAD^
+```
