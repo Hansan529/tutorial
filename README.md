@@ -134,3 +134,13 @@ git push origin master -f
 추가로 `git status`를 입력하면 커밋할 때 파일들의 상태를 볼 수 있다.
 
 이 기능 덕분에 사이드바를 확인하지 않고도 스테이징이 됐는지, 변경 사항에 있는지 알 수 있다.
+
+## 원하지 않은 파일 Push 하지 않기
+
+```
+touch .gitignore
+```
+
+.gitignore 파일이 생성되는데 해당 시스템 파일에서 추가하지 않고자 하는 파일들의 이름과 확장자를 입력하면 된다.
+
+`.DS_Store` `.env` `.psd` `images/` `.txt`
