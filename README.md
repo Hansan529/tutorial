@@ -44,3 +44,9 @@ git으로 감지한 파일들을 스테이징 하기 위해 사용한다.
 해당 차이를 없애 주기 위해서 push를 진행한다.
 
 ## 되돌리기
+
+    git checkout 5b73403aada4a0ee434ad527430cbb0f7dd03ce8
+
+checkout 뒤에 텍스트들은 git log에서 commit 한 이름을 풀어놓은 것이다. 해당 커밋을 했을 때로 이동한다.
+
+커밋을 변경한 건 아니기에 다시 현재로 돌아올 수 있다. `git checkout master`를 하면 기존에 마지막으로 commit 한 공간으로 돌아오게 된다.
