@@ -101,3 +101,13 @@ git switch -c branch
 git checkout은 넓은 범위로 사용되고, switch와 restore라고 나누어져있다.
 
 각각 파일을 변경,복원 시에 사용하는 명령어다.
+
+```
+git checkout ID -b Branch-Name
+```
+
+해당 커밋 위치에 새로운 Branch를 즉시 생성한다.
+
+`git branch` branch 목록들을 확인 할 수 있다.
+
+생성한 branches 를 업로드하려면 `git push origin branch-name` 를 하면 된다.
