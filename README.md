@@ -33,7 +33,7 @@ git으로 감지한 파일들을 스테이징 하기 위해 사용한다.
     git commit -m "작성 하고자 하는 제목"
 
 스테이징 공간으로 이동한 파일들을 커밋하는 작업이다.  
-<br><br>
+<br>
 
 ## 푸쉬
 
@@ -51,18 +51,6 @@ checkout 뒤에 텍스트들은 git log에서 commit 한 이름을 풀어놓은 
 
 커밋을 변경한 건 아니기에 다시 현재로 돌아올 수 있다. `git checkout master`를 하면 기존에 마지막으로 commit 한 공간으로 돌아오게 된다.
 
-완전히 해당 커밋을 삭제하고자 한다면 이와 같은 명령어를 사용하자.
-
-    git reset --hard HEAD^
-
-HEAD의 위치를 변경한다. ^를 입력하면 1단계 이전의 커밋으로 돌아가고, ^^는 2개 ^의 개수마다 증가한다.
-
-이렇게 해당 커밋을 삭제하게 되면 orgin이 보이지 않게 되는데, HEAD의 위치를 옮겨서 그렇다.
-
-    git push origin master --force
-
-강제로 푸시를 해야한다.
-
 reset에는 여러가지 리셋 방법들이 있다.
 
 ```CSS
@@ -76,6 +64,16 @@ reset에는 여러가지 리셋 방법들이 있다.
     git reset --hard HEAD^
 ```
 
+HEAD의 위치를 변경한다. ^를 입력하면 1단계 이전의 커밋으로 돌아가고, ^^는 2개 ^의 개수마다 증가한다.
+
+이렇게 해당 커밋을 삭제하게 되면 orgin이 보이지 않게 되는데, HEAD의 위치를 옮겨서 그렇다.
+
+    git push origin master --force
+
+강제로 푸시를 해야한다.
+
+<br>
+
 ## push 취소
 
 마지막으로 push한 commit을 수정할 일이 생긴다면 `reset HEAD^`를 해서 마지막 commit을 취소하고
@@ -86,15 +84,17 @@ reset에는 여러가지 리셋 방법들이 있다.
 
 push를 하는데 기존 `git push origin master` 에서 마지막에 `-f` 를 붙인다. --force의 약어이다.
 
-`git push origin master -f` 끝
+`git push origin master -f` 끝<br><br>
 
 ## 과거로 돌아간 후, branch 생성
 
-```
+```CSS
+/* ID를 갖는 commit으로 이동한다. */
 git checkout ID
 
+/* 새로운 branch를 생성한다. */
 git checkout -b branch
-    or
+/* 새로운 branch를 생성한다. */
 git switch -c branch
 ```
 
@@ -102,7 +102,8 @@ git checkout은 넓은 범위로 사용되고, switch와 restore라고 나누어
 
 각각 파일을 변경,복원 시에 사용하는 명령어다.
 
-```
+```CSS
+/* commit으로 이동하지 않고도 그 위치에 branch를 생성한다. */
 git checkout ID -b Branch-Name
 ```
 
@@ -110,7 +111,7 @@ git checkout ID -b Branch-Name
 
 `git branch` branch 목록들을 확인 할 수 있다.
 
-생성한 branches 를 업로드하려면 `git push origin branch-name` 를 하면 된다.
+생성한 branches 를 업로드하려면 `git push origin branch-name` 를 하면 된다.<br><br>
 
 ## 커밋 수정
 
@@ -133,7 +134,7 @@ git push origin master -f
 
 추가로 `git status`를 입력하면 커밋할 때 파일들의 상태를 볼 수 있다.
 
-이 기능 덕분에 사이드바를 확인하지 않고도 스테이징이 됐는지, 변경 사항에 있는지 알 수 있다.
+이 기능 덕분에 사이드바를 확인하지 않고도 스테이징이 됐는지, 변경 사항에 있는지 알 수 있다.<br><br>
 
 ## 원하지 않은 파일 Push 하지 않기
 
@@ -147,4 +148,31 @@ touch .gitignore
 
 이미 stage되었다면 `git rm -r file.ext` 하면 삭제된다.
 
-캐시되었다면 --cached를 추가한다. `git rm -r file.ext --cached`
+캐시되었다면 --cached를 추가한다. `git rm -r file.ext --cached`<br><br>
+
+## 다른 remote 추가하기
+
+github를 제외한 다른 저장소 홈페이지를 사용할 때 remote를 추가할 수 있다.
+
+```CSS
+/* remote를 볼 수 있다. */
+git remote -v
+
+/* remote를 추가한다. */
+git remote add name url
+
+/* 다시 remote를 확인하면 */
+git remote -v
+
+/* name url fetch와 push가 생성된다. */
+name url (fetch)
+name url (push)
+origin url (fetch)
+origin url (push)
+
+/* remote 삭제 */
+git remote remove name
+
+/* 새로운 remote에 push하기 */
+git push name branch
+```
