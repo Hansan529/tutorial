@@ -74,3 +74,5 @@ reset에는 여러가지 리셋 방법들이 있다.
 - git reset HEAD^
 
   변경사항 삭제하지는 않은채로 커밋한 파일을 stage 영역으로 옮겨서 untracked 상태로 만든다.
+
+git 복합리셋
