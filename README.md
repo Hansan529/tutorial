@@ -111,3 +111,5 @@ git checkout ID -b Branch-Name
 `git branch` branch 목록들을 확인 할 수 있다.
 
 생성한 branches 를 업로드하려면 `git push origin branch-name` 를 하면 된다.
+
+## 커밋 수정
