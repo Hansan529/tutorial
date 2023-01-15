@@ -113,3 +113,24 @@ git checkout ID -b Branch-Name
 생성한 branches 를 업로드하려면 `git push origin branch-name` 를 하면 된다.
 
 ## 커밋 수정
+
+커밋에 추가하지 못한 파일을 함께 커밋하고자 할 때에는
+
+```CSS
+/* 추가하고자 하는 파일 */
+git add .
+
+/* commit을 메시지를 수정하지 않음 */
+git commit --amend --no-edit
+/* commit의 메시지를 변경함 */
+git commit --amend -m ""
+
+/* push */
+git push origin master -f
+```
+
+커밋을 수정해주면 된다.
+
+추가로 `git status`를 입력하면 커밋할 때 파일들의 상태를 볼 수 있다.
+
+이 기능 덕분에 사이드바를 확인하지 않고도 스테이징이 됐는지, 변경 사항에 있는지 알 수 있다.
