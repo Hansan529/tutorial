@@ -75,3 +75,15 @@ reset에는 여러가지 리셋 방법들이 있다.
 /* commit을 취소하고 파일을 stage 영역으로 옮기지 않고 삭제한다. */
     git reset --hard HEAD^
 ```
+
+## push 취소
+
+마지막으로 push한 commit을 수정할 일이 생긴다면 `reset HEAD^`를 해서 마지막 commit을 취소하고
+
+내가 원하는 commit에 `git checkout`으로 HEAD를 이동시켜도 되고, 그대로 작업해도 된다.
+
+그 후 내용을 변경하고 `get add filename.txt` 스테이징을 하고 `git commit -m ""` 재 커밋을 해준다.
+
+push를 하는데 기존 `git push origin master` 에서 마지막에 `-f` 를 붙인다. --force의 약어이다.
+
+`git push origin master -f` 끝
