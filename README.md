@@ -87,3 +87,17 @@ reset에는 여러가지 리셋 방법들이 있다.
 push를 하는데 기존 `git push origin master` 에서 마지막에 `-f` 를 붙인다. --force의 약어이다.
 
 `git push origin master -f` 끝
+
+## 과거로 돌아간 후, branch 생성
+
+```
+git checkout ID
+
+git checkout -b branch
+    or
+git switch -c branch
+```
+
+git checkout은 넓은 범위로 사용되고, switch와 restore라고 나누어져있다.
+
+각각 파일을 변경,복원 시에 사용하는 명령어다.
