@@ -47,6 +47,30 @@ git으로 감지한 파일들을 스테이징 하기 위해 사용한다.
 
     git checkout 5b73403aada4a0ee434ad527430cbb0f7dd03ce8
 
-checkout 뒤에 텍스트들은 git log에서 commit 한 이름을 풀어놓은 것이다. 해당 커밋을 했을 때로 이동한다.
+checkout 뒤에 텍스트들은 git log에서 commit 한 이름을 풀어놓은 것이다. 시간 앞 뒤로 이동 할 수 있다.
 
 커밋을 변경한 건 아니기에 다시 현재로 돌아올 수 있다. `git checkout master`를 하면 기존에 마지막으로 commit 한 공간으로 돌아오게 된다.
+
+완전히 해당 커밋을 삭제하고자 한다면 이와 같은 명령어를 사용하자.
+
+    git reset --hard HEAD^
+
+HEAD의 위치를 변경한다. ^를 입력하면 1단계 이전의 커밋으로 돌아가고, ^^는 2개 ^의 개수마다 증가한다.
+
+이렇게 해당 커밋을 삭제하게 되면 orgin이 보이지 않게 되는데, HEAD의 위치를 옮겨서 그렇다.
+
+    git push origin master --force
+
+강제로 푸시를 해야한다.
+
+reset에는 여러가지 리셋 방법들이 있다.
+
+- git reset --hard HEAD^
+
+  완전히 과거로 돌아간다. stage 영역으로 옮기는 것이 아닌 파일 변경 내역을 유지하지 않는다.
+
+- git reset --soft HEAD^
+
+- git reset HEAD^
+
+  변경사항 삭제하지는 않은채로 커밋한 파일을 stage 영역으로 옮겨서 untracked 상태로 만든다.
