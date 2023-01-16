@@ -3,6 +3,7 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+.psd
 
 node_modules/
 dist/
@@ -12,4 +13,3 @@ package.json
 .prettierrc.json
 tsconfig.json
 
-.psd
