@@ -743,7 +743,7 @@ main section ul img {
   height: 40px;
   text-align: center;
   line-height: 40px;
-  background: var(--dark);
+  background: var(--mid);
   border-radius: 30px;
   margin-bottom: 20px;
   transition: color 0.5s, background 0.5s;
