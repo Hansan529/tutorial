@@ -3,8 +3,7 @@
 .DS_Store
 .AppleDouble
 .LSOverride
-.psd
-
+*.psd
 node_modules/
 dist/
 .eslintrc.json
