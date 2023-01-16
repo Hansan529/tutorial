@@ -20,7 +20,7 @@ li {
 }
 
 body {
-  background-color: #ccc;
+  /* background-color: #ccc; */
 }
 /* 가로 정렬 */
 .header-inner,
@@ -44,6 +44,7 @@ body {
 header {
   position: fixed;
   width: 100%;
+  z-index: 1000;
 }
 header.fixed {
   background: rgba(0, 0, 0, 0.7);
@@ -325,6 +326,7 @@ header.fixed {
 /*^ 메인 */
 main section {
   padding: 100px 0 70px;
+  position: relative;
 }
 /* 타이틀 */
 main .title {
@@ -463,50 +465,152 @@ main section ul img {
 }
 
 /*^ 포트폴리오 */
+/* 넘치는 자식들 밑으로 wrap */
 .portfolio-list {
   overflow: hidden;
   flex-wrap: wrap;
-  gap: 50px 30px;
+  gap: 50px 0;
 }
+/* 가로 분배 */
 .portfolio-list > li {
-  width: 30%;
+  width: 31%;
+}
+/* 넘치는 이미지 숨기기 */
+.portfolio-list > li .img-box {
+  overflow: hidden;
+}
+/* 전환 애니메이션 추가 */
+.portfolio-list > li img {
+  transition: transform 0.5s;
+}
+/* hover 크기 증가 */
+.portfolio-list > li:hover img {
+  transform: scale(1.1);
+}
+/* 포트폴리오 텍스트 박스 */
+.portfolio-list > li .text-box {
+  margin-top: 40px;
+  padding-left: 30px;
+  border-left: 1px solid #ccc;
+}
+/* 포트폴리오 제목 */
+.portfolio-list > li .text-box > h4 {
+  font-size: 1.7em;
+}
+/* 포트폴리오 설명 */
+.portfolio-list > li .text-box > P {
+  margin: 25px 0;
+  color: var(--light);
+  font-size: 0.8125em;
 }
 /* 버튼 */
 .portfolio-list .btn > span {
   border: 1px solid var(--light);
-  background: #fff;
+  /* background: #fff; */
   border-radius: 20px;
   padding: 5px 10px;
   margin-right: 8px;
-  white-space: nowrap;
+  font-size: 0.7em;
 }
+/* 더보기 위치 */
 .port-more {
-  background: var(--main-color);
+  margin-top: 50px;
+  text-align: center;
+  position: relative;
+}
+/* 텍스트 정렬 */
+.port-more > a > span {
+  position: relative;
+  line-height: 50px;
   color: #fff;
-  width: 300px;
-  height: 100px;
+}
+/* 텍스트 배경 */
+.port-more > a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 250px;
+  height: 50px;
+  background: var(--main-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) skewX(-30deg);
+  transition: transform 0.5s;
+}
+/* 텍스트 hover 시 사각형으로 만듦 */
+.port-more > a:hover::before {
+  transform: translateX(-50%) skew(0deg);
+}
+
+/** 주요고객사, 인증/수상 공통 */
+/* 화살표 */
+.partner-wrap .arrow-btn,
+.award-wrap .arrow-btn {
+  width: 1280px;
+}
+/* 기존 화살표 스타일 제거 */
+.partner-wrap .arrow-btn > li::after,
+.award-wrap .arrow-btn > li::after {
+  display: none;
+}
+/* 화살표 버튼 */
+.partner-wrap .arrow-btn > li > a,
+.award-wrap .arrow-btn > li > a {
+  display: block;
+  width: 23px;
+  height: 42px;
+  text-indent: -9999em;
+  position: absolute;
+  bottom: 40px;
+  border-bottom: none;
+}
+/* 화살표 이미지 */
+.partner-wrap .arrow-btn > li:first-child > a,
+.award-wrap .arrow-btn > li:first-child > a {
+  background: url("../images/main/main_prev.png") no-repeat;
+}
+.partner-wrap .arrow-btn > li:last-child > a,
+.award-wrap .arrow-btn > li:last-child > a {
+  right: -20px;
+  background: url("../images/main/main_next.png") no-repeat;
+}
+/* 넘치는 요소 숨기기 */
+.partner-list-wrap,
+.award-list-wrap {
+  overflow: hidden;
+  width: 90%;
   margin: 0 auto;
   text-align: center;
-  line-height: 100px;
-  transform: skew(-30deg);
+  position: relative;
 }
+/* 6등분 */
+.partner-list > li,
+.award-list > li {
+  width: 7.5%;
+  padding: 0 10px;
+  /* background-color: red; */
+}
+/*^ 주요고객사 */
+.partner-list {
+  width: calc(100% * 12 / 6);
+}
+
 /*^ 인증/수상 */
-.partner-list,
 .award-list {
-  width: 100%;
-  overflow: hidden;
+  width: calc(100% * 13 / 6);
 }
-.award-list img {
-  display: block;
-}
-
-/* 텍스트 중앙정렬 */
 .award-list > li > a {
-  display: block;
-  text-align: center;
-  width: 180px;
+  font-size: 0.75em;
 }
-
+.award-list::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: url("../images/main/award_line.png") 100% 100%;
+  position: absolute;
+  top: 15px;
+}
 /* 메달 이미지, 어워드 수상 텍스트 */
 .award-list > li > a > span::before {
   content: "KWAA 어워드 수상";
@@ -517,13 +621,39 @@ main section ul img {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 150px;
+  height: 140px;
   background: url("../images/main/medal_e.png") no-repeat center;
 }
 
-/* footer-top 위치 */
+/** footer 공통 */
+.footer > div {
+  padding: 40px 0;
+}
 
-/* footer-bottom 위치 */
+/*^ footer top */
+.footer-top {
+  border-top: 1px solid #ccc;
+}
+.foot-nav {
+  display: flex;
+  justify-content: space-between;
+}
+/* 메뉴 타이틀 */
+.foot-nav > li > a {
+  font-size: 1.12em;
+  font-weight: 700;
+}
+/* 서브 메뉴 */
+.foot-nav > li > ul {
+  margin-top: 30px;
+  line-height: 2;
+}
+/*^ footer-bottom */
+.footer-bottom {
+  background: var(--dark);
+  color: #ccc;
+}
+
 .footer-bottom .inner {
   display: flex;
   justify-content: space-between;
