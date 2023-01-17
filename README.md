@@ -198,3 +198,5 @@ git push origin master
 ```
 
 fork -> pull request 테스트
+
+원본 저장소 주인의 커밋
