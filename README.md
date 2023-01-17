@@ -196,3 +196,5 @@ git push origin master
 
 /* 그 후 pull request를 하여 저장소 주인에게 merge 요청을 한다. */
 ```
+
+fork -> pull request 테스트
