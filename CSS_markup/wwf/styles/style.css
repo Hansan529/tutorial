@@ -1,0 +1,104 @@
+body {
+  font-family: "NanumBarunGothic", sans-serif;
+  font-size: ;
+}
+
+.inner {
+  max-width: 1480px;
+  margin: 0 auto;
+  background: rgba(255, 0, 0, 0.3);
+}
+
+/*^ header */
+header {
+  background: black;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+}
+
+/* 로고 옆에 gnb 옮기기 */
+.logo {
+  float: left;
+  width: 100px;
+}
+.logo img {
+  width: 100%;
+}
+nav {
+  float: left;
+}
+/* gnb:hover 서브 메뉴 */
+.depth2 {
+  display: none;
+}
+/* R-gnb 텍스트 정렬 */
+.gnb-wrap {
+  float: right;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+/* R-gnb 텍스트 정렬 */
+.gnb-wrap > .gnb {
+  display: flex;
+  gap: 30px;
+}
+.gnb-wrap > .gnb > li {
+}
+.gnb-wrap > .gnb > li > a {
+  color: #ddd;
+}
+.search-wrap {
+  /* display: none; */
+}
+.search-wrap > a {
+  display: block;
+  background: #fff url("../images/icon_search_search.png") no-repeat center
+    center / 20px 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.search-wrap > a:hover {
+  background: #666 url("../images/icon_search_header_white.png") no-repeat
+    center center / 20px 20px;
+}
+.search-wrap > .form-inner {
+  display: none;
+}
+.sponer > a {
+  display: block;
+  background: transparent;
+  color: #fff;
+  padding: 0 40px;
+  line-height: 50px;
+  outline: 1px solid #fff;
+  font-size: 1.2em;
+  transition: all 0.3s;
+}
+.sponer > a:hover {
+  background: #ffce32;
+  color: #000;
+  outline: none;
+}
+
+/* gnb 위치 */
+#nav {
+  display: flex;
+  gap: 55px;
+  margin-left: 60px;
+}
+#nav > li {
+}
+#nav > li > a {
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+/*^ container */
+
+/*^ footer*/
