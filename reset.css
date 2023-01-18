@@ -77,11 +77,16 @@ input {
   position: absolute;
   top: -9999px;
   width: 100%;
-  line-height: 50%;
+  line-height: 2;
   text-align: center;
   background: black;
   color: white;
 }
 .skip a:focus {
   top: 0;
+}
+.clearFix::after {
+  content: "";
+  display: block;
+  clear: both;
 }
