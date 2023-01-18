@@ -232,7 +232,7 @@ pre {
 }
 
 .part-05__img > li {
-  list-style-image: url("../images/icon-arrow-cursor.png");
+  list-style-image: url("./images/icon-arrow-cursor.png");
 }
 
 /* *part-06 */
@@ -274,7 +274,7 @@ pre {
   cursor: pointer;
 }
 .part-06__cursor12 {
-  cursor: url("../images/icon-arrow-big.png"), auto;
+  cursor: url("./images/icon-arrow-big.png"), auto;
 }
 
 /* *part-07 */
@@ -416,8 +416,7 @@ pre {
    background-repeat: no-repeat;
    background-position: center 200px;
    background-attachment: fixed; */
-  background: skyblue url("../CSS_markup/images/b1.png") no-repeat center 200px
-    fixed;
+  background: skyblue url("../images/b1.png") no-repeat center 200px fixed;
 }
 
 /* *part-14 */
@@ -428,14 +427,14 @@ pre {
 }
 
 .part-14__box2 {
-  background-image: url("../CSS_Markup/images/mainBanner_1.jpg");
+  background-image: url("../images/mainBanner_1.jpg");
   color: white;
   background-attachment: fixed;
   background-position: center center;
 }
 
 .part-14__box4 {
-  background-image: url("../CSS_Markup/images/mainBanner_2.jpg");
+  background-image: url("../images/mainBanner_2.jpg");
   color: white;
   background-attachment: fixed;
   background-position: center center;
@@ -516,7 +515,7 @@ pre {
 /* *part-18 */
 #part-18 {
   background: url("../images/bg_utilization.png") no-repeat center 0,
-    url("../CSS_markup/images/mainBanner_1.jpg") no-repeat;
+    url("../images/mainBanner_1.jpg") no-repeat;
 }
 #part-18 h2 {
   color: #fff;
@@ -528,7 +527,7 @@ pre {
   height: 300px;
   background-color: pink;
   background-position: center center;
-  background-image: url("../CSS_markup/images/mainBanner_4.jpg");
+  background-image: url("../images/mainBanner_4.jpg");
   margin-bottom: 10px;
 }
 
@@ -674,7 +673,7 @@ pre {
   display: block;
   width: 100%;
   height: 55px;
-  background: url("../CSS_markup/images/icon_set_011.png") no-repeat center 100%;
+  background: url("../images/icon_set_011.png") no-repeat center 100%;
 }
 
 .part-22__icon-item > span {
@@ -687,7 +686,7 @@ pre {
 }
 
 .part-22__icon-item:hover > i {
-  background-image: url("../CSS_markup/images/icon_set_011_over.png");
+  background-image: url("../images/icon_set_011_over.png");
 }
 
 /* *part-23 */
@@ -739,7 +738,7 @@ pre {
 }
 
 .part-24__sponsor-wrap > i {
-  background: url("../CSS_markup/images/icon_set_011.png") no-repeat center 75%;
+  background: url("../images/icon_set_011.png") no-repeat center 75%;
   display: block;
   width: 100%;
   height: 90px;
@@ -754,7 +753,7 @@ pre {
   cursor: pointer;
 }
 .part-24__sponsor-wrap:hover > i {
-  background-image: url("../CSS_markup/images/icon_set_011_over.png");
+  background-image: url("../images/icon_set_011_over.png");
 }
 
 /* *part-25 */
@@ -1284,11 +1283,11 @@ pre {
   position: relative;
 }
 .part-45__notice {
-  background-image: url("./img/b1.png");
+  background-image: url("./images/b1.png");
   background-position: 0px 70px;
 }
 .part-45__data {
-  background-image: url("./img/b2.png");
+  background-image: url("./images/b2.png");
   background-position: 0px 80px;
 }
 .part-45__column {
@@ -1869,10 +1868,10 @@ pre {
   display: inline-block;
   width: 24px;
   height: 24px;
-  background-image: url("../CSS_markup/images/checkbox-30-24.png");
+  background-image: url("../images/checkbox-30-24.png");
 }
 #part-64__checkbox:checked + label {
-  background-image: url("../CSS_markup/images/checkbox-31-24.png");
+  background-image: url("../images/checkbox-31-24.png");
 }
 #part-64 input[type="radio"] + label {
   color: skyblue;
@@ -2455,7 +2454,7 @@ pre {
   color: transparent;
 }
 .part-80__img-bg {
-  background-image: url("../CSS_markup/images/mainBanner_3.jpg");
+  background-image: url("../images/mainBanner_3.jpg");
 }
 .part-80__gbg {
   background: linear-gradient(
