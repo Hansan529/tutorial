@@ -15,6 +15,7 @@ body {
 }
 
 /*^ header */
+/* 최상단 메뉴바 */
 header {
   background: black;
   position: fixed;
@@ -26,7 +27,7 @@ header {
 /* 로고 옆에 gnb 옮기기 */
 .logo {
   float: left;
-  width: 100px;
+  width: 110px;
 }
 /* 이미지 100% */
 /* .logo img {
@@ -151,35 +152,192 @@ nav {
   border-left: 1px solid #ddd;
 }
 /*^ container */
+/* fixed 높이만큼 여백 지정 */
 main {
   padding-top: 80px;
 }
-#main-banner {
-  height: 860px;
+/* 배너 사이즈 및 부모 */
+.main__banner {
+  height: 680px;
+  position: relative;
 }
+/* 배너 총 너비 및 가로 정렬 */
 .banner {
   display: flex;
   width: calc(100% * 3);
-  /* overflow: hidden; */
 }
+/* 배너 너비 */
 .banner li {
   width: calc(100% / 3);
   height: 100%;
   position: relative;
 }
-.banner li:hover img {
+/* 배너 이미지 전환 효과 */
+.banner > li img {
+  width: 100%;
+  height: 100%;
+  animation: bannerSize 5s forwards;
+  object-fit: cover;
+}
+/* 배너 크기 증가 */
+@keyframes bannerSize {
+  from {
+    transform: sclae(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+/* 배너 이미지 hover */
+.banner > li:hover img {
   transform: scale(1.1);
 }
-.banner img {
-  width: 100%;
-  transition: transform 0.5s;
-}
+/* 넘치는 이미지 hidden */
 .banner-img {
   overflow: hidden;
 }
-.banner-txt,
-.more-btn {
+/* 배너 텍스트 */
+.banner-txt {
   position: absolute;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+  color: #fff;
+  word-break: keep-all;
+  width: 100%;
 }
-
+/* 배너 제목 */
+.banner-txt > h2 {
+  font-size: 4em;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: WWF;
+}
+/* 배너 서브 타이틀 */
+.banner-txt > span {
+  display: block;
+  font-size: 1.5em;
+  margin: 10px 0 30px;
+}
+/* 배너 더보기 */
+.banner-txt > .more-btn > a {
+  font-size: 1.6em;
+  display: inline-block;
+  border: 1px solid;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 15px 60px;
+  font-family: WWF;
+  transition: all 0.2s;
+}
+/* 더보기 btn hover */
+.banner-txt > .more-btn > a:hover {
+  background: var(--orange);
+  border-radius: 20px;
+}
+/* 배너 하단 아이콘 wrap */
+.control-wrap {
+  position: absolute;
+  width: 100%;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 배너 컨트롤러 */
+.control-btn {
+  display: flex;
+  gap: 25px;
+  margin-left: 20px;
+}
+/* 컨트롤러 크기 */
+.control-btn > li > a {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  text-indent: -9999em;
+}
+/* 컨트롤러 이미지 */
+.control-btn > li:first-child > a {
+  background-image: url("../images/main_slide_arr_prev.png");
+}
+.control-btn > li:nth-child(2) > a {
+  background-image: url("../images/main_slide_arr_next.png");
+}
+.control-btn > li:nth-child(3) > a {
+  background-image: url("../images/main_slide_pause.png");
+}
+.control-btn > li:last-child > a {
+  background-image: url("../images/main_slide_play.png");
+}
+/* 선택된 배너 페이지 */
+.pager {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* 페이저 도형 */
+.pager > li > a {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: #fff;
+  border-radius: 50%;
+  text-indent: -9999em;
+}
+/* 마우스 스크롤 */
+.scroll {
+  width: 25px;
+  height: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  position: relative;
+  margin-right: 20px;
+}
+/* 마우스 가상선택 활성화, 중앙 */
+.scroll::before,
+.scroll::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+}
+/* 마우스 내부 선 */
+.scroll::before {
+  background: rgba(255, 255, 255, 0.5);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 20px;
+}
+/* 마우스 휠 */
+.scroll::after {
+  width: 5px;
+  height: 5px;
+  background: #fff;
+  border-radius: 50%;
+  top: 5px;
+  transform: translateX(-50%);
+  animation: scroll 3s linear infinite alternate;
+}
+/* 마우스 휠 무브먼트 */
+@keyframes scroll {
+  from {
+    top: 5px;
+  }
+  20% {
+    top: 5px;
+  }
+  80% {
+    top: 20px;
+  }
+  to {
+    top: 20px;
+  }
+}
 /*^ footer*/
