@@ -197,7 +197,18 @@ git push origin master
 /* 그 후 pull request를 하여 저장소 주인에게 merge 요청을 한다. */
 ```
 
-fork -> pull request 테스트
+<br>
 
-원본 저장소 주인의 커밋
-2개 커밋 추가
+## pull request
+
+- github에 원본 저장소에 내가 기여할 수 있는 방법이다.
+
+일단 원본 저장소를 fork 하여 나의 repository로 만든 다음
+
+clone 하여 로컬에서 작업 한 후, commit, push 해서 업데이트를 한 후에, github 페이지에서
+
+`Pull requests` -> `New pull request` -> `compare across forks`
+
+`base repository`: 업데이트 신청을 하고자 하는 저장소 / branch <- `head repository`: fork 한 나의 저장소 / branch
+
+`Create pull request` 버튼을 눌러 생성하면 원본 저장소 주인에게 요청이 간다. 이에 대해 코멘트를 남기고, 병합하거나 거부할 수 있다.
