@@ -1,8 +1,13 @@
-body {
-  font-family: "NanumBarunGothic", sans-serif;
-  font-size: ;
+@import "./fonts.css";
+
+:root {
+  --orange: #e98302;
 }
 
+body {
+  font-family: "NanumBarunGothic", sans-serif;
+  font-size: 16px;
+}
 .inner {
   max-width: 1480px;
   margin: 0 auto;
@@ -16,22 +21,20 @@ header {
   width: 100%;
   height: 80px;
   line-height: 80px;
+  z-index: 1000;
 }
-
 /* 로고 옆에 gnb 옮기기 */
 .logo {
   float: left;
   width: 100px;
 }
-.logo img {
+/* 이미지 100% */
+/* .logo img {
   width: 100%;
-}
+} */
+/* 로고 왼쪽으로 gnb 정렬 */
 nav {
   float: left;
-}
-/* gnb:hover 서브 메뉴 */
-.depth2 {
-  display: none;
 }
 /* R-gnb 텍스트 정렬 */
 .gnb-wrap {
@@ -45,14 +48,18 @@ nav {
   display: flex;
   gap: 30px;
 }
+/* R-gnb  */
 .gnb-wrap > .gnb > li {
 }
+/* R-gnb color */
 .gnb-wrap > .gnb > li > a {
   color: #ddd;
 }
+/* search */
 .search-wrap {
   /* display: none; */
 }
+/* search 아이콘 이미지 */
 .search-wrap > a {
   display: block;
   background: #fff url("../images/icon_search_search.png") no-repeat center
@@ -61,14 +68,16 @@ nav {
   height: 32px;
   border-radius: 50%;
 }
-
+/* search 아이콘 이미지 변경 */
 .search-wrap > a:hover {
   background: #666 url("../images/icon_search_header_white.png") no-repeat
     center center / 20px 20px;
 }
+/* search 아이콘 내부 */
 .search-wrap > .form-inner {
   display: none;
 }
+/* 후원하기 */
 .sponer > a {
   display: block;
   background: transparent;
@@ -79,26 +88,98 @@ nav {
   font-size: 1.2em;
   transition: all 0.3s;
 }
+/* 후원하기 hover */
 .sponer > a:hover {
-  background: #ffce32;
+  background: var(--orange);
   color: #000;
   outline: none;
 }
-
 /* gnb 위치 */
 #nav {
   display: flex;
-  gap: 55px;
   margin-left: 60px;
 }
+/* gnb 메뉴 wrap */
 #nav > li {
+  position: relative;
+  padding: 0 30px;
 }
+/* gnb 텍스트 스타일 */
 #nav > li > a {
   color: #fff;
   font-size: 1.3em;
   font-weight: 700;
 }
-
+/* gnb hover 서브 메뉴 활성화 */
+#nav > li:hover .depth2 {
+  display: block;
+}
+/* gnb hover 색상 변경 */
+#nav > li:hover > a {
+  color: var(--orange);
+}
+/* gnb:hover 서브 메뉴 */
+#nav .depth2 {
+  display: none;
+  position: absolute;
+  background: #fff;
+  width: 220px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);
+  top: 65px;
+  left: 0;
+}
+/* 서브 메뉴 스타일 */
+#nav .depth2 a {
+  display: block;
+  padding: 0 30px;
+  font-size: 1.15em;
+  line-height: 3;
+}
+/* 서브 메뉴 hover 스타일 */
+#nav .depth2 a:hover {
+  display: block;
+  background: var(--orange);
+  color: #fff;
+}
+/* 서브 메뉴 '활동' 사이드탭 */
+#nav .right {
+  background: #ddd;
+  top: 0;
+  left: 220px;
+  height: 331.2px;
+  box-shadow: none;
+  border-left: 1px solid #ddd;
+}
 /*^ container */
+main {
+  padding-top: 80px;
+}
+#main-banner {
+  height: 860px;
+}
+.banner {
+  display: flex;
+  width: calc(100% * 3);
+  /* overflow: hidden; */
+}
+.banner li {
+  width: calc(100% / 3);
+  height: 100%;
+  position: relative;
+}
+.banner li:hover img {
+  transform: scale(1.1);
+}
+.banner img {
+  width: 100%;
+  transition: transform 0.5s;
+}
+.banner-img {
+  overflow: hidden;
+}
+.banner-txt,
+.more-btn {
+  position: absolute;
+}
 
 /*^ footer*/
