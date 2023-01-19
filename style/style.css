@@ -2894,3 +2894,22 @@ pre {
   transform: scale(1.5);
   transform-origin: center top;
 }
+/** part-94 */
+.part-94 {
+  width: 500px;
+  padding: 10px;
+  border: 5px solid;
+}
+.part-94 > img {
+  width: 500px;
+  height: 500px;
+}
+.part-94__img2 {
+  object-fit: contain;
+}
+.part-94__img3 {
+  object-fit: cover;
+}
+.part-94__img4 {
+  object-fit: scale-down;
+}
