@@ -212,3 +212,25 @@ clone 하여 로컬에서 작업 한 후, commit, push 해서 업데이트를 �
 `base repository`: 업데이트 신청을 하고자 하는 저장소 / branch <- `head repository`: fork 한 나의 저장소 / branch
 
 `Create pull request` 버튼을 눌러 생성하면 원본 저장소 주인에게 요청이 간다. 이에 대해 코멘트를 남기고, 병합하거나 거부할 수 있다.
+
+<br>
+
+## git merge
+
+Fast forword 와 non fast forword 방식으로 있다.
+
+현재 내 브랜치보다 더 앞서 있는 다른 branch가 있을 경우 병합 커밋을 새롭게 생성한다.
+
+```CSS
+/* master 브랜치로 이동 */
+git checkout -
+
+/* 앞서있는 brnach */
+git merge branch
+
+- fast forword -
+
+/* 병합 후 master에서 push */
+git push origin master
+
+```
