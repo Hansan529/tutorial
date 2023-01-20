@@ -234,3 +234,5 @@ git merge branch
 git push origin master
 
 ```
+
+fetch와 merge를 한번에 하는 `git pull branch` 을 이용해도 된다.
