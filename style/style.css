@@ -102,10 +102,12 @@ pre {
 
 .before::before {
   content: "before";
+  display: block;
   text-transform: uppercase;
 }
 .after::before {
   content: "after";
+  display: block;
   text-transform: uppercase;
   color: red;
 }
@@ -2912,4 +2914,18 @@ pre {
 }
 .part-94__img4 {
   object-fit: scale-down;
+}
+
+/** part-95 */
+#part-95 .code-result h2 {
+  width: 250px;
+  background-color: skyblue;
+}
+#part-95 .after h2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }

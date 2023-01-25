@@ -4276,6 +4276,36 @@
             </div>
           </div>
         </section>
+        <section id="part-95">
+          <hr class="margin" />
+          <h2 class="margin">95 여러줄 말줄임</h2>
+          <div class="code-box">
+            <pre class="code">
+              width: 250px;
+              overflow: hidden;
+  text-overflow: ellipsis;<span class="red">
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  </span>
+            </pre>
+            <div class="code-result">
+              <div class="before">
+                <h2>
+                  [보도자료] WWF, 전 세계 중앙은행 및 금융감독기관의 지속가능성
+                  평가 발표
+                </h2>
+              </div>
+              <div class="after">
+                <h2>
+                  [보도자료] WWF, 전 세계 중앙은행 및 금융감독기관의 지속가능성
+                  평가 발표
+                </h2>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   </body>
