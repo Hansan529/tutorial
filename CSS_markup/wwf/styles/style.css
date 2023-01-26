@@ -641,6 +641,90 @@ section ul img {
   right: 1%;
 }
 /** newdeal-wrap */
+/* 위치 조정 */
+.newdeal-wrap > div {
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  word-break: keep-all;
+}
+/* 텍스트 색상 */
+.deal-top {
+  color: #fff;
+  padding: 0 50px 0 50px;
+}
+/* 텍스트와 이미지 여백 */
+.deal-top > .title-box {
+  padding: 100px 20px 0 0;
+}
+/* 영문 서식 */
+.deal-top .title-box strong {
+  display: block;
+  width: 350px;
+  font: 400 6em "WWF";
+  line-height: 1;
+  word-break: keep-all;
+}
+/* 메인컬러 언더바 */
+.deal-top .title-box strong::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 5px;
+  background: var(--orange);
+  margin: 30px 0 40px;
+}
+/* 부제 서식 */
+.deal-top > .title-box > .sub-title {
+  font-size: 2em;
+}
+/* 전체 서식에서 탈출 */
+.deal-top > .title-box > .sub {
+  text-align: start;
+  color: #fff;
+  font-size: 1.275em;
+}
+/* 이미지 위치 조정 */
+.deal-top > .deal-img {
+  position: relative;
+  top: -70px;
+}
+/* 아이콘 텍스트 색상 */
+.icon-wrap {
+  color: var(--orange);
+  padding: 0 50px 50px 50px;
+}
+/* 아이콘 박스 */
+.icon-wrap > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 30%;
+}
+/* 텍스트 너비 */
+.icon-wrap > div > .slogan__text {
+  width: 70%;
+}
+/* 마지막 박스 크기 */
+.icon-wrap > div:last-child {
+  width: 35%;
+}
+/* 마지막 박스 텍스트 너비 */
+.icon-wrap > div:last-child > .slogan__text {
+  width: 80%;
+}
+/* 아이콘 박스 제목 */
+.icon-wrap > div > .slogan__text > strong {
+  font-size: 1.2em;
+}
+/* 아이콘 박스 설명 */
+.icon-wrap > div > .slogan__text > p {
+  margin-top: 15px;
+}
+/* 아이콘 이미지 크기 */
+.icon-wrap > div > img {
+  width: 82px;
+}
 /** campaign-wrap */
 
 /*^ footer*/
