@@ -37,6 +37,10 @@ button {
   border: 0;
   cursor: pointer;
 }
+input {
+  background: none;
+  border: 0;
+}
 a {
   text-decoration: none;
 }
