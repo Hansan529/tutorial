@@ -4308,7 +4308,7 @@
         </section>
         <section id="part-95">
           <hr class="margin" />
-          <h2 class="margin">95 grid</h2>
+          <h2 class="margin">95 grid - flex, grid</h2>
           <div class="code-box">
             <pre class="code"></pre>
             <div class="code-result">
@@ -4339,7 +4339,8 @@
         </section>
         <section id="part-96">
           <hr class="margin" />
-          <h2 class="margin">96 grid</h2>
+          <h2 class="margin">96 grid - float, flex, grid</h2>
+          <p>첫번째 항목이 큰 경우에는 별 어려움 없이 구성할 수 있다.</p>
           <p>아래와 같은 3가지의 방법으로 같은 레이아웃을 구성 할 수 있다.</p>
           <p>단일 축이 아닌 경우에는 grid 레이아웃을 사용하는 것이 좋다.</p>
           <div class="code-box">
@@ -4378,6 +4379,98 @@
                   <div class="box6">box6</div>
                   <div class="box7">box7</div>
                   <div class="box8">box8</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="part-97">
+          <hr class="margin" />
+          <h2 class="margin">97 grid</h2>
+          <p>
+            첫번째가 아닐 경우에 grid를 제외한 나머지로 레이아웃을 구성하려면
+            몇가지 단계가 더 추가된다.
+          </p>
+          <p>
+            flex의 box2의 높이가 커지면 box1과 box3의 높이도 같이 커진다.
+            align-items의 기본값이 stritch 이기 때문이다.
+          </p>
+          <div class="code-box">
+            <pre class="code"></pre>
+            <div class="code-result">
+              <div class="one">
+                <div class="part-97__float-wrap part-97">
+                  <div class="box1">box1</div>
+                  <div class="box2">box2</div>
+                  <div class="box3">box3</div>
+                  <div class="box4">box4</div>
+                  <div class="box5">box5</div>
+                </div>
+                <div class="part-97__flex-wrap part-97">
+                  <div class="box1">box1</div>
+                  <div class="box2">box2</div>
+                  <div class="box3">box3</div>
+                  <div class="box4">box4</div>
+                  <div class="box5">box5</div>
+                </div>
+                <div class="part-97__grid-wrap part-97">
+                  <div class="box1">box1</div>
+                  <div class="box2">box2</div>
+                  <div class="box3">box3</div>
+                  <div class="box4">box4</div>
+                  <div class="box5">box5</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="part-98">
+          <hr class="margin" />
+          <h2 class="margin">98 grid - area</h2>
+          <p>
+            grid-column-start, grid-column-end, grid-row-start, grid-row-end
+          </p>
+          <p>아래로 내려갈 수록 함축적으로 변한다.</p>
+          <p>grid-column: start / end, grid-row: start / end</p>
+          <p>grid-area: row-start / col-start / row-end / col-end</p>
+          <div class="code-box">
+            <pre class="code"></pre>
+            <div class="code-result">
+              <div class="one">
+                <div class="part-98__grid-wrap">
+                  <div class="box1">box1</div>
+                  <div class="box2">box2</div>
+                  <div class="box3">box3</div>
+                  <div class="box4">box4</div>
+                  <div class="box5">box5</div>
+                  <div class="box6">box6</div>
+                  <div class="box7">box7</div>
+                  <div class="box8">box8</div>
+                  <div class="box9">box9</div>
+                  <div class="box10">box10</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="part-99">
+          <hr class="margin" />
+          <h2 class="margin">99 grid - blank</h2>
+          <div class="code-box">
+            <pre class="code"></pre>
+            <div class="code-result">
+              <div class="one">
+                <div class="part-99__grid-wrap">
+                  <div class="box1">box1</div>
+                  <div class="box2">box2</div>
+                  <div class="box3">box3</div>
+                  <div class="box4">box4</div>
+                  <div class="box5">box5</div>
+                  <div class="box6">box6</div>
+                  <div class="box7">box7</div>
+                  <div class="box8">box8</div>
+                  <div class="box9">box9</div>
+                  <div class="box10">box10</div>
                 </div>
               </div>
             </div>
