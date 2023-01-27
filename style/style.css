@@ -3096,3 +3096,43 @@ pre {
 .part-98__grid-wrap > .box2 {
   grid-area: 1/2/3/5;
 }
+/** part-99 */
+.part-99__grid-wrap {
+  margin: 10px;
+  padding: 10px;
+  background: pink;
+  display: grid;
+  grid-auto-columns: 1fr 2fr;
+  gap: 10px;
+}
+.part-99__grid-wrap > div {
+  background: skyblue;
+  border: 1px solid #000;
+  padding: 10px;
+}
+.part-99__grid-wrap > .box1 {
+  grid-column: 2;
+}
+.part-99__grid-wrap > .box2 {
+  grid-column: 3;
+}
+.part-99__grid-wrap > .box3 {
+  grid-column: 4;
+}
+/** part-100 */
+.part-100__grid-wrap {
+  margin: 10px;
+  padding: 10px;
+  background: pink;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(3, 1fr); */
+  grid-template-rows: repeat(3, minmax(100px, auto));
+  /* grid-template: repeat(3, 1fr) / repeat(3, 1fr); */
+}
+.part-100__grid-wrap > div {
+  background: skyblue;
+  border: 1px solid #000;
+  padding: 10px;
+}
