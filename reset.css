@@ -76,6 +76,9 @@ input {
 strong {
   font-weight: bolder;
 }
+address {
+  font-style: normal;
+}
 .blind {
   position: absolute;
   top: -9999px;
