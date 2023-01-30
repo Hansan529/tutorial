@@ -3179,3 +3179,49 @@ pre {
   grid-column-end: span 3;
   background: aqua;
 }
+/** part-103 */
+@media screen and (min-width: 1280px) {
+  #part-103 .media {
+    background: skyblue;
+    font-size: 16px;
+  }
+  .part-103__pc-title {
+  }
+  .part-103__ipad-title,
+  .part-103__pc-mobile-title {
+    display: none;
+  }
+  .part-103__box {
+  }
+}
+@media screen and (max-width: 1279px) {
+  #part-103 .media {
+    background: green;
+    font-size: 14px;
+    color: #fff;
+  }
+  .part-103__ipad-title {
+    display: block;
+  }
+  .part-103__ipad-title,
+  .part-103__pc-mobile-title {
+    display: none;
+  }
+  .part-103__box {
+  }
+}
+@media screen and (max-width: 767px) {
+  #part-103 .media {
+    background: pink;
+    font-size: 12px;
+  }
+  .part-103__mobile-title {
+    display: block;
+  }
+  .part-103__pc-title,
+  .part-103__ipad-title {
+    display: none;
+  }
+  .part-103__box {
+  }
+}
