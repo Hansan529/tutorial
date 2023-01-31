@@ -125,9 +125,10 @@ header.fixed {
 
 /** main */
 .main-banner {
-  width: 300%;
+  width: 100%;
 }
 .banner {
+  width: 300%;
   height: 100vh;
   position: relative;
 }
@@ -140,7 +141,6 @@ header.fixed {
   position: relative;
 }
 /* banner 공통사항 */
-.banner > li::before,
 .banner > li::after {
   content: "";
   display: block;
@@ -182,14 +182,14 @@ header.fixed {
   background-size: cover;
 }
 .banner > li:nth-child(3)::after {
-  width: 60%;
+  width: 100%;
   height: 100%;
-  background: url("../images/main/v3_mockup.png") no-repeat center / contain,
-    url("../images/main/v3_polygon.png") no-repeat 250px -25px / contain,
-    url("../images/main/v_polygon.png") no-repeat -100px 450px / contain;
-  top: 50%;
+  background: url("../images/main/v3_mockup.png") no-repeat 80% center / 40%,
+    url("../images/main/v3_polygon.png") no-repeat center / contain,
+    url("../images/main/v_polygon.png") no-repeat 70% 100% / 50%;
+  /* top: 50%;
   left: 50%;
-  transform: translate(-20%, -50%);
+  transform: translate(-20%, -50%); */
 }
 
 /* 배너 텍스트 */
@@ -206,7 +206,7 @@ header.fixed {
 
 /* 배너 제목 */
 .banner > li > .inner h2 {
-  font-size: 5em;
+  font-size: 4em;
 }
 .banner > li:first-child > .inner h2 {
   letter-spacing: 20px;
@@ -354,6 +354,7 @@ main .title + p {
   font-size: 1.1em;
   color: #888;
   margin-bottom: 50px;
+  word-break: keep-all;
 }
 main section ul {
   display: flex;
