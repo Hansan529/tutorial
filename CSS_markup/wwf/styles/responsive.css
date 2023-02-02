@@ -21,7 +21,7 @@
   }
   .news-wrap .pager,
   .wwf-wrap .pager,
-  .campaign-wrap .pager {
+  .pager {
     display: flex;
   }
   /*^ style */
@@ -129,11 +129,9 @@
     text-align: center;
   }
   /** campaign */
-  /* 여백 조정, 넘치는 content hidden */
+  /* 정렬 */
   .main__camp-slide {
-    gap: 20px;
-    overflow: hidden;
-    /* width: 400% */
+    display: block;
   }
   /* list 크기 100% 화면 full */
   .main__camp-slide > li {
