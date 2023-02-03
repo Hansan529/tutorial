@@ -4,24 +4,28 @@
 	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
 <style type="text/css">
 	.st0{display:none;}
-	.st1{fill:none;stroke:#231F20;stroke-width:7.258;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#231F20;stroke-width:8.258;stroke-miterlimit:10;}
 	.st2{fill:none;stroke:#231F20;stroke-width:7.6225;stroke-miterlimit:10;}
-	.st3{fill:none;stroke:#231F20;stroke-width:7.1926;stroke-miterlimit:10;}
+	.st3{fill:#231F20;}
 	.st4{fill:none;stroke:#231F20;stroke-width:7.8336;stroke-linecap:round;stroke-miterlimit:10;}
 	.st5{fill:none;stroke:#231F20;stroke-width:7.9887;stroke-linecap:round;stroke-miterlimit:10;}
-	.st6{fill:none;stroke:#231F20;stroke-width:7.8025;stroke-linecap:round;stroke-miterlimit:10;}
-	.st7{fill:none;stroke:#231F20;stroke-width:7.8024;stroke-linecap:round;stroke-miterlimit:10;}
-	.st8{fill:none;stroke:#231F20;stroke-width:7.824;stroke-linecap:round;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#231F20;stroke-width:6.8025;stroke-linecap:round;stroke-miterlimit:10;}
+	.st7{fill:none;stroke:#231F20;stroke-width:6.8024;stroke-linecap:round;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#231F20;stroke-width:6.824;stroke-linecap:round;stroke-miterlimit:10;}
 	.st9{fill:none;stroke:#231F20;stroke-width:7;stroke-linecap:round;stroke-miterlimit:10;}
-	.st10{fill:#231F20;}
-	.st11{fill:#FFFFFF;stroke:#231F20;stroke-width:0.9184;stroke-miterlimit:10;}
+	.st10{fill:#FFFFFF;stroke:#231F20;stroke-width:0.9184;stroke-miterlimit:10;}
+	.st11{fill:none;stroke:#231F20;stroke-width:7;stroke-miterlimit:10;}
+	.st12{fill:none;stroke:#231F20;stroke-width:5;stroke-miterlimit:10;}
+	.st13{fill:none;stroke:#231F20;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;}
+	.st14{fill:none;stroke:#231F20;stroke-width:6.7877;stroke-linecap:round;stroke-miterlimit:10;}
 </style>
 <g id="Layer_1" class="st0">
 </g>
 <g id="Layer_2">
 	<g>
-		<polygon class="st3" points="83.28,23.85 16.72,23.85 5.02,95.71 94.98,95.71 		"/>
-		<path class="st3" d="M33.38,23.47c0-10.59,8.59-19.18,19.18-19.18s19.18,8.59,19.18,19.18"/>
+		<path class="st3" d="M86.76,19.75H75.55C73.76,8.68,64.13,0.19,52.57,0.19c-11.57,0-21.2,8.49-22.98,19.56H13.24L0.2,99.81h99.6
+			L86.76,19.75z M52.57,8.39c7.03,0,12.96,4.84,14.61,11.36H37.95C39.6,13.23,45.53,8.39,52.57,8.39z M20.2,27.94h59.6l10.37,63.67
+			H9.83L20.2,27.94z"/>
 	</g>
 </g>
 </svg>
