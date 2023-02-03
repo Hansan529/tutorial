@@ -38,17 +38,17 @@
         </div>
         <div class="top-menu-r-wrap">
           <ul class="gnb-btn">
-            <li>
+            <li class="">
               <a href="#"
                 ><img src="./images/icon_login.svg" alt="login" /> 로그인</a
               >
             </li>
-            <li>
+            <li class="">
               <a href="#"
                 ><img src="./images/icon_member.svg" alt="res" /> 회원가입</a
               >
             </li>
-            <li>
+            <li class="">
               <a href="#"
                 ><img src="./images/icon_cart.svg" alt="cart" /><i
                   class="bubble"
@@ -57,8 +57,9 @@
               >
             </li>
             <li class="search">
-              <a href="#">SEARCH</a
-              ><img src="./images/icon_search.svg" alt="search" />
+              <a href="#"
+                >SEARCH<img src="./images/icon_search.svg" alt="search"
+              /></a>
             </li>
           </ul>
         </div>
@@ -179,17 +180,14 @@
         <section class="new-arrivals">
           <h2>New Arrivals</h2>
           <p class="arrow-more-btn">
-            <a href="#"
-              ><img src="./images/icon_arrow-right.svg" alt="" />제품 전체
-              보기</a
-            >
+            <a href="#">제품 전체 보기</a>
           </p>
-          <div class="product-list-wrap">
+          <div class="product-list-wrap product__ul-flex--5">
             <a href="#" class="list-btn__prev">prev</a>
             <div class="list-wrap-overflow">
               <ul class="product-list__inner">
                 <li>
-                  <div class="list-img-box over">
+                  <div class="list-img-box">
                     <a href="#">
                       <img
                         src="./images/NS97P02J_NS97P02J_primary.jpg"
@@ -202,10 +200,12 @@
                       />
                     </a>
                   </div>
-                  <p class="txt"><a href="#">SUPER KICKS</a></p>
-                  <span class="sale">149,000 원</span
-                  ><span class="price">134,100 원</span
-                  ><span class="sale-parsent">10%</span>
+                  <div class="list-text-box">
+                    <p class="txt"><a href="#">SUPER KICKS</a></p>
+                    <span class="sale">149,000 원</span
+                    ><span class="price">134,100 원</span
+                    ><span class="sale-parsent">10%</span>
+                  </div>
                 </li>
                 <li>
                   <div class="list-img-box">
@@ -535,7 +535,7 @@
             </div>
             <a href="#" class="list-btn__next">next</a>
           </div>
-          <div class="product-list-wrap">
+          <div class="product-list-wrap product__imgTxt-flex--3">
             <div class="product-list">
               <div class="list-img-box">
                 <img
@@ -562,31 +562,36 @@
                     class="img-back"
                   />
                 </div>
-                <p class="txt">SUPER PACK</p>
-                <span class="sale">169,000 원</span
-                ><span class="price">152,100 원</span
-                ><span class="sale-parsent">10%</span></a
+                <div class="list-text-box">
+                  <p class="txt">SUPER PACK</p>
+                  <span class="sale">169,000 원</span
+                  ><span class="price">152,100 원</span
+                  ><span class="sale-parsent">10%</span>
+                </div></a
               >
             </div>
             <div class="product-list">
-              <a href="#" class="right-top">
+              <a href="#" class="white">
                 <div class="list-img-box">
                   <img
                     src="./images/TNF_Main_middle_3SR_BackPack.jpg"
                     alt="SUPER PACK"
                   />
                 </div>
-                <p class="txt">DUAL PRO III BACKPACK</p>
+                <div class="item-list__text-box right-top">
+                  <p class="txt">DUAL PRO III BACKPACK</p>
+                </div>
               </a>
             </div>
           </div>
-          <div class="product-list-wrap white">
-            <div class="item-list left-bottom">
+          <div class="product-list-wrap product__imgTxt-flex--2 white">
+            <div class="product-list">
               <img
                 src="./images/TNF_Main_big_2L_TNF_Main_big_2L_N_SUMMIT.jpg"
                 alt="패딩"
+                class="list-img-box"
               />
-              <div class="item-list__text-box">
+              <div class="item-list__text-box left-bottom">
                 <h2 class="title">SUMMIT SERIES COLLECTION</h2>
                 <p class="txt">
                   고산 등반과 극지 탐험을 위한 노스페이스의 최상급 테크니컬 라인
@@ -594,10 +599,11 @@
                 <a href="#" class="arrow-more-btn">자세히보기</a>
               </div>
             </div>
-            <div class="item-list left-top">
+            <div class="product-list">
               <img
                 src="./images/1215_TNF_Main_big_2L_N_WinterShoes.jpg"
                 alt="wintershoes"
+                class="list-img-box"
               />
               <div class="item-list__text-box">
                 <h2 class="title">겨울을 <br />기다리는 이유</h2>
@@ -634,17 +640,17 @@
           </div>
         </section>
         <section class="styling">
-          <h2>STYLING</h2>
-          <div class="product-list-wrap">
-            <ul>
+          <h2 class="title">STYLING</h2>
+          <div class="product-list-wrap product__ul-flex--3">
+            <ul class="product-list__inner">
               <li>
-                <div class="img-box">
+                <div class="list-img-box">
                   <img
                     src="./images/0106_main_style1.jpg"
                     alt="styling model"
                   />
                 </div>
-                <div class="text-box">
+                <div class="list-text-box">
                   <div>
                     <img src="./images/NJ1DN95A_style.jpg" alt="style" /><span
                       >W 1996 RETRO NUPTSE JACKET</span
@@ -663,13 +669,13 @@
                 </div>
               </li>
               <li>
-                <div class="img-box">
+                <div class="list-img-box">
                   <img
                     src="./images/0106_main_style2.jpg"
                     alt="styling model"
                   />
                 </div>
-                <div class="text-box">
+                <div class="list-text-box">
                   <div>
                     <img src="./images/NC2DN65B_style.jpg" alt="style" /><span
                       >M'S ASPEN TECH DOWN COAT</span
@@ -688,13 +694,13 @@
                 </div>
               </li>
               <li>
-                <div class="img-box">
+                <div class="list-img-box">
                   <img
                     src="./images/0106_main_style3.jpg"
                     alt="styling model"
                   />
                 </div>
-                <div class="text-box">
+                <div class="list-text-box">
                   <div>
                     <img src="./images/NJ1DN75G_style.jpg" alt="style" /><span
                       >M'S 1996 COLOR-BLOCK NUPTSE JACKET</span
@@ -713,13 +719,13 @@
                 </div>
               </li>
               <li>
-                <div class="img-box">
+                <div class="list-img-box">
                   <img
                     src="./images/0106_main_style4.jpg"
                     alt="styling model"
                   />
                 </div>
-                <div class="text-box">
+                <div class="list-text-box">
                   <div>
                     <img src="./images/NJ1DN86B_style.jpg" alt="style" /><span
                       >POLAR AIR DOWN BOMBER</span
@@ -738,13 +744,13 @@
                 </div>
               </li>
               <li>
-                <div class="img-box">
+                <div class="list-img-box">
                   <img
                     src="./images/0106_main_style5.jpg"
                     alt="styling model"
                   />
                 </div>
-                <div class="text-box">
+                <div class="list-text-box">
                   <div>
                     <img src="./images/NC2DN50D_style.jpg" alt="style" /><span
                       >AIR HEAT DOWN COAT</span
@@ -763,13 +769,13 @@
                 </div>
               </li>
               <li>
-                <div class="img-box">
+                <div class="list-img-box">
                   <img
                     src="./images/0106_main_style6.jpg"
                     alt="styling model"
                   />
                 </div>
-                <div class="text-box">
+                <div class="list-text-box">
                   <div>
                     <img src="./images/NJ2YN50B_style.jpg" alt="style" /><span
                       >HIMALAYAN ZIP-IN PARKA</span
@@ -788,13 +794,13 @@
                 </div>
               </li>
               <li>
-                <div class="img-box">
+                <div class="list-img-box">
                   <img
                     src="./images/0106_main_style7.jpg"
                     alt="styling model"
                   />
                 </div>
-                <div class="text-box">
+                <div class="list-text-box">
                   <div>
                     <img src="./images/NJ1DN87C_style.jpg" alt="style" /><span
                       >W'S PRAISE DOWN PARKA</span
@@ -840,18 +846,15 @@
           </div>
         </section>
         <section class="hot-item">
-          <h2>HOT ITEM</h2>
-          <a href="#" class="arrow-more-btn"
-            ><img src="./images/icon_arrow-right.svg" alt="" /> 제품 전체
-            보기</a
-          >
-          <div class="product-list-wrap">
+          <h2 class="title">HOT ITEM</h2>
+          <a href="#" class="arrow-more-btn"> 제품 전체 보기</a>
+          <div class="product-list-wrap product__ul-flex--5">
             <a href="#" class="list-btn__prev">prev</a>
             <div class="list-wrap-overflow">
-              <ul>
+              <ul class="product-list__inner">
                 <li>
-                  <a href="#">
-                    <div class="list-img-box over">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NJ3LN00D_NJ3LN00D_primary.jpg"
                         alt="M'S FLYHIGH JACKET"
@@ -861,16 +864,18 @@
                         alt="M'S FLYHIGH JACKET"
                         class="img-back"
                       />
-                    </div>
-                    <p class="txt">M'S FLYHIGH JACKET</p>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
+                    <p class="txt"><a href="#">M'S FLYHIGH JACKET</a></p>
                     <span class="sale">89,000 원</span
                     ><span class="price">62,300 원</span
-                    ><span class="sale-parsent">30%</span></a
-                  >
+                    ><span class="sale-parsent">30%</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NM2DP00A_NM2DP00A_primary.jpg"
                         alt="BIG SHOT backapck"
@@ -880,16 +885,18 @@
                         alt="BIG SHOT backapck"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">BIG SHOT</p>
                     <span class="sale">150,000 원</span
                     ><span class="price">135,000 원</span
-                    ><span class="sale-parsent">10%</span></a
-                  >
+                    ><span class="sale-parsent">10%</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box user-only-wrap">
+                    <a href="#">
                       <img
                         src="./images/NJ1DP81K_NJ1DP81K_primary.jpg"
                         alt="W'S NOVELTY NUPTSE DOWN JACKET SP"
@@ -899,20 +906,24 @@
                         alt="W'S NOVELTY NUPTSE DOWN JACKET SP"
                         class="img-back"
                       />
+                    </a>
+                    <div class="user-only">
+                      <div>
+                        <img src="./images/icon_lock.svg" alt="user only" />
+                      </div>
+                      <p><a href="#">회원 구매 상품</a></p>
                     </div>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">W'S NOVELTY NUPTSE DOWN JACKET SP</p>
                     <span class="sale"></span
                     ><span class="price">298,000 원</span
-                    ><span class="sale-parsent"></span
-                  ></a>
-                  <div class="user-only-wrap">
-                    <img src="./images/" alt="user only" />
-                    <p>회원 구매 상품</p>
+                    ><span class="sale-parsent"></span>
                   </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NJ2GP05A_NJ2GP05A_primary.jpg"
                         alt="SUPER PACK II"
@@ -922,16 +933,18 @@
                         alt="SUPER PACK II"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">SUPER PACK II</p>
                     <span class="sale">179,000 원</span
                     ><span class="price">161,100원</span
-                    ><span class="sale-parsent">10%</span></a
-                  >
+                    ><span class="sale-parsent">10%</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NJ3BP02K_NJ3BP02K_primary.jpg"
                         alt="MARTIS JACKET"
@@ -941,16 +954,18 @@
                         alt="MARTIS JACKET"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">MARTIS JACKET</p>
                     <span class="sale"></span
                     ><span class="price">178,000 원</span
-                    ><span class="sale-parsent"></span
-                  ></a>
+                    ><span class="sale-parsent"></span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NJ1DP05A_NJ1DP05A_primary.jpg"
                         alt="M'S 1996 ECO NUPTSE JACKET"
@@ -960,16 +975,18 @@
                         alt="M'S 1996 ECO NUPTSE JACKET"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">M'S 1996 ECO NUPTSE JACKET</p>
                     <span class="sale"></span
                     ><span class="price">339,000 원</span
-                    ><span class="sale-parsent"></span
-                  ></a>
+                    ><span class="sale-parsent"></span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NJ1DN79A_primary.jpg"
                         alt="ACT FREE EX HYBRID DOWN JACKET"
@@ -979,16 +996,18 @@
                         alt="ACT FREE EX HYBRID DOWN JACKET"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">ACT FREE EX HYBRID DOWN JACKET</p>
                     <span class="sale">269,000 원</span
                     ><span class="price">205,790원</span
-                    ><span class="sale-parsent">23%</span></a
-                  >
+                    ><span class="sale-parsent">23%</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NJ3LN00C_NJ3LN00C_primary.jpg"
                         alt="M'S FLYHIGH JACKET"
@@ -998,16 +1017,18 @@
                         alt="M'S FLYHIGH JACKET"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">M'S FLYHIGH JACKET</p>
                     <span class="sale">89,000 원</span
                     ><span class="price">62,300 원</span
-                    ><span class="sale-parsent">30%</span></a
-                  >
+                    ><span class="sale-parsent">30%</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NJ4FN58B_primary.jpg"
                         alt="CARAVAN EX FLEECE JACKET"
@@ -1017,16 +1038,18 @@
                         alt="CARAVAN EX FLEECE JACKET"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">CARAVAN EX FLEECE JACKET</p>
                     <span class="sale">109,000 원</span
                     ><span class="price">64,860원</span
-                    ><span class="sale-parsent">40%</span></a
-                  >
+                    ><span class="sale-parsent">40%</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NJ1DP80A_NJ1DP80A_primary.jpg"
                         alt="W'S 1996 ECO NUPTSE JACKET"
@@ -1036,16 +1059,18 @@
                         alt="W'S 1996 ECO NUPTSE JACKET"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">W'S 1996 ECO NUPTSE JACKET</p>
                     <span class="sale"></span
                     ><span class="price">339,000 원</span
-                    ><span class="sale-parsent"></span
-                  ></a>
+                    ><span class="sale-parsent"></span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NS93N60S_NS93N60S_primary.jpg"
                         alt="MULE SLIP ON V-MOTION EX"
@@ -1055,16 +1080,18 @@
                         alt="MULE SLIP ON V-MOTION EX"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">MULE SLIP ON V-MOTION EX</p>
                     <span class="sale">89,000 원</span
                     ><span class="price">68,090 원</span
-                    ><span class="sale-parsent">23%</span></a
-                  >
+                    ><span class="sale-parsent">23%</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NJ2DN99A_NJ2DN99A_primary.jpg"
                         alt="HIMALAYAN PARKA"
@@ -1074,16 +1101,18 @@
                         alt="HIMALAYAN PARKA"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">HIMALAYAN PARKA</p>
                     <span class="sale"></span
                     ><span class="price">850,000 원</span
-                    ><span class="sale-parsent"></span
-                  ></a>
+                    ><span class="sale-parsent"></span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NJ2GN60B.jpg"
                         alt="NOVELTY ECO GTX MOUNTAIN JACKET"
@@ -1093,16 +1122,18 @@
                         alt="NOVELTY ECO GTX MOUNTAIN JACKET"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">NOVELTY ECO GTX MOUNTAIN JACKET</p>
                     <span class="sale">399,000 원</span
                     ><span class="price">279,300 원</span
-                    ><span class="sale-parsent">30%</span></a
-                  >
+                    ><span class="sale-parsent">30%</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NJ2DN50A_NJ2DN50A_primary.jpg"
                         alt="AIR HEAT DOWN JACKET"
@@ -1112,16 +1143,18 @@
                         alt="AIR HEAT DOWN JACKET"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">AIR HEAT DOWN JACKET</p>
                     <span class="sale">429,000 원</span
                     ><span class="price">300,300 원</span
-                    ><span class="sale-parsent">30%</span></a
-                  >
+                    ><span class="sale-parsent">30%</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NC2DN99A.jpg"
                         alt="HIMALAYAN COAT"
@@ -1131,16 +1164,18 @@
                         alt="HIMALAYAN COAT"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div>
                     <p class="txt">HIMALAYAN COAT</p>
                     <span class="sale">990,000 원</span
                     ><span class="price">891,000 원</span
-                    ><span class="sale-parsent">10%</span></a
-                  >
+                    ><span class="sale-parsent">10%</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NJ4FN56J_NJ4FN56J_primary.jpg"
                         alt="COMFY EX FLEECE HOODIE"
@@ -1150,16 +1185,18 @@
                         alt="COMFY EX FLEECE HOODIE"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">COMFY EX FLEECE HOODIE</p>
                     <span class="sale">108,000 원</span
                     ><span class="price">73,440 원</span
-                    ><span class="sale-parsent">32%</span></a
-                  >
+                    ><span class="sale-parsent">32%</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NC2DN50A_NC2DN50A_primary.jpg"
                         alt="AIR HEAT DOWN COAT"
@@ -1169,35 +1206,37 @@
                         alt="AIR HEAT DOWN COAT"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">AIR HEAT DOWN COAT</p>
                     <span class="sale">459,000 원</span
                     ><span class="price">321,300 원</span
-                    ><span class="sale-parsent">30%</span></a
-                  >
+                    ><span class="sale-parsent">30%</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NM5MN60B_NM5MN60B_primary.jpg"
                         alt="BANDANA EX SWEATSHIRTS"
-                        class="img-front"
-                      /><img
+                        class="img-front" /><img
                         src="./images/NM5MN60B_NM5MN60B_hover.jpg"
                         alt="BANDANA EX SWEATSHIRTS"
                         class="img-back"
-                      />
-                    </div>
+                    /></a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">BANDANA EX SWEATSHIRTS</p>
                     <span class="sale">89,000 원</span
                     ><span class="price">60,520 원</span
-                    ><span class="sale-parsent">32%</span></a
-                  >
+                    ><span class="sale-parsent">32%</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NJ3NN60S_NJ3NN60S_primary.jpg"
                         alt="K'S ON BALL EX CARDIGAN"
@@ -1207,16 +1246,18 @@
                         alt="K'S ON BALL EX CARDIGAN"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">K'S ON BALL EX CARDIGAN</p>
                     <span class="sale">108,000 원</span
                     ><span class="price">64,260 원</span
-                    ><span class="sale-parsent">41%</span></a
-                  >
+                    ><span class="sale-parsent">41%</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NT7UN01B_NT7UN01B_primary.jpg"
                         alt="TNF LOGO EX S/S R/TEE"
@@ -1226,16 +1267,18 @@
                         alt="TNF LOGO EX S/S R/TEE"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">TNF LOGO EX S/S R/TEE</p>
                     <span class="sale">35,000 원</span
                     ><span class="price">26,780 원</span
-                    ><span class="sale-parsent">23%</span></a
-                  >
+                    ><span class="sale-parsent">23%</span>
+                  </div>
                 </li>
                 <li>
-                  <a href="#">
-                    <div class="list-img-box">
+                  <div class="list-img-box">
+                    <a href="#">
                       <img
                         src="./images/NM2DN53A_NM2DN53A_primary.jpg"
                         alt="BOREALIS II"
@@ -1245,26 +1288,28 @@
                         alt="BOREALIS II"
                         class="img-back"
                       />
-                    </div>
+                    </a>
+                  </div>
+                  <div class="list-text-box">
                     <p class="txt">BOREALIS II</p>
                     <span class="sale">139,000 원</span
                     ><span class="price">125,100 원</span
-                    ><span class="sale-parsent">10%</span></a
-                  >
+                    ><span class="sale-parsent">10%</span>
+                  </div>
                 </li>
               </ul>
             </div>
             <a href="#" class="list-btn__next">next</a>
           </div>
-          <div class="product-list-wrap">
-            <div class="product-list right-top">
+          <div class="product-list-wrap product__imgTxt-flex--3">
+            <div class="product-list white">
               <div class="list-img-box">
                 <img
-                  src="./images/TNF_Main_middle_3W_BackPack.jpg"
+                  src="./images/TNF_Main_middle_3W_CAP.jpg"
                   alt="BACK TO SCHOOL COLLECTION"
                 />
               </div>
-              <div class="item-list__text-box">
+              <div class="item-list__text-box right-top">
                 <h2 class="title">THE MORE BETTER WARM</h2>
                 <p class="txt">다양한 아이템으로 추운 겨울을 보다 따뜻하게</p>
                 <a href="#" class="arrow-more-btn">자세히보기</a>
@@ -1283,39 +1328,45 @@
                     class="img-back"
                   />
                 </div>
-                <p class="txt">ETHNIC LAMBSWOOL GLOVE</p>
-                <span class="sale">43,000 원</span
-                ><span class="price">38,700 원</span
-                ><span class="sale-parsent">10%</span></a
+                <div class="list-text-box">
+                  <p class="txt">ETHNIC LAMBSWOOL GLOVE</p>
+                  <span class="sale">43,000 원</span
+                  ><span class="price">38,700 원</span
+                  ><span class="sale-parsent">10%</span>
+                </div></a
               >
             </div>
-            <div class="product-list">
-              <a href="#" class="left-top">
+            <div class="product-list white">
+              <a href="#">
                 <div class="list-img-box">
-                  <img
-                    src="./images/TNF_Main_middle_3SR_BackPack.jpg"
-                    alt="SUPER PACK"
-                  />
+                  <img src="./images/winter_etc.jpg" alt="WL SHORT BEANIE" />
                 </div>
-                <p class="txt">WL SHORT BEANIE</p>
+                <div class="item-list__text-box">
+                  <p class="txt">WL SHORT BEANIE</p>
+                </div>
               </a>
             </div>
           </div>
           <div class="product-list-wrap white">
-            <div class="item-list left-bottom">
+            <div class="product-list">
               <img
                 src="./images/TNF_Main_big_2L_N_LightWeightDown_A.jpg"
                 alt="LIGHT WEIGHT DOWN COLLECTION"
+                class="list-img-box"
               />
-              <div class="item-list__text-box">
+              <div class="item-list__text-box left-bottom">
                 <h2 class="title">LIGHT WEIGHT DOWN COLLECTION</h2>
                 <p class="txt">가볍고 따뜻한 경량&amp;중량 다운 자켓</p>
                 <a href="#" class="arrow-more-btn">자세히보기</a>
               </div>
             </div>
-            <div class="item-list left-bottom">
-              <img src="./images/TNF_Main_big_2R_N_stay.jpg" alt="STAY WARM" />
-              <div class="item-list__text-box">
+            <div class="product-list">
+              <img
+                src="./images/TNF_Main_big_2R_N_stay.jpg"
+                alt="STAY WARM"
+                class="list-img-box"
+              />
+              <div class="item-list__text-box left-bottom">
                 <h2 class="title">STAY WARM</h2>
                 <p class="txt">
                   노스페이스만의 기술력을 담아 탄생한 볼타입 충전재 아우터
@@ -1349,13 +1400,15 @@
               </li>
             </ul>
           </div>
-          <div class="product-list-wrap">
-            <div class="item-list right-top">
-              <img
-                src="./images/TNF_Main_middle_3W_StickCollection.jpg"
-                alt="STICK COLLECTION"
-              />
-              <div class="item-list__text-box">
+          <div class="product-list-wrap product__imgTxt-flex--3">
+            <div class="product-list white">
+              <div class="list-img-box">
+                <img
+                  src="./images/TNF_Main_middle_3W_StickCollection.jpg"
+                  alt="STICK COLLECTION"
+                />
+              </div>
+              <div class="item-list__text-box right-top">
                 <h2 class="title">STICK COLLECTION</h2>
                 <p class="txt">25년간 사랑해주신 고객분들께 마음을 전합니다.</p>
                 <a href="#" class="arrow-more-btn">자세히보기</a>
@@ -1374,21 +1427,25 @@
                     class="img-back"
                   />
                 </div>
-                <p class="txt">CARBON 25TH 3STEP STICK SET</p>
-                <span class="sale">159,000 원</span
-                ><span class="price">143,100 원</span
-                ><span class="sale-parsent">10%</span></a
+                <div class="list-text-box">
+                  <p class="txt">CARBON 25TH 3STEP STICK SET</p>
+                  <span class="sale">159,000 원</span
+                  ><span class="price">143,100 원</span
+                  ><span class="sale-parsent">10%</span>
+                </div></a
               >
             </div>
-            <div class="product-list">
-              <a href="#" class="right-bottom">
+            <div class="product-list white">
+              <a href="#">
                 <div class="list-img-box">
                   <img
                     src="./images/TNF_Main_middle_3SR_NA5SN32A.jpg"
                     alt="DURABLE 25TH 3STEP STICK SET"
                   />
                 </div>
-                <p class="txt">DURABLE 25TH 3STEP STICK SET</p>
+                <div class="item-list__text-box right-bottom">
+                  <p class="txt">DURABLE 25TH 3STEP STICK SET</p>
+                </div>
               </a>
             </div>
           </div>
