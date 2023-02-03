@@ -178,7 +178,7 @@
       </section>
       <div class="inner">
         <section class="new-arrivals">
-          <h2>New Arrivals</h2>
+          <h2 class="title">New Arrivals</h2>
           <p class="arrow-more-btn">
             <a href="#">제품 전체 보기</a>
           </p>
@@ -640,7 +640,8 @@
           </div>
         </section>
         <section class="styling">
-          <h2 class="title">STYLING</h2>
+          <h2 class="title title-margin">STYLING</h2>
+          <!--TODO  참고자료 -->
           <div class="product-list-wrap product__ul-flex--3">
             <ul class="product-list__inner">
               <li>
@@ -819,6 +820,7 @@
                 </div>
               </li>
             </ul>
+            <!--TODO  슬라이드 버튼 -->
           </div>
           <div class="product-list-wrap">
             <ul class="item-list__sns-model">
@@ -1347,7 +1349,7 @@
               </a>
             </div>
           </div>
-          <div class="product-list-wrap white">
+          <div class="product-list-wrap product__imgTxt-flex--2 white">
             <div class="product-list">
               <img
                 src="./images/TNF_Main_big_2L_N_LightWeightDown_A.jpg"
@@ -1451,35 +1453,51 @@
           </div>
         </section>
         <section class="hot-keyword">
-          <h2># HOT KEYWORD</h2>
+          <h2 class="title"># HOT KEYWORD</h2>
           <ul class="hash-tag-wrap">
-            <li><a href="#">#롱패딩</a></li>
-            <li><a href="#">#숏패딩</a></li>
-            <li><a href="#">#테크울</a></li>
-            <li><a href="#">#눕시</a></li>
-            <li><a href="#">#다운</a></li>
-            <li><a href="#">#플리스</a></li>
-            <li><a href="#">#방한화</a></li>
-            <li><a href="#">#등산화</a></li>
+            <li>
+              <a href="#"><span>#롱패딩</span></a>
+            </li>
+            <li>
+              <a href="#"><span>#숏패딩</span></a>
+            </li>
+            <li>
+              <a href="#"><span>#테크울</span></a>
+            </li>
+            <li>
+              <a href="#"><span>#눕시</span></a>
+            </li>
+            <li>
+              <a href="#"><span>#다운</span></a>
+            </li>
+            <li>
+              <a href="#"><span>#플리스</span></a>
+            </li>
+            <li>
+              <a href="#"><span>#방한화</span></a>
+            </li>
+            <li>
+              <a href="#"><span>#등산화</span></a>
+            </li>
           </ul>
-          <div class="product-list-wrap white">
-            <div class="item-list left-bottom">
+          <div class="product-list-wrap product__imgTxt-flex--2 white">
+            <div class="product-list">
               <img
                 src="./images/TNF_Main_big_2R_N_KIDSOUTER.jpg"
                 alt="GOOD KIDS GOOD OUTER"
               />
-              <div class="item-list__text-box">
+              <div class="item-list__text-box left-bottom">
                 <h2 class="title">GOOD KIDS GOOD OUTER</h2>
                 <p class="txt">노스페이스 키즈만의 따뜻한 겨울로 초대합니다</p>
                 <a href="#" class="arrow-more-btn">자세히보기</a>
               </div>
             </div>
-            <div class="item-list right-bottom">
+            <div class="product-list">
               <img
                 src="./images/TNF_Main_big_2R_N_EcoWideLab.jpg"
                 alt="ECO WIDE LAB KIDS BACKPACK"
               />
-              <div class="item-list__text-box">
+              <div class="item-list__text-box right-bottom">
                 <h2 class="title">ECO WIDE LAB KIDS BACKPACK</h2>
                 <p class="txt">노스페이스 키즈 스쿨팩 연구소</p>
                 <a href="#" class="arrow-more-btn">자세히보기</a>
@@ -1512,16 +1530,19 @@
           </div>
         </section>
         <section class="tech-archive">
-          <h2>TECH ARCHIVE</h2>
-          <div class="product-list-wrap">
-            <a href="#" class="list-btn__prev absolute white"></a>
+          <h2 class="title title-margin">TECH ARCHIVE</h2>
+          <div class="product-list-wrap product__ul-flex--3">
+            <div class="slide-btn">
+              <a href="#" class="slide-btn__prev"></a>
+              <a href="#" class="slide-btn__next"></a>
+            </div>
             <div class="list-wrap-overflow">
-              <ul>
+              <ul class="product-list__inner">
                 <li>
                   <div class="list-img-box">
                     <a href="#">
                       <img
-                        src="./images/0922_TNF_Actibity_01.jpg"
+                        src="./images/0922_TNF_Actibity_05-1.jpg"
                         alt="ECO Loft HEAT"
                       />
                     </a>
@@ -1639,7 +1660,6 @@
                 </li>
               </ul>
             </div>
-            <a href="#" class="list-btn__next absolute white"></a>
           </div>
         </section>
       </div>
@@ -1652,51 +1672,58 @@
           <li><a href="#">매장개설</a></li>
           <li><a href="#">고객센터</a></li>
           <li>
-            <strong><a href="#">개인정보처리방침</a></strong>
+            <a href="#"><strong>개인정보처리방침</strong></a>
           </li>
           <li><a href="#">이용약관</a></li>
         </ul>
       </div>
       <div class="foot-bottom">
-        <div class="foot-bottom__address-wrap">
-          <address>
-            <span>㈜영원아웃도어</span>
-            <span>대표이사 성기학</span
-            ><span>[개인정보관리책임자] 최윤정 상무</span
-            ><span>사업자등록번호 110-81-27101</span>
-            <span>통신판매업 신고번호: 2013-경기성남-0984</span>
-            <a href="#" class="white"><strong>사업자정보확인</strong></a>
-            <span>주소: 경기도 성남시 중원구 광명로 293(금광동)</span>
-            <span
-              >반송지 주소 : 경기도 이천시 마장면 프리미엄 아울렛로 33-20</span
-            >
-            <span>온라인몰 고객지원실: 1661-3512</span>
-            <span>매장고객 및 A/S문의: 1899-2626</span>
-            <p class="copy">Youngone Outdoor Co. All Rights Reserved.</p>
-          </address>
-        </div>
-        <div class="foot-bottom__info">
-          <div>
-            <img src="./images/escrow_74x74_gray.png" alt="escrowinipay" />
-            <div class="foot-bottom__info-text-box">
-              <span>(주)이니시스의 에스크로 서비스 가입</span>
+        <div class="inner">
+          <div class="foot-bottom__address-wrap">
+            <address>
               <p>
-                저희 쇼핑몰은 고객님의 안전한 거래를 위해 실시간 계좌이체 거래에
-                대해 구매안전서비스를 적용하고 있습니다.
+                <span>㈜영원아웃도어</span>
+                <span>대표이사 성기학</span
+                ><span>[개인정보관리책임자] 최윤정 상무</span
+                ><span>사업자등록번호 110-81-27101</span>
+                <span>통신판매업 신고번호: 2013-경기성남-0984</span>
+                <strong><a href="#" class="white">사업자정보확인</a></strong>
               </p>
-              <a href="#" class="white">에스크로 서비스 가입 확인</a>
-            </div>
+              <p>
+                <span>주소: 경기도 성남시 중원구 광명로 293(금광동)</span>
+                <span
+                  >반송지 주소 : 경기도 이천시 마장면 프리미엄 아울렛로
+                  33-20</span
+                >
+                <span>온라인몰 고객지원실: 1661-3512</span>
+                <span>매장고객 및 A/S문의: 1899-2626</span>
+              </p>
+              <p class="copy">Youngone Outdoor Co. All Rights Reserved.</p>
+            </address>
           </div>
-          <div>
-            <img src="./images/ISMS-icon.png" alt="ISMS" />
-            <div class="foot-bottom__info-text-box">
-              <p>[인증범위] 온라인쇼핑몰</p>
-              <p>(노스페이스, 영원아웃도어) 및 TNF100 홈페이지</p>
-              <p>[유효기간] 2022.09.21 ~ 2025.09.20</p>
+          <div class="foot-bottom__info">
+            <div>
+              <img src="./images/escrow_74x74_gray.png" alt="escrowinipay" />
+              <div class="foot-bottom__info-text-box">
+                <p>
+                  (주)이니시스의 에스크로 서비스 가입 저희 쇼핑몰은 고객님의
+                  안전한 거래를 위해 실시간 계좌이체 거래에 대해
+                  구매안전서비스를 적용하고 있습니다.
+                </p>
+                <a href="#" class="white">에스크로 서비스 가입 확인</a>
+              </div>
             </div>
-          </div>
-          <div>
-            <img src="./images/ISO-icon.png" alt="ISO" />
+            <div>
+              <img src="./images/ISMS-icon.png" alt="ISMS" />
+              <div class="foot-bottom__info-text-box">
+                <span>[인증범위] 온라인쇼핑몰</span>
+                <p>(노스페이스, 영원아웃도어) 및 TNF100 홈페이지</p>
+                <span>[유효기간] 2022.09.21 ~ 2025.09.20</span>
+              </div>
+            </div>
+            <div>
+              <img src="./images/ISO-icon.png" alt="ISO" />
+            </div>
           </div>
         </div>
       </div>
