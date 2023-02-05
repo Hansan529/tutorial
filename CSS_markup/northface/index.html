@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../reset.css" />
     <!-- <link rel="stylesheet" href="./reset.css" /> -->
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/responsive.css" />
     <title>노스페이스</title>
   </head>
   <body>
@@ -40,12 +41,16 @@
           <ul class="gnb-btn">
             <li class="">
               <a href="#"
-                ><img src="./images/icon_login.svg" alt="login" /> 로그인</a
+                ><img src="./images/icon_login.svg" alt="login" /><span
+                  >로그인</span
+                ></a
               >
             </li>
             <li class="">
               <a href="#"
-                ><img src="./images/icon_member.svg" alt="res" /> 회원가입</a
+                ><img src="./images/icon_member.svg" alt="res" /><span
+                  >회원가입</span
+                ></a
               >
             </li>
             <li class="">
@@ -53,13 +58,17 @@
                 ><img src="./images/icon_cart.svg" alt="cart" /><i
                   class="bubble"
                   >0</i
-                >장바구니</a
+                ><span>장바구니</span></a
               >
             </li>
             <li class="search">
               <a href="#"
-                >SEARCH<img src="./images/icon_search.svg" alt="search"
+                ><span>SEARCH</span
+                ><img src="./images/icon_search.svg" alt="search"
               /></a>
+            </li>
+            <li class="mobile-more-btn">
+              <a href="#"><img src="./images/icon_menu.svg" alt="menu" /></a>
             </li>
           </ul>
         </div>
@@ -181,6 +190,9 @@
           <h2 class="title">New Arrivals</h2>
           <p class="arrow-more-btn">
             <a href="#">제품 전체 보기</a>
+          </p>
+          <p class="mobile-arrow-more-btn">
+            ALL <img src="./images/icon_arrow-right.svg" alt="더보기" />
           </p>
           <div class="product-list-wrap product__ul-flex--5">
             <a href="#" class="list-btn__prev">prev</a>
