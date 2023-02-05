@@ -1,0 +1,95 @@
+/*^ ipad */
+
+/*^ mobile */
+@media screen and (max-width: 767px) {
+  .skip {
+    display: none;
+  }
+  body {
+    font-size: 14px;
+  }
+  .inner {
+    width: 100%;
+    /*TODO  지울 것 */
+    overflow: hidden;
+    /*TODO ------ */
+  }
+  .banner__list .list-img-box > img:first-child,
+  section > .arrow-more-btn,
+  .banner__list .list-text-box > .banner__more-btn,
+  .banner__list .list-text-box .txt,
+  .gnb-btn > li,
+  .gnb-btn > li span,
+  .foot-top__btn > li > a,
+  .gnb-btn > .search span {
+    display: none;
+  }
+  .gnb-btn > li:nth-child(3),
+  .gnb-btn .search,
+  .gnb-btn .mobile-more-btn,
+  .banner__list .list-img-box > img:last-child,
+  .mobile-arrow-more-btn {
+    display: block;
+  }
+  .gnb-btn:hover > li {
+    opacity: 1;
+  }
+  .banner__list .list-text-box {
+    position: absolute;
+    top: unset;
+    bottom: 10%;
+    left: 50%;
+    width: 85%;
+    transform: unset;
+    text-align: center;
+    transform: translate(-50%, 0);
+    font-size: 10px;
+  }
+  /*^ header */
+  header {
+    height: 60px;
+  }
+  .header-inner {
+    width: 95%;
+    position: relative;
+  }
+  .search {
+    width: unset;
+    border: none;
+  }
+  .search img {
+    transform: scaleX(-1);
+  }
+  .gnb-btn > li > a {
+    gap: 0;
+    padding: 0;
+  }
+  #nav {
+    position: absolute;
+    bottom: -45px;
+    background: #fff;
+    width: 100%;
+    height: 45px;
+    transform: scale(1.06);
+    justify-content: space-evenly;
+    gap: 0;
+  }
+  #nav > li > a {
+    line-height: 45px;
+    font-size: 14px;
+  }
+  /*^ main */
+  main {
+    padding-top: 110px;
+  }
+  header .logo {
+    width: 70px;
+  }
+  .arrow-more-btn {
+    padding: 0;
+    background: none;
+  }
+  .mobile-arrow-more-btn {
+    width: ;
+  }
+}
