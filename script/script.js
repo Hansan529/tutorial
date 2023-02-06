@@ -24,4 +24,9 @@ pt03Num1 = pt03Num1 * pt03Num2;
 pt03Result = pt03Num1 / pt03Num3;
 
 pt03Result = pt03Num1 % 7;
-console.log(pt03Result);
+
+//^ pt04 - 연결연산자
+let pt04Nation = "korea";
+let pt04City = "seoul";
+let pt04Year = 2023;
+let pt04Month = 2;

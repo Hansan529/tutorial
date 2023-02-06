@@ -19,6 +19,7 @@ window.alert("text");
 
 // 콘솔창에 결과 값 도출하기
 console.log("text");
+console.log("text", function);
 console.log(function);
 console.log(function, "text");
 ```
@@ -36,11 +37,11 @@ console.log(function, "text");
 기존에는 1번밖에 없지만 ES6에서 2,3 번이 추가되었고, var를 세분화한 것이다.
 
 ```
-var = 재할당 가능, 변수 변경 가능
+var = 재선언 가능, 변수 변경 가능
 
-let = 새롭게 정의가 가능한 변수, 재할당 불가능
+let = 변할 수 있는 변수, 재선언 불가능
 
-const = 새롭게 정의가 불가능한 변수 (고정)
+const = 고정 상수, 변경 불가능
 ```
 
 ```js
@@ -58,7 +59,7 @@ let hobby;
 userName = null;
 
 /* 
-변수 재할당 (var만 가능, const 불가)
+변수 재선언 (var만 가능, const 불가)
 var userName = null;  정상
 let userName = null;  에러
 */
@@ -66,7 +67,9 @@ let userName = null;  에러
 
 ## #03 연산자
 
-+: 더하기 (하나가 문자일 경우 연결연산자로 변경)  
+### 사칙연산자
+
++: 더하기
 -: 빼기  
 \*: 곱하기  
 /: 나누기  
@@ -95,4 +98,25 @@ result = num1 / num3; /* 6 */
 
 // 나머지 연산자
 result = num1 % 7; /* 30/7 = 2 */
+```
+
+### 연결연산자
+
++: 연결연산자 (문자 + 숫자)
+
+```js
+let nation = "korea";
+let city = "seoul";
+let year = 2023;
+let month = 2;
+
+console.log(nation + city); /* koreaseoul */
+
+// 문자 + bollean 일 경우 문자로 변경
+console.log(nation + true); /* koreatrue */
+
+// 숫자 + 문자 일 경우 숫자끼리 더하기가 된 후 연결
+console.log(year + month + city); /* 2025seoul */
+// 괄호를 이용해 해결
+console.log(year + (month + city)); /* 20232seoul */
 ```
