@@ -168,3 +168,39 @@ num1 /= num2; /* 8 */
 // %=  : num1: 8
 num1 %= num2; /* 2 */
 ```
+
+```js
+// 숫자 변수
+let count = 1;
+
+// 테이블 변수
+let myTable = "<table>";
+
+myTable += "<tr>";
+myTable += "<td>" + count + "</td>";
+myTable += "<td>" + ++count + "</td>";
+myTable += "<td>" + ++count + "</td>";
+myTable += "</tr>";
+myTable += "</table>";
+
+document.write(myTable);
+```
+
+<table>
+  <tr>
+  <td style="border: 1px solid">1</td>
+  <td style="border: 1px solid">2</td>
+  <td style="border: 1px solid">3</td>
+  </tr>
+</table>
+
+```html
+<!-- 작성된 html 코드 -->
+<table>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+  </tr>
+</table>
+```

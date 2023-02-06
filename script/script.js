@@ -39,3 +39,33 @@ let pt05Num2 = 10;
 let pt06Num1 = 10;
 let pt06Num2 = 3;
 let pt06Num3 = 5;
+
+//^ pt07 - table
+let pt07Count = 1;
+let pt07MyTable = '<table style="border: 1px solid black">';
+
+pt07MyTable += "<tr>";
+pt07MyTable += "<td>" + pt07Count + "</td>";
+pt07MyTable += "<td>" + ++pt07Count + "</td>";
+pt07MyTable += "<td>" + ++pt07Count + "</td>";
+pt07MyTable += "</tr>";
+pt07MyTable += "</table>";
+
+// document.write(pt07MyTable);
+
+//^ pt08 - table-2
+let pt08Day = "일";
+let pt08MyTable = '<table style="border: 1px solid">';
+
+pt08MyTable += "<tr>";
+pt08MyTable += '<th style="border: 1px solid">' + pt08Day + "<th>";
+pt08MyTable += '<th style="border: 1px solid">' + "월" + "<th>";
+pt08MyTable += '<th style="border: 1px solid">' + "화" + "<th>";
+pt08MyTable += '<th style="border: 1px solid">' + "수" + "<th>";
+pt08MyTable += '<th style="border: 1px solid">' + "목" + "<th>";
+pt08MyTable += '<th style="border: 1px solid">' + "금" + "<th>";
+pt08MyTable += '<th style="border: 1px solid">' + "토" + "<th>";
+pt08MyTable += "</tr>";
+pt08MyTable += "</table>";
+
+document.write(pt08MyTable);
