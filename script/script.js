@@ -34,3 +34,8 @@ let pt04Month = 2;
 //^ pt05 - 증감연산자
 let pt05Num1 = 5;
 let pt05Num2 = 10;
+
+//^ pt06 - 대입연산자
+let pt06Num1 = 10;
+let pt06Num2 = 3;
+let pt06Num3 = 5;

@@ -130,9 +130,41 @@ console.log(year + (month + city)); /* 20232seoul */
 let num1 = 5;
 let num2 = 10;
 
-// num1++
+// num1++ 나중에 계산
 num1++; /* 5 */
 num1; /* 6 */
-// ++num1
+// ++num1 미리 계산
 ++num1; /* 6 */
+```
+
+### 대입연산자
+
+오른쪽에 있는 결과값을 왼쪽의 연산자에 할당할 때 사용함  
+ a = b : a에다 b를 넣어라  
+`a += b` : a = a + b  
+`a -= b` : a = a -b  
+`a *= b` : a = a \* b  
+`a /= b` : a = a / b  
+`a %= b` : a = a % b
+
+```js
+let num1 = 10;
+let num2 = 3;
+let num3 = 5;
+
+//  +=  : num1: 10
+num1 = num1 + num2; /* 13 */
+num1 += num2; /* 13 */
+
+// -=  : num1: 13
+num1 -= num3; /* 8 */
+
+// *=  : num1: 8
+num1 *= num2; /* 24 */
+
+// /=  : num1: 24
+num1 /= num2; /* 8 */
+
+// %=  : num1: 8
+num1 %= num2; /* 2 */
 ```
