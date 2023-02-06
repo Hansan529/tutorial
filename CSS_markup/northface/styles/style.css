@@ -1,0 +1,780 @@
+/*^ import */
+@import url("./variables.css");
+@import url("./font.css");
+
+/*^ 공통사항 */
+.inner {
+  /* background: rgba(255, 0, 0, 0.3); */
+}
+.header-inner,
+.top-menu-l-wrap,
+.top-menu-r-wrap,
+#nav,
+.gnb-btn,
+.gnb-btn > li > a,
+.banner__list,
+.product-list-wrap {
+  display: flex;
+  align-items: center;
+}
+/* 너비 */
+.header-inner,
+.inner {
+  max-width: var(--main-width);
+  margin: 0 auto;
+}
+/* 글꼴, 크기 */
+body {
+  font-size: 16px;
+  font-family: "SpoqaHanSansNeo-Regular";
+}
+/* function */
+.white {
+  color: #fff;
+}
+.product-list-wrap .item-list__text-box {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 50%;
+  text-align: start;
+}
+#main div.inner > section .right-top {
+  top: 5%;
+  right: 5%;
+  bottom: unset;
+  left: unset;
+  text-align: end;
+}
+#main div.inner > section .left-bottom {
+  top: unset;
+  right: unset;
+  bottom: 5%;
+  left: 5%;
+  text-align: start;
+}
+#main div.inner > section .right-bottom {
+  top: unset;
+  right: 5%;
+  bottom: 5%;
+  left: unset;
+  text-align: end;
+}
+/* 부모, 여백 지정 */
+section {
+  position: relative;
+  width: 100%;
+  margin-bottom: 100px;
+}
+/* 중앙 정렬 */
+section > h2,
+section > p {
+  text-align: center;
+}
+/* 제목 서식 */
+section > h2 {
+  font-size: 2.25em;
+  font-weight: bold;
+}
+/* 여백 설정 */
+section > p {
+  margin-top: 20px;
+}
+/* 중앙 정렬 */
+.inner section {
+  text-align: center;
+}
+/* 화살표 자세히 보기 서식, 이미지 */
+.arrow-more-btn {
+  display: inline-block;
+  font-weight: 700;
+  padding-left: 20px;
+  background: url("../images/icon_arrow-right.svg") no-repeat 0 50% / 15px;
+}
+/* 화살표 자세히보기 이미지 크기 */
+.arrow-more-btn > a > img {
+  width: 1em;
+  height: 1em;
+  display: inline;
+  margin-right: 10px;
+}
+/* hover 자세히보기 밑줄 */
+.arrow-more-btn:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
+/* section 제목 밑 자세히 보기 hover */
+section > .arrow-more-btn:hover {
+  text-decoration: none;
+  opacity: 1;
+}
+/* 화이트 자세히 보기 */
+.white .arrow-more-btn {
+  background-image: url("../images/icon_arrow-right-white.svg");
+}
+/* 서식, 여백 조정 */
+.title {
+  font-size: 3.125em;
+  font-weight: 600;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+/* 여백 조정 */
+.title-margin {
+  margin-bottom: 50px;
+}
+/* 여백 조정 */
+.txt {
+  margin-bottom: 25px;
+}
+/* 여백 조정 */
+.list-text-box > .txt {
+  margin-bottom: 10px;
+}
+/* 여백, 서식 */
+.list-text-box {
+  font-size: 0.875em;
+  padding: 0px 10px;
+}
+/* 부모 */
+.product-list-wrap,
+.product-list {
+  position: relative;
+}
+/* 여백, 텍스트 정렬 */
+.product-list-wrap {
+  margin-bottom: 100px;
+  text-align: start;
+}
+/* 목록 이동 버튼 5% (10%) */
+.product-list-wrap > a {
+  display: block;
+  width: 5%;
+  position: relative;
+  bottom: 49px;
+  text-indent: -9999em;
+}
+/* 목록 이동 버튼 */
+.product-list-wrap > .list-btn__prev {
+  background: url("../images/icon_chevron-left-white.svg") no-repeat 50%;
+}
+/* 목록 이동 버튼 */
+.product-list-wrap > .list-btn__next {
+  background: url("../images/icon_chevron-right-white.svg") no-repeat 50%;
+}
+/* 목록 너비 90% (버튼 10%) */
+.product-list-wrap > .list-wrap-overflow {
+  width: 90%;
+}
+/* 목록 가로 정렬, 간격 */
+.product-list__inner {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  overflow: hidden;
+}
+/* 이미지, 텍스트 여백 */
+.product-list__inner > li > .list-text-box {
+  margin: 28px 0 7px;
+}
+/* 텍스트 제목, 가격 여백 */
+.product-list__inner > li > .list-text-box > .txt {
+  margin: 0 0 15px;
+}
+/* 여백 지정 */
+.product__ul-flex--5 {
+  margin-top: 70px;
+}
+/* 부모 */
+.product__ul-flex--5 .product-list__inner > li > .list-img-box,
+.product-list > a > .list-img-box {
+  position: relative;
+}
+/* 변환 효과 */
+.product__ul-flex--5 .product-list__inner > li > .list-img-box > a > img,
+.product-list > a > .list-img-box > img {
+  transition: 0.3s ease-in-out;
+}
+/* hover시 변경 이미지 위치 변경 */
+.product__ul-flex--5 .product-list__inner > li > .list-img-box > a > .img-back,
+.product-list > a > .list-img-box > .img-back {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  opacity: 0;
+}
+/* hover 이미지 변경 */
+.product__ul-flex--5
+  .product-list__inner
+  > li
+  > .list-img-box:hover
+  > a
+  > .img-back,
+.product-list > a:hover > .list-img-box > .img-back {
+  opacity: 1;
+}
+/* 공백시 제거 */
+span.sale:empty,
+span.price:empty,
+span.sale-parsent:empty {
+  display: none;
+}
+/* 취소선, 여백, 서식 */
+span.sale {
+  text-decoration: line-through;
+  color: #9e9e9e;
+  margin-right: 10px;
+}
+/* 여백 */
+span.price {
+  margin-right: 10px;
+}
+/* 세일 색상 */
+span.sale-parsent {
+  color: #e60023;
+  font-weight: 600;
+}
+/*^ header */
+/* 높이 지정, 배경, 고정 */
+header {
+  height: 90px;
+  background: #ffffff;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+/* 높이 부모 상속, left-right 간격 */
+.header-inner {
+  justify-content: space-between;
+  height: 100%;
+}
+/* 로고 크기 */
+header .logo {
+  width: 100px;
+}
+/* 높이 부모 상속, 간격 */
+.top-menu-l-wrap {
+  height: 100%;
+  gap: 40px;
+}
+/* 높이 부모 상속, 간격, 서식 */
+#nav {
+  height: 100%;
+  gap: 20px;
+  font-size: 1.125em;
+  font-weight: 700;
+}
+/* 높이 부모 상속 */
+#nav > li {
+  height: 100%;
+}
+/* 텍스트 정렬 */
+#nav > li > a {
+  display: block;
+  position: relative;
+  line-height: 90px;
+  height: 100%;
+}
+/* hover 색상 변경, 효과 */
+#nav > li > a:hover {
+  color: #c22014;
+  border-bottom: 3px solid #222;
+}
+/* 너비 조정할 때 필요시 사용 */
+/* #nav > li > a:hover::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  position: absolute;
+  bottom: 0;
+} */
+/* 간격 조정 */
+.gnb-btn {
+  gap: 20px;
+}
+/* 장바구니 부모 */
+.gnb-btn > li {
+  position: relative;
+}
+/* 간격 */
+.gnb-btn > li > a {
+  gap: 5px;
+}
+/* ul hover시 li 반투명 */
+.gnb-btn:hover > li {
+  opacity: 0.5;
+}
+/* hover시에도 불투명하게 */
+.gnb-btn:hover > li:last-child {
+  opacity: 1;
+}
+/* li hover 불투명도 업 */
+.gnb-btn > li:hover {
+  opacity: 1;
+}
+/* 
+hover -> opaicty : 1
+nth -> opaicty: 0
+*/
+/* 장바구니 간격 조정 */
+.gnb-btn > li:nth-child(3) > a {
+  gap: 10px;
+}
+/* 이미지 크기 */
+.gnb-btn > li > a > img {
+  width: 25px;
+}
+/* 장바구니 알림 */
+.gnb-btn .bubble {
+  position: absolute;
+  top: -5px;
+  left: 13px;
+  background: red;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  font-size: 0.8em;
+}
+/* 검색창 테두리, 너비 */
+.search {
+  border: 1px solid #999;
+  width: 200px;
+}
+/* 검색창 링크 */
+.search > a {
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+/* 모바일용 제거 */
+.mobile-more-btn,
+.banner__list .list-img-box > img:last-child,
+.mobile-arrow-more-btn {
+  display: none;
+}
+/*^ main */
+/* header 높이 값 */
+main {
+  padding-top: 90px;
+}
+/** banner */
+/* 넘치는 목록 숨김 */
+.banner__list {
+  overflow: hidden;
+}
+/* 목록 너비 부모 상속 */
+.banner__list > li {
+  width: 100%;
+}
+/* 이미지 부모에 크기 맞추기 */
+.banner__list .list-img-box > img {
+  width: 100%;
+}
+/* 텍스트 박스 부모 */
+.banner__list > li {
+  position: relative;
+}
+/* 배너 텍스트 박스 위치 */
+.banner__list .list-text-box {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 23%;
+  transform: translate(-50%, -50%);
+  width: 490px;
+  word-break: keep-all;
+}
+/* 배너 타이틀 서식 */
+.banner__list .list-text-box .title {
+  font-size: 3.75em;
+  font-weight: 700;
+  line-height: 1.4;
+}
+/* 배너 텍스트 여백 */
+.banner__list .list-text-box .txt {
+  margin-bottom: 25px;
+}
+/* 배너 자세히보기 */
+.banner__list .list-text-box > .banner__more-btn {
+  text-align: center;
+  line-height: 50px;
+  width: 180px;
+  height: 50px;
+  color: #000;
+  font-weight: 700;
+  background: #fff;
+}
+/* 배너 hover 슬라이드버튼 숨기기 해제 */
+.banner:hover > .slide-btn {
+  display: flex;
+}
+/* 슬라이드 버튼 */
+.slide-btn {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: space-between;
+  width: 95%;
+}
+/* a 크기 조정 */
+.slide-btn > a {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+/* 이미지 변경 */
+.slide-btn > .slide-btn__prev {
+  background: url("../images/icon_chevron-left-white.svg") no-repeat;
+}
+/* 이미지 변경 */
+.slide-btn > .slide-btn__next {
+  background: url("../images/icon_chevron-right-white.svg") no-repeat;
+}
+/* pager 가로 정렬, 위치 조정 */
+.pager {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* pager 목록 */
+.pager > div {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+/* 활성화 된 pager */
+.pager > .over {
+  width: 25px;
+  background: #fff;
+  border-radius: 5px;
+}
+/** new-arrivals */
+/* 목록 리스트 너비 */
+.product__ul-flex--5 .product-list__inner > li {
+  width: calc(20% - 10px);
+}
+/* 높이 정렬 */
+.product__imgTxt-flex--3 {
+  align-items: stretch;
+}
+/* 이미지 부모 사이즈 맞춤 */
+.product__imgTxt-flex--3 > div .list-img-box > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 50% 너비 조정 */
+.product__imgTxt-flex--3 > div:first-child {
+  flex: 2;
+}
+/* 25% 너비 조정 */
+.product__imgTxt-flex--3 > div:nth-child(2) {
+  flex: 1;
+  background: #f6f6f6;
+}
+/* 텍스트 위치 조정 */
+.product__imgTxt-flex--3 > div:nth-child(2) .list-text-box {
+  padding: 10px 30px 0;
+}
+/* 25% 너비 조정 */
+.product__imgTxt-flex--3 > div:nth-child(3) {
+  flex: 1;
+}
+/* 가로 정렬, 너비 최대 */
+.item-list__sns-model {
+  display: flex;
+  width: 100%;
+}
+/* 너비 100% */
+.product__imgTxt-flex--2 > div,
+.item-list__sns-model > li {
+  flex: 1;
+}
+/* 이미지 크기 부모에 맞춤 */
+.product__imgTxt-flex--2 > div > img,
+.item-list__sns-model > li img {
+  width: 100%;
+}
+/** styling */
+/* 여백, 너비 */
+.product__ul-flex--3 .product-list__inner {
+  gap: 15px;
+  width: calc(100% + 15px);
+}
+/* 목록 너비 */
+.product__ul-flex--3 .product-list__inner > li {
+  width: calc(100% / 3 - 15px);
+}
+/* 이미지 & 텍스트 가로 정렬 */
+.product__ul-flex--3 .list-text-box > div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* width: 100%; */
+  margin-bottom: 10px;
+}
+/* 이미지 너비 */
+.product__ul-flex--3 .list-text-box > div > img {
+  width: 80px;
+}
+/* 텍스트 너비 */
+.product__ul-flex--3 .list-text-box > div > span {
+  flex: 0.8;
+  font-size: 1.125em;
+}
+/** hot item */
+/* 너비 높이 100% */
+.user-only {
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+/* 자물쇠 여백 */
+.user-only > div {
+  display: inline-block;
+  border-radius: 50%;
+  background: #fff;
+  padding: 10px;
+  top: 20px;
+  right: 20px;
+  position: absolute;
+}
+/* 자물쇠 크기 */
+.user-only > div > img {
+  width: 30px;
+}
+/* 회원 판매 상품 */
+.user-only > p {
+  opacity: 0;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* 전체 범위 a */
+.user-only > p > a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  line-height: 200px;
+  text-align: center;
+}
+/* hover 숨기기 해제 */
+.user-only-wrap:hover .user-only > p {
+  opacity: 1;
+  text-align: end;
+}
+/** hot-item */
+/* 한 줄 */
+section.hot-item .product__imgTxt-flex--3 .product-list .right-bottom {
+  width: 60%;
+}
+/** hot keyword */
+/* 가로 정렬, 간격, 여백 */
+.hash-tag-wrap {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  font-size: 1.75em;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  margin-bottom: 100px;
+}
+/* after 부모 */
+.hash-tag-wrap > li {
+  position: relative;
+}
+/* after보다 앞에 있기 위함 */
+.hash-tag-wrap > li > a > span {
+  position: relative;
+  z-index: 1;
+  transition: 0.3s;
+}
+/* 텍스트 밑줄 */
+.hash-tag-wrap > li > a::after {
+  content: "";
+  display: block;
+  width: 70%;
+  height: 60%;
+  position: absolute;
+  left: 50%;
+  bottom: -0.2em;
+  transform: translateX(-50%);
+  background: #76c975;
+  transition: 0.3s;
+  opacity: 0;
+}
+/* hover 스케일업 */
+.hash-tag-wrap > li:hover > a > span {
+  display: inline-block;
+  transform: scale(1.25);
+  font-weight: 700;
+}
+/* hover 밑줄 보이기 */
+.hash-tag-wrap > li:hover > a::after {
+  opacity: 1;
+}
+/**  tech archive */
+/* 간격 제거, 너비 100% */
+.tech-archive .product__ul-flex--3 .product-list__inner {
+  gap: 0;
+  width: 100%;
+}
+/* 3분할 */
+.tech-archive .product__ul-flex--3 .product-list__inner > li {
+  width: calc(100% / 3);
+}
+/* 이미지 100% */
+.tech-archive .product-list__inner > li > .list-img-box img {
+  width: 100%;
+}
+/* inner 100% */
+.tech-archive .product-list-wrap > .list-wrap-overflow {
+  width: 100%;
+}
+/* 버튼 위치 조정 */
+.tech-archive .slide-btn {
+  top: 38%;
+}
+/* 중앙 정렬 */
+.tech-archive .list-text-box {
+  text-align: center;
+}
+/* 서식 변경 */
+.sub-title {
+  font-size: 1.875em;
+  font-weight: 600;
+}
+/* 여백 지정 */
+.sub-title + .content {
+  padding: 30px 26px;
+}
+/*^ footer */
+/** foot top */
+.foot-top__btn {
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+}
+/* 여백 추가, 부모 */
+.foot-top__btn > li > a {
+  position: relative;
+  display: block;
+  padding: 30px 50px;
+}
+/* hover 서체 변경 */
+.foot-top__btn > li > a:hover {
+  color: #e60023;
+  font-weight: bolder;
+}
+/* li 옆 border */
+.foot-top__btn > li > a::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 1em;
+  background: #000;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* 마지막 li 효과 제거 */
+.foot-top__btn > li:last-child > a::after {
+  display: none;
+}
+/** foot bottom */
+/* 배경, 색상, 여백 */
+.foot-bottom {
+  background: #000;
+  color: #9b9b9b;
+  padding: 50px 0;
+}
+/* 가로 정렬 */
+.foot-bottom > .inner {
+  display: flex;
+}
+/* address 너비 30% */
+.foot-bottom__address-wrap {
+  flex: 0.7;
+}
+/* info 너비 70% */
+.foot-bottom__info {
+  flex: 1.3;
+  display: flex;
+}
+/* 여백, 글꼴 조정 */
+.foot-bottom__address-wrap > address {
+  padding: 20px;
+  font-size: 12px;
+}
+/* after 부모, 여백 추가 */
+.foot-bottom__address-wrap > address > p > span {
+  position: relative;
+  margin-right: 20px;
+  word-break: keep-all;
+}
+/* p 자손 우측 after */
+.foot-bottom__address-wrap > address > p > span::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 1em;
+  background: #ccc;
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* 텍스트 우측 after 제거 */
+.foot-bottom__address-wrap > address > p:first-child > span:nth-child(4)::after,
+.foot-bottom__address-wrap
+  > address
+  > p:nth-child(2)
+  > span:nth-child(2)::after,
+.foot-bottom__address-wrap > address > p > *:last-child::after {
+  display: none;
+}
+/* copy 여백 */
+.foot-bottom__address-wrap > address .copy {
+  margin-top: 10px;
+}
+/* 이미지 크기 */
+.foot-bottom__info img {
+  max-width: 120px;
+}
+/* 이미지 & 텍스트 가로 정렬 */
+.foot-bottom__info > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+/* flex-grow 제거 */
+.foot-bottom__info > div:last-child {
+  flex: 0;
+}
+/* 이미지 사이즈만큼 너비 조정 */
+.foot-bottom__info-text-box {
+  width: calc(100% - 120px);
+}
+/* 에스크로 서비스 하단 여백 */
+.foot-bottom__info-text-box > p {
+  margin-bottom: 10px;
+}
+/* 여백 제거 */
+.foot-bottom__info > div:nth-child(2) > .foot-bottom__info-text-box > p {
+  margin: 0;
+}

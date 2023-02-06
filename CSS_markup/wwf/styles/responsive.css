@@ -1,0 +1,210 @@
+@media screen and (max-width: 767px) {
+  /*^ 메인 크기 변경 */
+  body {
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+  }
+  main,
+  footer {
+    overflow: hidden;
+  }
+  /*^ hidden */
+  nav,
+  .gnb-wrap > .gnb,
+  .search-wrap,
+  .sponer,
+  .main__banner,
+  .sitemap,
+  .wwf-wrap .arrow-btn,
+  .deal-top > .title-box > .sub,
+  .icon-wrap > div > .slogan__text > p {
+    display: none;
+  }
+  /*^ visibility */
+  .sitemap-btn {
+    display: block;
+  }
+  .news-wrap .pager,
+  .wwf-wrap .pager,
+  .pager {
+    display: flex;
+  }
+  /*^ style */
+  .select {
+    color: var(--orange);
+  }
+  section {
+    position: relative;
+  }
+  section .sub {
+    margin: 20px 0 40px;
+    font-size: 1.6em;
+    word-break: keep-all;
+  }
+  .inner {
+    max-width: 95%;
+  }
+  .pager {
+    bottom: -5%;
+  }
+  .pager > li > a {
+    background: #000;
+    width: 10px;
+    height: 10px;
+  }
+  .pager > li > a.select {
+    background: var(--orange);
+  }
+  /*^ header */
+  /* 로고 크기 */
+  .logo {
+    width: 80px;
+  }
+  /* 높이 지정 */
+  .gnb-wrap {
+    height: 80px;
+  }
+  /*^ main */
+  /** news wrap */
+  /* 선택된 버튼 이미지 변경 */
+  .tab-menu > li > a.select > i {
+    background-image: url("../images/btn_go_board_list_on.png");
+  }
+  /* 넘치는 content hidden */
+  .tab-list {
+    gap: 10px;
+    overflow: hidden;
+  }
+  /* list 크기 100% 화면 full */
+  .tab-list > li {
+    width: 100%;
+  }
+  /** sponsor wrap */
+  /* 높이값 지정 */
+  .sponsor-wrap {
+    height: 250px;
+  }
+  /** wwf wrap */
+  /* 여백 제거 */
+  .activity-list {
+    margin: 0;
+  }
+  /* list 크기 100% 화면 full */
+  .activity-list > li {
+    width: 100%;
+  }
+  /** newdeal wrap */
+  /* 여백 조정 및 정렬 */
+  .newdeal-wrap > .deal-top {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 20px;
+  }
+  /* 순서 변경, 크기 조정 */
+  .deal-top > .deal-img {
+    order: 1;
+    width: 95%;
+    top: -30px;
+    right: -2%;
+    position: absolute;
+    height: 39vw;
+  }
+  /* 순서 변경, 여백 조정 */
+  .deal-top > .title-box {
+    order: 2;
+    padding: 75% 0 0;
+  }
+  /* 여백 조정, 위치 정렬 */
+  .newdeal-wrap > .icon-wrap {
+    padding: 20px 0;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  /* 너비 조정, 위치 정렬 */
+  .icon-wrap > div,
+  .icon-wrap > div:last-child {
+    width: 30%;
+    flex-direction: column;
+  }
+  /* 텍스트 조정, 정렬 */
+  .icon-wrap > div > .slogan__text,
+  .icon-wrap > div:last-child > .slogan__text {
+    width: 100%;
+    text-align: center;
+  }
+  /** campaign */
+  /* 정렬 */
+  .main__camp-slide {
+    display: block;
+  }
+  /* list 크기 100% 화면 full */
+  .main__camp-slide > li {
+    width: 100%;
+  }
+  /*^ footer */
+  /** footer top */
+  /* 너비 100% */
+  .foot-top {
+    display: block;
+  }
+  /* 여백 조정 */
+  .foot-top > .newsletter > .newsletter-title p {
+    margin: 20px 0 30px;
+  }
+  /* 여백 조정 */
+  .foot-top .email > button {
+    margin: 0 0 30px;
+  }
+  /** footer link */
+  /* 위치 정렬, 여백 조정 */
+  .foot-link {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    position: relative;
+  }
+  /* 너비 100%, 위치 정렬 */
+  .foot-link > div {
+    width: 100%;
+    justify-content: center;
+  }
+  /* 위치 정렬 */
+  .foot-link > .utilmenu > ul {
+    justify-content: center;
+  }
+  /* 구분선 */
+  .foot-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  /** footer bottom */
+  /* 너비 조정, 위치 정렬 */
+  .foot-bottom {
+    text-align: center;
+    width: auto;
+  }
+  /* 텍스트 위치 조정 */
+  .foot-bottom .foot-logo {
+    float: none;
+  }
+  /* 중앙 정렬 */
+  .foot-bottom .foot-logo img {
+    margin: 0 auto;
+  }
+  /* 텍스트 정렬 */
+  .foot-bottom address .footer-txt {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .deal-top .title-box strong {
+    font-size: 4em;
+  }
+}

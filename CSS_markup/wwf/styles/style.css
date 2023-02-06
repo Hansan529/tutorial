@@ -1,8 +1,5 @@
 @import "./fonts.css";
-
-:root {
-  --orange: #e98302;
-}
+@import "./variables.css";
 
 body {
   font-family: "NanumBarunGothic", sans-serif;
@@ -101,6 +98,18 @@ nav {
   background: var(--orange);
   color: #000;
   outline: none;
+}
+/* mobile sitemap btn */
+.sitemap-btn {
+  display: none;
+}
+/* sitemap btn */
+.sitemap-btn > span {
+  display: block;
+  background: #fff;
+  width: 35px;
+  height: 1px;
+  margin: 10px 0;
 }
 /* gnb 위치 */
 #nav {
@@ -389,6 +398,9 @@ section ul img {
 }
 /** news-wrap */
 /* 메뉴 wrap */
+.news-wrap .pager {
+  display: none;
+}
 .tab-menu {
   justify-content: flex-start;
   gap: 35px;
@@ -549,6 +561,9 @@ section ul img {
   background: var(--orange);
 }
 /** wwf-wrap */
+.wwf-wrap .pager {
+  display: none;
+}
 .activity-list {
   margin: 0 50px;
   position: relative;
@@ -708,6 +723,9 @@ section ul img {
   width: 82px;
 }
 /** campaign-wrap */
+.campaign-wrap .pager {
+  display: none;
+}
 /* 중앙 정렬 */
 .main__camp-wrap {
   margin: 0 auto;

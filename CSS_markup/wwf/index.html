@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
     <link
       rel="icon"
       type="image/png"
@@ -12,6 +16,7 @@
     />
     <link rel="stylesheet" href="../../reset.css" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/responsive.css" />
     <title>세계자연기금 홈페이지, WWF Korea</title>
   </head>
   <body>
@@ -132,6 +137,7 @@
             </div>
           </form>
           <p class="sponer"><a href="#void">후원하기</a></p>
+          <div class="sitemap-btn"><span></span><span></span><span></span></div>
         </div>
       </div>
     </header>
@@ -213,7 +219,7 @@
             <h2 class="title">최신 소식</h2>
             <ul class="tab-menu">
               <li>
-                <a href="#void">언론보도<i></i></a>
+                <a href="#void" class="select">언론보도<i></i></a>
               </li>
               <li>
                 <a href="#void">소식<i></i></a>
@@ -308,6 +314,11 @@
               </ul>
             </div>
           </div>
+          <ul class="pager">
+            <li><a href="#void" class="select">1</a></li>
+            <li><a href="#void">2</a></li>
+            <li><a href="#void">3</a></li>
+          </ul>
         </section>
         <section class="sponsor-wrap">
           <h2 class="blind">sponer</h2>
@@ -317,84 +328,97 @@
         </section>
         <section class="wwf-wrap">
           <h2 class="title">WWF 활동분야</h2>
-          <p class="sub">
-            WWF는 사람과 자연이 조화로운 미래를 만들어가기 위해 아래 6개 보전
-            영역에 걸쳐 활동하고 있습니다.
-          </p>
-          <div class="activity-wrap">
-            <ul class="activity-list">
-              <li class="border">
-                <a href="#void">
-                  <div class="main__activity-img border">
-                    <img src="./images/main_activity01.jpg" alt="기후 에너지" />
+          <div class="inner">
+            <p class="sub">
+              WWF는 사람과 자연이 조화로운 미래를 만들어가기 위해 아래 6개 보전
+              영역에 걸쳐 활동하고 있습니다.
+            </p>
+            <div class="activity-wrap">
+              <ul class="activity-list">
+                <li class="border">
+                  <a href="#void">
+                    <div class="main__activity-img border">
+                      <img
+                        src="./images/main_activity01.jpg"
+                        alt="기후 에너지"
+                      />
+                    </div>
+                    <div class="main__activity-txt">
+                      <p>CLIMATE &amp; ENERGY</p>
+                      <p>기후 &middot; 에너지</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="border">
+                  <a href="#void">
+                    <div class="main__activity-img border">
+                      <img src="./images/1649837077_96554.jpg" alt="해양" />
+                    </div>
+                    <div class="main__activity-txt">
+                      <p>OCEANS</p>
+                      <p>해양</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="border">
+                  <div class="main__activity-box">
+                    <div class="main__activity-img">
+                      <img src="./images/main_activity03.jpg" alt="야생동물" />
+                    </div>
+                    <div class="main__activity-txt">
+                      <p>WILDLIFE</p>
+                      <p>야생동물</p>
+                    </div>
                   </div>
-                  <div class="main__activity-txt">
-                    <p>CLIMATE &amp; ENERGY</p>
-                    <p>기후 &middot; 에너지</p>
+                </li>
+                <li class="border">
+                  <div class="main__activity-box">
+                    <div class="main__activity-img border">
+                      <img src="./images/main_activity_food.jpg" alt="식량" />
+                    </div>
+                    <div class="main__activity-txt">
+                      <p>FOOD</p>
+                      <p>식량</p>
+                    </div>
                   </div>
-                </a>
-              </li>
-              <li class="border">
-                <a href="#void">
-                  <div class="main__activity-img border">
-                    <img src="./images/1649837077_96554.jpg" alt="해양" />
+                </li>
+                <li class="border">
+                  <div class="main__activity-box">
+                    <div class="main__activity-img">
+                      <img src="./images/main_activity05.jpg" alt="식량" />
+                    </div>
+                    <div class="main__activity-txt">
+                      <p>FRESHWATER</p>
+                      <p>담수</p>
+                    </div>
                   </div>
-                  <div class="main__activity-txt">
-                    <p>OCEANS</p>
-                    <p>해양</p>
+                </li>
+                <li class="border">
+                  <div class="main__activity-box">
+                    <div class="main__activity-img">
+                      <img src="./images/main_activity04.jpg" alt="식량" />
+                    </div>
+                    <div class="main__activity-txt">
+                      <p>FORESTS</p>
+                      <p>산림</p>
+                    </div>
                   </div>
-                </a>
-              </li>
-              <li class="border">
-                <div class="main__activity-box">
-                  <div class="main__activity-img">
-                    <img src="./images/main_activity03.jpg" alt="야생동물" />
-                  </div>
-                  <div class="main__activity-txt">
-                    <p>WILDLIFE</p>
-                    <p>야생동물</p>
-                  </div>
-                </div>
-              </li>
-              <li class="border">
-                <div class="main__activity-box">
-                  <div class="main__activity-img border">
-                    <img src="./images/main_activity_food.jpg" alt="식량" />
-                  </div>
-                  <div class="main__activity-txt">
-                    <p>FOOD</p>
-                    <p>식량</p>
-                  </div>
-                </div>
-              </li>
-              <li class="border">
-                <div class="main__activity-box">
-                  <div class="main__activity-img">
-                    <img src="./images/main_activity05.jpg" alt="식량" />
-                  </div>
-                  <div class="main__activity-txt">
-                    <p>FRESHWATER</p>
-                    <p>담수</p>
-                  </div>
-                </div>
-              </li>
-              <li class="border">
-                <div class="main__activity-box">
-                  <div class="main__activity-img">
-                    <img src="./images/main_activity04.jpg" alt="식량" />
-                  </div>
-                  <div class="main__activity-txt">
-                    <p>FORESTS</p>
-                    <p>산림</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <ul class="arrow-btn">
-              <li><a href="#void">left</a></li>
-              <li><a href="#void">right</a></li>
-            </ul>
+                </li>
+              </ul>
+              <ul class="arrow-btn">
+                <li><a href="#void">left</a></li>
+                <li><a href="#void">right</a></li>
+              </ul>
+            </div>
           </div>
+          <ul class="pager">
+            <li><a href="#void" class="select">1</a></li>
+            <li><a href="#void">2</a></li>
+            <li><a href="#void">3</a></li>
+            <li><a href="#void">4</a></li>
+            <li><a href="#void">5</a></li>
+            <li><a href="#void">6</a></li>
+          </ul>
         </section>
         <section class="newdeal-wrap">
           <div class="deal-top inner">
@@ -447,69 +471,71 @@
           </div>
         </section>
         <section class="campaign-wrap">
-          <h2 class="title">캠페인</h2>
-          <p class="sub">
-            우리의 지구를 지키기 위한 WWF의 캠페인에 함께 해주세요
-          </p>
-          <div class="main__camp-wrap">
-            <ul class="main__camp-slide">
-              <li class="swiper-slide">
-                <a href="#void">
-                  <div class="img-box border">
-                    <img src="./images/ori_1.jpg" alt="북극곰 보호" />
-                  </div>
-                  <div class="text-box">
-                    <div class="main__camp-title">북극곰 보호</div>
-                    <p class="sub">
-                      북극곰은 먹이사슬의 최상위 포식자라는 것 알고 계셨나요?
-                      그렇기에 북극곰이 북극 생태계의 균형을 유지하는 데 중요한
-                      역할을 합니다.
-                    </p>
-                  </div>
-                </a>
-              </li>
-              <li class="swiper-slide">
-                <a href="#void">
-                  <div class="img-box border">
-                    <img src="./images/ori_2.jpg" alt="기후위기" />
-                  </div>
-                  <div class="text-box">
-                    <div class="main__camp-title">기후위기</div>
-                    <p class="sub">
-                      기후위기에 대응하기 위해서는 기후위기가 무엇인지 그리고 그
-                      원인에 대해서 제대로 알고있어야 합니다.
-                    </p>
-                  </div>
-                </a>
-              </li>
-              <li class="swiper-slide">
-                <a href="#void">
-                  <div class="img-box border">
-                    <img src="./images/ori_3.jpg" alt="멸종위기 동물 보호" />
-                  </div>
-                  <div class="text-box">
-                    <div class="main__camp-title">멸종위기 동물 보호</div>
-                    <p class="sub">
-                      WWF-Korea와 함께 멸종위기에 처한 동물들을 지켜주세요.
-                    </p>
-                  </div>
-                </a>
-              </li>
-              <li class="swiper-slide">
-                <a href="#void">
-                  <div class="img-box border">
-                    <img src="./images/ori_4.jpg" alt="플라스틱 프리" />
-                  </div>
-                  <div class="text-box">
-                    <div class="main__camp-title">플라스틱 프리</div>
-                    <p class="sub">
-                      우리의 일상에서 뗄래야 뗄 수 없는 플라스틱. 플라스틱의
-                      생산과 폐기까지의 생애를 알아보세요.
-                    </p>
-                  </div>
-                </a>
-              </li>
-            </ul>
+          <div class="inner">
+            <h2 class="title">캠페인</h2>
+            <p class="sub">
+              우리의 지구를 지키기 위한 WWF의 캠페인에 함께 해주세요
+            </p>
+            <div class="main__camp-wrap">
+              <ul class="main__camp-slide">
+                <li class="swiper-slide">
+                  <a href="#void">
+                    <div class="img-box border">
+                      <img src="./images/ori_1.jpg" alt="북극곰 보호" />
+                    </div>
+                    <div class="text-box">
+                      <div class="main__camp-title">북극곰 보호</div>
+                      <p class="sub">
+                        북극곰은 먹이사슬의 최상위 포식자라는 것 알고 계셨나요?
+                        그렇기에 북극곰이 북극 생태계의 균형을 유지하는 데
+                        중요한 역할을 합니다.
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#void">
+                    <div class="img-box border">
+                      <img src="./images/ori_2.jpg" alt="기후위기" />
+                    </div>
+                    <div class="text-box">
+                      <div class="main__camp-title">기후위기</div>
+                      <p class="sub">
+                        기후위기에 대응하기 위해서는 기후위기가 무엇인지 그리고
+                        그 원인에 대해서 제대로 알고있어야 합니다.
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#void">
+                    <div class="img-box border">
+                      <img src="./images/ori_3.jpg" alt="멸종위기 동물 보호" />
+                    </div>
+                    <div class="text-box">
+                      <div class="main__camp-title">멸종위기 동물 보호</div>
+                      <p class="sub">
+                        WWF-Korea와 함께 멸종위기에 처한 동물들을 지켜주세요.
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="#void">
+                    <div class="img-box border">
+                      <img src="./images/ori_4.jpg" alt="플라스틱 프리" />
+                    </div>
+                    <div class="text-box">
+                      <div class="main__camp-title">플라스틱 프리</div>
+                      <p class="sub">
+                        우리의 일상에서 뗄래야 뗄 수 없는 플라스틱. 플라스틱의
+                        생산과 폐기까지의 생애를 알아보세요.
+                      </p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
       </div>
@@ -596,7 +622,6 @@
             </form>
           </div>
         </div>
-        G
         <div class="foot-link">
           <div class="utilmenu">
             <ul>
