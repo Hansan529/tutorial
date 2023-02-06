@@ -23,7 +23,7 @@ console.log(function);
 console.log(function, "text");
 ```
 
-## Variable (변수)
+## #02 Variable (변수)
 
 - 변수: 변할 수 있는 데이터를 저장하는 공간
 
@@ -64,10 +64,35 @@ let userName = null;  에러
 */
 ```
 
-## 연산자
+## #03 연산자
 
 +: 더하기 (하나가 문자일 경우 연결연산자로 변경)  
 -: 빼기  
 \*: 곱하기  
 /: 나누기  
 %: 나머지
+
+```js
+// 숫자 변수
+let num1 = 10,
+  num2 = 3,
+  num3 = 5;
+
+// 결과 변수
+let result;
+
+// 더하기 연산자
+result = num1 + num2 + num3; /* 18 */
+
+// 빼기 연산자 - (재선언이기에 더하기 연산자 값은 해당 없음)
+result = num1 - num2 - num3; /* 2 */
+
+// 곱하기 연산자
+num1 = num1 * num2; /* 30 */
+
+// 나누기 연산자
+result = num1 / num3; /* 6 */
+
+// 나머지 연산자
+result = num1 % 7; /* 30/7 = 2 */
+```
