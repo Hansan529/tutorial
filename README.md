@@ -120,3 +120,19 @@ console.log(year + month + city); /* 2025seoul */
 // 괄호를 이용해 해결
 console.log(year + (month + city)); /* 20232seoul */
 ```
+
+### 증감연산자
+
+++: 1씩 증가  
+--: 1씩 감소
+
+```js
+let num1 = 5;
+let num2 = 10;
+
+// num1++
+num1++; /* 5 */
+num1; /* 6 */
+// ++num1
+++num1; /* 6 */
+```

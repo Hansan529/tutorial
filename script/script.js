@@ -30,3 +30,7 @@ let pt04Nation = "korea";
 let pt04City = "seoul";
 let pt04Year = 2023;
 let pt04Month = 2;
+
+//^ pt05 - 증감연산자
+let pt05Num1 = 5;
+let pt05Num2 = 10;
