@@ -82,16 +82,13 @@ let pt10num2 = 5,
 let pt10text = true;
 
 //^ pt11 - 삼향조건연산자
-let pt11a = 20;
-if (pt11a < 20) {
-  true;
-} else if (pt11a > 50) {
-  ("...");
-} else {
-  false;
-}
 //^ pt12 - 2
-let pt12tag = '<input id="pt12input" type="number" />';
-document.write(pt12tag);
-
-let pt12userAge = prompt("나이", "");
+// let pt12userAge = prompt("나이");
+// pt12userAge >= 30 ? document.write("30 up") : document.write("30 down");
+//^ pt13 - 3
+// let a = prompt("a");
+// let b = prompt("b");
+// let c = prompt("c");
+// let d = Number(a) + Number(b) + Number(c);
+// d >= 15000 ? document.write(true) : document.write(false);
+//^ pt14 - 4

@@ -294,26 +294,22 @@ num2(5) > num1(10) || num1(10) > num3(3); // true: 1
 
 ### 삼향조건연산자
 
-조건문 ? : 조건의 결과가 true일 때 실행할 문장 : 조건의 결과가 false일 때 실행 할 문장
+조건문 ? 조건의 결과가 true일 때 실행할 문장 : 조건의 결과가 false일 때 실행 할 문장
 
 a = 5  
-b = 3  
-if (a&gt;b) { true } else { false } : true  
-if (a&lt;b) { true } else { false } : false
+b = 3
+
+a >= b ? "b보다 크거나 같음": "b보다 크거나 같지 않음";
 
 ```js
-let a = 20;
+let userAge = prompt("당신의 나이는?");
+userAge >= 30 ? document.write("30 up") : document.write("30 down");
 
-// false
-if (a < 20) {
-  true;
-} else if (a > 50) {
-  ("...");
-} else {
-  false;
-}
+// 차비(a), 식비(b), 간식비(c) 총합(d) >= 15,000 true : false
+let a = prompot("a");
+let b = prompot("b");
+let c = prompot("c");
+let d = Number(a) + Number(b) + Number(c);
 
-a = 51;
-// ...
-if ();
+d >= 15000 ? document.write(true) : document.write(false);
 ```
