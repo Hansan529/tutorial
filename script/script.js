@@ -1,71 +1,97 @@
-//^ pt02 - 변수
-let pt02UserName = "홍길동";
-let pt02UserAge = 18;
+//^ pt2 - 변수
+let pt2userName = "홍길동";
+let pt2userAge = 18;
 
-let pt02Gender = true;
+let pt2gender = true;
 
-let pt02Hobby;
+let pt2hobby;
 
-pt02UserName = null;
+pt2userName = null;
 
-//^ pt03 - 사칙연산자
-let pt03Num1 = 10,
-  pt03Num2 = 3,
-  pt03Num3 = 5;
+//^ pt3 - 사칙연산자
+let pt3num1 = 10,
+  pt3num2 = 3,
+  pt3num3 = 5;
 
-let pt03Result;
+let pt3result;
 
-pt03Result = pt03Num1 + pt03Num2 + pt03Num3;
+pt3result = pt3num1 + pt3num2 + pt3num3;
 
-pt03Result = pt03Num1 - pt03Num2 - pt03Num3;
+pt3result = pt3num1 - pt3num2 - pt3num3;
 
-pt03Num1 = pt03Num1 * pt03Num2;
+pt3num1 = pt3num1 * pt3num2;
 
-pt03Result = pt03Num1 / pt03Num3;
+pt3result = pt3num1 / pt3num3;
 
-pt03Result = pt03Num1 % 7;
+pt3result = pt3num1 % 7;
 
-//^ pt04 - 연결연산자
-let pt04Nation = "korea";
-let pt04City = "seoul";
-let pt04Year = 2023;
-let pt04Month = 2;
+//^ pt4 - 연결연산자
+let pt4nation = "korea";
+let pt4city = "seoul";
+let pt4year = 2023;
+let pt4month = 2;
 
-//^ pt05 - 증감연산자
-let pt05Num1 = 5;
-let pt05Num2 = 10;
+//^ pt5 - 증감연산자
+let pt5num1 = 5;
+let pt5num2 = 10;
 
-//^ pt06 - 대입연산자
-let pt06Num1 = 10;
-let pt06Num2 = 3;
-let pt06Num3 = 5;
+//^ pt6 - 대입연산자
+let pt6num1 = 10;
+let pt6num2 = 3;
+let pt6Num3 = 5;
 
-//^ pt07 - table
-let pt07Count = 1;
-let pt07MyTable = '<table style="border: 1px solid black">';
+//^ pt7 - table
+let pt7count = 1;
+let pt7myTable = '<table style="border: 1px solid black">';
 
-pt07MyTable += "<tr>";
-pt07MyTable += "<td>" + pt07Count + "</td>";
-pt07MyTable += "<td>" + ++pt07Count + "</td>";
-pt07MyTable += "<td>" + ++pt07Count + "</td>";
-pt07MyTable += "</tr>";
-pt07MyTable += "</table>";
+pt7myTable += "<tr>";
+pt7myTable += "<td>" + pt7count + "</td>";
+pt7myTable += "<td>" + ++pt7count + "</td>";
+pt7myTable += "<td>" + ++pt7count + "</td>";
+pt7myTable += "</tr>";
+pt7myTable += "</table>";
 
-// document.write(pt07MyTable);
+// document.write(pt7myTable);
 
-//^ pt08 - table-2
-let pt08Day = "일";
-let pt08MyTable = '<table style="border: 1px solid">';
+//^ pt8 - table-2
+let pt8day = "일";
+let pt8myTable = '<table style="border: 1px solid">';
 
-pt08MyTable += "<tr>";
-pt08MyTable += '<th style="border: 1px solid">' + pt08Day + "<th>";
-pt08MyTable += '<th style="border: 1px solid">' + "월" + "<th>";
-pt08MyTable += '<th style="border: 1px solid">' + "화" + "<th>";
-pt08MyTable += '<th style="border: 1px solid">' + "수" + "<th>";
-pt08MyTable += '<th style="border: 1px solid">' + "목" + "<th>";
-pt08MyTable += '<th style="border: 1px solid">' + "금" + "<th>";
-pt08MyTable += '<th style="border: 1px solid">' + "토" + "<th>";
-pt08MyTable += "</tr>";
-pt08MyTable += "</table>";
+pt8myTable += "<tr>";
+pt8myTable += '<th style="border: 1px solid">' + pt8day + "<th>";
+pt8myTable += '<th style="border: 1px solid">' + "월" + "<th>";
+pt8myTable += '<th style="border: 1px solid">' + "화" + "<th>";
+pt8myTable += '<th style="border: 1px solid">' + "수" + "<th>";
+pt8myTable += '<th style="border: 1px solid">' + "목" + "<th>";
+pt8myTable += '<th style="border: 1px solid">' + "금" + "<th>";
+pt8myTable += '<th style="border: 1px solid">' + "토" + "<th>";
+pt8myTable += "</tr>";
+pt8myTable += "</table>";
 
-document.write(pt08MyTable);
+// document.write(pt8myTable);
+
+//^ pt9 - 비교연산자
+let pt9num1 = 10;
+let pt9str1 = "10";
+let pt9num2 = 20;
+
+//^ pt10 - 논리연산자
+let pt10num1 = 10;
+let pt10num2 = 5,
+  pt10num3 = 3;
+let pt10text = true;
+
+//^ pt11 - 삼향조건연산자
+let pt11a = 20;
+if (pt11a < 20) {
+  true;
+} else if (pt11a > 50) {
+  ("...");
+} else {
+  false;
+}
+//^ pt12 - 2
+let pt12tag = '<input id="pt12input" type="number" />';
+document.write(pt12tag);
+
+let pt12userAge = prompt("나이", "");
