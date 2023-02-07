@@ -322,6 +322,11 @@ d >= 15000 ? document.write(true) : document.write(false);
 
 1. if: 비교 연산, 조건이 적은 경우에 사용한다.
 
+- branch statment 기반 원하는 조건이 나올 때 까지 순차적으로 모든 경우를 비교한다.
+- 실행을 할건지 말건지 판단
+
+<br>
+
 - 단일 if: 조건이 참일때만 실행된다.
 
 ```js
@@ -361,6 +366,10 @@ else{
 
 2. switch~ case: 조건이 많은경우, 값을 체크할때 사용한다.
 
+- jump statement 기반으로 if와 다르게 순차적으로 비교하지 않고 한번에 이동한다.
+- jump 하는데 그 위치 찾기
+- 어떤 코드를 실행할 것인지 판단
+
 ```js
 switch(조건식){
      case 값1:
@@ -371,8 +380,10 @@ switch(조건식){
       break;
    default : 위의 조건을 만족하지 않을때 실행할 문장;
 }
+```
 
-// 1~7 사이의 숫자를 입력 받아서 무지개색 출력하기, 이 외의 숫자는 불가능 출력
+```js
+// 여러 조건, 다른 답
 let num = prompt("1~7 숫자");
 
 switch (num) {
@@ -391,33 +402,18 @@ switch (num) {
   default:
     console.log("1~7 숫자만 가능");
 }
-```
 
-```js
-// 간단한 Date 문
-let date = new Date();
+// 여러 조건, 같은 답
+let browser = prompt("이용하시는 브라우저를 입력하세요");
 
-// 년도
-let year = date.getFullYear();
-
-// 월 0~11 (1월~12월) 0부터 시작한다.
-let month = date.getMonth() + 1;
-
-// 일
-let days = date.getDate();
-
-// 요일 0~6
-let day = date.getDay();
-
-switch (day) {
-  case 0:
-    document.write("일요일");
+switch (browser) {
+  case "Chrome":
+  case "Firfox":
+  case "Safari":
+  case "Opera":
+    console.log(browser + "는 지원하는 브라우저입니다.");
     break;
-
-  // 생략
-
-  case 6:
-    document.write("토요일");
-    break;
+  default:
+    console.log(browser + "는 지원하지 않는 브라우저입니다");
 }
 ```
