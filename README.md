@@ -204,3 +204,116 @@ document.write(myTable);
   </tr>
 </table>
 ```
+
+### 비교연산자
+
+a&gt;b : a가 b보다 크냐? true, false  
+a&gt;=b : a가 b보다 크거나 같냐?  
+a&lt;b : a가 b보다 작으냐?  
+a&lt;= : a가 b보다 작거나 같냐?  
+a==b: a와 b가 같으냐? (값만 비교)  
+`let num1 = 10, num2 = "10" : num1==num2  `  
+a===b: a와 b가 같으냐? (타입 비교)  
+a!=b: a와 b가 다르냐?  
+a!==b: a와 b가 다르냐? (타입비교)
+
+```js
+let num1 = 10;
+let str1 = "10";
+let num2 = 20;
+
+// num1이 num2보다 크냐?
+num1 > num2; /* false: 크지 않음 */
+
+// num2가 num1보다 크거나 같냐?
+num2 >= num1; /* true: 크거나 같음 */
+
+// num1이 str1과 값이 같냐?
+num1 == str1; /* true: 같음*/
+
+// num1과 str1이 타입과 값이 같냐?
+num1 === str1; /* false: 다름 */
+
+// num1과 str1의 값이 다르냐?
+num1 != str1; /* false: 같음 */
+
+// num1과 str1의 타입과 값이 다르냐?
+num1 !== str1; /* true: 다름 */
+```
+
+### 논리연산자
+
+! : 부정 반대(not)  
+&& : 논리곱(and)  
+ false && false ==> false 0 && 0 ==> 0  
+ false && true ==> false 0 && 1 ==> 0  
+ true && false ==> false 1 && 0 ==> 0  
+ true && true ==> true 1 && 1 ==> 1
+
+|| : 논리합(or)  
+ false || false ==> false 0 || 0 ==> 0  
+ false || true ==> true 0 || 1 ==> 1  
+ true || false ==> true 1 || 0 ==> 1  
+ true || true ==> true 1 || 1 ==> 1
+
+```js
+let num1 = 10;
+let num2 = 5;
+let num3 = 3;
+let text = true;
+
+text; // true: 1
+!text; // false: 0
+
+/* &&: AND 연산자 */
+// false && false [0 && 0]
+num2(5) > num1(10) && num3(3) > num1(10); // false: 0
+
+// true && true [1 && 1]
+num1(10) > num2(5) && num1(10) > num3(3); // true: 1
+
+// true && false [1 && 0]
+num1(10) > num2(5) && num3(3) > num1(10); // false: 0
+
+// false && true [0 && 1]
+num2(5) > num1(10) && num1(10) > num3(3); // false: 0
+
+/* ||: OR 연산자 */
+// false || false [0 || 0]
+num2(5) > num1(10) || num3(3) > num1(10); // false: 0
+
+// true || true [1 || 1]
+num1(10) > num2(5) || num1(10) > num3(3); // true: 1
+
+// true || false [1 || 0]
+num1(10) > num2(5) || num3(3) > num1(10); // true: 1
+
+// false || true [0 || 1]
+num2(5) > num1(10) || num1(10) > num3(3); // true: 1
+```
+
+### 삼향조건연산자
+
+조건문 ? : 조건의 결과가 true일 때 실행할 문장 : 조건의 결과가 false일 때 실행 할 문장
+
+a = 5  
+b = 3  
+if (a&gt;b) { true } else { false } : true  
+if (a&lt;b) { true } else { false } : false
+
+```js
+let a = 20;
+
+// false
+if (a < 20) {
+  true;
+} else if (a > 50) {
+  ("...");
+} else {
+  false;
+}
+
+a = 51;
+// ...
+if ();
+```
