@@ -313,3 +313,111 @@ let d = Number(a) + Number(b) + Number(c);
 
 d >= 15000 ? document.write(true) : document.write(false);
 ```
+
+## #04 제어문
+
+### 조건문
+
+조건에 따라서 프로그램의 흐름을 제어할 때 사용한다.
+
+1. if: 비교 연산, 조건이 적은 경우에 사용한다.
+
+- 단일 if: 조건이 참일때만 실행된다.
+
+```js
+if(조건문){
+  조건이 참일때 실행할 문장
+}
+```
+
+- if~else: 조건이 참, 거짓일때
+
+```js
+if(조건문){
+  조건이 참일때 실행할 문장;
+} else {
+  조건이 거짓일때 실행할 문장;
+}
+```
+
+- 다중 if: 조건이 많을 경우 사용함
+
+```js
+if(조건문1){
+   조건문1이 참일때 실행할 문장;
+}
+else if(조건2){
+  조건1이 거짓이고, 조건2가 참일때 실행할 문장;
+}
+else if(조건3){
+    조건1이 거짓이고, 조건2가 거짓이고, 조건3일때 실행할 문장;
+}
+else{
+   조건1,조건2, 조건3을 모두 만족못했을 경우 실행할 문장;
+}
+```
+
+<br>
+
+2. switch~ case: 조건이 많은경우, 값을 체크할때 사용한다.
+
+```js
+switch(조건식){
+     case 값1:
+        값1을 만족할때 실행할 문장;
+        break;
+    case 값2 :
+      값2를 만족할때 실행할 문장;
+      break;
+   default : 위의 조건을 만족하지 않을때 실행할 문장;
+}
+
+// 1~7 사이의 숫자를 입력 받아서 무지개색 출력하기, 이 외의 숫자는 불가능 출력
+let num = prompt("1~7 숫자");
+
+switch (num) {
+  case "1":
+    console.log("빨강");
+    break;
+  case "2":
+    console.log("주황");
+    break;
+
+  // 생략
+
+  case "7":
+    console.log("보라");
+    break;
+  default:
+    console.log("1~7 숫자만 가능");
+}
+```
+
+```js
+// 간단한 Date 문
+let date = new Date();
+
+// 년도
+let year = date.getFullYear();
+
+// 월 0~11 (1월~12월) 0부터 시작한다.
+let month = date.getMonth() + 1;
+
+// 일
+let days = date.getDate();
+
+// 요일 0~6
+let day = date.getDay();
+
+switch (day) {
+  case 0:
+    document.write("일요일");
+    break;
+
+  // 생략
+
+  case 6:
+    document.write("토요일");
+    break;
+}
+```
