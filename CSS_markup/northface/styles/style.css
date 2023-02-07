@@ -353,7 +353,8 @@ nth -> opaicty: 0
 /* 모바일용 제거 */
 .mobile-more-btn,
 .banner__list .list-img-box > img:last-child,
-.mobile-arrow-more-btn {
+.mobile-arrow-more-btn,
+.mobile-arrow-more-btn-block {
   display: none;
 }
 /*^ main */
@@ -474,20 +475,20 @@ main {
   object-fit: cover;
 }
 /* 50% 너비 조정 */
-.product__imgTxt-flex--3 > div:first-child {
+.product__imgTxt-flex--3 > div:first-of-type {
   flex: 2;
 }
 /* 25% 너비 조정 */
-.product__imgTxt-flex--3 > div:nth-child(2) {
+.product__imgTxt-flex--3 > div:nth-of-type(2) {
   flex: 1;
   background: #f6f6f6;
 }
 /* 텍스트 위치 조정 */
-.product__imgTxt-flex--3 > div:nth-child(2) .list-text-box {
+.product__imgTxt-flex--3 > div:nth-of-type(2) .list-text-box {
   padding: 10px 30px 0;
 }
 /* 25% 너비 조정 */
-.product__imgTxt-flex--3 > div:nth-child(3) {
+.product__imgTxt-flex--3 > div:nth-of-type(3) {
   flex: 1;
 }
 /* 가로 정렬, 너비 최대 */
@@ -777,4 +778,17 @@ section.hot-item .product__imgTxt-flex--3 .product-list .right-bottom {
 /* 여백 제거 */
 .foot-bottom__info > div:nth-child(2) > .foot-bottom__info-text-box > p {
   margin: 0;
+}
+/*^ top */
+.top-btn {
+  display: block;
+  position: fixed;
+  bottom: 8%;
+  right: 2%;
+  width: 48px;
+  height: 48px;
+  background: #999 url("../images/icon_chevron-up-white.svg") no-repeat center /
+    25px;
+  border-radius: 50%;
+  text-indent: -9999px;
 }
