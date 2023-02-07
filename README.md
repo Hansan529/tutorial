@@ -291,29 +291,3 @@ num1(10) > num2(5) || num3(3) > num1(10); // true: 1
 // false || true [0 || 1]
 num2(5) > num1(10) || num1(10) > num3(3); // true: 1
 ```
-
-### 삼향조건연산자
-
-조건문 ? : 조건의 결과가 true일 때 실행할 문장 : 조건의 결과가 false일 때 실행 할 문장
-
-a = 5  
-b = 3  
-if (a&gt;b) { true } else { false } : true  
-if (a&lt;b) { true } else { false } : false
-
-```js
-let a = 20;
-
-// false
-if (a < 20) {
-  true;
-} else if (a > 50) {
-  ("...");
-} else {
-  false;
-}
-
-a = 51;
-// ...
-if ();
-```
