@@ -34,6 +34,7 @@
   .gnb-btn .mobile-more-btn,
   .banner__list .list-img-box > img:last-child,
   .mobile-arrow-more-btn,
+  .mobile-arrow-more-btn-block,
   .product__imgTxt-flex--2,
   span.sale,
   .product__imgTxt-flex--2 .item-list__text-box > .arrow-more-btn,
@@ -134,6 +135,18 @@
     height: 3px;
     background: #000;
   }
+  .mobile-arrow-more-btn-block {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+  .mobile-arrow-more-btn-block > a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border: 1px solid #000;
+    font-size: 14px;
+  }
   /* 하단 바 선택된 너비 조정 */
   .product__ul-flex--5 > .mobile-list-bar::after {
     width: calc(90% / 10);
@@ -143,18 +156,18 @@
     flex-wrap: wrap;
   }
   /* flex-grow 제거 */
-  .product__imgTxt-flex--3 > div:first-child,
-  .product__imgTxt-flex--3 > div:nth-child(2),
-  .product__imgTxt-flex--3 > div:last-child {
+  .product__imgTxt-flex--3 > div:first-of-type,
+  .product__imgTxt-flex--3 > div:nth-of-type(2),
+  .product__imgTxt-flex--3 > div:last-of-type {
     flex: inherit;
   }
   /* 이미지 100% */
-  .product__imgTxt-flex--3 > div:first-child {
+  .product__imgTxt-flex--3 > div:first-of-type {
     width: 100%;
   }
   /* 이미지 너비 */
-  .product__imgTxt-flex--3 > div:nth-child(2),
-  .product__imgTxt-flex--3 > div:last-child {
+  .product__imgTxt-flex--3 > div:nth-of-type(2),
+  .product__imgTxt-flex--3 > div:last-of-type {
     width: 50%;
   }
   /* 이미지 높이 */
@@ -166,15 +179,15 @@
     height: 100%;
   }
   /* 이미지, 텍스트 여백 조정 */
-  .product__imgTxt-flex--3 > div:nth-child(2) .list-text-box {
+  .product__imgTxt-flex--3 > div:nth-of-type(2) .list-text-box {
     padding: 10px;
   }
   /* 지정한 값 초기화 */
-  .product__imgTxt-flex--3 > div:nth-child(2) .list-img-box {
+  .product__imgTxt-flex--3 > div:nth-of-type(2) .list-img-box {
     height: unset;
   }
   /* 이미지 가로에 맞춤 */
-  .product__imgTxt-flex--3 > div:nth-child(2) .list-img-box > img {
+  .product__imgTxt-flex--3 > div:nth-of-type(2) .list-img-box > img {
     height: inherit;
     object-fit: contain;
   }
@@ -183,7 +196,7 @@
     display: inline;
   }
   /* 마지막 div 이미지 텍스트 한 줄 */
-  .product__imgTxt-flex--3 > div:nth-child(3) .item-list__text-box {
+  .product__imgTxt-flex--3 > div:nth-of-type(3) .item-list__text-box {
     width: 100%;
     font-size: 12px;
   }
@@ -275,18 +288,21 @@
     padding: 0;
   }
   /** Styling */
+  .styling .product__ul-flex--3 {
+    width: 90%;
+    margin: 0 auto;
+  }
   /* 7분할 너비, 간격 제거 */
   .product__ul-flex--3 .product-list__inner {
-    width: calc(40% * 7);
-    gap: 0;
+    width: calc(30% * 7);
   }
   /* 목록 너비  */
   .product__ul-flex--3 .product-list__inner > li {
-    width: 40%;
+    width: 30%;
   }
   /* 하단 바 너비 조정 */
   .product__ul-flex--3 > .mobile-list-bar::after {
-    width: calc(90% / 7);
+    width: calc(100% / 5);
   }
   /** Hot Kyword */
   /* 서체 변경, 너비, 위치, 간격 변경 */
@@ -465,4 +481,11 @@
     width: 100%;
     transform: translateX(-50%);
   }
+}
+/*^ top btn */
+.top-btn {
+  right: 5%;
+  width: 40px;
+  height: 40px;
+  background-size: 20px;
 }
