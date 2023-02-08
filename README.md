@@ -334,6 +334,15 @@ if(조건문){
 }
 ```
 
+```js
+// 50보다 크면 진행하세요, 작을 경우에는 무시하세요
+let userAge = prompt("당신의 나이를 입력하세요"); /* 51 */
+
+if (userAge > 50) {
+  document.write("50 이상입니다"); /* 50 이상입니다 */
+}
+```
+
 - if~else: 조건이 참, 거짓일때
 
 ```js
@@ -341,6 +350,43 @@ if(조건문){
   조건이 참일때 실행할 문장;
 } else {
   조건이 거짓일때 실행할 문장;
+}
+```
+
+```js
+// 60점 이상이면 합격, 미만이면 불합격
+let score = prompt("당신의 점수를 입력하세요"); /* 70 */
+
+if (score >= 60) {
+  document.write("합격"); /* true */
+} else {
+  document.write("불합격");
+}
+
+// 짝수, 홀수인지 구별하기
+let num = Number(prompt("숫자를 입력하세요"));
+
+if (num % 2 == 0) {
+  document.write("홀수");
+} else {
+  document.write("짝수");
+}
+
+// 1과목, 2과목, 3과목 점수 평균 60점 이하 불합격, 미달이 없으면서 60점 이상일 경우 합격
+let num1 = Number(prompt("1과목 점수를 입력하세요"));
+let num2 = Number(prompt("2과목 점수를 입력하세요"));
+let num3 = Number(prompt("3과목 점수를 입력하세요"));
+
+let avg = (num1 + num2 + num3) / 3;
+
+if (avg < 60) {
+  document.write("불합격"); /* 50, 40, 60 */
+} else {
+  if (num1 >= 40 && num2 >= 40 && num3 >= 40) {
+    document.write("합격"); /* 100, 100, 100 */
+  } else {
+    document.write("불합격"); /* 20, 100, 100 */
+  }
 }
 ```
 
@@ -358,6 +404,23 @@ else if(조건3){
 }
 else{
    조건1,조건2, 조건3을 모두 만족못했을 경우 실행할 문장;
+}
+```
+
+```js
+// 90~100 A, 80~89 B, 70~79 C, 60~69 D, ~59 F
+let score = Number(prompt("점수를 입력하세요"));
+
+if (score >= 90) {
+  document.write("A등급");
+} else if (score >= 80) {
+  document.write("B등급");
+} else if (score >= 70) {
+  document.write("C등급");
+} else if (score >= 60) {
+  document.write("D등급");
+} else {
+  document.write("F등급");
 }
 ```
 
