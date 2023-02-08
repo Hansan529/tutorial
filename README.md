@@ -479,3 +479,70 @@ switch (browser) {
     console.log(browser + "는 지원하지 않는 브라우저입니다");
 }
 ```
+
+<br>
+
+## #05 반복문
+
+여러번 반복하고자 할 때 사용한다.
+
+1. for  
+   for(초기값; 조건문; 증감식){  
+    반복할 문장(함수);
+   }
+
+```js
+// i = integer(숫자), 증감
+for (i = 1; i <= 10; i++) {
+  document.write(`${i} for문<br>`);
+}
+
+// 구구단
+let number = Number(prompt("구구단"));
+for (i = 1; i <= 9; i++) {
+  document.write(`${number}*${i}=${number * i}<br>`);
+}
+```
+
+```js
+// 이중 for문
+for (i = 2; i <= 9; i++) {
+  document.write(`<h1>*** ${i}단 ***</h1>`);
+  for (j = 1; j <= 9; j++) {
+    document.write(`${i}*${j}=${i * j}<br>`);
+  }
+}
+
+// i와 j가 1씩 증가, j가 i보다 작거나 같을 경우 반복
+for (i = 1; i <= 5; i++) {
+  for (j = 1; j <= i; j++) {
+    document.write(`★`);
+  }
+  document.write(`<br>`);
+}
+
+// 피라미드 형식 for문
+for (i = 0; i < 5; i++) {
+  /* 5번 반복: <br> */
+  for (j = 4; j > i; j--) {
+    document.write("&nbsp");
+  }
+  for (j = 0; j <= i; j++) {
+    document.write("*");
+  }
+  for (j = 1; j <= i; j++) {
+    document.write("*");
+  }
+  document.write("<br>");
+}
+```
+
+```js
+
+```
+
+2. while
+
+3. do~while
+
+4. for in
