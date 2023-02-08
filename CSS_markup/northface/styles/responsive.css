@@ -288,18 +288,21 @@
     padding: 0;
   }
   /** Styling */
+  .styling .product__ul-flex--3 {
+    width: 90%;
+    margin: 0 auto;
+  }
   /* 7분할 너비, 간격 제거 */
   .product__ul-flex--3 .product-list__inner {
-    width: calc(40% * 7);
-    gap: 0;
+    width: calc(30% * 7);
   }
   /* 목록 너비  */
   .product__ul-flex--3 .product-list__inner > li {
-    width: 40%;
+    width: 30%;
   }
   /* 하단 바 너비 조정 */
   .product__ul-flex--3 > .mobile-list-bar::after {
-    width: calc(90% / 7);
+    width: calc(100% / 5);
   }
   /** Hot Kyword */
   /* 서체 변경, 너비, 위치, 간격 변경 */
