@@ -330,9 +330,27 @@ pt14d >= true ? console.log("정상") : console.log("노력"); */
 //   console.log("b");
 // };
 //^ pt38 - 예제
-document.write(`<button onclick="colorBg('red')">red</button>`);
-let colorBg = function (color) {
-  console.log(color);
-  // document.getElementsByTagName("body")[0].style.backgroundColor = color;
-  document.querySelector("body").style.backgroundColor = color;
-};
+// document.write(`<button onclick="colorBg('red')">red</button>`);
+// let colorBg = function (color) {
+//   console.log(color);
+//   document.querySelector("body").style.backgroundColor = color;
+// };
+//^ pt39 - 객체
+// let TV = new Object();
+// TV.bland = "LG";
+// TV.inch = 60;
+// TV.flat = true;
+// TV.on = function () {
+//   console.log("On");
+// };
+// TV.off = function () {
+//   console.log("Off");
+// };
+// TV.changeChannel = function (num) {
+//   console.log(num + "channel");
+// };
+// TV.volumn = function (upDown) {
+//   console.log(upDown);
+// };
+// console.log(TV.bland);
+// TV.volumn(20);

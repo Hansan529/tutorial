@@ -757,3 +757,34 @@ function ret(a, b) {
 let beta = ret(10, 20);
 document.write(beta); /* 30 */
 ```
+
+## #07 객체
+
+```js
+// 사용자 정의객체
+// property: bland = "LG", inch = 60, flat = true,
+// method: on(), off(), changeChannel(9), volumn("up")
+let TV = new Object(); /* 객체 생성 */
+TV.bland = "LG"; /* 속성 추가 */
+TV.inch = 60; /* 속성 추가 */
+TV.flat = true; /* 속성 추가 */
+
+/* method 추가 */
+TV.on = function () {
+  console.log("On");
+};
+/* method 추가 */
+TV.off = function () {
+  console.log("Off");
+};
+/* method 추가 */
+TV.changeChannel = function (num) {
+  console.log(num + "channel");
+};
+/* method 추가 */
+TV.volumn = function (upDown) {
+  console.log(upDown);
+};
+console.log(TV.bland); /* LG */
+TV.volumn(20); /* 함수 실행 (20) */
+```
