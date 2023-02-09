@@ -372,3 +372,27 @@ pt14d >= true ? console.log("정상") : console.log("노력"); */
 //     console.log(upDown);
 //   },
 // };
+//^ pt41 - 내장객체
+// let now = new Date();
+// let year = now.getFullYear();
+// let month = now.getMonth();
+// let date = now.getDate();
+// let day = now.getDay();
+// let hours = now.getHours();
+// let minutes = now.getMinutes();
+// let seconds = now.getSeconds();
+//^ pt42 - 2
+// let dDay = new Date(2023, 04, 26);
+// let now = new Date();
+// let diff = (dDay - now) / (24*60*60*1000);
+//^ pt43 - day night
+/* 스크립트에서 외부 데이터를 입력할 경우 경로 스크립트가 들어있는 파일을 중심으로 경로를 설정한다. */
+// let today = new Date();
+// let hours = today.getHours();
+// if (hours >= 7 && hours <= 18) {
+//   document.querySelector("body").style.backgroundImage =
+//     "url(./images/day.jpeg)"; /* script/script 위치 기준이 아닌, html 기준이다. */
+// } else {
+//   document.querySelector("body").style.backgroundImage =
+//     "url(./images/night.jpeg)"; /* script/script 위치 기준이 아닌, html 기준이다. */
+// }
