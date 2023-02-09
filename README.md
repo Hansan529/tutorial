@@ -600,8 +600,60 @@ for (;;) {
 }
 ```
 
+```js
+// 보조제어문
+
+// 조건을 만족하면 반복을 종료
+for (i = 0; i < 10; i++) {
+  if (i == 5) {
+    break; /* 01234 */
+  }
+  document.write("i");
+}
+
+// 조건에 맞는것만 skip하고 반복문 실행
+for (j = 0; j < 10; j++) {
+  if (j == 5) continue; /* 012346789 */
+  // if함수에서 실행할 문장이 1개일 경우 {} 오브젝트를 열지 않아도 된다.
+  document.write("j");
+}
+```
+
 2. while
 
+- 실행하기 전, 조건을 확인하고 참일 경우 반복한다.
+
+while(조건문){  
+반복할 문장;  
+증감식;  
+}
+
+```js
+let i = 0;
+
+while (i < 10) {
+  document.write(`${i + 1}번 반복문<br>`);
+  i++;
+}
+```
+
 3. do~while
+
+- 한번 실행 한 뒤, 조건을 확인하고 참일 경우 반복한다.
+
+  초기값;  
+  do {  
+   &nbsp;&nbsp;실행할 문장;  
+   &nbsp;&nbsp;증감식  
+  } while (조건);
+
+```js
+let j = 0;
+
+do {
+  document.write(`${j}`);
+  j++;
+} while (j < 0);
+```
 
 4. for in

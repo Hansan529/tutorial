@@ -263,14 +263,40 @@ pt14d >= true ? console.log("정상") : console.log("노력"); */
 //   document.write("<br>");
 // }
 //^ pt31 - 9
-let num1 = 1;
-let cal = "<table>";
-for (i = 0; i < 5; i++) {
-  cal += "<tr>";
-  for (j = 0; j < 7; j++) {
-    cal += `<td style='border: 1px solid'>${num1++}</td>`;
+// let num1 = 1;
+// let cal = "<table>";
+// for (i = 0; i < 5; i++) {
+//   cal += "<tr>";
+//   for (j = 0; j < 7; j++) {
+//     cal += `<td style='border: 1px solid'>${num1++}</td>`;
+//   }
+//   cal += `</tr>`;
+// }
+// cal += "</table>";
+// document.write(cal);
+//^ pt32 - while do~while
+// let i = 0;
+
+// while (i < 0) {
+//   document.write(`${i + 1}번 반복문<br>`);
+//   i++;
+// }
+// let j = 0;
+// do {
+//   document.write(`${j}`);
+//   j++;
+// } while (j < 0);
+//^ pt33 - 보조제어문 break & continue
+for (i = 0; i < 10; i++) {
+  if (i == 5) {
+    break;
   }
-  cal += `</tr>`;
+  document.write(i);
 }
-cal += "</table>";
-document.write(cal);
+document.write("<br>");
+for (j = 0; j < 10; j++) {
+  if (j == 5) {
+    continue;
+  }
+  document.write(j);
+}
