@@ -354,3 +354,21 @@ pt14d >= true ? console.log("정상") : console.log("노력"); */
 // };
 // console.log(TV.bland);
 // TV.volumn(20);
+//^ pt40 - 객체 리터럴
+// let TV = {
+//   bland: "LG",
+//   inch: 60,
+//   flat: true,
+//   on: function () {
+//     console.log("On");
+//   },
+//   off: function () {
+//     console.log("Off");
+//   },
+//   changeChannel: function (num) {
+//     console.log(num);
+//   },
+//   volumn: function (upDown) {
+//     console.log(upDown);
+//   },
+// };

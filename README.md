@@ -788,3 +788,24 @@ TV.volumn = function (upDown) {
 console.log(TV.bland); /* LG */
 TV.volumn(20); /* 함수 실행 (20) */
 ```
+
+```js
+// 객체 생성 리터럴방식
+let TV = {
+  bland: "LG",
+  inch: 60,
+  flat: true,
+  on: function () {
+    console.log("On");
+  },
+  off: function () {
+    console.log("Off");
+  },
+  changeChannel: function (num) {
+    console.log(num);
+  },
+  volumn: function (upDown) {
+    console.log(upDown);
+  },
+};
+```
