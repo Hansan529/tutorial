@@ -657,3 +657,103 @@ do {
 ```
 
 4. for in
+
+```
+
+```
+
+## #06 함수
+
+자주 사용되는 명령문을 저장해놓은 것이다.
+
+- 익명함수: 함수명이 없는 함수, 생성된 함수를 변수에 할당하여 사용한다  
+  let 변수명 = function(){  
+   함수표현식;  
+  }
+
+```js
+// 선언적 명명함수
+function a1() {
+  console.log("a");
+}
+
+// 익명함수
+let a2 = function () {
+  console.log("b");
+};
+```
+
+```js
+// html
+<button onclick="colorBg('red')">red</button>
+<button onclick="colorBg('blue')">blue</button>
+<button onclick="colorBg('yellow')">yellow</button>
+<button onclick="colorBg('green')">green</button>
+
+// js [btn-red] -> background: red
+let colorBg = function (color) {
+  console.log(color); /* red */
+  // 아래와 같은 태그를 사용하면 더 빠른 결과를 얻을 수 있음.
+  // document.getElementsByTagName("body")[0].style.backgroundColor = color;
+  document.querySelector("body").style.backgroundColor = color; // 통합 태그 선택자
+};
+```
+
+1. 기본함수
+
+```js
+// 선언 1
+   function 함수이름(){
+     실행할 문장;
+   }
+
+// 선언 2
+   let 함수이름 = function(){
+    실행할 문장;
+   }
+
+// 호출
+함수();
+```
+
+2. 매개변수 함수
+
+function 함수이름(매개변수){  
+실행할 문장;  
+}  
+함수이름(값);
+
+```js
+function hi(uName, age) {
+  document.write(uName, age); /* a5b10 */
+}
+
+hi("a", 5);
+hi("b", 10);
+```
+
+3. 리턴
+   호출한 함수로 값을 돌려주는것, 함수가 변수로 사용된다
+
+function 함수이름(매개변수,매개변수){  
+ 실행할 문장;  
+ return 변수;  
+}
+
+let 변수 = 함수이름(값);
+
+```js
+// 전역변수, 어디에서든 호출이 가능한 변수
+// let alpha;
+
+function ret(a, b) {
+  // 지역변수 (지역 안에서만 사용 가능한 변수)
+  let alpha = a + b;
+  // 지역변수의 값을 함수에다가 저장한다.
+  return alpha;
+}
+
+// a(10) + b(20)의 값(30)을 ret이 현재 갖고 있다.
+let beta = ret(10, 20);
+document.write(beta); /* 30 */
+```

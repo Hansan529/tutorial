@@ -287,16 +287,52 @@ pt14d >= true ? console.log("정상") : console.log("노력"); */
 //   j++;
 // } while (j < 0);
 //^ pt33 - 보조제어문 break & continue
-for (i = 0; i < 10; i++) {
-  if (i == 5) {
-    break;
-  }
-  document.write(i);
-}
-document.write("<br>");
-for (j = 0; j < 10; j++) {
-  if (j == 5) {
-    continue;
-  }
-  document.write(j);
-}
+// for (i = 0; i < 10; i++) {
+//   if (i == 5) {
+//     break;
+//   }
+//   document.write(i);
+// }
+// document.write("<br>");
+// for (j = 0; j < 10; j++) {
+//   if (j == 5) {
+//     continue;
+//   }
+//   document.write(j);
+// }
+//^ pt34 - 함수 function
+// function hi() {
+//   document.write("hi");
+// }
+
+// hi();
+//^ pt35 - 매개변수
+// function hi(uName, age) {
+//   document.write(uName, age);
+// }
+
+// hi("a", 5);
+// hi("b", 10);
+//^ pt36 - return
+// let alpha;
+// function ret(a, b) {
+//   let alpha = a + b;
+//   return alpha;
+// }
+// let beta = ret(10, 20);
+// document.write(beta);
+//^ pt37 - 익명함수
+// function a1() {
+//   console.log("a");
+// }
+
+// let a2 = function () {
+//   console.log("b");
+// };
+//^ pt38 - 예제
+document.write(`<button onclick="colorBg('red')">red</button>`);
+let colorBg = function (color) {
+  console.log(color);
+  // document.getElementsByTagName("body")[0].style.backgroundColor = color;
+  document.querySelector("body").style.backgroundColor = color;
+};
