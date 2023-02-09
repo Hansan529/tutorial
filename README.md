@@ -809,3 +809,32 @@ let TV = {
   },
 };
 ```
+
+개별적으로 생성해서 사용해도 되지만, 기본적으로 JS 안에 내장되어 있는 객체가 있다.
+
+- 내장객체
+
+```js
+// Date
+let now = new Date(); /* 20**-**-** */
+let year = now.getFullYear(); /* 20** */
+let month = now.getMonth(); /* 0~11 1월~12월 */
+let date = now.getDate(); /* 0~31 */
+let day = now.getDay(); /* 0~6 일~토 */
+let hours = now.getHours(); /* 0~23 */
+let minutes = now.getMinutes(); /* 0~59 */
+let seconds = now.getSeconds(); /* 0~59 */
+```
+
+1s => 1000ms
+
+```js
+let dDay = new Date(2023, 11, 25);
+
+let diff = (dDay - now) / (24 * 60 * 60 * 1000);
+```
+
+24: 시간  
+60: 분  
+60: 초  
+1000: 1초
