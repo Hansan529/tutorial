@@ -971,3 +971,53 @@ let join = rain.join("*"); /* 우비*우비*장우산 */
 // 배열의 개수 길이
 fruit.length; /* 4 */
 ```
+
+내장객체를 이용한 종합예제
+
+```js
+let now = new Date(); /* 현재 날짜 값 */
+let year = now.getFullYear(); /* 현재 년도 */
+let month = now.getMonth(); /* 이번 달 */
+
+let thisDay = new Date(year, month, 1); /* 이번 달의 1일 */
+let thisWeek = thisDay.getDay(); /* 1일의 요일 값 */
+
+/* 1~12월 배치도 */
+let lastDate = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+// 반복문에 이용할 변수
+let week = ["일", "월", "화", "수", "목", "금", "토"]; /* 요일 배열 */
+let num = 1; /* 1일 */
+
+// 달력 row 수 구하기
+/* [월]의 줄 수: 소수점 올림((마지막 일[월] + 시작요일) / 일주일) */
+let row = Math.ceil((lastDate[month] + thisWeek) / 7);
+
+let cal = "<table>";
+cal += "<tr>";
+/* column 방향으로 7줄 */
+for (i = 0; i < 7; i++) {
+  // week 배열의 i번째, 즉 0~7: 일~토
+  cal += `<th style="border: 1px solid">${week[i]}</th>`;
+}
+cal += "</tr>";
+
+/* row 방향으로 row 줄 */
+for (i = 0; i < row; i++) {
+  cal += "<tr>";
+
+  /* column 방향으로 7줄 (일주일) */
+  for (j = 0; j < 7; j++) {
+    if ((i == 0 && j < thisWeek) || num > lastDate[month]) {
+      //1번 조건: 1번 줄 (i==0)에 시작요일보다 작은 경우 아래를 실행 (시작 요일 찾아가기)
+      //2번 조건: if로 인해서 num 값이 ++되어 커지는데, 이번달의 마지막 날보다 커지면 아래 실행
+      cal += "<td></td>";
+    } else {
+      // j가 7이 될 때 까지 num을 1씩 증가
+      cal += `<td style="border: 1px solid">${num++}</td>`;
+    }
+  }
+  cal += "</tr>";
+}
+cal += "</table>";
+```

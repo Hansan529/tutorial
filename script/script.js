@@ -453,3 +453,63 @@ let rain = ["우산", "우비", "장우산"];
 // fruit.reverse();
 // let join = rain.join("*");
 // console.log("fruit.length;: ", fruit.length);
+//^ pt49 - 예제
+// let number = ["1", "2", "3", "4", "5"];
+// let num = Math.floor(Math.random() * number.length);
+//^ pt50 - 예제
+// let now = new Date();
+// let week = ["일", "월", "화", "수", "목", "금", "토"];
+
+// let day = now.getDay();
+// console.log("week[day]: ", `${week[day]}요일`);
+//^ pt51 - 예제
+let now = new Date();
+let year = now.getFullYear();
+let month = now.getMonth();
+
+let thisDay = new Date(year, month, 1); /* 이번 달의 1일 */
+let thisWeek = thisDay.getDay(); /* 1일의 요일 */
+let lastDate = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+let num = 1;
+let week = ["일", "월", "화", "수", "목", "금", "토"];
+
+/* 
+28: 0 /7-> 4
+28: 1 -> 5
+30: 0 -> 5 30/7 => Math.ceil(4.2857142857) : 5
+(30+ 6) / 7 -> 6 => Math.ceil(5.1428571429) : 6
+ */
+
+// [월]의 줄 수: 소수점 올림((매 달 마지막 날[월] + 시작요일) / 일주일)
+// 밀리면서 줄이 늘어남
+let row = Math.ceil((lastDate[month] + thisWeek) / 7);
+
+let cal = "<table>";
+cal += "<tr>";
+/* column 방향으로 7줄 */
+for (i = 0; i < 7; i++) {
+  // week 배열의 i번째, 즉 0~7: 일~토
+  cal += `<th style="border: 1px solid">${week[i]}</th>`;
+}
+cal += "</tr>";
+
+/* row 방향으로 row 줄 */
+for (i = 0; i < row; i++) {
+  cal += "<tr>";
+
+  /* column 방향으로 7줄 (일주일) */
+  for (j = 0; j < 7; j++) {
+    if ((i == 0 && j < thisWeek) || num > lastDate[month]) {
+      //1번 조건: 1번 줄 (i==0)에 시작요일보다 작은 경우 아래를 실행 (시작 요일 찾아가기)
+      //2번 조건: if로 인해서 num 값이 ++되어 커지는데, 이번달의 마지막 날보다 커지면 아래 실행
+      cal += "<td></td>";
+    } else {
+      // j가 7이 될 때 까지 num을 1씩 증가
+      cal += `<td style="border: 1px solid">${num++}</td>`;
+    }
+  }
+  cal += "</tr>";
+}
+cal += "</table>";
+
+document.write(cal);
