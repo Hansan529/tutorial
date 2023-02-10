@@ -432,3 +432,14 @@ pt14d >= true ? console.log("정상") : console.log("노력"); */
 //   document.write("Lost");
 // }
 //^ pt46 - number
+//^ pt47 - array
+let fruit = new Array();
+fruit[0] = "사과";
+fruit[1] = "배";
+fruit[2] = "샤인머스캣";
+fruit[3] = "포도";
+
+let fruit2 = new Array("홍시", "키위", "망고", "파인애플");
+let fruit3 = ["사과", "배", "샤인머스캣", "포도"];
+
+console.log(fruit, fruit2, fruit3, fruit[0]);
