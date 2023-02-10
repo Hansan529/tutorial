@@ -433,13 +433,23 @@ pt14d >= true ? console.log("정상") : console.log("노력"); */
 // }
 //^ pt46 - number
 //^ pt47 - array
-let fruit = new Array();
-fruit[0] = "사과";
-fruit[1] = "배";
-fruit[2] = "샤인머스캣";
-fruit[3] = "포도";
-
-let fruit2 = new Array("홍시", "키위", "망고", "파인애플");
-let fruit3 = ["사과", "배", "샤인머스캣", "포도"];
-
-console.log(fruit, fruit2, fruit3, fruit[0]);
+// let fruit = new Array();
+// fruit[0] = "사과";
+// fruit[1] = "배";
+// fruit[2] = "샤인머스캣";
+// fruit[3] = "포도";
+// let fruit2 = new Array("홍시", "키위", "망고", "파인애플");
+// let fruit3 = ["사과", "배", "샤인머스캣", "포도"];
+//^ pt48 - array method, attribute
+let fruit = ["사과", "배", "샤인머스캣", "포도"];
+let rain = ["우산", "우비", "장우산"];
+// fruit.push("딸기");
+// rain.pop();
+// fruit.unshift("딸기");
+// fruit.shift();
+// fruit.splice(2, 0, "딸기", "수박", "멜론");
+// fruit.splice(2, 2);
+// fruit.sort();
+// fruit.reverse();
+// let join = rain.join("*");
+// console.log("fruit.length;: ", fruit.length);
