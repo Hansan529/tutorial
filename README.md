@@ -838,3 +838,77 @@ let diff = (dDay - now) / (24 * 60 * 60 * 1000);
 60: 분  
 60: 초  
 1000: 1초
+
+<br>
+
+수학객체 (Math)
+
+```js
+// 변수
+let num1 = -5;
+let num2 = 3;
+
+// 절대값 (Math.abs)
+Math.abs(num1); /* 5 */
+
+// 최대값 (Math.max)
+Math.max(num1, num2, 50, 100); /* 100 */
+
+// 최소값 (Math.min)
+Math.min(num1, num2, 50, 100); /* -5 */
+
+// 거듭제곱 (Math.pow)
+Math.pow(num2, 4); /* 3^4 = 81 */
+
+// 제곱근 (Math.sqrt)
+Math.sqrt(9); /* √9 */
+
+// 랜덤 (Math.random)
+Math.random(); /* 0.0~ 0.99 */
+
+// 반올림 (Math.round)
+Math.round(10.5); /* 11 */
+
+// 올림 (Math.ceil)
+Math.ceil(10.1); /* 11 */
+
+// 내림 (Math.floor)
+Math.floor(11.8); /* 11 */
+
+// 파이 (Math.PI)
+Math.PI; /* 3.141592653589793 */
+```
+
+숫자객체 (Number)
+
+```js
+let num1 = "10.123";
+let num2 = "3.141529";
+let num3 = 13.2421;
+let num4 = "char10.123";
+
+// 문자열 -> 숫자
+num1 + 20; /* 10.12320 */
+Number(num1 + 20); /* 30.123 */
+
+// 정수 (parseInt)
+parseInt(num1); /* 10 */
+
+// 실수 (paseFloat)
+parseFloat(num1) + 10; /* 20.123 */
+
+// 소수점 자릿수
+num3.toFixed(2); /* 13.24 */
+num3.toPrecision(5); /* 13.242 */
+
+// NaN (Not A Number) 숫자가 아님
+isNaN(num1); /* false */
+isNaN(num3); /* false */
+isNaN(num4); /* true */
+```
+
+배열객체 (Array)
+
+```js
+
+```

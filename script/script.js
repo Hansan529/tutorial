@@ -386,13 +386,49 @@ pt14d >= true ? console.log("정상") : console.log("노력"); */
 // let now = new Date();
 // let diff = (dDay - now) / (24*60*60*1000);
 //^ pt43 - day night
-/* 스크립트에서 외부 데이터를 입력할 경우 경로 스크립트가 들어있는 파일을 중심으로 경로를 설정한다. */
 // let today = new Date();
 // let hours = today.getHours();
 // if (hours >= 7 && hours <= 18) {
 //   document.querySelector("body").style.backgroundImage =
-//     "url(./images/day.jpeg)"; /* script/script 위치 기준이 아닌, html 기준이다. */
+//     "url(./images/day.jpeg)";
 // } else {
 //   document.querySelector("body").style.backgroundImage =
-//     "url(./images/night.jpeg)"; /* script/script 위치 기준이 아닌, html 기준이다. */
+//     "url(./images/night.jpeg)";
 // }
+//^ pt44 - Math
+// let num1 = -5;
+// let num2 = 3;
+// document.write(Math.abs(num1));
+// document.write(Math.max(num1, num2, 50, 100));
+// document.write(Math.min(num1, num2, 50, 100));
+// document.write(Math.pow(num2, 4));
+// document.write(Math.sqrt(9));
+// document.write(Math.random()*100);
+// document.write(Math.round(10.5));
+// document.write(Math.ceil(10.1));
+// document.write(Math.floor(11.8));
+// document.write(Math.PI);
+//^ pt45 - 2
+// let gameNum = prompt("가위, 바위, 보");
+
+// switch (gameNum) {
+//   case "가위":
+//     gameNum = 1;
+//     break;
+//   case "바위":
+//     gameNum = 2;
+//     break;
+//   case "보":
+//     gameNum = 3;
+//     break;
+//   default:
+//     document.write("오류");
+// }
+// let com = Math.random() * 3;
+// document.write(com);
+// if (gameNum == com) {
+//   document.write("Win");
+// } else {
+//   document.write("Lost");
+// }
+//^ pt46 - number
