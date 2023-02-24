@@ -574,3 +574,26 @@ let rain = ["우산", "우비", "장우산"];
 // } else {
 //   console.log("Error");
 // }
+//^ pt55 - 브라우저 객체
+//^ pt56 - 브라우저 객체
+// alert("설문을 시작합니다");
+// let userAge = prompt("나이를 입력하세요");
+// let okCancle = confirm(`나이가 ${userAge}가 맞습니까?`);
+// if (okCancle) {
+//   if (usrAge >= 20) {
+//     console.log("가능");
+//   } else {
+//     console.log("불가능");
+//   }
+// }
+//^ pt57 - 브라우저 객체
+// let i = 1;
+// function tt() {
+//   console.log(i++);
+// }
+
+// let timer = setInterval(tt, 1000);
+// let stop = clearInterval(timer);
+
+//^ pt58 - 브라우저 객체
+// setTimeout('console.log("text")', 3000);
