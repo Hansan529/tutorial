@@ -1077,3 +1077,35 @@ console.log(`random ${txt.repeat(3)}`); /* random txt txt txt */
 // 문자열 대체: replace(변경할 문자, 문자) 대소문자 구분
 console.log(str.replace("random", "new")); /* new text */
 ```
+
+<br>
+
+### 브라우저 객체
+
+window는 생략 가능하다
+
+```js
+// open: url을 popup 형식으로 열기: 현재 트렌드는 미사용, div(레이어)로 대체하여 사용함
+window.open("url", "popup", "width=500, height: 400, top=100, left=200");
+
+// close: open한 것을 닫음
+window.close();
+
+// alert: 확인 창 / 창이 나올 경우 다른 코드는 실행을 멈춤
+window.alert();
+
+// prompt: 데이터를 입력하는 창
+window.prompt();
+
+// confirm: 확인/취소 버튼이 있는 창
+window.confirm();
+
+// setinterval: 일정 시간마다 반복
+setInterval(console.log("반복"), 1000);
+
+// clearInterval: 반복 취소
+clearInterval(변수);
+
+// setTimeout: 일정 시간 이후 실행
+setTimeout("console.log('text')", 3000);
+```
