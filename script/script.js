@@ -552,23 +552,25 @@ let rain = ["우산", "우비", "장우산"];
 //   console.log(phoneNumber.replace(lastNumber, "****"));
 // }
 
+// let tel = phoneNumber.sibstr(0,phoneNumber.length-4)+"*".repeat(4);
+// console.log(tel);
 //^ pt54 - 예제
-let check1 = false;
-let check2 = false;
-let arrUrl = [".co.kr", ".com", ".go.kr", ".net"];
+// let check1 = false;
+// let check2 = false;
+// let arrUrl = [".co.kr", ".com", ".go.kr", ".net"];
 
-let userEmail = "hansan0529@gmail.com";
-if (userEmail.indexOf("@") > 0) {
-  check1 = true;
-}
-for (i = 0; i < arrUrl.length; i++) {
-  if (userEmail.indexOf(arrUrl[i]) > 0) {
-    check2 = true;
-  }
-}
+// let userEmail = "hansan0529@gmail.com";
+// if (userEmail.indexOf("@") > 0) {
+//   check1 = true;
+// }
+// for (i = 0; i < arrUrl.length; i++) {
+//   if (userEmail.indexOf(arrUrl[i]) > 0) {
+//     check2 = true;
+//   }
+// }
 
-if (check1 && check2) {
-  console.log(userEmail);
-} else {
-  console.log("Error");
-}
+// if (check1 && check2) {
+//   console.log(userEmail);
+// } else {
+//   console.log("Error");
+// }
