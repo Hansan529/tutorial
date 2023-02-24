@@ -535,3 +535,40 @@ let rain = ["우산", "우비", "장우산"];
 // }
 // console.log(str.concat(" text"));
 // console.log(str.replace("random", "new"));
+
+//^ pt53 - 예제
+
+// let userName = "hansan";
+// console.log("userName.toUpperCase(): ", userName.toUpperCase());
+
+// let phoneNumber = "01012345678";
+// let phoneNumberLength = phoneNumber.length;
+// console.log(phoneNumber.length);
+// if (phoneNumberLength >= 11) {
+//   let lastNumber = phoneNumber.substring(7, 12);
+//   console.log(phoneNumber.replace(lastNumber, "****"));
+// } else {
+//   let lastNumber = phoneNumber.substring(6, 11);
+//   console.log(phoneNumber.replace(lastNumber, "****"));
+// }
+
+//^ pt54 - 예제
+let check1 = false;
+let check2 = false;
+let arrUrl = [".co.kr", ".com", ".go.kr", ".net"];
+
+let userEmail = "hansan0529@gmail.com";
+if (userEmail.indexOf("@") > 0) {
+  check1 = true;
+}
+for (i = 0; i < arrUrl.length; i++) {
+  if (userEmail.indexOf(arrUrl[i]) > 0) {
+    check2 = true;
+  }
+}
+
+if (check1 && check2) {
+  console.log(userEmail);
+} else {
+  console.log("Error");
+}
