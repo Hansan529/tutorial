@@ -463,15 +463,15 @@ let rain = ["우산", "우비", "장우산"];
 // let day = now.getDay();
 // console.log("week[day]: ", `${week[day]}요일`);
 //^ pt51 - 예제
-let now = new Date();
-let year = now.getFullYear();
-let month = now.getMonth();
+// let now = new Date();
+// let year = now.getFullYear();
+// let month = now.getMonth();
 
-let thisDay = new Date(year, month, 1); /* 이번 달의 1일 */
-let thisWeek = thisDay.getDay(); /* 1일의 요일 */
-let lastDate = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-let num = 1;
-let week = ["일", "월", "화", "수", "목", "금", "토"];
+// let thisDay = new Date(year, month, 1); /* 이번 달의 1일 */
+// let thisWeek = thisDay.getDay(); /* 1일의 요일 */
+// let lastDate = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+// let num = 1;
+// let week = ["일", "월", "화", "수", "목", "금", "토"];
 
 /* 
 28: 0 /7-> 4
@@ -482,34 +482,56 @@ let week = ["일", "월", "화", "수", "목", "금", "토"];
 
 // [월]의 줄 수: 소수점 올림((매 달 마지막 날[월] + 시작요일) / 일주일)
 // 밀리면서 줄이 늘어남
-let row = Math.ceil((lastDate[month] + thisWeek) / 7);
+// let row = Math.ceil((lastDate[month] + thisWeek) / 7);
 
-let cal = "<table>";
-cal += "<tr>";
-/* column 방향으로 7줄 */
-for (i = 0; i < 7; i++) {
-  // week 배열의 i번째, 즉 0~7: 일~토
-  cal += `<th style="border: 1px solid">${week[i]}</th>`;
-}
-cal += "</tr>";
+// let cal = "<table>";
+// cal += "<tr>";
+// /* column 방향으로 7줄 */
+// for (i = 0; i < 7; i++) {
+// week 배열의 i번째, 즉 0~7: 일~토
+// cal += `<th style="border: 1px solid">${week[i]}</th>`;
+// }
+// cal += "</tr>";
 
-/* row 방향으로 row 줄 */
-for (i = 0; i < row; i++) {
-  cal += "<tr>";
+// /* row 방향으로 row 줄 */
+// for (i = 0; i < row; i++) {
+//   cal += "<tr>";
 
-  /* column 방향으로 7줄 (일주일) */
-  for (j = 0; j < 7; j++) {
-    if ((i == 0 && j < thisWeek) || num > lastDate[month]) {
-      //1번 조건: 1번 줄 (i==0)에 시작요일보다 작은 경우 아래를 실행 (시작 요일 찾아가기)
-      //2번 조건: if로 인해서 num 값이 ++되어 커지는데, 이번달의 마지막 날보다 커지면 아래 실행
-      cal += "<td></td>";
-    } else {
-      // j가 7이 될 때 까지 num을 1씩 증가
-      cal += `<td style="border: 1px solid">${num++}</td>`;
-    }
-  }
-  cal += "</tr>";
-}
-cal += "</table>";
+//   /* column 방향으로 7줄 (일주일) */
+//   for (j = 0; j < 7; j++) {
+//     if ((i == 0 && j < thisWeek) || num > lastDate[month]) {
+//       //1번 조건: 1번 줄 (i==0)에 시작요일보다 작은 경우 아래를 실행 (시작 요일 찾아가기)
+//       //2번 조건: if로 인해서 num 값이 ++되어 커지는데, 이번달의 마지막 날보다 커지면 아래 실행
+//       cal += "<td></td>";
+//     } else {
+//       // j가 7이 될 때 까지 num을 1씩 증가
+//       cal += `<td style="border: 1px solid">${num++}</td>`;
+//     }
+//   }
+//   cal += "</tr>";
+// }
+// cal += "</table>";
 
-document.write(cal);
+//^ pt52 - 문자열객체
+
+// let str = "random text";
+
+// console.log(str);
+
+// console.log(str.charAt(3)); /* d */
+// console.log(str.substr(4, 2)); /* om  */
+// console.log(str.substring(7, 11));
+// console.log(str.indexOf("d"));
+// console.log(str.indexOf("b"));
+// console.log(str.search("x"));
+// console.log(str.search("z"));
+// console.log(str.length);
+// console.log(str.charCodeAt(0));
+// console.log(String.fromCharCode(97));
+// let sp = str.split(" ");
+// console.log("sp.length: ", sp.length);
+// for (i = 0; i < sp.length; i++) {
+//   console.log(sp[i]);
+// }
+// console.log(str.concat(" text"));
+// console.log(str.replace("random", "new"));

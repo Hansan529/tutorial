@@ -812,7 +812,7 @@ let TV = {
 
 개별적으로 생성해서 사용해도 되지만, 기본적으로 JS 안에 내장되어 있는 객체가 있다.
 
-- 내장객체
+### 내장객체
 
 ```js
 // Date
@@ -841,7 +841,7 @@ let diff = (dDay - now) / (24 * 60 * 60 * 1000);
 
 <br>
 
-수학객체 (Math)
+### 수학객체 (Math)
 
 ```js
 // 변수
@@ -879,7 +879,7 @@ Math.floor(11.8); /* 11 */
 Math.PI; /* 3.141592653589793 */
 ```
 
-숫자객체 (Number)
+### 숫자객체 (Number)
 
 ```js
 let num1 = "10.123";
@@ -907,7 +907,7 @@ isNaN(num3); /* false */
 isNaN(num4); /* true */
 ```
 
-배열객체 (Array)
+### 배열객체 (Array)
 
 ```js
 // 배열 각각 지정하기
@@ -1020,4 +1020,60 @@ for (i = 0; i < row; i++) {
   cal += "</tr>";
 }
 cal += "</table>";
+```
+
+### 문자열객체
+
+```js
+// 선언 방법
+// let str = new String("text");
+let str = "random text";
+
+console.log(str);
+
+// 문자 추출하기: charAt(위치)
+console.log(str.charAt(3)); /* d */
+
+// 문자열 추출하기: substr(시작위치, 개수)
+console.log(str.substr(4, 2)); /* om  */
+// substring(시작위치, [끝위치 - 1])
+console.log(str.substring(7, 11)); /* text */
+
+// 특정 문자의 위치 찾기: indexOf("문자")
+// 대부분 문자열을 찾을 때는 indexOf함수를 사용한다.
+console.log(str.indexOf("d")); /* 3 */
+console.log(str.indexOf("b")); /* 없는 문자는 -1 */
+// [정규식] 특정 문자의 위치 찾기: search("문자")
+// 시작 위치를 지정할 수는 없지만 정규식을 사용하여 문자열을 찾을 수 있다.
+console.log(str.search("x")); /* 9 */
+console.log(str.search("z")); /* 없는 문자는 -1 */
+
+// 대소문자: method()
+console.log(str.toUpperCase()); /* RANDOM TEXT */
+console.log(str.toLowerCase()); /* random text */
+
+// 문자열 길이 속성: length
+console.log(str.length); /* 11 */
+
+// 코드값: charCodeAt(코드) A~Z: 65~90  a~z: 97~122
+console.log(str.charCodeAt(0)); /* 114 (r) */
+
+// 코드값으로 문자 찾기: fromCharCode(code)
+console.log(String.fromCharCode(114)); /* r */
+
+// 문자열 분리: split("문자")
+let sp = str.split(" "); /* ['random', 'text'] */
+
+// 문자열 합치기: concat(문자열)
+console.log(str.concat(" text")); /* random text text */
+
+// 문자열 앞 공백 제거: trim()
+console.log(str.trim());
+
+// 문자열 반복: repeeat(정수)
+let txt = "txt ";
+console.log(`random ${txt.repeat(3)}`); /* random txt txt txt */
+
+// 문자열 대체: replace(변경할 문자, 문자) 대소문자 구분
+console.log(str.replace("random", "new")); /* new text */
 ```
