@@ -1101,11 +1101,30 @@ window.prompt();
 window.confirm();
 
 // setinterval: 일정 시간마다 반복
-setInterval(console.log("반복"), 1000);
+setInterval(console.log("반복"), 1000); /* 1s */
 
 // clearInterval: 반복 취소
 clearInterval(변수);
 
 // setTimeout: 일정 시간 이후 실행
-setTimeout("console.log('text')", 3000);
+setTimeout("console.log('text')", 3000); /* 3s */
+```
+
+<br>
+
+### 스크린 객체
+
+스크린에 대한 정보들을 확인 할 수 있다.
+
+```js
+// 스크린의 너비, 높이값
+document.write(`width: ${screen.width}`);
+document.write(`height: ${screen.height}`);
+
+// 사용할 수 있는 너비, 높이값
+document.write(`availWidth: ${screen.availWidth}`);
+document.write(`availHeight: ${screen.availHeight}`);
+
+// 컬러 수
+document.write(`color: ${screen.colorDepth}`); /* 24 */
 ```

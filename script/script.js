@@ -586,7 +586,7 @@ let rain = ["우산", "우비", "장우산"];
 //     console.log("불가능");
 //   }
 // }
-//^ pt57 - 브라우저 객체
+//^ pt57 - 객체: setinterval
 // let i = 1;
 // function tt() {
 //   console.log(i++);
@@ -595,5 +595,12 @@ let rain = ["우산", "우비", "장우산"];
 // let timer = setInterval(tt, 1000);
 // let stop = clearInterval(timer);
 
-//^ pt58 - 브라우저 객체
+//^ pt58 - 객체: settimeout
 // setTimeout('console.log("text")', 3000);
+
+//^ pt59 - 객체: screen
+// document.write(`width: ${screen.width}<br>`);
+// document.write(`height: ${screen.height}<br>`);
+// document.write(`availWidth: ${screen.availWidth}<br>`);
+// document.write(`availHeight: ${screen.availHeight}<br>`);
+// document.write(`color: ${screen.colorDepth}<br>`);
