@@ -626,8 +626,17 @@ let rain = ["우산", "우비", "장우산"];
 // document.write(`<button onclick="history.forward();">forward</button>`);
 
 //^ pt63 - navigator
-document.write(navigator.appCodeName, "<br>");
-document.write(navigator.appName, "<br>");
-document.write(navigator.appVersion, "<br>");
-document.write(navigator.language, "<br>");
-document.write(navigator.userAgent);
+// document.write(navigator.appCodeName, "<br>");
+// document.write(navigator.appName, "<br>");
+// document.write(navigator.appVersion, "<br>");
+// document.write(navigator.language, "<br>");
+// document.write(navigator.userAgent);
+
+let total = navigator.userAgent;
+if (total.indexOf("Mac") >= 0) {
+  document.write("Mac OS");
+} else if (total.indexOf("iPhone") >= 0) {
+  document.write("iPhone");
+} else {
+  document.write("다른 플랫폼입니다");
+}
