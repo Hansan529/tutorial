@@ -632,11 +632,29 @@ let rain = ["우산", "우비", "장우산"];
 // document.write(navigator.language, "<br>");
 // document.write(navigator.userAgent);
 
-let total = navigator.userAgent;
-if (total.indexOf("Mac") >= 0) {
-  document.write("Mac OS");
-} else if (total.indexOf("iPhone") >= 0) {
-  document.write("iPhone");
-} else {
-  document.write("다른 플랫폼입니다");
-}
+//^ pt64 - 예제
+// let total = navigator.userAgent;
+// if (total.indexOf("Mac") >= 0) {
+//   document.write("Mac OS");
+// } else if (total.indexOf("iPhone") >= 0) {
+//   document.write("iPhone");
+// } else {
+//   document.write("다른 플랫폼입니다");
+// }
+
+//^ pt65 - geolocation
+// function getLocation() {
+//   navigator.geolocation.getCurrentPosition(success, error);
+// }
+// function success(position) {
+//   console.log("success");
+//   console.log(position.coords.latitude, position.coords.longitude);
+//   const latitude = position.coords.latitude;
+//   const longitude = position.coords.longitude;
+//   location.href = `https://www.openstreetmap.org/#map=17/${latitude}/${longitude}`;
+// }
+// function error() {
+//   console.log("error");
+// }
+
+// document.write(`<button onclick="getLocation();">btn</button>`);

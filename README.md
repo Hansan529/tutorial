@@ -1193,3 +1193,18 @@ navigator.userAgent;
 // language 방문자의 사용 언어
 navigator.language; /* ko-KR */
 ```
+
+```js
+// 위치값 찾기
+navigator.geolocation.getCurrentPosition(callback, error);
+
+function callback(position) {
+  const latitude = position.coords.latitude; /* 위도 */
+  const longitude = position.coords.longitude; /* 경도 */
+  location.href = `https://www.openstreetmap.org/#map=17/${latitude}/${longitude}`;
+}
+
+function error() {
+  document.write("error");
+}
+```
