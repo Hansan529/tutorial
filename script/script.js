@@ -658,3 +658,17 @@ let rain = ["우산", "우비", "장우산"];
 // }
 
 // document.write(`<button onclick="getLocation();">btn</button>`);
+
+//^ pt66 - dom 객체
+// let hTitle = document.createElement("h1");
+// let hText = document.createTextNode("dom text");
+// hTitle.appendChild(hText);
+
+// document.body.appendChild(hTitle);
+
+//^ pt67
+let img = document.createElement("img");
+img.setAttribute("src", "https://via.placeholder.com/150x100");
+img.setAttribute("alt", "가상 이미지");
+
+document.body.appendChild(img);

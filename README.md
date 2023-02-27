@@ -1208,3 +1208,42 @@ function error() {
   document.write("error");
 }
 ```
+
+<br>
+
+### DOM 객체
+
+```js
+// 태그 생성
+let hTitle = document.createElement("tag"); /* <tag></tag> */
+
+// 태그 내용물
+let hText = document.createTextNode("dom text");
+
+// 태그 내용 삽입
+hTitle.appendChild(hText);
+
+// body에 적용하기
+document.body.appendChild(hTitle);
+```
+
+```js
+// 이미지 태그 생성
+let img = document.createElement("img");
+
+// 속성값 넣기
+/* (구버전) */
+img.src = "url";
+img.alt = "text";
+
+/* (신버전) */
+img.setAttribute("src", "url");
+img.setAttribute("alt", "text");
+
+// body에 적용하기
+document.body.appendChild(img);
+```
+
+`window.onload = function(){}` head 태그에 스크립트를 작성할 때 사용하는 속성
+
+html를 모두 로드했다면 function을 실행한다.
