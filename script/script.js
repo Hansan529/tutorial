@@ -604,3 +604,11 @@ let rain = ["우산", "우비", "장우산"];
 // document.write(`availWidth: ${screen.availWidth}<br>`);
 // document.write(`availHeight: ${screen.availHeight}<br>`);
 // document.write(`color: ${screen.colorDepth}<br>`);
+
+//^ pt60 - location
+// let url = location.href;
+// console.log(url);
+
+// console.log(location.hostname);
+// console.log(location.host);
+// console.log(location.protocol);

@@ -1128,3 +1128,25 @@ document.write(`availHeight: ${screen.availHeight}`);
 // 컬러 수
 document.write(`color: ${screen.colorDepth}`); /* 24 */
 ```
+
+Location
+
+브라우저의 주소를 변경하거나 얻어올 때 사용된다
+
+```js
+// 주소
+location.href; /* http://127.0.0.1:8080/ */
+
+// 호스트이름
+location.hostname; /* 127.0.0.1 */
+// 호스트
+location.host; /* 127.0.0.1:8080 */
+// 프로토콜
+location.protocol; /* http: */
+
+// 새로고침
+location.reload();
+//
+location.href = "http://naver.com"; /* 링크 연결 */
+location.assign("http://www.google.com"); /* 링크 변경 */
+```
