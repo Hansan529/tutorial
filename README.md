@@ -1155,7 +1155,7 @@ location.assign("http://www.google.com"); /* 링크 변경 */
 
 <br>
 
-Window
+### Window
 
 ```js
 window.innerWidth; /* 개발자 도구 범위 미포함 너비 */
@@ -1163,4 +1163,11 @@ window.outerWidth; /* 개발자 도구 범위 포함 너비 */
 
 window.innerHeight; /* 브라우저 주소창 미포함 높이 */
 window.outerHeight; /* 브라우저 주소창 포함 높이 */
+```
+
+### History
+
+```js
+history.back(); /* 이전 페이지로 이동 */
+history.forward(); /* 방문했던 페이지로 이동 */
 ```

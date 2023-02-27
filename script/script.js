@@ -618,3 +618,9 @@ let rain = ["우산", "우비", "장우산"];
 // console.log("window.outerWidth: ", window.outerWidth);
 // console.log("window.innerHeight: ", window.innerHeight);
 // console.log("window.outerHeight: ", window.outerHeight);
+
+//^ pt62 - sub
+// document.write("<h1>history index</h1>");
+// document.write("<a href='#'>sub1</a>");
+// document.write(`<button onclick="history.back();">back</button>`);
+// document.write(`<button onclick="history.forward();">forward</button>`);
