@@ -619,8 +619,15 @@ let rain = ["우산", "우비", "장우산"];
 // console.log("window.innerHeight: ", window.innerHeight);
 // console.log("window.outerHeight: ", window.outerHeight);
 
-//^ pt62 - sub
+//^ pt62 - history
 // document.write("<h1>history index</h1>");
 // document.write("<a href='#'>sub1</a>");
 // document.write(`<button onclick="history.back();">back</button>`);
 // document.write(`<button onclick="history.forward();">forward</button>`);
+
+//^ pt63 - navigator
+document.write(navigator.appCodeName, "<br>");
+document.write(navigator.appName, "<br>");
+document.write(navigator.appVersion, "<br>");
+document.write(navigator.language, "<br>");
+document.write(navigator.userAgent);

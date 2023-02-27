@@ -1165,9 +1165,31 @@ window.innerHeight; /* 브라우저 주소창 미포함 높이 */
 window.outerHeight; /* 브라우저 주소창 포함 높이 */
 ```
 
+<br>
+
 ### History
 
 ```js
 history.back(); /* 이전 페이지로 이동 */
 history.forward(); /* 방문했던 페이지로 이동 */
+```
+
+<br>
+
+### Navigator
+
+```js
+/* 현재는 사용하지 않는 코드 */
+// 방문자의 브라우저 코드명을 알아낼 때
+navigator.appCodeName; /* Mozila */
+// 브라우저의 이름 알아내기
+navigator.appName; /* Netscape */
+// 브라우저의 버전 알아내기
+navigator.appVersion; /* 5.0 */
+  ↓
+// 모두 확인하기
+navigator.userAgent;
+
+// language 방문자의 사용 언어
+navigator.language; /* ko-KR */
 ```
