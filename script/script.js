@@ -612,3 +612,9 @@ let rain = ["우산", "우비", "장우산"];
 // console.log(location.hostname);
 // console.log(location.host);
 // console.log(location.protocol);
+
+//^ pt61 - window
+// console.log("window.innerWidth: ", window.innerWidth);
+// console.log("window.outerWidth: ", window.outerWidth);
+// console.log("window.innerHeight: ", window.innerHeight);
+// console.log("window.outerHeight: ", window.outerHeight);

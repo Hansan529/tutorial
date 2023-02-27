@@ -1129,7 +1129,9 @@ document.write(`availHeight: ${screen.availHeight}`);
 document.write(`color: ${screen.colorDepth}`); /* 24 */
 ```
 
-Location
+<br>
+
+### Location
 
 브라우저의 주소를 변경하거나 얻어올 때 사용된다
 
@@ -1146,7 +1148,19 @@ location.protocol; /* http: */
 
 // 새로고침
 location.reload();
-//
+
 location.href = "http://naver.com"; /* 링크 연결 */
 location.assign("http://www.google.com"); /* 링크 변경 */
+```
+
+<br>
+
+Window
+
+```js
+window.innerWidth; /* 개발자 도구 범위 미포함 너비 */
+window.outerWidth; /* 개발자 도구 범위 포함 너비 */
+
+window.innerHeight; /* 브라우저 주소창 미포함 높이 */
+window.outerHeight; /* 브라우저 주소창 포함 높이 */
 ```
