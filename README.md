@@ -1353,9 +1353,55 @@ fristChild, firstElementChild; /* 첫번째 자식 */
 lastChild, lastElementChild; /* 마지막 자식 */
 children, childNodes; /* 자식들 */
 childElementCount; /* 자식요소 수 */
+```
 
-// class
+```js
+//  공통 예제
+<ul class="menu">
+  <li>
+    <a href="#">list1</a>
+  </li>
+  <li>
+    <a href="#">list2</a>
+  </li>
+  <li>
+    <a href="#">list3</a>
+  </li>
+  <li>
+    <a href="#">list4</a>
+  </li>
+  <li>
+    <a href="#">list5</a>
+  </li>
+</ul>;
+
+let list = document.querySelector(".menu");
+```
+
+```js
+// class 관련 기본 속성
 classList.add;
 classList.remove;
 classList.toggle;
+```
+
+```js
+// firstChild
+let first = list.firstElementChild; /* 첫번째 자식 */
+first.classList.add("bg"); /* <li class="bg"><a href="#"></a></li> */
+
+// lastChild
+let last = list.lastElementChild; /* 마지막 자식 */
+first.classList.add("bg2"); /* <li class="bg2"><a href="#"></a></li> */
+```
+
+```js
+// children
+let child = list.children; /* 배열 */
+child[1].classList.add("border"); /* <li class="border"><a href="#"></a></li> */
+
+let nav = document.querySelector(".menu>li>a");
+for (i = 0; i < nav.length; i++) {
+  nav[i].classList.add("border"); /* 모든 li > a 에게 border class Add */
+}
 ```
