@@ -667,8 +667,48 @@ let rain = ["우산", "우비", "장우산"];
 // document.body.appendChild(hTitle);
 
 //^ pt67
-let img = document.createElement("img");
-img.setAttribute("src", "https://via.placeholder.com/150x100");
-img.setAttribute("alt", "가상 이미지");
+// let img = document.createElement("img");
+// img.setAttribute("src", "https://via.placeholder.com/150x100");
+// img.setAttribute("alt", "가상 이미지");
 
-document.body.appendChild(img);
+// document.body.appendChild(img);
+
+//^ pt68 - innerText
+// let hTitle = document.createElement("h1");
+
+// let text = document.createTextNode("text");
+// hTitle.appendChild(text);
+// hTitle.innerHTML = "asd";
+
+// document.body.append(hTitle);
+
+//^ pt69 - dom selector
+let cTag = document.createElement("p");
+let cClass = document.createElement("p");
+let cId = document.createElement("p");
+let cForm = document.createElement("form");
+
+cTag.innerHTML = "cTag";
+document.body.append(cTag);
+cTag.style.color = "green";
+
+cClass.innerHTML = "cClass";
+cClass.classList.add("cClass");
+document.body.append(cClass);
+
+let cClassText = document.getElementsByClassName("cClass")[0];
+cClassText.style.color = "red";
+
+cId.innerHTML = "cId";
+document.body.append(cId);
+document.getElementsByTagName("p")[2].id = "cId";
+
+let cIdtext = document.getElementById("cId");
+cIdtext.style.color = "blue";
+
+cForm.innerHTML = "cForm";
+document.body.append(cForm);
+document.getElementsByTagName("form")[0].id = "cForm";
+
+let cFormText = document.querySelector("#cForm");
+cFormText.style.color = "pink";

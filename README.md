@@ -1247,3 +1247,62 @@ document.body.appendChild(img);
 `window.onload = function(){}` head 태그에 스크립트를 작성할 때 사용하는 속성
 
 html를 모두 로드했다면 function을 실행한다.
+
+<br>
+
+- innerText
+
+```js
+let hTitle = document.createElement("h1");
+
+// let text = document.createTextNode("text");
+// hTitle.appendChild(text);
+
+hTitle.innerText = "text";
+
+document.body.append(hTitle); /* text */
+```
+
+<br>
+
+- dom 선택자
+
+1. tag
+
+```js
+let hTitle = document.getElementsByTagName("h1")[0]; /* 0번째 tag */
+hTitle.style.color = "green";
+```
+
+2. class
+
+```js
+let cText =
+  document.getElementsByClassName("cClass")[0]; /* 0번째 cClass 태그 */
+cText.style.color = "red";
+// cText.stlye["background-color"] = "red"; /* css 형식 */
+
+let cTextQuery = document.querySelectorAll(".cClass"); /* 모든 cClass 클래스 */
+
+for (i = 0; i < cTextQuery.length; i++) {
+  cTextQuery[i].style["text-decoration"] = "underline";
+}
+```
+
+3. id
+
+```js
+let cId = document.getElementById("cId"); /* cId라는 ID */
+cId.style.color = "blue";
+```
+
+4. form
+
+```js
+let cForm = document.querySelector("#cForm"); /* cForm라는 ID를 불러옴  */
+cForm.style["background-color"] = "skyblue";
+```
+
+getElementsByTagName, getElemetsByClassName, getElemetById를 모두 합친
+
+`querySelector`라는 method가 있다.
