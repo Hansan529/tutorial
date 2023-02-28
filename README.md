@@ -1313,3 +1313,20 @@ cForm.style["background-color"] = "skyblue";
 getElementsByTagName, getElemetsByClassName, getElemetById를 모두 합친
 
 `querySelector`라는 method가 있다.
+
+<br>
+
+```js
+// 바로 다음에 오는 형제를 선택
+nextSibling; /* 태그 옆에 엔터를 쳤을 경우 #text로 나온다. */
+nextElementSibling; /* 선택된 태그 다음 태그가 나온다. */
+
+// 앞에 오는 형제를 선택
+previousSibling; /* 태그 앞에 있는 것을 선택한다. */
+previousElementSibling; /* 선택된 태그 앞에 있는 태그를 선택한다 */
+
+// class
+classList.add;
+classList.remove;
+classList.toggle;
+```

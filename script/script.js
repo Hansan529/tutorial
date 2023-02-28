@@ -730,3 +730,23 @@ let rain = ["우산", "우비", "장우산"];
 // setInterval("myDigit()", 1000);
 
 // myDigit();
+
+//^ pt71 - 인접선택자
+// let h1 = document.createElement("h1");
+// h1.innerText = "인접선택자";
+// document.body.append(h1);
+
+// let ul = document.createElement("ul");
+// ul.innerHTML =
+//   "<li><a href='#'>list1</a></li><li><a href='#'>list2</a></li><li><a href='#'>list3</a></li>";
+// document.body.append(ul);
+// document.querySelector("ul").id = "list";
+
+// let hTitle = document.querySelector("h1");
+// let next = hTitle.nextElementSibling;
+// next.classList.add("active");
+
+// let menu = document.querySelector("#list");
+// let prev = menu.previousElementSibling;
+// menu.previous;
+// prev.classList.add("active");
