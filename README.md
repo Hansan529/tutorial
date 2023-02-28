@@ -1317,13 +1317,42 @@ getElementsByTagName, getElemetsByClassName, getElemetById를 모두 합친
 <br>
 
 ```js
+// 형재 선택자
 // 바로 다음에 오는 형제를 선택
 nextSibling; /* 태그 옆에 엔터를 쳤을 경우 #text로 나온다. */
 nextElementSibling; /* 선택된 태그 다음 태그가 나온다. */
 
+<h1></h1>
+<h2></h2>
+
+let title = document.querySelector("h1");
+let nextSibling = title.nextSibling; /* #text */
+let nextElementSibling = title.nextElementSibling; /* <h2></h2> */
+
+nextElementSibling.classList.add("active"); /* <h2 class="active"></h2> */
+```
+
+```js
 // 앞에 오는 형제를 선택
 previousSibling; /* 태그 앞에 있는 것을 선택한다. */
 previousElementSibling; /* 선택된 태그 앞에 있는 태그를 선택한다 */
+
+<h1></h1>
+<h2></h2>
+
+let title = documnt.querySelector("h2");
+let previousSibling = title.previousSibibling;
+let previousElementSibling = title.previousElementSibling; /* <h1></h1> */
+
+previousElementSibling.classList.add("active"); /* <h1 class="active"></h1> */
+```
+
+```js
+// 자식 선택자
+fristChild, firstElementChild; /* 첫번째 자식 */
+lastChild, lastElementChild; /* 마지막 자식 */
+children, childNodes; /* 자식들 */
+childElementCount; /* 자식요소 수 */
 
 // class
 classList.add;
