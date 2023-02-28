@@ -752,37 +752,56 @@ let rain = ["우산", "우비", "장우산"];
 // prev.classList.add("active");
 
 //^ pt72 - 자식선택자
-let style = document.createElement("style");
-style.append(".bg{background: pink}");
-style.append(".bg2{background: green; color:#fff; font-size:24px}");
-style.append(".border { border: 3px solid salmon; }");
-document.body.append(style);
+// let style = document.createElement("style");
+// style.append(".bg{background: pink}");
+// style.append(".bg2{background: green; color:#fff; font-size:24px}");
+// style.append(".border { border: 3px solid salmon; }");
+// document.body.append(style);
 
-let h1 = document.createElement("h1");
-h1.innerText = "자식선택자";
-document.body.append(h1);
+// let h1 = document.createElement("h1");
+// h1.innerText = "자식선택자";
+// document.body.append(h1);
 
-let ul = document.createElement("ul");
+// let ul = document.createElement("ul");
 
-ul.innerHTML =
-  "<li><a href='#'>list1</a></li><li><a href='#'>list2</a></li><li><a href='#'>list3</a></li>";
-document.body.append(ul);
-document.querySelector("ul").id = "list";
+// ul.innerHTML =
+//   "<li><a href='#'>list1</a></li><li><a href='#'>list2</a></li><li><a href='#'>list3</a></li>";
+// document.body.append(ul);
+// document.querySelector("ul").id = "list";
 
-let list = document.querySelector("#list");
+// let list = document.querySelector("#list");
 
-let first = list.firstElementChild;
-first.classList.add("bg");
+// let first = list.firstElementChild;
+// first.classList.add("bg");
 
-let last = list.lastElementChild;
-last.classList.add("bg2");
+// let last = list.lastElementChild;
+// last.classList.add("bg2");
 
-let child = list.children;
-child[1].classList.add("border");
+// let child = list.children;
+// child[1].classList.add("border");
 
-let nav = document.querySelectorAll("#list>li>a");
-nav[1].classList.add("border");
+// let nav = document.querySelectorAll("#list>li>a");
+// nav[1].classList.add("border");
 
 // for (i = 0; i < nav.length; i++) {
 //   nav[i].classList.add("border");
 // }
+
+//^ pt73 - 부모선택자
+let style = document.createElement("style");
+style.append(".bg{background: pink; padding: 50px}");
+style.append(".me{background:skyblue");
+document.body.append(style);
+
+let h1 = document.createElement("h1");
+h1.innerText = "부모선택자";
+document.body.append(h1);
+
+let div = document.createElement("div");
+document.body.append(div);
+div.innerHTML = "부모<div class='me'>자식</div>";
+
+let p = document.querySelector(".me");
+let parent = p.parentNode;
+parent.classList.add("bg");
+console.log("parent: ", parent);

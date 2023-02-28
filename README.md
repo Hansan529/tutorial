@@ -1316,8 +1316,9 @@ getElementsByTagName, getElemetsByClassName, getElemetById를 모두 합친
 
 <br>
 
+- 형재 선택자
+
 ```js
-// 형재 선택자
 // 바로 다음에 오는 형제를 선택
 nextSibling; /* 태그 옆에 엔터를 쳤을 경우 #text로 나온다. */
 nextElementSibling; /* 선택된 태그 다음 태그가 나온다. */
@@ -1404,4 +1405,20 @@ let nav = document.querySelector(".menu>li>a");
 for (i = 0; i < nav.length; i++) {
   nav[i].classList.add("border"); /* 모든 li > a 에게 border class Add */
 }
+```
+
+<br>
+
+- 부모선택자
+
+```js
+parentNode
+
+<div>
+  부모<h1 class="me">자식</h1>
+</div>;
+
+let p = document.querySelector(".me");
+let parent = p.parentNode;
+parent.classList.add("bg"); /* <div class="bg"></div> */
 ```
