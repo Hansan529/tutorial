@@ -683,32 +683,50 @@ let rain = ["우산", "우비", "장우산"];
 // document.body.append(hTitle);
 
 //^ pt69 - dom selector
-let cTag = document.createElement("p");
-let cClass = document.createElement("p");
-let cId = document.createElement("p");
-let cForm = document.createElement("form");
+// let cTag = document.createElement("p");
+// let cClass = document.createElement("p");
+// let cId = document.createElement("p");
+// let cForm = document.createElement("form");
 
-cTag.innerHTML = "cTag";
-document.body.append(cTag);
-cTag.style.color = "green";
+// cTag.innerHTML = "cTag";
+// document.body.append(cTag);
+// cTag.style.color = "green";
 
-cClass.innerHTML = "cClass";
-cClass.classList.add("cClass");
-document.body.append(cClass);
+// cClass.innerHTML = "cClass";
+// cClass.classList.add("cClass");
+// document.body.append(cClass);
 
-let cClassText = document.getElementsByClassName("cClass")[0];
-cClassText.style.color = "red";
+// let cClassText = document.getElementsByClassName("cClass")[0];
+// cClassText.style.color = "red";
 
-cId.innerHTML = "cId";
-document.body.append(cId);
-document.getElementsByTagName("p")[2].id = "cId";
+// cId.innerHTML = "cId";
+// document.body.append(cId);
+// document.getElementsByTagName("p")[2].id = "cId";
 
-let cIdtext = document.getElementById("cId");
-cIdtext.style.color = "blue";
+// let cIdtext = document.getElementById("cId");
+// cIdtext.style.color = "blue";
 
-cForm.innerHTML = "cForm";
-document.body.append(cForm);
-document.getElementsByTagName("form")[0].id = "cForm";
+// cForm.innerHTML = "cForm";
+// document.body.append(cForm);
+// document.getElementsByTagName("form")[0].id = "cForm";
 
-let cFormText = document.querySelector("#cForm");
-cFormText.style.color = "pink";
+// let cFormText = document.querySelector("#cForm");
+// cFormText.style.color = "pink";
+
+//^ pt70 - 예제
+// let clockDom = document.createElement("div");
+// document.body.append(clockDom);
+// document.querySelector("div").id = "myClock";
+
+// function myDigit() {
+//   let today = new Date();
+//   let hour = today.getHours();
+//   let m = today.getMinutes();
+//   let s = today.getSeconds();
+//   let myClock = document.querySelector("#myClock");
+//   myClock.innerText = `${hour}:${m}:${s}`;
+// }
+
+// setInterval("myDigit()", 1000);
+
+// myDigit();
