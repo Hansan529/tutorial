@@ -1357,29 +1357,6 @@ childElementCount; /* 자식요소 수 */
 ```
 
 ```js
-//  공통 예제
-<ul class="menu">
-  <li>
-    <a href="#">list1</a>
-  </li>
-  <li>
-    <a href="#">list2</a>
-  </li>
-  <li>
-    <a href="#">list3</a>
-  </li>
-  <li>
-    <a href="#">list4</a>
-  </li>
-  <li>
-    <a href="#">list5</a>
-  </li>
-</ul>;
-
-let list = document.querySelector(".menu");
-```
-
-```js
 // class 관련 기본 속성
 classList.add;
 classList.remove;
@@ -1405,6 +1382,31 @@ classRemove.onclick = function(){
 classToggle.onclick = function(){
   box.classList.toggle("bg"); /* click하면 class="bg", 있는 상태에서 하면 class="" */
 }
+```
+
+<br>
+
+```js
+//  공통 예제
+<ul class="menu">
+  <li>
+    <a href="#">list1</a>
+  </li>
+  <li>
+    <a href="#">list2</a>
+  </li>
+  <li>
+    <a href="#">list3</a>
+  </li>
+  <li>
+    <a href="#">list4</a>
+  </li>
+  <li>
+    <a href="#">list5</a>
+  </li>
+</ul>;
+
+let list = document.querySelector(".menu");
 ```
 
 ```js
