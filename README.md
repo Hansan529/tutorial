@@ -1384,6 +1384,27 @@ let list = document.querySelector(".menu");
 classList.add;
 classList.remove;
 classList.toggle;
+
+
+<div class="box"></div>
+<button class="add"></button>
+<button class="remove"></button>
+<button class="toggle"></button>
+
+let box = document.querySelector(".box");
+let classAdd = document.querySelector(".add");
+let classRemove = document.querySelector(".remove");
+let classToggle = document.querySelector(".toggle");
+
+classAdd.onlcik = function(){
+  box.classList.add("bg"); /* Add btn 클릭하면 <div class="box bg"> */
+}
+classRemove.onclick = function(){
+  box.classList.remove("bg"); /* <div class="box"> */
+}
+classToggle.onclick = function(){
+  box.classList.toggle("bg"); /* click하면 class="bg", 있는 상태에서 하면 class="" */
+}
 ```
 
 ```js
