@@ -1250,7 +1250,7 @@ html를 모두 로드했다면 function을 실행한다.
 
 <br>
 
-- innerText
+- innerHTML, innerText
 
 ```js
 let hTitle = document.createElement("h1");
@@ -1262,6 +1262,13 @@ hTitle.innerText = "text";
 
 document.body.append(hTitle); /* text */
 ```
+
+append는 추가하지만 innerHTML의 경우 덮어씌운다.
+
+추가로 innerHTML은 태그값 모두를 불러오지만 innerText의 경우는 텍스트만 불러온다.
+
+innerHTML - `안녕하세요 <span>태그</span>`  
+innerText - `안녕하세요 태그`
 
 <br>
 
