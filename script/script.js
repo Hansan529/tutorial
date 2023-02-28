@@ -788,20 +788,37 @@ let rain = ["우산", "우비", "장우산"];
 // }
 
 //^ pt73 - 부모선택자
-let style = document.createElement("style");
-style.append(".bg{background: pink; padding: 50px}");
-style.append(".me{background:skyblue");
-document.body.append(style);
+// let style = document.createElement("style");
+// style.append(".bg{background: pink; padding: 50px}");
+// style.append(".me{background:skyblue");
+// document.body.append(style);
 
-let h1 = document.createElement("h1");
-h1.innerText = "부모선택자";
-document.body.append(h1);
+// let h1 = document.createElement("h1");
+// h1.innerText = "부모선택자";
+// document.body.append(h1);
 
-let div = document.createElement("div");
-document.body.append(div);
-div.innerHTML = "부모<div class='me'>자식</div>";
+// let div = document.createElement("div");
+// document.body.append(div);
+// div.innerHTML = "부모<div class='me'>자식</div>";
 
-let p = document.querySelector(".me");
-let parent = p.parentNode;
-parent.classList.add("bg");
-console.log("parent: ", parent);
+// let p = document.querySelector(".me");
+// let parent = p.parentNode;
+// parent.classList.add("bg");
+// console.log("parent: ", parent);
+
+//^ pt74 - cloneNode 복사
+// let style = document.createElement("style");
+// style.append("li{list-style: nonel; margin:0; padding: 0;");
+// document.body.append(style);
+
+// let ul = document.createElement("ul");
+
+// ul.innerHTML =
+//   "<li><a href='#'>list1</a></li><li><a href='#'>list2</a></li><li><a href='#'>list3</a></li>";
+// document.body.append(ul);
+// let classs = document.querySelector("ul");
+// classs.classList.add("list");
+
+// let list = document.querySelector(".list");
+// let first = list.firstElementChild.cloneNode(true);
+// list.appendChild(first);
