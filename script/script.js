@@ -822,3 +822,47 @@ let rain = ["우산", "우비", "장우산"];
 // let list = document.querySelector(".list");
 // let first = list.firstElementChild.cloneNode(true);
 // list.appendChild(first);
+
+//^ pt76 - mouse event
+let btnCreate = document.createElement("p");
+
+btnCreate.innerHTML = "<button>btn</button>";
+document.body.append(btnCreate);
+
+function bg(e) {
+  // let myBody = document.querySelector("body");
+  // myBody.style["background-color"] = "skyblue";
+  console.log(e);
+}
+
+let btn = document.querySelector("button");
+// btn.addEventListener("mouseover", bg);
+btn.style.position = "absolute";
+btn.style.top = 0;
+btn.style.left = 0;
+
+function clickHandler(e) {
+  let xPos = e.clientX;
+  let yPos = e.clientY;
+  let btnX = parseInt(btn.style.left);
+  let btnY = parseInt(btn.style.top);
+
+  let moveX = xPos - btnX;
+  let moveY = yPos - btnY;
+
+  setInterval(function () {
+    if ((moveX > 0 && btnX < xPos) || (moveX < 0 && btnX > xPos)) {
+      btnX += moveX * 0.2;
+      btnY += moveY * 0.2;
+      btn.style.left = btnX + "PX";
+      btn.style.top = btnY + "PX";
+    }
+  }, 50);
+
+  // btn.style.left = xPos + "px";
+  // btn.style.top = yPos + "px";
+}
+
+let myBody = document.querySelector("body");
+myBody.style["height"] = "100vh";
+myBody.addEventListener("click", clickHandler);
