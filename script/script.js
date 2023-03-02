@@ -838,15 +838,19 @@ function bg(e) {
 let btn = document.querySelector("button");
 // btn.addEventListener("mouseover", bg);
 btn.style.position = "absolute";
+
 btn.style.top = 0;
 btn.style.left = 0;
 
-function clickHandler(e) {
-  let xPos = e.clientX;
-  let yPos = e.clientY;
-  let btnX = parseInt(btn.style.left);
-  let btnY = parseInt(btn.style.top);
+let btnX = parseInt(btn.style.left);
+let btnY = parseInt(btn.style.top);
 
+let xPos = 0;
+let yPos = 0;
+
+function clickHandler(e) {
+  xPos = e.clientX;
+  yPos = e.clientY;
   let moveX = xPos - btnX;
   let moveY = yPos - btnY;
 
@@ -858,11 +862,26 @@ function clickHandler(e) {
       btn.style.top = btnY + "PX";
     }
   }, 50);
-
-  // btn.style.left = xPos + "px";
-  // btn.style.top = yPos + "px";
 }
 
 let myBody = document.querySelector("body");
 myBody.style["height"] = "100vh";
-myBody.addEventListener("click", clickHandler);
+// document.addEventListener("click", clickHandler);
+
+//* pt77
+document.addEventListener("click", function (e) {
+  xPos = e.clientX;
+  yPos = e.clientY;
+  console.log(xPos, yPos);
+});
+
+moveBtn();
+
+function moveBtn() {
+  requestAnimationFrame(moveBtn);
+  btnX += (xPos - btnX) * 0.1;
+  btnY += (yPos - btnY) * 0.1;
+  // btn.style.transform = `translate(${btnX}px,${btnY}px)`;
+  btn.style.left = btnX + "px";
+  btn.style.top = btnY + "px";
+}
