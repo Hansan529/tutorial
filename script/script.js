@@ -824,64 +824,106 @@ let rain = ["우산", "우비", "장우산"];
 // list.appendChild(first);
 
 //^ pt76 - mouse event
-let btnCreate = document.createElement("p");
+// let btnCreate = document.createElement("p");
 
-btnCreate.innerHTML = "<button>btn</button>";
-document.body.append(btnCreate);
+// btnCreate.innerHTML = "<button>btn</button>";
+// document.body.append(btnCreate);
 
-function bg(e) {
-  // let myBody = document.querySelector("body");
-  // myBody.style["background-color"] = "skyblue";
-  console.log(e);
-}
+// function bg(e) {
+//   // let myBody = document.querySelector("body");
+//   // myBody.style["background-color"] = "skyblue";
+//   console.log(e);
+// }
 
-let btn = document.querySelector("button");
-// btn.addEventListener("mouseover", bg);
-btn.style.position = "absolute";
+// let btn = document.querySelector("button");
+// // btn.addEventListener("mouseover", bg);
+// btn.style.position = "absolute";
 
-btn.style.top = 0;
-btn.style.left = 0;
+// btn.style.top = 0;
+// btn.style.left = 0;
 
-let btnX = parseInt(btn.style.left);
-let btnY = parseInt(btn.style.top);
+// let btnX = parseInt(btn.style.left);
+// let btnY = parseInt(btn.style.top);
 
-let xPos = 0;
-let yPos = 0;
+// let xPos = 0;
+// let yPos = 0;
 
-function clickHandler(e) {
-  xPos = e.clientX;
-  yPos = e.clientY;
-  let moveX = xPos - btnX;
-  let moveY = yPos - btnY;
+// function clickHandler(e) {
+//   xPos = e.clientX;
+//   yPos = e.clientY;
+//   let moveX = xPos - btnX;
+//   let moveY = yPos - btnY;
 
-  setInterval(function () {
-    if ((moveX > 0 && btnX < xPos) || (moveX < 0 && btnX > xPos)) {
-      btnX += moveX * 0.2;
-      btnY += moveY * 0.2;
-      btn.style.left = btnX + "PX";
-      btn.style.top = btnY + "PX";
-    }
-  }, 50);
-}
+//   setInterval(function () {
+//     if ((moveX > 0 && btnX < xPos) || (moveX < 0 && btnX > xPos)) {
+//       btnX += moveX * 0.2;
+//       btnY += moveY * 0.2;
+//       btn.style.left = btnX + "PX";
+//       btn.style.top = btnY + "PX";
+//     }
+//   }, 50);
+// }
 
-let myBody = document.querySelector("body");
-myBody.style["height"] = "100vh";
+// let myBody = document.querySelector("body");
+// myBody.style["height"] = "100vh";
 // document.addEventListener("click", clickHandler);
 
 //* pt77
-document.addEventListener("click", function (e) {
-  xPos = e.clientX;
-  yPos = e.clientY;
-  console.log(xPos, yPos);
+// document.addEventListener("click", function (e) {
+//   xPos = e.clientX;
+//   yPos = e.clientY;
+//   console.log(xPos, yPos);
+// });
+
+// moveBtn();
+
+// function moveBtn() {
+//   requestAnimationFrame(moveBtn);
+//   btnX += (xPos - btnX) * 0.1;
+//   btnY += (yPos - btnY) * 0.1;
+//   // btn.style.transform = `translate(${btnX}px,${btnY}px)`;
+//   btn.style.left = btnX + "px";
+//   btn.style.top = btnY + "px";
+// }
+
+//^ pt79
+let htmlStyle = document.createElement("style");
+htmlStyle.append("*{margin:0; padding: 0}");
+htmlStyle.append("li{list-style:none}");
+htmlStyle.append(
+  "div { width: 400px; margin:100px auto; text-align: center; position: relative; background-color: antiquewhite;}"
+);
+htmlStyle.append(".arrow>li>a{position:absolute;top:50%;}");
+htmlStyle.append(".arrow>li>.leftBtn{left: 0;}");
+htmlStyle.append(".arrow>li>.rightBtn{right: 0;}");
+document.body.append(htmlStyle);
+
+let banner = document.createElement("div");
+
+banner.innerHTML =
+  "<div><img src='../images/list-1.jpg' class='bannerImg'></div><ul class='arrow'><li><a href='#' class='leftBtn'>left</a></li><li><a href='#' class=rightBtn>right</a></li></ul>";
+document.body.append(banner);
+
+let left = document.querySelector(".leftBtn");
+let right = document.querySelector(".rightBtn");
+let myImg = document.querySelector(".bannerImg");
+
+let showBanner = 1;
+
+right.addEventListener("click", function () {
+  if (showBanner < 3) {
+    showBanner++;
+  } else {
+    showBanner = 1;
+  }
+  myImg.src = `../images/list-${showBanner}.jpg`;
 });
 
-moveBtn();
-
-function moveBtn() {
-  requestAnimationFrame(moveBtn);
-  btnX += (xPos - btnX) * 0.1;
-  btnY += (yPos - btnY) * 0.1;
-  // btn.style.transform = `translate(${btnX}px,${btnY}px)`;
-  btn.style.left = btnX + "px";
-  btn.style.top = btnY + "px";
-}
+left.addEventListener("click", function () {
+  if (showBanner > 1) {
+    showBanner--;
+  } else {
+    showBanner = 3;
+  }
+  myImg.src = `../images/list-${showBanner}.jpg`;
+});
