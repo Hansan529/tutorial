@@ -1445,3 +1445,87 @@ let p = document.querySelector(".me");
 let parent = p.parentNode;
 parent.classList.add("bg"); /* <div class="bg"></div> */
 ```
+
+<br>
+
+## #08 이벤트
+
+1. 태그 object에 이벤트 적용  
+   `<태그 이벤트종류="자바스크립트코드;">`
+
+2. 태그 object에 이름을 준 후 스크립트에서 적용
+
+```js
+<태그 id="아이디명">
+<script>
+let 변수명 = document.getElementById("아이디명");
+변수명.이벤트종류 = function(){
+  스크립트 코드
+}
+</script>
+```
+
+3. 이벤트 리스너로 적용
+
+- addEventListener
+- removeEventListener
+- hasEventListener
+
+`변수명.addEventListener("이벤트종류", function(e) {})`
+
+```html
+<button>btn</button>;
+```
+
+```js
+function fc() {
+  let val = document.querySelector("body");
+  val.style["background-color"] = "#000";
+}
+
+let btn = document.querySelector("button");
+btn.addEventListener("click", fc);
+```
+
+btn을 클릭하면 body의 배경색이 #000 으로 변경된다.
+
+<br>
+
+이벤트 목록
+
+리스너 이벤트로 사용할 때에는 앞에 on을 생략하고 작성한다. 그 외의 경우에는 on을 같이 작성해야한다.
+
+e 매개변수에는 많은 정보를 나타내는데 대표적인 정보만 작성함
+
+- e.type : 이벤트 종류  
+  e.target : 이벤트를 준 대상  
+  e.clientX : X 좌표  
+  e.clientY : Y 좌표  
+  e.keyCode : 키보드의 코드값
+
+```js
+// 마우스 이벤트
+click; /* 클릭하면 */
+dbclick; /* 더블클릭하면 */
+mouseover; /* 마우스를 올려두면 */
+mouseout; /* 마우스가 벗어나면 */
+mousedown; /* 클릭되는 동안 */
+mouseup; /* 클릭이 해제되면 */
+mousemove; /* 마우스가 움직이면 */
+contextmenu; /* 우클릭하면 */
+
+// 키보드 이벤트
+keydown; /* 키를 누를 때 */
+keyup; /* 키를 놓을 때 */
+keypress; /* deprecated 권장하지 않음 */
+
+// 포커스 이벤트
+focus; /* 선택한 요소에 포커스가 들어가면 */
+blur; /* 선택한 요소에서 포커스가 벗어나면 */
+
+// 기타 이벤트
+load; /* 선택한 요쇼의 하위요소들이 모두 불려지면 */
+change; /* 선택한 요소의 값이 변하면 */
+reset; /* reset 버튼이 클릭되면 */
+submit; /* 전송 버튼이 클릭되면 */
+```
