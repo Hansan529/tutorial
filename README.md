@@ -1529,3 +1529,63 @@ change; /* 선택한 요소의 값이 변하면 */
 reset; /* reset 버튼이 클릭되면 */
 submit; /* 전송 버튼이 클릭되면 */
 ```
+
+<br>
+
+```html
+<button class="click">click</button>
+<button class="dbclick">dbclick</button>
+<button class="mouseover">mouseover</button>
+<button class="mouseout">mouseout</button>
+<button class="mousedown">mousedown</button>
+<button class="mouseup">mouseup</button>
+<button class="mousemove">mousemove</button>
+<button class="contextmenu">contextmenu</button>
+
+<div class="output">output</div>
+```
+
+```js
+let output = document.querySelector(".output");
+
+// click을 클릭하면 output에 "click" 텍스트가 나타남
+document.querySelector(".click").addEventListener("click", function (event) {
+  output.innerHTML += "click";
+  event.preventDefault();
+});
+
+// dbclick을 더블 클릭하면 output의 배경 색상을 변경함
+document.querySelector(".dbclick").addEventListener("dbclick", function () {
+  output.style.backgroundColor = "skyblue";
+});
+
+// mouseover을 마우스로 옮겨보면 글꼴 크기를 줄임
+document.querySelector(".mouseover").addEventListener("mouseover", function () {
+  output.style.fontSize = "10px";
+});
+
+// mouseout을 마우스를 옮겼다가 밖으로 이동시키면 글꼴 색상을 변경함
+document.querySelector(".mouseout").addEventListener("mouseout", function () {
+  output.style.fontColor = "red";
+});
+
+// mousedown을 마우스 좌클릭을 하는 동안 opacity를 줄임
+document.querySelector(".mousedown").addEventListener("mousedown", function () {
+  output.style.opacity = 0.5;
+});
+
+// mouseup을 마우스 좌클릭을 하다가 떼면 배경 색상을 변경함
+document.querySelector(".mouseup").addEventListener("mouseup", function () {
+  output.style.backgroundColor = "pink";
+});
+
+// mousemove에 마우스를 움직이면 위치값을 콘솔에 띄움
+document
+  .querySelector(".mousemove")
+  .addEventListener("mousemove", function (e) {
+    console.log(e.clientX, e.clientY);
+  });
+
+// 별도의 탭에서 설명하겠음
+// document.querySelector(".contextmenu");
+```
