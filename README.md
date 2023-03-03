@@ -1659,3 +1659,55 @@ document.addEventListener("keydown", (e) => {
 ---
 
 <br>
+
+폼 이벤트
+
+```html
+<form>
+  <p>
+    <label>text<input type="checkbox" class="ui" /></label
+    ><label>text<input type="checkbox" class="ui" /></label
+    ><label>text<input type="checkbox" class="ui" /></label>
+  </p>
+  <p><input id="checkText" /></p>
+  <p>
+    <select name="likeColor" id="likeColor">
+      <option value="pink">Pink</option>
+      <option value="blue">Blue</option>
+      <option value="skyblue">Skyblue</option>
+    </select>
+  </p>
+  <button type="submit">전송</button>
+</form>
+```
+
+```js
+let uiLabel = document.querySelectorAll(".ui");
+for (i = 0; i < uiLabel.length; i++) {
+  uiLabel[i].addEventListener("change", (e) => {
+    console.log(e); /* type: 'change', target: input.ui */
+  });
+}
+
+// input의 value를 선택하는 경우
+let checkText = document
+  .querySelector("#checkText")
+  .addEventListener("select", (e) => {
+    console.log(e); /* type: 'select', target: input#checkText */
+  });
+
+// Blue로 select change
+let like = document
+  .querySelector("#likeColor")
+  .addEventListener("change", (e) => {
+    console.log(e.target.value); /* Blue */
+    console.log(e.target.selectedIndex); /* 1 */
+  });
+
+// 기본 속성 이벤트 제거
+let myForm = document
+  .querySelector("#myForm")
+  .addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
+```

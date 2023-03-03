@@ -929,60 +929,110 @@ let rain = ["우산", "우비", "장우산"];
 // });
 
 //^ pt80 - key event
-let style = document.createElement("style");
-style.innerHTML =
-  ".boxWrap{width: 600px; height: 400px; border: 1px solid; box-sizing: border-box; position: relative;}";
-style.append(".icon{position: absolute; top:0; left:0;");
-document.body.append(style);
-let input = document.createElement("input");
-input.id = "code";
-document.body.append(input);
-let box = document.createElement("div");
-box.innerHTML =
-  "<div class='icon'><img src='https://via.placeholder.com/100x100'></div>";
-box.classList.add("boxWrap");
-document.body.append(box);
+// let style = document.createElement("style");
+// style.innerHTML =
+//   ".boxWrap{width: 600px; height: 400px; border: 1px solid; box-sizing: border-box; position: relative;}";
+// style.append(".icon{position: absolute; top:0; left:0;");
+// document.body.append(style);
+// let input = document.createElement("input");
+// input.id = "code";
+// document.body.append(input);
+// let box = document.createElement("div");
+// box.innerHTML =
+//   "<div class='icon'><img src='https://via.placeholder.com/100x100'></div>";
+// box.classList.add("boxWrap");
+// document.body.append(box);
 
-let boxHandler = document.querySelector(".boxWrap");
-let boxWidth = boxHandler.offsetWidth;
-let boxHeight = boxHandler.offsetHeight;
+// let boxHandler = document.querySelector(".boxWrap");
+// let boxWidth = boxHandler.offsetWidth;
+// let boxHeight = boxHandler.offsetHeight;
 
-let iconHandler = document.querySelector(".icon");
-let iconWidth = iconHandler.offsetWidth;
-let iconHeight = iconHandler.offsetHeight;
+// let iconHandler = document.querySelector(".icon");
+// let iconWidth = iconHandler.offsetWidth;
+// let iconHeight = iconHandler.offsetHeight;
 
-let inputHandler = document.querySelector("#code");
+// let inputHandler = document.querySelector("#code");
 
-let boxAreaWidth = boxWidth - iconWidth;
-let boxAreaHeight = boxHeight - iconHeight;
+// let boxAreaWidth = boxWidth - iconWidth;
+// let boxAreaHeight = boxHeight - iconHeight;
 
-let xPos = 0;
-let yPos = 0;
+// let xPos = 0;
+// let yPos = 0;
 
-document.addEventListener("keydown", (e) => {
-  inputHandler.value = e.key;
-  switch (e.key) {
-    case "ArrowUp":
-      if (yPos > 0) {
-        yPos -= 10;
-      }
-      break;
-    case "ArrowRight":
-      if (xPos < boxAreaWidth) {
-        xPos += 10;
-      }
-      break;
-    case "ArrowDown":
-      if (yPos < boxAreaHeight) {
-        yPos += 10;
-      }
-      break;
-    case "ArrowLeft":
-      if (xPos > 0) {
-        xPos -= 10;
-      }
-      break;
-  }
-  iconHandler.style.left = xPos + "px";
-  iconHandler.style.top = yPos + "px";
-});
+// document.addEventListener("keydown", (e) => {
+//   inputHandler.value = e.key;
+//   switch (e.key) {
+//     case "ArrowUp":
+//       if (yPos > 0) {
+//         yPos -= 10;
+//       }
+//       break;
+//     case "ArrowRight":
+//       if (xPos < boxAreaWidth) {
+//         xPos += 10;
+//       }
+//       break;
+//     case "ArrowDown":
+//       if (yPos < boxAreaHeight) {
+//         yPos += 10;
+//       }
+//       break;
+//     case "ArrowLeft":
+//       if (xPos > 0) {
+//         xPos -= 10;
+//       }
+//       break;
+//   }
+//   iconHandler.style.left = xPos + "px";
+//   iconHandler.style.top = yPos + "px";
+// });
+
+//^ pt82 - form event
+let formCreate = document.createElement("form");
+formCreate.id = "myForm";
+let label = '<label>text<input type="checkbox" class="ui"></label>';
+formCreate.innerHTML = `<p>${label}${label}${label}</p>`;
+let pCreateInput = document.createElement("p");
+pCreateInput.innerHTML = "<input id='checkText'>";
+let pSelectCreate = document.createElement("p");
+let colorPink = "pink";
+let colorBlue = "blue";
+let colorSkyblue = "skyblue";
+let optionPink = `<option value="${colorPink}">Pink</option>`;
+let optionBlue = `<option value="${colorBlue}">Blue</option>`;
+let optionSkyblue = `<option value="${colorSkyblue}">Skyblue</option>`;
+pSelectCreate.innerHTML = `<select name='likeColor' id='likeColor'>${optionPink}${optionBlue}${optionSkyblue}</select>`;
+let submit = document.createElement("input");
+submit.type = "submit";
+submit.innerText = "전송";
+
+document.body.append(pCreateInput);
+document.body.append(pSelectCreate);
+document.body.append(submit);
+document.body.append(formCreate);
+
+let checkText = document
+  .querySelector("#checkText")
+  .addEventListener("select", (e) => {
+    console.log(e);
+  });
+
+let uiLabel = document.querySelectorAll(".ui");
+for (i = 0; i < uiLabel.length; i++) {
+  uiLabel[i].addEventListener("change", (e) => {
+    console.log(e);
+  });
+}
+
+let like = document
+  .querySelector("#likeColor")
+  .addEventListener("change", (e) => {
+    console.log(e.target.value);
+    console.log(e.target.selectedIndex);
+  });
+
+let myForm = document
+  .querySelector("#myForm")
+  .addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
