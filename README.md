@@ -1711,3 +1711,42 @@ let myForm = document
     e.preventDefault();
   });
 ```
+
+---
+
+<br>
+
+포커스 이벤트
+
+```html
+<form>
+  <p><input id="uId" /><label for="uId" class="uId">id</label></p>
+  <p>
+    <input type="password" id="uPass" />pw<label
+      for="uPass"
+      class="uPass"
+    ></label>
+  </p>
+</form>
+```
+
+```js
+let idlabel = document.querySelector(".uId");
+
+let uId = document.querySelector("$uId");
+
+// input을 focus하면 "active" class를 추가하고 idLabel을 none으로 변경함.
+uId.addEventListener("focus", (e) => {
+  // uId.classList.add("active"); /* 직접 선택하여 클래스 추가 */
+  // e.target.classList.add("active") /* 타겟이 된 요소에 클래스 추가 */
+  // e.currentTarget.classList.add("active"); /* 이벤트리스너를 가진 요소에 클래스 추가 */
+  this.classList.add("acitve"); /* 자기 자신에게 클래스 추가 */
+  idLabel.style.display = "none";
+});
+
+// input을 blur하면 "active" class를 제거하고 idLabel를 inline-block으로 변경한다.
+uId.addEventListener("blur", (e) => {
+  uId.classList.remove("active");
+  idLabel.style.display = "inline-block";
+});
+```
