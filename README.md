@@ -1737,9 +1737,9 @@ let uId = document.querySelector("$uId");
 
 // input을 focus하면 "active" class를 추가하고 idLabel을 none으로 변경함.
 uId.addEventListener("focus", (e) => {
-  // uId.classList.add("active"); /* 직접 선택하여 클래스 추가 */
-  // e.target.classList.add("active") /* 타겟이 된 요소에 클래스 추가 */
-  // e.currentTarget.classList.add("active"); /* 이벤트리스너를 가진 요소에 클래스 추가 */
+  /* uId.classList.add("active"); 직접 선택하여 클래스 추가 */
+  /* e.target.classList.add("active") 타겟이 된 요소에 클래스 추가 */
+  /* e.currentTarget.classList.add("active"); 이벤트리스너를 가진 요소에 클래스 추가 */
   this.classList.add("acitve"); /* 자기 자신에게 클래스 추가 */
   idLabel.style.display = "none";
 });
@@ -1749,4 +1749,60 @@ uId.addEventListener("blur", (e) => {
   uId.classList.remove("active");
   idLabel.style.display = "inline-block";
 });
+```
+
+---
+
+<br>
+
+스크롤 이벤트
+
+스크롤의 윗부분의 위치를 알 수 있다
+
+```js
+document.documentElement.scrollTop;
+```
+
+<br>
+
+```html
+<header>
+  <h1 class="logo">
+    <a fref="#"><img src="" /></a>
+  </h1>
+  <nav>
+    <ul id="list">
+      <li><a href="#">menu1</a></li>
+      <li><a href="#">menu2</a></li>
+      <li><a href="#">menu3</a></li>
+      <li><a href="#">menu4</a></li>
+      <li><a href="#">menu5</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="container">
+  <div id="mainBanner">
+    <img src="" />
+  </div>
+  <div class="inner">
+    <section>
+      <h2>title</h2>
+      <p>text</p>
+      <!-- p{text$} * 100 -->
+    </section>
+  </div>
+</main>
+```
+
+```js
+navFixed() => {
+  let scrollY = document.documentElement.scrollTop();
+  let nav = document.querySelector("nav");
+  if(scrollY > 80){
+    nav.classList.add("fixed");
+  } else {
+    nav.classList.remove("fixed");
+  }
+}
+document.addEventListener("scroll", navFixed)
 ```
