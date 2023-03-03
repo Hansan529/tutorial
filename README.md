@@ -1518,6 +1518,7 @@ contextmenu; /* 우클릭하면 */
 keydown; /* 키를 누를 때 */
 keyup; /* 키를 놓을 때 */
 keypress; /* deprecated 권장하지 않음 */
+// 키보드 코드 값: key, keyCode, code
 
 // 포커스 이벤트
 focus; /* 선택한 요소에 포커스가 들어가면 */
@@ -1525,12 +1526,17 @@ blur; /* 선택한 요소에서 포커스가 벗어나면 */
 
 // 기타 이벤트
 load; /* 선택한 요쇼의 하위요소들이 모두 불려지면 */
+select; /* 요소가 선택되면 */
 change; /* 선택한 요소의 값이 변하면 */
 reset; /* reset 버튼이 클릭되면 */
 submit; /* 전송 버튼이 클릭되면 */
 ```
 
+---
+
 <br>
+
+마우스 이벤트
 
 ```html
 <button class="click">click</button>
@@ -1589,3 +1595,67 @@ document
 // 별도의 탭에서 설명하겠음
 // document.querySelector(".contextmenu");
 ```
+
+---
+
+  <br>
+
+키보드 이벤트
+
+```html
+<input id="code" />
+<div class="boxWrap">
+  <div class="icon"><img src="url" /></div>
+</div>
+```
+
+```js
+// 방향키로 아이콘을 이동시키는 코드
+let boxHandler = document.querySelector(".boxWrap");
+let boxWidth = boxHandler.offsetWidth; /* 요소의 너비 */
+let boxHeight = boxHandler.offsetHeight; /* 요소의 높이 */
+
+let iconHandler = document.querySelector(".icon");
+let iconWidth = iconHandler.offsetWidth;
+let iconHeight = iconHandler.offsetHeight;
+
+let inputHandler = document.querySelector("#code");
+
+let boxAreaWidth = boxWidth - iconWidth;
+let boxAreaHeight = boxHeight - iconHeight;
+
+let xPos = 0;
+let yPos = 0;
+
+document.addEventListener("keydown", (e) => {
+  inputHandler.value = e.key;
+  switch (e.key) {
+    case "ArrowUp":
+      if (yPos > 0) {
+        yPos -= 10;
+      }
+      break;
+    case "ArrowRight":
+      if (xPos < boxAreaWidth) {
+        xPos += 10;
+      }
+      break;
+    case "ArrowDown":
+      if (yPos < boxAreaHeight) {
+        yPos += 10;
+      }
+      break;
+    case "ArrowLeft":
+      if (xPos > 0) {
+        xPos -= 10;
+      }
+      break;
+  }
+  iconHandler.style.left = xPos + "px";
+  iconHandler.style.top = yPos + "px";
+});
+```
+
+---
+
+<br>
