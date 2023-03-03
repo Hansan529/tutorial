@@ -1374,7 +1374,7 @@ let classRemove = document.querySelector(".remove");
 let classToggle = document.querySelector(".toggle");
 
 classAdd.onlcik = function(){
-  box.classList.add("bg"); /* Add btn 클릭하면 <div class="box bg"> */
+  box.classList.add("bg"); /* Add btn 클릭하면 <div class="box bg"></div> */
 }
 classRemove.onclick = function(){
   box.classList.remove("bg"); /* <div class="box"> */
@@ -1805,4 +1805,18 @@ navFixed() => {
   }
 }
 document.addEventListener("scroll", navFixed)
+```
+
+리사이징
+
+```js
+// 최초 상태
+let w = window.innerWidth;
+let h = window.innerHeight;
+
+// resize 후 너비 높이
+window.addEventListener("resize", () => {
+  w = window.innerWidth;
+  h = window.innerHeight;
+});
 ```
