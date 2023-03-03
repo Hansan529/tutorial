@@ -887,43 +887,102 @@ let rain = ["우산", "우비", "장우산"];
 // }
 
 //^ pt79
-let htmlStyle = document.createElement("style");
-htmlStyle.append("*{margin:0; padding: 0}");
-htmlStyle.append("li{list-style:none}");
-htmlStyle.append(
-  "div { width: 400px; margin:100px auto; text-align: center; position: relative; background-color: antiquewhite;}"
-);
-htmlStyle.append(".arrow>li>a{position:absolute;top:50%;}");
-htmlStyle.append(".arrow>li>.leftBtn{left: 0;}");
-htmlStyle.append(".arrow>li>.rightBtn{right: 0;}");
-document.body.append(htmlStyle);
+// let htmlStyle = document.createElement("style");
+// htmlStyle.append("*{margin:0; padding: 0}");
+// htmlStyle.append("li{list-style:none}");
+// htmlStyle.append(
+//   "div { width: 400px; margin:100px auto; text-align: center; position: relative; background-color: antiquewhite;}"
+// );
+// htmlStyle.append(".arrow>li>a{position:absolute;top:50%;}");
+// htmlStyle.append(".arrow>li>.leftBtn{left: 0;}");
+// htmlStyle.append(".arrow>li>.rightBtn{right: 0;}");
+// document.body.append(htmlStyle);
 
-let banner = document.createElement("div");
+// let banner = document.createElement("div");
 
-banner.innerHTML =
-  "<div><img src='../images/list-1.jpg' class='bannerImg'></div><ul class='arrow'><li><a href='#' class='leftBtn'>left</a></li><li><a href='#' class=rightBtn>right</a></li></ul>";
-document.body.append(banner);
+// banner.innerHTML =
+//   "<div><img src='../images/list-1.jpg' class='bannerImg'></div><ul class='arrow'><li><a href='#' class='leftBtn'>left</a></li><li><a href='#' class=rightBtn>right</a></li></ul>";
+// document.body.append(banner);
 
-let left = document.querySelector(".leftBtn");
-let right = document.querySelector(".rightBtn");
-let myImg = document.querySelector(".bannerImg");
+// let left = document.querySelector(".leftBtn");
+// let right = document.querySelector(".rightBtn");
+// let myImg = document.querySelector(".bannerImg");
 
-let showBanner = 1;
+// let showBanner = 1;
 
-right.addEventListener("click", function () {
-  if (showBanner < 3) {
-    showBanner++;
-  } else {
-    showBanner = 1;
+// right.addEventListener("click", function () {
+//   if (showBanner < 3) {
+//     showBanner++;
+//   } else {
+//     showBanner = 1;
+//   }
+//   myImg.src = `../images/list-${showBanner}.jpg`;
+// });
+
+// left.addEventListener("click", function () {
+//   if (showBanner > 1) {
+//     showBanner--;
+//   } else {
+//     showBanner = 3;
+//   }
+//   myImg.src = `../images/list-${showBanner}.jpg`;
+// });
+
+//^ pt80 - key event
+let style = document.createElement("style");
+style.innerHTML =
+  ".boxWrap{width: 600px; height: 400px; border: 1px solid; box-sizing: border-box; position: relative;}";
+style.append(".icon{position: absolute; top:0; left:0;");
+document.body.append(style);
+let input = document.createElement("input");
+input.id = "code";
+document.body.append(input);
+let box = document.createElement("div");
+box.innerHTML =
+  "<div class='icon'><img src='https://via.placeholder.com/100x100'></div>";
+box.classList.add("boxWrap");
+document.body.append(box);
+
+let boxHandler = document.querySelector(".boxWrap");
+let boxWidth = boxHandler.offsetWidth;
+let boxHeight = boxHandler.offsetHeight;
+
+let iconHandler = document.querySelector(".icon");
+let iconWidth = iconHandler.offsetWidth;
+let iconHeight = iconHandler.offsetHeight;
+
+let inputHandler = document.querySelector("#code");
+
+let boxAreaWidth = boxWidth - iconWidth;
+let boxAreaHeight = boxHeight - iconHeight;
+
+let xPos = 0;
+let yPos = 0;
+
+document.addEventListener("keydown", (e) => {
+  inputHandler.value = e.key;
+  switch (e.key) {
+    case "ArrowUp":
+      if (yPos > 0) {
+        yPos -= 10;
+      }
+      break;
+    case "ArrowRight":
+      if (xPos < boxAreaWidth) {
+        xPos += 10;
+      }
+      break;
+    case "ArrowDown":
+      if (yPos < boxAreaHeight) {
+        yPos += 10;
+      }
+      break;
+    case "ArrowLeft":
+      if (xPos > 0) {
+        xPos -= 10;
+      }
+      break;
   }
-  myImg.src = `../images/list-${showBanner}.jpg`;
-});
-
-left.addEventListener("click", function () {
-  if (showBanner > 1) {
-    showBanner--;
-  } else {
-    showBanner = 3;
-  }
-  myImg.src = `../images/list-${showBanner}.jpg`;
+  iconHandler.style.left = xPos + "px";
+  iconHandler.style.top = yPos + "px";
 });
