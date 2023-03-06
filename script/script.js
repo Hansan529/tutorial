@@ -988,51 +988,104 @@ let rain = ["우산", "우비", "장우산"];
 // });
 
 //^ pt82 - form event
-let formCreate = document.createElement("form");
-formCreate.id = "myForm";
-let label = '<label>text<input type="checkbox" class="ui"></label>';
-formCreate.innerHTML = `<p>${label}${label}${label}</p>`;
-let pCreateInput = document.createElement("p");
-pCreateInput.innerHTML = "<input id='checkText'>";
-let pSelectCreate = document.createElement("p");
-let colorPink = "pink";
-let colorBlue = "blue";
-let colorSkyblue = "skyblue";
-let optionPink = `<option value="${colorPink}">Pink</option>`;
-let optionBlue = `<option value="${colorBlue}">Blue</option>`;
-let optionSkyblue = `<option value="${colorSkyblue}">Skyblue</option>`;
-pSelectCreate.innerHTML = `<select name='likeColor' id='likeColor'>${optionPink}${optionBlue}${optionSkyblue}</select>`;
-let submit = document.createElement("input");
-submit.type = "submit";
-submit.innerText = "전송";
+// let formCreate = document.createElement("form");
+// formCreate.id = "myForm";
+// let label = '<label>text<input type="checkbox" class="ui"></label>';
+// formCreate.innerHTML = `<p>${label}${label}${label}</p>`;
+// let pCreateInput = document.createElement("p");
+// pCreateInput.innerHTML = "<input id='checkText'>";
+// let pSelectCreate = document.createElement("p");
+// let colorPink = "pink";
+// let colorBlue = "blue";
+// let colorSkyblue = "skyblue";
+// let optionPink = `<option value="${colorPink}">Pink</option>`;
+// let optionBlue = `<option value="${colorBlue}">Blue</option>`;
+// let optionSkyblue = `<option value="${colorSkyblue}">Skyblue</option>`;
+// pSelectCreate.innerHTML = `<select name='likeColor' id='likeColor'>${optionPink}${optionBlue}${optionSkyblue}</select>`;
+// let submit = document.createElement("input");
+// submit.type = "submit";
+// submit.innerText = "전송";
 
-document.body.append(pCreateInput);
-document.body.append(pSelectCreate);
-document.body.append(submit);
-document.body.append(formCreate);
+// document.body.append(pCreateInput);
+// document.body.append(pSelectCreate);
+// document.body.append(submit);
+// document.body.append(formCreate);
 
-let checkText = document
-  .querySelector("#checkText")
-  .addEventListener("select", (e) => {
-    console.log(e);
-  });
+// let checkText = document
+//   .querySelector("#checkText")
+//   .addEventListener("select", (e) => {
+//     console.log(e);
+//   });
 
-let uiLabel = document.querySelectorAll(".ui");
-for (i = 0; i < uiLabel.length; i++) {
-  uiLabel[i].addEventListener("change", (e) => {
-    console.log(e);
-  });
-}
+// let uiLabel = document.querySelectorAll(".ui");
+// for (i = 0; i < uiLabel.length; i++) {
+//   uiLabel[i].addEventListener("change", (e) => {
+//     console.log(e);
+//   });
+// }
 
-let like = document
-  .querySelector("#likeColor")
-  .addEventListener("change", (e) => {
-    console.log(e.target.value);
-    console.log(e.target.selectedIndex);
-  });
+// let like = document
+//   .querySelector("#likeColor")
+//   .addEventListener("change", (e) => {
+//     console.log(e.target.value);
+//     console.log(e.target.selectedIndex);
+//   });
 
-let myForm = document
-  .querySelector("#myForm")
-  .addEventListener("submit", (e) => {
-    e.preventDefault();
-  });
+// let myForm = document
+//   .querySelector("#myForm")
+//   .addEventListener("submit", (e) => {
+//     e.preventDefault();
+//   });
+
+//^ pt87 - video
+let css = document.createElement("style");
+css.append(
+  "#videoWrap { width: 800px; margin: 0 auto;} #videoWrap video{width:100%}.controlBtn{display:flex;gap:20px;}"
+);
+css.append(
+  ".controlBtn>li>a{display: block;width:24px;height:24px;padding:10px;border:1px solid;background-repeat:no-repeat;background-position:center;text-indent:-9999px;}.playPause{background-image:url(../images/btn-play.png);}"
+);
+css.append(
+  ".stop {background: url(../images/btn-stop.png);} .prev{background:url(../images/btn-back.png);} .next{background:url(../images/btn-reward.png);}"
+);
+css.append(".playPause.active{background-image:url(../images/btn-pause.png)}");
+let videoEle = document.createElement("div");
+videoEle.id = "videoWrap";
+videoEle.innerHTML =
+  '<video src="http://media.w3.org/2010/05/sintel/trailer.mp4" id="myVideo"></video>';
+let controlBtn = document.createElement("ul");
+controlBtn.classList.add("controlBtn");
+controlBtn.innerHTML =
+  "<li><a href='#' class='playPause'>play/pause</a></li><li><a href='#' class='stop'>stop</a></li><li><a href='#' class='prev'>prev</a></li><li><a href='#' class='next'>next</a></li>";
+document.body.append(css);
+document.body.append(videoEle);
+document.body.append(controlBtn);
+
+let myVideo = document.querySelector("#myVideo");
+let play = document.querySelector(".playPause");
+let stop = document.querySelector(".stop");
+let next = document.querySelector(".next");
+let prev = document.querySelector(".prev");
+
+play.addEventListener("click", () => {
+  if (myVideo.paused) {
+    myVideo.play();
+    play.classList.add("active");
+  } else {
+    myVideo.pause();
+    play.classList.remove("active");
+  }
+});
+
+stop.addEventListener("click", () => {
+  myVideo.pause();
+  myVideo.currentTime = 0;
+  play.classList.remove("active");
+});
+
+next.addEventListener("click", () => {
+  myVideo.currentTime += 5;
+});
+prev.addEventListener("click", () => {
+  myVideo.currentTime -= 5;
+});
