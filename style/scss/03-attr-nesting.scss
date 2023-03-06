@@ -1,0 +1,22 @@
+h1 {
+  // font-style font-weight, font-size / line-height font-family
+  // font: italic 700 50px / 2 "돋움";
+  font: 50px/100px "돋움" {
+    weight: 100;
+    style: italic;
+  }
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  > div {
+    background: skyblue;
+    margin: {
+      top: 10px;
+      left: 50px;
+      right: 30px;
+      bottom: 20px;
+    }
+  }
+}

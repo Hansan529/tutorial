@@ -1,0 +1,9 @@
+@charset "UTF-8";
+h1 {
+  color: pink;
+  background: #ccc;
+  font-family: "돋움";
+  font-size: 30px;
+  font-weight: 100;
+  font-style: italic;
+}/*# sourceMappingURL=02-attr-nesting.css.map */
