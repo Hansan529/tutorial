@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="./">목록으로 이동</a>
+    <pre style="white-space: pre-line">
+      $("ul&gt;li").css({ listStyle: "none" });
+
+      $("p").parent().css({ backgroundColor: "green" });
+      $("p").parents().css({ color: "pink" });
+      
+      $(".menu").children().css({ border: "1px solid" });
+      
+      $(".sub1").closest("ul").css({ border: "2px dashed", margin: "10px" });
+      $(".depth2").closest("ul").css({ border: "2px dashed red", margin: "10px" });
+      </pre
+    >
+    <div>
+      <p>parent() 부모 선택자</p>
+      <p>children() 자식 선택자</p>
+      <p>closest("") 가까운 요소 선택자</p>
+    </div>
+    <h1>조상 선택자</h1>
+    <div class="wrap">
+      <h2>부모찾기</h2>
+      <div class="parent">
+        <p class="child">자식</p>
+      </div>
+    </div>
+
+    <ul class="menu">
+      <li>
+        <a href="#">menu1</a>
+        <ul class="sub sub1">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu2</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li class="depth2"><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu3</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+    </ul>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script/04-selectorParent.js"></script>
+  </body>
+</html>
