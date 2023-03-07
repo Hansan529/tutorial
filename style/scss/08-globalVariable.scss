@@ -1,0 +1,32 @@
+$contentColor: green;
+$contentSize: 30px;
+$commonColor: #333;
+
+header {
+  border-bottom: 2px solid $contentColor;
+  h1 {
+    font-size: $contentSize;
+    color: $contentColor;
+  }
+
+  #nav {
+    li {
+      a {
+        color: $commonColor;
+
+        &:hover {
+          color: $contentColor;
+        }
+      }
+    }
+  }
+}
+
+#main {
+  section {
+    * {
+      font-size: $contentSize;
+      color: $contentColor;
+    }
+  }
+}
