@@ -1,0 +1,21 @@
+header {
+  border-bottom: 2px solid #ccc;
+}
+header #nav {
+  display: flex;
+  justify-content: flex-end;
+}
+header #nav li {
+  margin: 0 100px;
+}
+header #nav li:last-child {
+  margin-right: 0;
+}
+header #nav li a {
+  font-size: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+header #nav li a:hover {
+  color: pink;
+}/*# sourceMappingURL=04-parentSelector.css.map */
