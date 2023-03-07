@@ -1,0 +1,20 @@
+.list {
+  display: flex;
+  gap: 100px;
+  li {
+    list-style: none;
+
+    a {
+      color: hotpink;
+      text-decoration: none;
+
+      &:hover {
+        color: darkgreen;
+      }
+
+      .wrap & {
+        background: lime;
+      }
+    }
+  }
+}

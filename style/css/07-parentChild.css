@@ -1,0 +1,17 @@
+.list {
+  display: flex;
+  gap: 100px;
+}
+.list li {
+  list-style: none;
+}
+.list li a {
+  color: hotpink;
+  text-decoration: none;
+}
+.list li a:hover {
+  color: darkgreen;
+}
+.wrap .list li a {
+  background: lime;
+} /*# sourceMappingURL=07-parentChild.css.map */
