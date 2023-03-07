@@ -1,0 +1,8 @@
+header p::before {
+  content: "text";
+  font-size: 30px;
+}
+
+p::after {
+  content: "yellow";
+}/*# sourceMappingURL=12-redefine.css.map */

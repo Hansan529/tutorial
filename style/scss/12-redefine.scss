@@ -1,0 +1,14 @@
+$content: "text";
+
+header {
+  p {
+    &::before {
+      content: $content;
+      font-size: 30px;
+    }
+  }
+}
+$content: "yellow";
+p::after {
+  content: $content;
+}
