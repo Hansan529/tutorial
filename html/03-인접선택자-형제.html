@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="./">목록으로 이동</a>
+    <pre style="white-space: pre-line">
+      $(".list3").next().css("color", "red");
+      $(".list3").nextAll().css("border", "1px solid");
+      $(".list3").nextUntil(".list6").css("backgroundColor", "yellow");
+      
+      $(".menu6").prev().css({ color: "hotpink" });
+      $(".menu6").prevAll().css({ background: "#ddd" });
+      $(".menu6").prevUntil(".menu3").css({ border: "1px solid" });
+      
+      $(".si3").siblings().css({
+        fontSize: "30px",
+        color: "green",
+      });
+      
+    </pre>
+
+    <h1>이전 형제</h1>
+    <ul class="menu">
+      <li>menu1</li>
+      <li>menu2</li>
+      <li class="menu3">menu3</li>
+      <li>menu4</li>
+      <li>menu5</li>
+      <li class="menu6">menu6</li>
+      <li>menu7</li>
+    </ul>
+
+    <h1>이후 형제</h1>
+    <ol class="list">
+      <li>list1</li>
+      <li>list2</li>
+      <li class="list3">list3</li>
+      <li>list4</li>
+      <li>list5</li>
+      <li class="list6">list6</li>
+      <li>list7</li>
+    </ol>
+
+    <h1>형제들</h1>
+    <ul class="si">
+      <li>형제들1</li>
+      <li>형제들2</li>
+      <li class="si3">형제들3</li>
+      <li>형제들4</li>
+      <li>형제들5</li>
+      <li>형제들6</li>
+      <li>형제들7</li>
+    </ul>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script/03-selectorSiblings.js"></script>
+  </body>
+</html>
