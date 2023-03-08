@@ -1,0 +1,13 @@
+.box__wrap > div {
+  background: skyblue;
+  margin: 10px;
+}
+.box__wrap > div:first-child {
+  width: 200px;
+}
+.box__wrap > div:nth-child(2) {
+  width: 200px;
+}
+.box__wrap > div:last-child {
+  width: 200px;
+}
