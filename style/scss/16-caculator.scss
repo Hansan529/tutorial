@@ -1,0 +1,22 @@
+.box__wrap {
+  > div {
+    background: rgba(250, 128, 114, 0.5);
+    margin: 20px;
+
+    &.box {
+      width: 200px;
+    }
+    &.box1 {
+      width: 200px + 100px;
+    }
+    &.box2 {
+      width: 200px - 100px;
+    }
+    &.box3 {
+      width: 200px * 1.3;
+    }
+    &.box4 {
+      width: calc(1000px / 5);
+    }
+  }
+}

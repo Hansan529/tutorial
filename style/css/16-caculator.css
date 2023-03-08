@@ -1,0 +1,19 @@
+.box__wrap > div {
+  background: rgba(250, 128, 114, 0.5);
+  margin: 20px;
+}
+.box__wrap > div.box {
+  width: 200px;
+}
+.box__wrap > div.box1 {
+  width: 300px;
+}
+.box__wrap > div.box2 {
+  width: 100px;
+}
+.box__wrap > div.box3 {
+  width: 260px;
+}
+.box__wrap > div.box4 {
+  width: 200px;
+}
