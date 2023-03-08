@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="./">목록으로 이동</a>
+    <pre style="white-space: pre-line">
+      $(".menu&gt;li").children("a").css({ color: "black" });
+      $(".menu").find("a").css({ textDecoration: "none" });</pre
+    >
+    <ul class="menu">
+      <li>
+        <a href="#">menu1</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu2</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu3</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu4</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu5</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+    </ul>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script/09-selectorEtc.js"></script>
+  </body>
+</html>
