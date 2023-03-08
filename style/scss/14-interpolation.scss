@@ -1,0 +1,10 @@
+$pink: pink;
+$direction: bottom;
+
+.bg-#{pink} {
+  background: $pink;
+
+  h2 {
+    border-#{$direction}: 3px solid #000;
+  }
+}
