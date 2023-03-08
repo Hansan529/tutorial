@@ -8,7 +8,13 @@
   </head>
   <body>
     <a href="./">목록으로 이동</a>
-    <pre style="white-space: pre-line"></pre>
+    <pre style="white-space: pre-line">
+      let value = $("select &gt; option:selected").val();
+      console.log(value);
+
+      let inputValue = $("input:checked").val();
+      console.log(inputValue);
+    </pre>
     <div></div>
     <h1 class="vis">visibility</h1>
     <h1>제목</h1>
