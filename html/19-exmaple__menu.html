@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/reset.css" />
+    <style>
+      nav {
+        background: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+      }
+      #menu {
+        width: 60%;
+        min-width: 320px;
+        line-height: 2.3;
+      }
+      #menu > li > a {
+        display: block;
+        background-color: #111;
+        background-image: url("https://via.placeholder.com/50x20/FFFFFF/000000.png?text=Down");
+        background-repeat: no-repeat;
+        background-position: 95% center;
+        border-bottom: 1px solid #222;
+        color: #fff;
+        font-size: 20px;
+        text-indent: 20px;
+      }
+      #menu > li.active > a {
+        text-decoration: underline;
+        background-image: url("https://via.placeholder.com/50x20/FFFFFF/000000.png?text=Up");
+      }
+      #menu > li .sub {
+        display: none;
+      }
+      #menu > li.active .sub {
+        display: block;
+      }
+      #menu > li .sub > li > a {
+        display: block;
+        background: #181818;
+        border-bottom: 1px solid #222;
+        color: #fff;
+        text-indent: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <nav>
+      <ul id="menu">
+        <li>
+          <a href="#">menu1</a>
+          <ul class="sub">
+            <li><a href="#">submenu1</a></li>
+            <li><a href="#">submenu2</a></li>
+            <li><a href="#">submenu3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu2</a>
+          <ul class="sub">
+            <li><a href="#">submenu1</a></li>
+            <li><a href="#">submenu2</a></li>
+            <li><a href="#">submenu3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu3</a>
+          <ul class="sub">
+            <li><a href="#">submenu1</a></li>
+            <li><a href="#">submenu2</a></li>
+            <li><a href="#">submenu3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu4</a>
+          <ul class="sub">
+            <li><a href="#">submenu1</a></li>
+            <li><a href="#">submenu2</a></li>
+            <li><a href="#">submenu3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu5</a>
+          <ul class="sub">
+            <li><a href="#">submenu1</a></li>
+            <li><a href="#">submenu2</a></li>
+            <li><a href="#">submenu3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script/19-example.js"></script>
+  </body>
+</html>
