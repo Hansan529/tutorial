@@ -1,0 +1,14 @@
+@mixin myButton($borderColor, $bgColor, $fontColor, $padding) {
+  border: 1px solid $borderColor;
+  background-color: $bgColor;
+  color: $fontColor;
+  padding: $padding;
+}
+
+h1 {
+  @include myButton(red, #fff, blue, 10px);
+}
+
+button {
+  @include myButton(#fff, #ddd, red, 5px);
+}
