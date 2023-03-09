@@ -1,0 +1,22 @@
+h1,
+span,
+p {
+  font-size: 25px;
+  color: #fff;
+  text-decoration: underline;
+}
+
+h1 {
+  background: pink;
+  border: 1px solid green;
+}
+
+span {
+  background: lightblue;
+  font-style: italic;
+}
+
+p {
+  background: yellow;
+  font-weight: bold;
+}
