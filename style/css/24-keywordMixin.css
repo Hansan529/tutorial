@@ -1,0 +1,26 @@
+.wrap {
+  background: skyblue;
+  width: 800px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+.wrap .box1 {
+  background: pink;
+  width: 500px;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+.wrap .box2 {
+  background: green;
+  height: 200px;
+  position: absolute;
+  right: 10px;
+  bottom: 50px;
+}
+.wrap .box3 {
+  background: pink;
+  width: 300px;
+  height: 50px;
+}
