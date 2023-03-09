@@ -15,6 +15,6 @@ $("#nav>.active>a").css({
   color: "dodgerblue",
 });
 
-$("#nav>li").click(() => {
+$("#nav>li").click(function () {
   $(this).addClass("active").siblings().removeClass("active");
 });
