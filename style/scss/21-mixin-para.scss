@@ -1,0 +1,21 @@
+@mixin myFlex($align, $gap) {
+  display: flex;
+  justify-content: $align;
+  gap: $gap;
+}
+@mixin myBorder($weight, $type, $color) {
+  border: $weight $type $color;
+}
+ul {
+  @include myFlex(flex-end, 10px);
+  li {
+    @include myBorder(1px, solid, blue);
+  }
+}
+
+ol {
+  @include myFlex(center, 20px);
+  li {
+    @include myBorder(1px, solid, pink);
+  }
+}
