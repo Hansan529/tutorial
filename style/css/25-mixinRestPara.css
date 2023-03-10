@@ -1,0 +1,14 @@
+.box1 {
+  width: 800px;
+  height: 400px;
+  background: url("https://via.placeholder.com/1000x1000/FFFF00/000000.png?text=Test+Image");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.box2 {
+  width: 600px;
+  height: 500px;
+  background: url("https://via.placeholder.com/200x900/000000/ffffff.png?text=Test+Image") no-repeat, url("https://via.placeholder.com/1000x1200/00FF00/000000.png?text=Test+Image") no-repeat;
+}

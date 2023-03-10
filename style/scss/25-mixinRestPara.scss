@@ -1,0 +1,29 @@
+@mixin bg($width, $height, $bg...) {
+  width: $width;
+  height: $height;
+  background: $bg;
+}
+
+.box1 {
+  @include bg(
+    800px,
+    400px,
+    url("https://via.placeholder.com/1000x1000/FFFF00/000000.png?text=Test+Image")
+  );
+  background: {
+    repeat: no-repeat;
+    position: center;
+    size: cover;
+  }
+}
+
+.box2 {
+  @include bg(
+    600px,
+    500px,
+    url("https://via.placeholder.com/200x900/000000/ffffff.png?text=Test+Image")
+      no-repeat,
+    url("https://via.placeholder.com/1000x1200/00FF00/000000.png?text=Test+Image")
+      no-repeat
+  );
+}
