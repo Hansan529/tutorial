@@ -1,0 +1,71 @@
+header {
+  background: tomato;
+  border-bottom: 1px solid lightgreen;
+}
+@media screen and (max-width: 768px) {
+  header {
+    text-align: left;
+  }
+}
+header .logo {
+  text-align: center;
+}
+header .gnb {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  display: flex;
+  gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  header .gnb {
+    display: none;
+  }
+}
+header .ham {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  header .ham {
+    display: block;
+  }
+}
+header nav .mgnb {
+  display: none;
+}
+header nav .close {
+  display: none;
+}
+header nav #nav {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  line-height: 50px;
+}
+@media screen and (max-width: 768px) {
+  header nav #nav {
+    display: block;
+    width: 70%;
+    background: #ddd;
+  }
+}
+
+.innerBox {
+  background: blanchedalmond;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .innerBox {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .innerBox {
+    width: 80%;
+  }
+}
