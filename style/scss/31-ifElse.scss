@@ -1,0 +1,27 @@
+@mixin boxPos($w, $h, $left, $top, $p: absolute) {
+  position: $p;
+  @if ($p==absolute or $p==fixed) {
+    width: $w;
+    height: if(unitless($h), #{$h}, $h);
+    left: $left;
+    top: $top;
+  } @else {
+    width: $left;
+  }
+}
+
+.wrap {
+  width: 800px;
+  height: 400px;
+  backgroun-color: azure;
+  margin: 100px auto;
+
+  .box1 {
+    @include boxPos(600px, 100px, 10px, 20px);
+    background: pink;
+  }
+  .box2 {
+    @include boxPos(200px, 200px, 0, 0, fixed);
+    background: lightyellow;
+  }
+}

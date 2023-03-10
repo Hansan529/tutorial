@@ -1,0 +1,22 @@
+.wrap {
+  width: 800px;
+  height: 400px;
+  backgroun-color: azure;
+  margin: 100px auto;
+}
+.wrap .box1 {
+  position: absolute;
+  width: 600px;
+  height: 100px;
+  left: 10px;
+  top: 20px;
+  background: pink;
+}
+.wrap .box2 {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  left: 0;
+  top: 0;
+  background: lightyellow;
+}
