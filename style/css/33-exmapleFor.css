@@ -1,0 +1,27 @@
+.sand {
+  display: flex;
+}
+.sand > li > a {
+  display: block;
+  height: 300px;
+  width: 300px;
+  background-size: 100%;
+}
+.sand > li:nth-child(1) > a {
+  background: url(http://via.placeholder.com/100) no-repeat;
+}
+.sand > li:nth-child(2) > a {
+  background: url(http://via.placeholder.com/200) no-repeat;
+}
+.sand > li:nth-child(3) > a {
+  background: url(http://via.placeholder.com/300) no-repeat;
+}
+.sand > li:nth-child(4) > a {
+  background: url(http://via.placeholder.com/400) no-repeat;
+}
+.sand > li:nth-child(5) > a {
+  background: url(http://via.placeholder.com/500) no-repeat;
+}
+.sand > li:nth-child(6) > a {
+  background: url(http://via.placeholder.com/600) no-repeat;
+}

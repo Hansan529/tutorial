@@ -1,0 +1,18 @@
+.sand {
+  display: flex;
+  > li {
+    > a {
+      display: block;
+      height: 300px;
+      width: 300px;
+      background-size: 100%;
+    }
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        > a {
+          background: url(http://via.placeholder.com/#{$i*100}) no-repeat;
+        }
+      }
+    }
+  }
+}
