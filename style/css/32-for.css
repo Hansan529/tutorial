@@ -1,0 +1,38 @@
+.wrap1 > div {
+  background: skyblue;
+  height: 50px;
+  margin: 10px;
+}
+.wrap1 div:nth-child(1) {
+  width: 100px;
+}
+.wrap1 div:nth-child(2) {
+  width: 200px;
+}
+.wrap1 div:nth-child(3) {
+  width: 300px;
+}
+.wrap1 div:nth-child(4) {
+  width: 400px;
+}
+.wrap1 div:nth-child(5) {
+  width: 500px;
+}
+
+.wrap2 > div {
+  background: pink;
+  width: 500px;
+  margin: 10px;
+}
+.wrap2 > div.to1 {
+  height: 50px;
+}
+.wrap2 > div.to2 {
+  height: 100px;
+}
+.wrap2 > div.to3 {
+  height: 150px;
+}
+.wrap2 > div.to4 {
+  height: 200px;
+}

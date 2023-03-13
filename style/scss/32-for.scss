@@ -1,0 +1,25 @@
+.wrap1 {
+  > div {
+    background: skyblue;
+    height: 50px;
+    margin: 10px;
+  }
+  @for $i from 1 through 5 {
+    div:nth-child(#{$i}) {
+      width: 100px * $i;
+    }
+  }
+}
+
+.wrap2 {
+  > div {
+    background: pink;
+    width: 500px;
+    margin: 10px;
+    @for $j from 1 to 5 {
+      &.to#{$j} {
+        height: 50px * $j;
+      }
+    }
+  }
+}
