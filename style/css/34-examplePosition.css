@@ -1,0 +1,25 @@
+.quick {
+  display: flex;
+  gap: 10px;
+}
+.quick li {
+  width: 70px;
+  height: 70px;
+}
+.quick li a {
+  display: block;
+  height: 100%;
+  background: url("http://placeimg.com/640/480/any");
+}
+.quick li:nth-child(1) a {
+  background-position: 0px 270px;
+}
+.quick li:nth-child(2) a {
+  background-position: -120px 270px;
+}
+.quick li:nth-child(3) a {
+  background-position: -240px 270px;
+}
+.quick li:nth-child(4) a {
+  background-position: -360px 270px;
+}
