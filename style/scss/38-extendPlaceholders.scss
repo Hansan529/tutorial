@@ -1,0 +1,22 @@
+%btn {
+  font-size: 24px;
+  border: 1px solid #000;
+  margin: 10px;
+  padding: 10px;
+}
+
+.box__wrap {
+  .box1 {
+    @extend %btn;
+    background: green;
+  }
+  .box2 {
+    @extend %btn;
+    background-color: pink;
+    font-size: 30px;
+  }
+  .box3 {
+    @extend %btn;
+    text-decoration: underline;
+  }
+}
