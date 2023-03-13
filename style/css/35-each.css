@@ -1,0 +1,24 @@
+.sns {
+  display: flex;
+  gap: 10px;
+}
+.sns > li > a {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+.sns > li.blog a {
+  background: url(https://via.placeholder.com/100?text=blog);
+}
+.sns > li.facebook a {
+  background: url(https://via.placeholder.com/100?text=facebook);
+}
+.sns > li.instagram a {
+  background: url(https://via.placeholder.com/100?text=instagram);
+}
+.sns > li.twiiter a {
+  background: url(https://via.placeholder.com/100?text=twiiter);
+}
+.sns > li.youtube a {
+  background: url(https://via.placeholder.com/100?text=youtube);
+}

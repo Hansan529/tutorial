@@ -1,0 +1,21 @@
+$snsArr: (blog, facebook, instagram, twiiter, youtube);
+
+.sns {
+  display: flex;
+  gap: 10px;
+
+  > li {
+    > a {
+      display: block;
+      width: 100px;
+      height: 100px;
+    }
+    @each $i in $snsArr {
+      &.#{$i} {
+        a {
+          background: url(https://via.placeholder.com/100?text=#{$i});
+        }
+      }
+    }
+  }
+}
