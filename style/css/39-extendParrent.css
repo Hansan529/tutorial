@@ -1,0 +1,11 @@
+.box__wrap, .box__wrap .box {
+  border: 2px solid dodgerblue;
+  padding: 10px 30px;
+  margin: 20px;
+}
+.box__wrap .box {
+  border-radius: 50px;
+  background: skyblue;
+  font-size: 30px;
+  display: inline-block;
+}
