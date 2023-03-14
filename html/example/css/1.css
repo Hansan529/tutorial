@@ -1,0 +1,122 @@
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 0, 0, 0.3);
+}
+@media screen and (max-width: 768px) {
+  .inner {
+    max-width: 95%;
+  }
+}
+
+body {
+  background: #ccc;
+}
+
+header {
+  background: #023586;
+  position: relative;
+}
+header .header__inner {
+  padding: 0 50px;
+}
+@media screen and (max-width: 768px) {
+  header .header__inner {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+  }
+}
+header .header__inner .ham-btn {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  header .header__inner .ham-btn {
+    display: block;
+  }
+}
+header .header__inner .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 768px) {
+  header .header__inner .logo img {
+    width: 180px;
+  }
+}
+header .header__inner .gnb__wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  header .header__inner .gnb__wrap {
+    height: 60px;
+  }
+}
+header .header__inner .gnb__wrap > div > ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  header .header__inner .gnb__wrap > div > ul {
+    display: none;
+  }
+}
+header .header__inner .gnb__wrap > div > ul > li::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: #fff;
+  position: relative;
+  top: 35px;
+  width: 0;
+  transition: 0.3s;
+}
+header .header__inner .gnb__wrap > div > ul > li:hover::after {
+  width: 100%;
+}
+header .header__inner .gnb__wrap > div > ul > li > a {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+}
+header .header__inner .gnb__wrap > div > ul > li .sub__wrap {
+  background: #fff;
+  position: absolute;
+  top: 90px;
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  padding: 20px;
+  line-height: 3;
+  box-shadow: 0 0 10px 0 #000;
+}
+header .header__inner .gnb__wrap > div > ul > li .sub__wrap > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+header .header__inner .gnb__wrap > div .search__btn {
+  color: #fff;
+}
+
+.mobile__nav {
+  display: none;
+}
+
+#container {
+  display: none;
+}
+
+footer {
+  display: none;
+}
+
+#aside__menu {
+  display: none;
+}
