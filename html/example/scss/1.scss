@@ -105,22 +105,33 @@ header {
           @include respond($responsive__768) {
             display: none;
           }
+          align-items: center;
           > li {
             &::after {
               content: "";
               display: block;
               height: 2px;
               background: #fff;
-              @include pos1($p: relative, $top: 35px);
+              @include pos1($p: relative);
               width: 0;
               transition: 0.3s;
             }
             &:hover::after {
               width: 100%;
             }
+            &.color::after {
+              background: #feda24;
+            }
+            &.color {
+              > a {
+                color: #feda24;
+              }
+            }
 
             > a {
+              display: block;
               color: #fff;
+              line-height: 90px;
               font: {
                 size: 15px;
                 weight: bold;
@@ -133,8 +144,10 @@ header {
               padding: 20px;
               line-height: 3;
               box-shadow: 0 0 10px 0 #000;
+              display: none;
               > div {
                 @include flexLayout($gap: 50px);
+                float: left;
               }
             }
           }
@@ -147,7 +160,7 @@ header {
   }
 }
 .mobile__nav {
-  display: none;
+  // display: none;
 }
 
 #container {

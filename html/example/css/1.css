@@ -61,6 +61,7 @@ header .header__inner .gnb__wrap > div > ul {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  align-items: center;
 }
 @media screen and (max-width: 768px) {
   header .header__inner .gnb__wrap > div > ul {
@@ -73,15 +74,22 @@ header .header__inner .gnb__wrap > div > ul > li::after {
   height: 2px;
   background: #fff;
   position: relative;
-  top: 35px;
   width: 0;
   transition: 0.3s;
 }
 header .header__inner .gnb__wrap > div > ul > li:hover::after {
   width: 100%;
 }
+header .header__inner .gnb__wrap > div > ul > li.color::after {
+  background: #feda24;
+}
+header .header__inner .gnb__wrap > div > ul > li.color > a {
+  color: #feda24;
+}
 header .header__inner .gnb__wrap > div > ul > li > a {
+  display: block;
   color: #fff;
+  line-height: 90px;
   font-size: 15px;
   font-weight: bold;
 }
@@ -95,18 +103,16 @@ header .header__inner .gnb__wrap > div > ul > li .sub__wrap {
   padding: 20px;
   line-height: 3;
   box-shadow: 0 0 10px 0 #000;
+  display: none;
 }
 header .header__inner .gnb__wrap > div > ul > li .sub__wrap > div {
   display: flex;
   justify-content: space-between;
   gap: 50px;
+  float: left;
 }
 header .header__inner .gnb__wrap > div .search__btn {
   color: #fff;
-}
-
-.mobile__nav {
-  display: none;
 }
 
 #container {
