@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.6.3.min.js"></script>
+    <link rel="stylesheet" href="../style/reset.css" />
+    <style>
+      #main__banner {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+      .banner {
+        display: flex;
+        width: 300%;
+      }
+      .banner > li {
+        width: calc(100% / 3);
+      }
+      .banner > li:first-child {
+        display: block;
+      }
+      .banner > li > a {
+        display: block;
+      }
+      .banner > li > a > img {
+        width: 100%;
+      }
+      .pager {
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .pager > li > button {
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: #fff;
+        border-radius: 10px;
+        text-indent: -9999px;
+      }
+      .pager > li.active > button {
+        width: 30px;
+        background: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <div id="main__banner">
+      <ul class="banner">
+        <li>
+          <a href="#"
+            ><img src="https://loremflickr.com/1920/600/cat" alt="lorem"
+          /></a>
+        </li>
+        <li>
+          <a href="#"
+            ><img src="https://loremflickr.com/1920/600/" alt="lorem"
+          /></a>
+        </li>
+        <li>
+          <a href="#"
+            ><img src="https://loremflickr.com/1920/600/water" alt="lorem"
+          /></a>
+        </li>
+      </ul>
+      <ul class="pager">
+        <li class="active"><button>1</button></li>
+        <li><button>2</button></li>
+        <li><button>3</button></li>
+      </ul>
+    </div>
+    <script src="../script/46-buttonHorizontal.js"></script>
+  </body>
+</html>
