@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <style>
+      .bg1 {
+        background: salmon;
+      }
+      .bg2 {
+        background: greenyellow;
+      }
+      .bg3 {
+        background: dodgerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <h1>form</h1>
+    <p>focusin: 포커스가 되면 실행함</p>
+    <p>focusout: 포커스에서 벗어나면 실행함</p>
+    <p>focus, blur: toggle과 같이 포커스가 되면, 벗어나면 실행함</p>
+    <pre
+      style="
+        white-space: pre-line;
+        background: silver;
+        display: inline-block;
+        padding: 10px 20px;
+      "
+    >
+        "focus": function () {
+          $(this).addClass("bg2");
+        },
+        "blur": function () {
+          $(this).removeClass("bg2");
+        }</pre
+    >
+    <p>select: value 값이 드래그가 되면 실행함</p>
+    <p>change: 변경되면 실행함</p>
+    <p>
+      .val(): 변경된 값을 얻어냄. .prop("selectedIndex"): 몇 번째인지 순서를
+      알려줌
+    </p>
+    <hr />
+    <form action="" name="myForm" id="myForm">
+      <label for="uName">Name</label>
+      <input type="text" id="uName" /><br />
+      <label for="uId">Id</label>
+      <input type="text" id="uId" /><br />
+      <label for="address">address</label
+      ><input type="text" id="address" value="lorem" /><br />
+      <select name="" id="tel">
+        <option value="010">010</option>
+        <option value="011">011</option>
+        <option value="016">016</option></select
+      ><br />
+      <input type="submit" value="전송" />
+    </form>
+    <script src="../script/60-form.js"></script>
+  </body>
+</html>
