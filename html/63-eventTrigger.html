@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <h1>event trigger</h1>
+    <div class="count">0</div>
+    <button class="click">click</button>
+    <button class="trigger">trigger</button>
+
+    <p>trigger 다른요소의 이벤트를 강제로 실행하고자 할 떄</p>
+    <script>
+      let i = 0;
+      $(".click").on("click", () => {
+        i++;
+        $(".count").text(i);
+      });
+      $(".trigger").on("click", (e) => {
+        $(".click").trigger("click");
+      });
+    </script>
+  </body>
+</html>
