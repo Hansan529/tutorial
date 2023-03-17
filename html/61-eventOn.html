@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <style>
+      div {
+        border: 1px solid;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <h1>event on</h1>
+    <h2>하나의 요소에 이벤트 한개 등록하기</h2>
+    <p>(this) 대신 (e.target) || (e.currentTarget) 으로 사용이 가능하다</p>
+    <p>
+      이벤트를 준 상대는 currentTarget이며, 실제로 이벤트가 적용된 상대는
+      target이다
+    </p>
+    <pre style="white-space: pre-line">
+      $(e.target).css({ background: "pink" });
+  $(e.currentTarget).css({ background: "skyblue" });
+    </pre>
+    <div class="click"><span>click</span></div>
+    <h2>하나의 요소에 여러개의 이벤트타입</h2>
+    <p>mouseover focus</p>
+    <a href="#" class="eventType">요소</a>
+    <h2>하나의 요소에 여러개의 이벤트 등록하기</h2>
+    <p>click-fontSize, mouseover-bgc, mouseout-underline</p>
+    <div class="event">요소</div>
+    <script src="../script/61-eventOn.js"></script>
+  </body>
+</html>
