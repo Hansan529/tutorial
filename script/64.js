@@ -40,19 +40,28 @@ $(".prev").on("click", () => {
   moveBanner();
 });
 
+// banner start, stop
 let autoBoolean = true;
 let auto = setInterval(autoPlay, 2000);
-
-$(".auto").on("click", () => {
-  if (autoBoolean == true) {
-    autoBoolean = false;
-    clearInterval(auto);
-  } else {
-    autoBoolean = true;
-    auto = setInterval(autoPlay, 2000);
-  }
-});
 
 function autoPlay() {
   $(".next").trigger("click");
 }
+
+$(".auto").on("click", (e) => {
+  let target = $(e.currentTarget).find("img");
+
+  if (autoBoolean == true) {
+    target.attr({
+      src: "https://via.placeholder.com/30/ffffff/000000.jpg?text=start",
+    });
+    autoBoolean = false;
+    clearInterval(auto);
+  } else {
+    target.attr({
+      src: "https://via.placeholder.com/30/ffffff/000000.jpg?text=stop",
+    });
+    autoBoolean = true;
+    auto = setInterval(autoPlay, 2000);
+  }
+});
