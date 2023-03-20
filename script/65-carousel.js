@@ -2,13 +2,11 @@ let showBanner = 0;
 let itemWidth = $(".list-1").outerWidth();
 
 let liCount = $(".item__list > li").length;
-console.log("liCount: ", liCount);
 
 let obj = $(".item__list>li:lt(3)").clone();
 $(".item__list").append(obj);
 
 let copyCount = $(".item__list > li").length;
-console.log("copyCount: ", copyCount);
 
 function moveBanner() {
   $(".item__list")
@@ -39,4 +37,22 @@ $(".left").on("click", () => {
   }
   showBanner--;
   moveBanner();
+});
+
+function auto() {
+  $(".right").trigger("click");
+}
+
+let startToggle = 0;
+let start = setInterval(auto, 2000);
+clearInterval(start);
+
+$(".play").on("click", (e) => {
+  if (startToggle == 0) {
+    start = setInterval(auto, 2000);
+    startToggle++;
+  } else {
+    clearInterval(start);
+    startToggle = 0;
+  }
 });
