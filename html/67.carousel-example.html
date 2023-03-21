@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <link rel="stylesheet" href="../style/reset.css" />
+    <style>
+      * {
+        flex-shrink: inherit;
+      }
+      #mainBanner {
+        max-width: 1200px;
+        background: aqua;
+        margin: 0 auto;
+      }
+      .banner {
+        display: flex;
+        width: calc(100% * 8 / 2);
+        position: relative;
+        text-align: center;
+        left: -300px;
+      }
+      .banner > li {
+        position: relative;
+        width: calc(100% / 8);
+      }
+
+      .banner > .active img {
+        opacity: 0;
+      }
+      .banner > .active .frame > div:nth-of-type(1) {
+        opacity: 1;
+      }
+      .banner > .active .smallTitle {
+        opacity: 0;
+      }
+      .banner > .active .frame {
+        padding: 0;
+      }
+
+      .frame {
+        position: relative;
+        padding: 30px;
+      }
+      .frame > div:nth-of-type(1) {
+        background: pink;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+      .frame > .smallTitle {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      li strong {
+        font-size: 40px;
+      }
+      li .textBox {
+        opacity: 0;
+      }
+      li img {
+        /* margin: 0 auto; */
+        width: 100%;
+      }
+      .arrow {
+        display: flex;
+        gap: 40px;
+      }
+      .arrow > li > a {
+        position: absolute;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <h1>pledis banner</h1>
+    <div id="mainBanner">
+      <div class="inner">
+        <ul class="banner">
+          <li class="b1">
+            <div class="frame">
+              <img
+                src="https://via.placeholder.com/600x400/ab00ff/000000.jpg"
+                alt="lorem"
+              />
+              <div class="video1"></div>
+              <div class="smallTitle">
+                <strong>title1</strong>
+                <p>text1</p>
+              </div>
+            </div>
+            <div class="textBox">
+              <strong>title1</strong>
+              <p>text1</p>
+            </div>
+          </li>
+          <li class="b2">
+            <div class="frame">
+              <img
+                src="https://via.placeholder.com/600x400/ab00ff/000000.jpg"
+                alt="lorem"
+              />
+              <div class="video2"></div>
+              <div class="smallTitle">
+                <strong>title2</strong>
+                <p>text2</p>
+              </div>
+            </div>
+            <div class="textBox">
+              <strong>title2</strong>
+              <p>text2</p>
+            </div>
+          </li>
+          <li class="b3">
+            <div class="frame">
+              <img
+                src="https://via.placeholder.com/600x400/ab00ff/000000.jpg"
+                alt="lorem"
+              />
+              <div class="video3"></div>
+              <div class="smallTitle">
+                <strong>title3</strong>
+                <p>text3</p>
+              </div>
+            </div>
+            <div class="textBox">
+              <strong>title3</strong>
+              <p>text3</p>
+            </div>
+          </li>
+          <li class="b4">
+            <div class="frame">
+              <img
+                src="https://via.placeholder.com/600x400/ab00ff/000000.jpg"
+                alt="lorem"
+              />
+              <div class="video4"></div>
+              <div class="smallTitle">
+                <strong>title4</strong>
+                <p>text4</p>
+              </div>
+            </div>
+            <div class="textBox">
+              <strong>title4</strong>
+              <p>text4</p>
+            </div>
+          </li>
+          <li class="b5">
+            <div class="frame">
+              <img
+                src="https://via.placeholder.com/600x400/ab00ff/000000.jpg"
+                alt="lorem"
+              />
+              <div class="video5"></div>
+              <div class="smallTitle">
+                <strong>title5</strong>
+                <p>text5</p>
+              </div>
+            </div>
+            <div class="textBox">
+              <strong>title5</strong>
+              <p>text5</p>
+            </div>
+          </li>
+          <li class="b6">
+            <div class="frame">
+              <img
+                src="https://via.placeholder.com/600x400/ab00ff/000000.jpg"
+                alt="lorem"
+              />
+              <div class="video6"></div>
+              <div class="smallTitle">
+                <strong>title6</strong>
+                <p>text6</p>
+              </div>
+            </div>
+            <div class="textBox">
+              <strong>title6</strong>
+              <p>text6</p>
+            </div>
+          </li>
+          <li class="b7">
+            <div class="frame">
+              <img
+                src="https://via.placeholder.com/600x400/ab00ff/000000.jpg"
+                alt="lorem"
+              />
+              <div class="video7"></div>
+              <div class="smallTitle">
+                <strong>title7</strong>
+                <p>text7</p>
+              </div>
+            </div>
+            <div class="textBox">
+              <strong>title7</strong>
+              <p>text7</p>
+            </div>
+          </li>
+          <li class="b8">
+            <div class="frame">
+              <img
+                src="https://via.placeholder.com/600x400/ab00ff/000000.jpg"
+                alt="lorem"
+              />
+              <div class="video8"></div>
+              <div class="smallTitle">
+                <strong>title8</strong>
+                <p>text8</p>
+              </div>
+            </div>
+            <div class="textBox">
+              <strong>title8</strong>
+              <p>text8</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <ul class="arrow">
+      <li class="left">
+        <a href="#"
+          ><img
+            src="https://via.placeholder.com/100/c0f000/ffffff.jpg"
+            alt="lorem"
+        /></a>
+      </li>
+      <li class="right">
+        <a href="#"
+          ><img
+            src="https://via.placeholder.com/100/c0f000/ffffff.jpg"
+            alt="lorem"
+        /></a>
+      </li>
+    </ul>
+    <script src="../script/67.js"></script>
+  </body>
+</html>
