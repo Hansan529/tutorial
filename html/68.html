@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/reset.css" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <style>
+      * {
+        flex-shrink: initial;
+      }
+      .best-seller {
+        position: relative;
+      }
+      .best-seller > .slide-wrap > .slide-list {
+        display: flex;
+        /* gap: 0px; */
+      }
+
+      .slide-wrap {
+        max-width: 1520px;
+        margin: 0 auto;
+        background: pink;
+      }
+      .slide-wrap > .slide-list {
+        display: flex;
+        width: calc(100% * 8 / 5);
+      }
+      .slide-list > li {
+        border: 1px solid #000;
+        width: calc(100% / 8);
+        position: relative;
+        /* text-box의 부모 */
+        padding-bottom: 200px;
+        text-align: center;
+      }
+
+      .slide-list .img-box {
+        position: relative;
+      }
+
+      .slide-list .img-box .center {
+        display: none;
+        position: absolute;
+        width: 100%;
+      }
+
+      .slide-list > li:nth-child(3) .img-box .center {
+        display: block;
+      }
+
+      .slide-list .img-box {
+        width: 100%;
+        height: 300px;
+      }
+
+      .slide-list .img-box img {
+        width: 100%;
+      }
+
+      .slide-list .text-box {
+        text-align: center;
+        font-family: "Noto Sans KR", sans-serif;
+        width: 130%;
+        word-break: keep-all;
+        position: absolute;
+        left: -40px;
+      }
+      .slide-list .text-box > div {
+        display: none;
+      }
+      .slide-list .text-box .best-text {
+        text-align: start;
+      }
+
+      .slide-list .text-box .grey {
+        color: #aaa;
+      }
+
+      .slide-list .text-box .cost {
+        color: rgb(145, 46, 46);
+        font-weight: 500;
+      }
+      .slide-list .best-slide .text-box .red {
+        color: red;
+        font-weight: 500;
+      }
+
+      .slide-list .text-box > div > .box {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+      }
+
+      .slide-list .text-box > .active-text-box {
+        display: none;
+      }
+      .arrow li > a {
+        display: block;
+        width: 40px;
+        height: 66px;
+        text-indent: -99999px;
+        position: absolute;
+        top: 50%;
+        transform: translateX(-50%);
+      }
+
+      .arrow .left-arrow > a {
+        left: 100px;
+      }
+
+      .arrow .right-arrow > a {
+        background-position: -50px 0;
+        right: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <div class="best-seller">
+      <div class="slide-wrap inner">
+        <ul class="slide-list">
+          <li>
+            <a href="#void">
+              <div class="img-box">
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=after+1"
+                  alt="순행클렌징폼 center"
+                  class="center"
+                />
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=before+1"
+                  alt="순행클렌징폼"
+                  class="smaller"
+                />
+              </div>
+              <div class="text-box">
+                <h3 class="best-title">순행클렌징폼</h3>
+                <!-- 한번 더 감싼 이유: center가 아닐 때 숨겨놓으려고 display:none; -->
+                <div class="active-text-box">
+                  <div class="box">
+                    <span class="grey">용량 200ml, 400ml</span>
+                    <span class="cost">42,000원</span>
+                  </div>
+                  <p class="best-text">
+                    수분을 머금은 거품이 피부 노폐물과 미세먼지를 없애고
+                    촉촉함은 유지시켜주는 마일드 클렌징 폼
+                  </p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#void">
+              <div class="img-box">
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=after+2"
+                  alt="자음생크림 center"
+                  class="center"
+                />
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=before+2"
+                  alt="자음생크림"
+                  class="smaller"
+                />
+              </div>
+              <div class="text-box">
+                <h3 class="best-title">자음생크림</h3>
+                <div class="active-text-box">
+                  <div class="box">
+                    <span class="grey">용량 30ml, 60ml</span>
+                    <span class="cost">270,000원</span>
+                  </div>
+                  <p class="best-text">
+                    활성 뷰티 사포닌 GINSENOMICS의 피부자생력으로 더욱 강력해진
+                    3중 탄력 안티에이징 크림
+                  </p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="hover-slide">
+            <a href="#void">
+              <div class="img-box">
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=after+3"
+                  alt="자음생세럼 center"
+                  class="center"
+                />
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=before+3"
+                  alt="자음생세럼"
+                  class="smaller"
+                />
+              </div>
+              <div class="text-box">
+                <h3 class="best-title">자음생세럼</h3>
+                <div>
+                  <div class="box">
+                    <span class="grey">용량 30ml 10만개, 50ml 19만개 기준</span>
+                    <span class="cost">145,000원</span>
+                  </div>
+                  <p class="best-text">
+                    10만개의 진세노믹스 캡슐로 빠르게 차오르는 3중 탄력
+                    안티에이징
+                  </p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#void">
+              <div class="img-box">
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=after+4"
+                  alt="상백크림 center"
+                  class="center"
+                />
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=before+4"
+                  alt="상백크림"
+                  class="smaller"
+                />
+              </div>
+              <div class="text-box">
+                <h3 class="best-title">상백크림</h3>
+                <div class="active-text-box">
+                  <div class="box">
+                    <span class="grey">용량 30ml, 50ml</span>
+                    <span class="cost">85,000원</span>
+                  </div>
+                  <p class="best-text">
+                    자외선, 유해환경 자극으로부터 피부를 강력하게 방어함과
+                    동시에 편하게 지켜주는 저자극 브라이트닝 선크림
+                  </p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#void">
+              <div class="img-box">
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=after+5"
+                  alt="퍼펙팅쿠션 center"
+                  class="center"
+                />
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=before+5"
+                  alt="퍼펙팅쿠션"
+                  class="smaller"
+                />
+              </div>
+              <div class="text-box">
+                <h3 class="best-title">퍼펙팅쿠션</h3>
+                <div class="active-text-box">
+                  <div class="box">
+                    <span class="grey">용량 15g*2</span>
+                    <span class="cost">80,000원</span>
+                  </div>
+                  <p class="best-text">
+                    하루종일 완벽하고 편안하게 지속되는 럭셔리 커버 쿠션
+                  </p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="best-slide">
+            <a href="#void">
+              <div class="img-box">
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=after+6"
+                  alt="에센스 center"
+                  class="center"
+                />
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=before+6"
+                  alt="에센스"
+                  class="smaller"
+                />
+              </div>
+              <div class="text-box">
+                <h3 class="best-title">윤조에센스</h3>
+                <div class="active-text-box">
+                  <div class="box">
+                    <span class="grey">용량 30ml, 60ml, 90ml</span>
+                    <span class="cost">140,000원</span>
+                  </div>
+                  <p class="best-text">
+                    피부 능력 활성화를 통해 피부 건강을 전반적으로 개선하여
+                    건강한 윤기를 선사하는 퍼스트 에센스
+                  </p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="best-slide">
+            <a href="#void">
+              <div class="img-box">
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=after+7"
+                  alt="데일리루틴 center"
+                  class="center"
+                />
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=before+7"
+                  alt="데일리루틴"
+                  class="smaller"
+                />
+              </div>
+              <div class="text-box">
+                <h3 class="best-title">에센셜 컴포트 데일리 루틴</h3>
+                <div class="active-text-box">
+                  <div class="box">
+                    <span class="grey">자음2종 150ml+125ml</span>
+                    <span class="red">10%</span
+                    ><span class="cost">126,000원</span>
+                  </div>
+                  <p class="best-text">
+                    충만한 보습으로 피부 본연의 건강함을 찾아주는 에션셜
+                    스킨케어 세트
+                  </p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="best-slide">
+            <a href="#void">
+              <div class="img-box">
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=after+8"
+                  alt="퍼스트 케어 center"
+                  class="center"
+                />
+                <img
+                  src="https://via.placeholder.com/315/cccccc/000000.jpg?text=before+8"
+                  alt="퍼스트 케어"
+                  class="smaller"
+                />
+              </div>
+              <div class="text-box">
+                <h3 class="best-title">나의 첫 설화수 세트</h3>
+                <div class="active-text-box">
+                  <div class="box">
+                    <span class="grey">옹량 1Set</span>
+                    <span class="cost">140,000원</span>
+                  </div>
+                  <p class="best-text">
+                    설화수를 처음 경험하는 당신에게 추천하는 퍼스트케어 루틴
+                    세트
+                  </p>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <ul class="arrow">
+        <li class="left-arrow">
+          <a href="#"
+            ><img
+              src="https://via.placeholder.com/20/c0f000/ffffff.jpg"
+              alt="lorem"
+          /></a>
+        </li>
+        <li class="right-arrow">
+          <a href="#"
+            ><img
+              src="https://via.placeholder.com/20/c0f000/ffffff.jpg"
+              alt="lorem"
+          /></a>
+        </li>
+      </ul>
+    </div>
+    <script src="../script/68.js"></script>
+  </body>
+</html>
