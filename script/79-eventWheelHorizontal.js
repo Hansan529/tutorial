@@ -9,7 +9,7 @@ $("html, body").on("mousewheel DOMMouseScroll", (e) => {
   if (!ani) {
     ani = true;
     let evt = e.originalEvent;
-    if (evt.delta) {
+    if (evt.detail) {
       delta = -evt.detail;
     } else {
       delta = evt.wheelDelta;
