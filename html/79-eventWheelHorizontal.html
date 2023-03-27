@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <link rel="stylesheet" href="../style/reset.css" />
+    <style>
+      #mainBanner {
+        width: 100%;
+        height: 500px;
+      }
+      .banner {
+        display: flex;
+        width: 300%;
+        height: 100%;
+      }
+      .banner > li {
+        width: 100%;
+        height: 100%;
+        font-size: 100px;
+      }
+      .banner > li:first-child {
+        background: pink;
+      }
+      .banner > li:nth-child(2) {
+        background: blueviolet;
+      }
+      .banner > li:last-child {
+        background: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <div id="mainBanner">
+      <ul class="banner">
+        <li>banner1</li>
+        <li>banner2</li>
+        <li>banner3</li>
+      </ul>
+    </div>
+    <script src="../script/79-eventWheelHorizontal.js"></script>
+  </body>
+</html>
