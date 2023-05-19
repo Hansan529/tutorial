@@ -18,14 +18,43 @@
     <script type="text/babel">
       const root = ReactDOM.createRoot(document.getElementById("root"));
       const App = () => {
-        const [counter, setCounter] = React.useState(0);
-        const onClick = () => {
-          setCounter(counter + 1);
+        const [amount, setAmount] = React.useState(0);
+        const [inverted, setInverted] = React.useState(false);
+        const onChange = (e) => {
+          setAmount(e.target.value);
+        };
+        const reset = () => setAmount(0);
+        const onFlip = () => {
+          reset();
+          setInverted((current) => !current);
         };
         return (
           <div>
-            <h3>클릭 횟수: {counter}</h3>
-            <button onClick={onClick}>클릭</button>
+            <div>
+              <h1 className="converter">변환기</h1>
+              <label htmlFor="minutes">분</label>
+              <input
+                value={inverted ? amount * 60 : amount}
+                id="minutes"
+                placeholder="분"
+                type="number"
+                onChange={onChange}
+                disabled={inverted === true}
+              />
+            </div>
+            <div>
+              <label htmlFor="hours">시간</label>
+              <input
+                value={inverted ? amount : Math.floor(amount / 60)}
+                id="hours"
+                placeholder="시간"
+                type="number"
+                onChange={onChange}
+                disabled={inverted === false}
+              />
+            </div>
+            <button onClick={reset}>리셋</button>
+            <button onClick={onFlip}>반전</button>
           </div>
         );
       };
