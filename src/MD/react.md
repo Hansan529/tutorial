@@ -130,9 +130,67 @@ const Container = () => (
     <Button />
   </div>
 );
-ReactDOM.createRoot(root), render(<Container />);
+ReactDOM.createRoot(root).render(<Container />);
 ```
 
 컴포넌트가 되는 요소는 첫글자가 대문자여야만 한다. 소문자일 경우 HTML 로 인식하기 때문에 반드시 대문자로 작성해야한다.
 
 `<Title />`로 사용하기 위해서 함수로 지정해주어야 한다. `() => ()`이 `function Title() { return (<h3>...</h3>)}` 와 같이 return이 포함되어있다.
+
+---
+
+### State
+
+```js
+let counter = 0;
+const root = ReactDOM.createRoot(document.getElementById("root"));
+function countUp() {
+  counter += 1;
+  root.render(<Container />);
+}
+const App = () => (
+  <div>
+    <h3>클릭 횟수: {counter}</h3>
+    <button onClick={countUp}>클릭</button>
+  </div>
+);
+root.render(<App />);
+```
+
+```html
+<!-- JS에서는 h3의 innerText를 업데이트하면, NodeList를 업데이트하기 위해서 노드트리를 재생성해 많은 작업이 이루어진다. -->
+<!-- 하지만 React에서는 가상돔을 사용해 보이는 부분만 수정하고, 업데이트가 끝나면 일괄로 합쳐 실제 DOM에 전달해준다. -->
+
+<body>
+  <div id="root">
+    <div>
+      <h3>클릭 횟수: 0</h3>
+    </div>
+  </div>
+</body>
+
+<!-- JS의 경우 `<body>` `<div id="root">` `<div>` `<h3>` `클릭 횟수: 0` 가 변하는데,  -->
+<!-- React의 경우 `0` 만 변하는 모습을 볼 수 있다. -->
+```
+
+<br>
+
+btn을 클릭하면 contUp이 실행되어 counter의 값이 1씩 커지는데, 커지기만 할 뿐, UI에는 업데이트 되지 않아서 **재렌더링**을 해준다.  
+ReactDOM으로 생성한 요소에 `render()` 해주면 된다.
+
+`root.render(<App />)` === `ReactDOM.createRoot(root).render(<Container />)`와 동일하다.
+
+하지만 업데이트하는 모든 함수마다 render를 해주는건 무리다.
+
+```js
+const [counter, setCounter] = React.useStatus(0);
+const onClick = () => {
+  setCounter(counter + 1);
+};
+```
+
+React.useStatus는 2개의 배열로 이루어져있는데, undefined와, modefier 있다. ES6의 const {} 처럼  
+`const [counter, setCounter]`를 지정하면, undefined, modefier이 counter, setCounter에 저장되는 것이다.  
+setCounter를 실행하게 되면, 리렌더링을 해서 업데이트한 요소를 볼 수 있다.
+
+**정리하자면 status가 변하면, 리렌더링이 일어난다.**
