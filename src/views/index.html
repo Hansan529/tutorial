@@ -17,114 +17,31 @@
     ></script>
     <script type="text/babel">
       const root = ReactDOM.createRoot(document.getElementById("root"));
-      const KmToMiles = () => {
-        const [amount, setAmount] = React.useState(0);
-        const [point, setPoint] = React.useState(2);
-        const [inverted, setInverted] = React.useState(false);
-        const onChange = (e) => {
-          setAmount(e.target.value);
-        };
-        const reset = () => setAmount(0);
-        const onInverted = () => {
-          reset();
-          setInverted((current) => !current);
-        };
-        const onPoint = (e) => setPoint(e.target.value);
+      const Btn = ({ text, big, submit, changeValue, value }) => {
         return (
-          <div>
-            <div>
-              <input
-                value={inverted ? (amount * 1.609344).toFixed(point) : amount}
-                id="minutes"
-                placeholder="분"
-                type="number"
-                onChange={onChange}
-                disabled={inverted === true}
-              />
-              <label htmlFor="minutes">킬로미터</label>
-            </div>
-            <div>
-              <input
-                value={inverted ? amount : (amount / 1.609344).toFixed(point)}
-                id="hours"
-                placeholder="시간"
-                type="number"
-                onChange={onChange}
-                disabled={inverted === false}
-              />
-              <label htmlFor="hours">마일</label>
-              <input
-                value={point}
-                id="units"
-                placeholder="자릿수"
-                type="number"
-                onChange={onPoint}
-              />
-            </div>
-            <button onClick={reset}>리셋</button>
-            <button onClick={onInverted}>{inverted ? "KM로" : "Mile로"}</button>
-          </div>
+          <button
+            onClick={changeValue}
+            style={{
+              backgroundColor: submit ? "skyblue" : "tomato",
+              color: "white",
+              padding: "10px 20px",
+              borderRadius: "10px",
+              border: 0,
+              fontSize: big ? "24px" : "18px",
+            }}
+          >
+            {text}
+          </button>
         );
       };
-      const MinutesToHours = () => {
-        const [amount, setAmount] = React.useState(0);
-        const [inverted, setInverted] = React.useState(false);
-        const onChange = (e) => {
-          setAmount(e.target.value);
-        };
-        const reset = () => setAmount(0);
-        const onInverted = () => {
-          reset();
-          setInverted((current) => !current);
-        };
-        return (
-          <div>
-            <div>
-              <input
-                value={inverted ? amount * 60 : amount}
-                id="minutes"
-                placeholder="분"
-                type="number"
-                onChange={onChange}
-                disabled={inverted === true}
-              />
-              <label htmlFor="minutes">분</label>
-            </div>
-            <div>
-              <input
-                value={inverted ? amount : Math.floor(amount / 60)}
-                id="hours"
-                placeholder="시간"
-                type="number"
-                onChange={onChange}
-                disabled={inverted === false}
-              />
-              <label htmlFor="hours">시간</label>
-            </div>
-            <button onClick={reset}>리셋</button>
-            <button onClick={onInverted}>
-              {inverted ? "분으로" : "시간으로"}
-            </button>
-          </div>
-        );
-      };
+      const MemorizedBtn = React.memo(Btn);
       const App = () => {
-        const [index, setIndex] = React.useState("x");
-        const onSelect = (e) => {
-          setIndex(e.target.value);
-        };
+        const [value, setValue] = React.useState("변경 저장");
+        const changeValue = () => setValue("완료");
         return (
           <div>
-            <div>
-              <h1 className="converter">변환기</h1>
-              <select value={index} onChange={onSelect}>
-                <option value="x">--선택--</option>
-                <option value="0">분/시간 변환기</option>
-                <option value="1">킬로미터/마일 변환기</option>
-              </select>
-              {index === "0" ? <MinutesToHours /> : null}
-              {index === "1" ? <KmToMiles /> : null}
-            </div>
+            <MemorizedBtn text={value} big={true} changeValue={changeValue} />
+            <MemorizedBtn text="확인" submit={true} />
           </div>
         );
       };

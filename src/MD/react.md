@@ -242,3 +242,88 @@ input에 value를 minutes로 설정한 뒤에, onChange를 추가하지 않으�
 왜 input에 value={minutes} 로 했냐면, 외부에서도 input의 값을 변경할 수 있도록 설정한 것이다.
 
 return 안에 JSX에도 javascript를 쓰는 방법은 {} 를 사용하면 가능하다.
+
+---
+
+### Props
+
+재사용 가능한 컴포넌트를 만든다.
+
+```js
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const Btn = (props) => {
+  return (
+    <button
+      style={{
+        backgroundColor: "tomato",
+        color: "white",
+        padding: "10px 20px",
+        borderRadius: "10px",
+        border: 0,
+      }}
+    >
+      {props.txt}
+    </button>
+  );
+};
+const App = () => {
+  return (
+    <div>
+      <Btn txt="변경 저장" />
+      <Btn txt="확인" />
+    </div>
+  );
+};
+root.render(<App />);
+```
+
+Btn 컴포넌트를 불러 올 때, property 를 지정 할 수 있는데, 컴포넌트에서는 1개의 인수를 받는데, 그게 prop이다.  
+`txt="텍스트"`를 보내면, Btn (props)에서, `txt: "텍스트"` 값을 얻을 수 있다.  
+props.txt 를 추출해보면 **변경 저장, 확인** 값을 얻어 볼 수 있는데, 선언 자체를 단축시켜 더욱 편리하게 사용 할 수 있다.
+
+`Btn (props)` &rarr; `Btn ({txt})`로 변경하면, {txt}만 하더라도 값을 얻을 수 있다.
+
+```js
+const Btn = ({ ... value, onClick}) => {
+  return(
+    <button onClick={onClick}>
+    {value}
+    </button>
+  )
+}
+const [value, setValue] = React.useState("변경 저장");
+...
+const onClick = setValue("완료");
+...
+<Btn text={value} onClick={onClick} />
+```
+
+Btn 컴포넌트에 지정한 onClick는 props의 이름일 뿐이다. `props.onClick: setValue("완료")` 가 되는 것이다.  
+changeValue가 이벤트를 추가 하는 것이 아닌, Btn의 button에 직접 지정해주어야 이벤트가 추가되는 형식이다.
+
+onClick을 changeValue로 변경하면 이해하기 더 쉬울 것이다.
+
+```js
+Btn = ({ changeValue }) => {
+  return(
+    <button onClick={changeValue}></button>
+  )
+}
+const changeValue = setValue("완료");
+<Btn text={value} changeValue={changeValue}>
+```
+
+부모가 변하면 자식 컴포넌트들은 모두 리렌더링이 된다. 그래서 text를 console.log 해보면,  
+&quot;변경 저장&quot;, &quot;확인&quot; 과  
+&quot;완료&quot;, &quot;확인&quot;이 나온다. 분명 나는 첫번째 요소만 변경했는데 모두를 리렌더링하는 모습이다.
+
+이와 같을 때, React.memo라는 것을 사용한다.
+
+### Memo
+
+```js
+const MemorizedBtn = React.memo(Btn);
+
+...
+<MemorizedBtn text={value} big={true} changeValue={changeValue} />
+```
