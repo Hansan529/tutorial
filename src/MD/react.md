@@ -327,3 +327,5 @@ const MemorizedBtn = React.memo(Btn);
 ...
 <MemorizedBtn text={value} big={true} changeValue={changeValue} />
 ```
+
+이후에는 &quot;변경 저장&quot;, &quot;확인&quot;, &quot;완료&quot;만 렌더링 되는 모습을 볼 수 있다.
