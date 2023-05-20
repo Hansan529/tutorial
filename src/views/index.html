@@ -12,12 +12,16 @@
     ></script>
     <script
       crossorigin
+      src="https://unpkg.com/prop-types@15.8.1/prop-types.js"
+    ></script>
+    <script
+      crossorigin
       src="
   https://unpkg.com/@babel/standalone/babel.min.js"
     ></script>
     <script type="text/babel">
       const root = ReactDOM.createRoot(document.getElementById("root"));
-      const Btn = ({ text, big, submit, changeValue, value }) => {
+      const Btn = ({ text, fontSize, submit, changeValue, value }) => {
         return (
           <button
             onClick={changeValue}
@@ -27,7 +31,7 @@
               padding: "10px 20px",
               borderRadius: "10px",
               border: 0,
-              fontSize: big ? "24px" : "18px",
+              fontSize,
             }}
           >
             {text}
@@ -35,13 +39,22 @@
         );
       };
       const MemorizedBtn = React.memo(Btn);
+      Btn.propTypes = {
+        text: PropTypes.string.isRequired,
+        fontSize: PropTypes.number,
+        submit: PropTypes.bool,
+      };
       const App = () => {
         const [value, setValue] = React.useState("변경 저장");
         const changeValue = () => setValue("완료");
         return (
           <div>
-            <MemorizedBtn text={value} big={true} changeValue={changeValue} />
-            <MemorizedBtn text="확인" submit={true} />
+            <MemorizedBtn
+              text={value}
+              fontSize={24}
+              changeValue={changeValue}
+            />
+            <MemorizedBtn text="확인" re submit={true} />
           </div>
         );
       };
