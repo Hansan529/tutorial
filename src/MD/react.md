@@ -193,4 +193,52 @@ React.useStatus는 2개의 배열로 이루어져있는데, undefined와, modefi
 `const [counter, setCounter]`를 지정하면, undefined, modefier이 counter, setCounter에 저장되는 것이다.  
 setCounter를 실행하게 되면, 리렌더링을 해서 업데이트한 요소를 볼 수 있다.
 
-**정리하자면 status가 변하면, 리렌더링이 일어난다.**
+**정리하자면 state가 변하면, 리렌더링이 일어난다.**
+
+추가로, 현재 state 바탕으로 다음 statue를 계산하려면 `setCounter((current) => current + 1)` 로 변경해서 사용하는 게 더 좋다.  
+current는 명확하게 현재 state의 counter 값을 줄 것이다.
+
+<br>
+
+---
+
+### input
+
+input에 대해 접근을 할 수 없는데, state를 사용하면 가능하다.
+
+```js
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const App = () => {
+  const [minutes, setMinutes] = React.useState(0);
+  const onChange = (e) => {
+    setMinutes(e.target.value);
+  };
+  return (
+    <div>
+      <h1 className="converter">변환기</h1>
+      <label htmlFor="minutes">Minutes</label>
+      <input
+        value={minutes}
+        id="minutes"
+        placeholder="분"
+        type="number"
+        onChange={onChange}
+      />
+      <label htmlFor="hours">Minutes</label>
+      <input
+        value={minutes}
+        id="hours"
+        placeholder="시간"
+        type="number"
+        onChange={onChange}
+      />
+    </div>
+  );
+};
+root.render(<App />);
+```
+
+input에 value를 minutes로 설정한 뒤에, onChange를 추가하지 않으면 input의 값이 변하지 않는다. value는 minutes의 기본 값을 받고 있는데, 업데이트가 되지 않기 떄문이다.  
+왜 input에 value={minutes} 로 했냐면, 외부에서도 input의 값을 변경할 수 있도록 설정한 것이다.
+
+return 안에 JSX에도 javascript를 쓰는 방법은 {} 를 사용하면 가능하다.
