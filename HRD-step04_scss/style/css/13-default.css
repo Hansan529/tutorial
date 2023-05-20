@@ -1,0 +1,10 @@
+@charset "UTF-8";
+header h1::after {
+  content: "첫선언";
+  display: block;
+}
+
+footer address::after {
+  content: "재선언 하지 않은 단일 선언";
+  display: block;
+}

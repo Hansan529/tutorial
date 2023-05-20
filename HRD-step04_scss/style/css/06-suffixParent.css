@@ -1,0 +1,10 @@
+.boxWrap {
+  padding: 20px;
+  background: skyblue;
+}
+.boxWrap .box-small {
+  font-size: 12px;
+}
+.boxWrap .box-big {
+  font-size: 24px;
+}

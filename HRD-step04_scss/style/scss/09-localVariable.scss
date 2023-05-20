@@ -1,0 +1,17 @@
+$width: 500px;
+$bg: skyblue;
+
+header {
+  $headerSize: 30px;
+  font-size: $headerSize;
+  width: $width;
+  background: $bg;
+}
+
+main {
+  $mainSize: 40px;
+  // font-size: $headerSize;
+  font-size: $mainSize;
+  width: $width;
+  background: $bg;
+}

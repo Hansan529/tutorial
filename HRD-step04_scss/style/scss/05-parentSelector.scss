@@ -1,0 +1,35 @@
+#nav {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  background: antiquewhite;
+  justify-content: space-evenly;
+  li {
+    list-style: none;
+
+    a {
+      text-decoration: none;
+      color: #222;
+      font-size: 20px;
+    }
+    &.active {
+      a {
+        text-decoration: underline;
+        color: pink;
+        font-size: 30px;
+      }
+    }
+  }
+}
+.btnWrap {
+  button {
+    background: #fff;
+    padding: 10px 30px;
+    border-radius: 10px;
+
+    &.on {
+      background: aquamarine;
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@mixin myText {
+  color: teal;
+  font-size: 30px;
+  font-weight: bold;
+  span {
+    text-decoration: underline;
+    background: gold;
+  }
+}
+
+h1,
+div,
+p {
+  @include myText;
+}

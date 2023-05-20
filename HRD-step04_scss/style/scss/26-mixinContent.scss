@@ -1,0 +1,27 @@
+@mixin reSize {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
+header {
+  height: 80px;
+  background: #ccc;
+  @include reSize {
+    position: fixed;
+    width: 100%;
+    height: initial;
+    background: skyblue;
+  }
+}
+
+#container {
+  width: 1280px;
+  background: lightgreen;
+  margin: 0 auto;
+
+  @include reSize {
+    width: 100%;
+    background: lightcoral;
+  }
+}

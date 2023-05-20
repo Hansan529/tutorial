@@ -1,0 +1,15 @@
+h1 {
+  border: 10px solid red;
+}
+
+p {
+  border: 1px solid #ccc;
+}
+
+div {
+  border: 10px solid skyblue;
+}
+
+span {
+  border: 1px solid #ccc;
+}

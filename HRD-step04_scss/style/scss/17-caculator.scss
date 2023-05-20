@@ -1,0 +1,17 @@
+$width: 1000px;
+
+.box__wrap {
+  > div {
+    background: skyblue;
+    margin: 10px;
+    &:first-child {
+      width: $width / 5;
+    }
+    &:nth-child(2) {
+      width: (1000px / 5);
+    }
+    &:last-child {
+      width: 200px * 6 / 6;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+$color: blue;
+
+p {
+  strong {
+    $color: green !global;
+    color: $color;
+  }
+  color: $color;
+}
+h1 {
+}

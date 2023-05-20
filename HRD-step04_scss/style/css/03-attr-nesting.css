@@ -1,0 +1,18 @@
+@charset "UTF-8";
+h1 {
+  font: 50px/100px "돋움";
+  font-weight: 100;
+  font-style: italic;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+}
+.wrap > div {
+  background: skyblue;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}

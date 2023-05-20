@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/css/14-interpolation.css" />
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <h1>interpolation</h1>
+    <p>문자와 변수를 함께 사용할 때</p>
+    <h2>javascript</h2>
+    <p>`text ${variable} text`</p>
+    <h2>scss</h2>
+    <p>text#{variable}</p>
+
+    <div class="bg-pink">
+      <h2>title1</h2>
+      <p>word1</p>
+    </div>
+    <pre>
+    $pink: pink;
+    $direction: bottom;
+
+    .bg-#{pink} {
+      background: $pink;
+
+      h2 {
+        border-#{$direction}: 3px solid #000;
+        }
+      }
+    </pre>
+    <div class="bg-green">
+      <h2>title2</h2>
+      <p>word2</p>
+    </div>
+  </body>
+</html>

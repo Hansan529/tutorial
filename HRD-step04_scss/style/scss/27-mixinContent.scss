@@ -1,0 +1,82 @@
+$mobileLg: 768px;
+$mobileSm: 480px;
+
+@mixin pos($p: absolute, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $p;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+@mixin responsive($media) {
+  @media screen and (max-width: $media) {
+    @content;
+  }
+}
+
+header {
+  background: tomato;
+  border-bottom: 1px solid lightgreen;
+
+  @include responsive($mobileLg) {
+    text-align: left;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  .gnb {
+    @include pos(absolute, 20px, 0);
+    display: flex;
+    gap: 20px;
+
+    @include responsive($mobileLg) {
+      display: none;
+    }
+  }
+
+  .ham {
+    @include pos(absolute, 20px, 0);
+    display: none;
+
+    @include responsive($mobileLg) {
+      display: block;
+    }
+  }
+  nav {
+    .mgnb {
+      display: none;
+    }
+    .close {
+      display: none;
+    }
+
+    #nav {
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+      line-height: 50px;
+
+      @include responsive($mobileLg) {
+        display: block;
+        width: 70%;
+        background: #ddd;
+      }
+    }
+  }
+}
+
+.innerBox {
+  background: blanchedalmond;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+
+  @include responsive($mobileLg) {
+    width: 95%;
+  }
+  @include responsive($mobileSm) {
+    width: 80%;
+  }
+}

@@ -1,0 +1,37 @@
+@mixin myPos(
+  $pos: absolute,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $pos;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin mySize($bg: pink, $width: null, $height: null) {
+  background: $bg;
+  width: $width;
+  height: $height;
+}
+
+.wrap {
+  @include mySize(skyblue, 800px, 400px);
+  margin: 0 auto;
+  @include myPos(relative);
+
+  .box1 {
+    @include mySize($width: 500px);
+    @include myPos($left: 100px, $top: 100px);
+  }
+  .box2 {
+    @include mySize($bg: green, $height: 200px);
+    @include myPos($right: 10px, $bottom: 50px);
+  }
+  .box3 {
+    @include mySize($width: 300px, $height: 50px);
+  }
+}

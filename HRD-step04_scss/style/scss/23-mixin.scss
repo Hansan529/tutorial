@@ -1,0 +1,15 @@
+@mixin myBorder($weight: 1px, $color: #ccc) {
+  border: $weight solid $color;
+}
+h1 {
+  @include myBorder(10px, red);
+}
+p {
+  @include myBorder();
+}
+div {
+  @include myBorder(, skyblue);
+}
+span {
+  @include myBorder();
+}

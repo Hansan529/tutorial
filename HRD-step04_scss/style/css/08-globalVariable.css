@@ -1,0 +1,18 @@
+header {
+  border-bottom: 2px solid green;
+}
+header h1 {
+  font-size: 30px;
+  color: green;
+}
+header #nav li a {
+  color: #333;
+}
+header #nav li a:hover {
+  color: green;
+}
+
+#main section * {
+  font-size: 30px;
+  color: green;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/css/26-mixinContent.css" />
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <p>@content: 내용들이 위치할 장소</p>
+    <p>@mixin reSize { @media screen and (max-width: 1280px) { @content; } }</p>
+    <p>
+      reSize를 @include하여 입력하면 @content 위치로 입력되는 걸 볼 수 있다.
+    </p>
+    <header>
+      <h1 class="logo">logo</h1>
+    </header>
+    <div id="container" class="inner">
+      <p>content1</p>
+      <p>content2</p>
+      <p>content3</p>
+      <p>content4</p>
+      <p>content5</p>
+      <p>content6</p>
+      <p>content7</p>
+      <p>content8</p>
+      <p>content9</p>
+      <p>content10</p>
+    </div>
+  </body>
+</html>

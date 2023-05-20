@@ -1,0 +1,89 @@
+$main__color: #009223;
+$sub__color: #ffce32;
+$color: #292929;
+$link_color: #333;
+$radius: 30px;
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 0, 0, 0.3);
+}
+
+body {
+  font: {
+    family: "Noto Sans KR", sans-serif;
+    size: 15px;
+    weight: normal;
+  }
+}
+
+header {
+  border-top: 3px solid $main__color;
+  text-align: center;
+
+  .logo {
+    padding: $radius 0;
+  }
+  #nav {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+
+    > li {
+      line-height: 50px;
+      > a {
+        font-size: 1.2em;
+        font-weight: bold;
+
+        &:hover {
+          color: $main__color;
+        }
+      }
+    }
+  }
+}
+
+main {
+  > .quick__wrap {
+    > .quick {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: -$radius;
+      text-align: center;
+      > div {
+        > a {
+          display: block;
+          width: 400px;
+          height: 80px;
+          line-height: 80px;
+          font-size: 1.25em;
+          border: 1px solid #000;
+          background-repeat: no-repeat;
+        }
+
+        &.store {
+          a {
+            background: {
+              color: $sub__color;
+              image: url("https://via.placeholder.com/25x50/FFFF00/000000.png");
+              position: 130px center;
+            }
+            border-radius: $radius 0 0 0;
+          }
+        }
+        &.franchise {
+          a {
+            background: {
+              color: $sub__color;
+              image: url("https://via.placeholder.com/25x50/00FFFF/000000.png");
+              position: 110px center;
+            }
+            border-radius: 0 0 $radius 0;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+$content: "첫선언";
+$content: "재선언" !default;
+
+header {
+  h1 {
+    &::after {
+      content: $content;
+      display: block;
+    }
+  }
+}
+
+$text: null;
+$text: "재선언 하지 않은 단일 선언" !default;
+
+footer {
+  address {
+    &::after {
+      content: $text;
+      display: block;
+    }
+  }
+}

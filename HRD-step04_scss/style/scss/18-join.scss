@@ -1,0 +1,6 @@
+div {
+  background: yellow;
+  &::after {
+    content: "a" + "b" + "c";
+  }
+}

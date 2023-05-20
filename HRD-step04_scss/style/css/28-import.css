@@ -1,0 +1,5 @@
+@import url("../css/reset.css");
+header #nav {
+  display: flex;
+  justify-content: space-evenly;
+}

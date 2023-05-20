@@ -1,0 +1,9 @@
+$width: 1200;
+
+.box {
+  @if ($width>600) {
+    background: skyblue;
+  } @else {
+    background: pink;
+  }
+}
