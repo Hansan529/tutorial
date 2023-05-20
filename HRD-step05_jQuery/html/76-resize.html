@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+    <link rel="stylesheet" href="../style/reset.css" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <style>
+      #mainBanner {
+        width: 1200px;
+        margin: 0 auto;
+        background: pink;
+      }
+      .banner {
+        display: flex;
+        width: 125%;
+      }
+      .banner > li {
+        padding: 10px;
+        width: 20%;
+      }
+      .banner > li img {
+        width: 100%;
+      }
+      @media screen and (max-width: 767px) {
+        #mainBanner {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <div id="mainBanner">
+      <ul class="banner">
+        <li>
+          <img
+            src="https://via.placeholder.com/300x100/?text=lorem+1"
+            alt="none"
+          />
+        </li>
+        <li>
+          <img
+            src="https://via.placeholder.com/300x100/?text=lorem+2"
+            alt="none"
+          />
+        </li>
+        <li>
+          <img
+            src="https://via.placeholder.com/300x100/?text=lorem+3"
+            alt="none"
+          />
+        </li>
+        <li>
+          <img
+            src="https://via.placeholder.com/300x100/?text=lorem+4"
+            alt="none"
+          />
+        </li>
+        <li>
+          <img
+            src="https://via.placeholder.com/300x100/?text=lorem+5"
+            alt="none"
+          />
+        </li>
+      </ul>
+      <ul class="pager">
+        <li><button>1</button></li>
+        <li><button>2</button></li>
+        <li><button>3</button></li>
+        <li><button>4</button></li>
+        <li><button>5</button></li>
+      </ul>
+      <ul class="arrowWrap">
+        <li class="left"><button>left</button></li>
+        <li class="right"><button>right</button></li>
+      </ul>
+    </div>
+    <script src="../script/76-resize.js"></script>
+  </body>
+</html>

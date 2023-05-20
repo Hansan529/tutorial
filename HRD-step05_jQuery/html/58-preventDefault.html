@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <style>
+      body {
+        height: 200vh;
+      }
+      p {
+        height: 50px;
+        background: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <h1>javascript</h1>
+    <p oncontextmenu="return false">return false</p>
+    <hr />
+    <h1 id="a">jquery</h1>
+    <p>return false, e.preventDafult()</p>
+    <hr />
+    <a class="b" href="#">a link</a>
+    <script>
+      $("p:eq(1)").on("contextmenu", (e) => {
+        e.preventDefault();
+      });
+
+      $(".b").on("click", (e) => {
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>

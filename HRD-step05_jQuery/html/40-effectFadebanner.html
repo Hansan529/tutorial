@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/reset.css" />
+    <style>
+      #main__banner {
+        position: relative;
+        height: 480px;
+      }
+      .banner {
+      }
+      .banner > li {
+        position: absolute;
+        display: none;
+        width: 100%;
+      }
+      .banner > li:first-child {
+        display: block;
+      }
+      .banner > li > img {
+        margin: 0 auto;
+      }
+      .pager {
+        display: flex;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 10px;
+        text-indent: -9999px;
+      }
+      .pager > li > a {
+        display: block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #fff;
+      }
+      .pager > li.active > a {
+        background: dodgerblue;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <div id="main__banner">
+      <ul class="banner">
+        <li>
+          <img
+            src="http://via.placeholder.com/1920x480?text=1+banner"
+            alt="img"
+          />
+        </li>
+        <li>
+          <img
+            src="http://via.placeholder.com/1920x480/00dd00?text=2+banner"
+            alt="img"
+          />
+        </li>
+        <li>
+          <img
+            src="http://via.placeholder.com/1920x480/f0f0f0?text=3+banner"
+            alt="img"
+          />
+        </li>
+        <li>
+          <img
+            src="http://via.placeholder.com/1920x480?text=4+banner"
+            alt="img"
+          />
+        </li>
+        <li>
+          <img
+            src="http://via.placeholder.com/1920x480?text=5+banner"
+            alt="img"
+          />
+        </li>
+      </ul>
+      <ul class="pager">
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+      </ul>
+    </div>
+    <script src="../script/40-effectFadebanner.js"></script>
+  </body>
+</html>

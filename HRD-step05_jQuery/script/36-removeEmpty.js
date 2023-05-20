@@ -1,0 +1,3 @@
+$("ul").remove();
+
+$("ol").empty();

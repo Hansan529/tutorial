@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="./">목록으로 이동</a>
+    <pre style="white-space: pre-line">
+$("input[type='text']").css({ color: "pink" });
+$("input:checkbox+label").css({ background: "yellow" });
+$("input:radio").next().css({ color: "blue" });
+    </pre>
+    <p>
+      <label for="uName">이름</label>
+      <input type="text" name="uName" value="name" />
+    </p>
+    <p>
+      <input type="checkbox" id="movie" /><label for="movie">영화</label>
+      <input type="checkbox" id="book" /><label for="book">book</label>
+      <input type="checkbox" id="exercise" /><label for="exercise">운동</label>
+    </p>
+    <p>
+      <input type="radio" name="gender" id="man" />
+      <label for="man">남자</label>
+      <input type="radio" name="gender" id="women" />
+      <label for="women">여자</label>
+    </p>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script/08-selectorForm.js"></script>
+  </body>
+</html>

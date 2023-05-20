@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/reset.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      nav {
+        background: rgba(0, 0, 0, 0.5);
+      }
+      #nav {
+        width: 70%;
+        min-width: 320px;
+      }
+      #nav > li {
+        line-height: 40px;
+      }
+      #nav > li > a {
+        display: block;
+        background: #333 url(https://via.placeholder.com/30/FFFFFF?text=Dn)
+          no-repeat 95% center;
+        color: #fff;
+        text-indent: 20px;
+        border-bottom: 1px solid #555;
+      }
+      #nav > li > a.active {
+        background-image: url(https://via.placeholder.com/30/FFFFFF?text=Up);
+      }
+      .sub {
+        display: none;
+      }
+      .sub > li > a {
+        display: block;
+        background: #444;
+        border-bottom: 1px solid #555;
+        color: #eee;
+        text-indent: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <nav>
+      <ul id="nav">
+        <li>
+          <a href="#">menu1</a>
+          <ul class="sub">
+            <li><a href="#">sub1</a></li>
+            <li><a href="#">sub2</a></li>
+            <li><a href="#">sub3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu2</a>
+          <ul class="sub">
+            <li><a href="#">sub1</a></li>
+            <li><a href="#">sub2</a></li>
+            <li><a href="#">sub3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu3</a>
+          <ul class="sub">
+            <li><a href="#">sub1</a></li>
+            <li><a href="#">sub2</a></li>
+            <li><a href="#">sub3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu4</a>
+          <ul class="sub">
+            <li><a href="#">sub1</a></li>
+            <li><a href="#">sub2</a></li>
+            <li><a href="#">sub3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu5</a>
+          <ul class="sub">
+            <li><a href="#">sub1</a></li>
+            <li><a href="#">sub2</a></li>
+            <li><a href="#">sub3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <script src="../script/43-slide-menu.js"></script>
+  </body>
+</html>

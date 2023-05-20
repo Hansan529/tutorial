@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/reset.css" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <style>
+      header img {
+        cursor: pointer;
+        margin: 0 auto;
+      }
+      #mainBanner {
+        width: 1920px;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+      }
+      #mainBanner h2 {
+        font-size: 50px;
+      }
+      #mainBanner > p {
+        /* display: none; */
+        opacity: 0;
+      }
+      article {
+        position: relative;
+      }
+      .imgWrap,
+      .textWrap {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+      }
+      .dunkin {
+        background: salmon;
+        height: 400px;
+      }
+      .dunkin .imgWrap,
+      .subway .imgWrap {
+        left: 0;
+      }
+      .dunkin .textWrap,
+      .subway .textWrap {
+        right: 0;
+      }
+      .subway {
+        background: gold;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <header>
+      <h1>
+        <img
+          src="https://via.placeholder.com/100x30/000000/ffffff.jpg?text=logo"
+          alt="lorem"
+        />
+      </h1>
+    </header>
+    <div id="container">
+      <div id="mainBanner">
+        <p class="banner1">
+          <img
+            src="https://via.placeholder.com/300/cccccc/ffffff.jpg?text=banner1"
+            alt="none"
+          />
+        </p>
+        <p class="banner2">
+          <img
+            src="https://via.placeholder.com/300/cccccc/ffffff.jpg?text=banner2"
+            alt="none"
+          />
+        </p>
+        <p class="banner3">
+          <img
+            src="https://via.placeholder.com/300/cccccc/ffffff.jpg?text=banner3"
+            alt="none"
+          />
+        </p>
+      </div>
+      <article class="dunkin">
+        <h2>title</h2>
+        <div class="imgWrap">
+          <img
+            src="https://via.placeholder.com/300/000000/ffffff.jpg?text=lorem+img"
+            alt="none"
+          />
+        </div>
+        <div class="textWrap">
+          <h2>title</h2>
+          <p>content</p>
+        </div>
+      </article>
+      <article class="subway">
+        <h2>title</h2>
+        <div class="imgWrap">
+          <img
+            src="https://via.placeholder.com/300/000000/ffffff.jpg?text=lorem+img"
+            alt="none"
+          />
+        </div>
+        <div class="textWrap">
+          <h2>title</h2>
+          <p>content</p>
+        </div>
+      </article>
+    </div>
+    <script src="../script/71-scrollAnimate.js"></script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/reset.css" />
+    <style>
+      .tab__wrap {
+        max-width: 1280px;
+        margin: 50px auto;
+      }
+      .tab__title {
+        display: flex;
+      }
+      .tab__title > li {
+        flex: 1;
+        border-top: 1px solid #999;
+        padding: 20px 0;
+        text-align: center;
+      }
+      .tab__title > .active {
+        border-top-color: #ffde00;
+      }
+      .tab__title > li > a {
+        font-size: 22px;
+        font-weight: bold;
+        color: #999;
+      }
+      .tab__title > .active > a {
+        color: #222;
+      }
+      .tab__list {
+        position: relative;
+      }
+      .tab__list > div {
+        position: absolute;
+        display: none;
+      }
+      .tab__list > div.on {
+        display: block;
+      }
+      .tab__list > div .title {
+        font-size: 30px;
+        margin: 50px 0;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <div class="tab__wrap">
+      <ul class="tab__title">
+        <li class="active"><a href="#">소개</a></li>
+        <li><a href="#">주변정보</a></li>
+      </ul>
+      <div class="tab__list">
+        <div class="on">
+          <section>
+            <h2 class="title">지도</h2>
+            <div>지도자리</div>
+          </section>
+          <section>
+            <h2 class="title">안내</h2>
+            <div>안내 아이콘</div>
+          </section>
+        </div>
+        <div>
+          <section>
+            <h2 class="title">관광</h2>
+            <div>관광이미지</div>
+          </section>
+          <section>
+            <h2 class="title">먹거리</h2>
+            <div>먹거리그림</div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script/18-exmaple.js"></script>
+  </body>
+</html>

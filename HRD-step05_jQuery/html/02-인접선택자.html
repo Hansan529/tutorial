@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="./">목록으로 이동</a>
+    <pre style="white-space: pre-line">
+      $(".menu&gtli&gta").css("textDecoration", "none");
+      $(".menu a").css({ color: "red", fontSize: "20px" });
+$("h2+p").css({ background: "#ccc", width: "200px" });
+$("h2~p").css({ color: "blue" });
+
+    </pre>
+    <p>선택자에 인접한 요소들</p>
+
+    <h1>인접선택자</h1>
+    <h2>자식선택자</h2>
+    <h2>후손선택자</h2>
+    <h2>바로다음 형제</h2>
+    <p>바로다음에 오는 형제 하나</p>
+    <h2>이후에 오는 형제</h2>
+    <p>동생1</p>
+    <p>동생2</p>
+    <p>동생3</p>
+    <ul class="menu">
+      <li>
+        <a href="#">menu1</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu2</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu3</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu4</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu5</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+    </ul>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script/02-selectorAdjacent.js"></script>
+  </body>
+</html>

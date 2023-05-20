@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <h1>keyboard event</h1>
+    <p>keyup: 키보드 입력을 마치면 실행한다</p>
+    <p>keydown: 키보드 입력을 하면 실행한다</p>
+    <p>keypress: enter(sumbit)을 하면 실행한다</p>
+    <p><input type="text" class="up" /></p>
+    <p><input type="text" class="down" /></p>
+    <p><input type="text" class="press" /></p>
+    <script>
+      $(".up").keyup(function () {
+        $(this).css({ padding: "20px" });
+      });
+      $(".down").keydown(function () {
+        $(this).css({ background: "skyblue" });
+      });
+      $(".press").keypress(function (e) {
+        $(this).css({ color: "pink" });
+        console.log(e.code, e.key, e.keyCode);
+      });
+    </script>
+  </body>
+</html>

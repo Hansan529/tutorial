@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <h1>mouse event</h1>
+    <p>click</p>
+    <p>dblclick</p>
+    <script>
+      $("p:eq(0)").click(function () {
+        $(this).css({ background: "pink" });
+      });
+      $("p:eq(1)").on("dblclick", function () {
+        $(this).css({ background: "skyblue" });
+      });
+    </script>
+  </body>
+</html>

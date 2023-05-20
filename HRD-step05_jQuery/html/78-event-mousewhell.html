@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 200vh;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <h1>wheel event</h1>
+    <p>mousewheel - 크롬, 사파리, 오페라, 익스</p>
+    <p>DOMMouseScroll - 파이어폭스</p>
+    <p>
+      e.originalEvent의 detail 값이 있다면 파이어폭스 브라우저이며 '0' 일 경우
+      다른 브라우저
+    </p>
+    <p>
+      휠을 아래 방향으로 향할 때, detail 값이 파이어폭스: '+', 다른 브라우저:
+      '-' 값이 나온다
+    </p>
+    <pre>
+if (event.detail) {
+      // 파이어폭스
+      delta = -event.detail;
+    } else {
+      // 다른 브라우저
+      delta = event.wheelDelta;
+    }</pre
+    >
+    <script src="../script/78-event-mousewhell.js"></script>
+  </body>
+</html>

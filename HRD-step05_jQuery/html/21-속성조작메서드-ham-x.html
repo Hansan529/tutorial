@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .toggleHam > a {
+        display: block;
+        width: 32px;
+        height: 32px;
+        background-image: url(https://via.placeholder.com/100x100/00FF00);
+      }
+      .toggleHam > a.active {
+        background-image: url(https://via.placeholder.com/400/FFFF00?text=active);
+        width: 400px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <h1>attr 이용한 이미지 변경</h1>
+    <p>
+      $(".hamBtn &gt; a &gt; img").attr("src",
+      "https://via.placeholder.com/200");
+    </p>
+    <p class="hamBtn">
+      <a href="#"
+        ><img src="https://via.placeholder.com/100x100/text+" alt=""
+      /></a>
+    </p>
+
+    <h1>toggleClass 이용한 이미지 변경</h1>
+    <p class="toggleHam"><a href="#"></a></p>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script/21-mathod-ham-x.js"></script>
+  </body>
+</html>

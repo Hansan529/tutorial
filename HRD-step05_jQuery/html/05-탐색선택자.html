@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      li {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">목록으로 이동</a>
+    <pre style="white-space: pre-line">
+      $("#nav&gt;li:first-child").css({ background: "pink" });
+      $("#nav&gt;li:last-child").css({ background: "skyblue" });
+      
+      $(".menu&gt;li").first().css({ color: "red" });
+      $(".menu&gt;li").last().css({ color: "blue" });
+      
+      $("#nav&gt;li:nth-child(3)").css({ fontSize: "30px" });
+      $(".menu&gt;li").eq(2).css({ backgroundColor: "lightgreen" });
+      
+      $(".cssList&gt;li:nth-child(even)").css({ background: "hotpink" });
+      $(".cssList&gt;li:nth-child(odd)").css({ color: "hotpink" });
+      
+      $(".list&gt;li").even().css({ color: "hotpink" });
+      $(".list&gt;li").odd().css({ background: "hotpink" });
+      
+      $(".list&gt;li:gt(3)").css({ fontSize: "25px" });
+      $(".list&gt;li:lt(3)").css({ border: "1px solid", padding: "5px" });
+      </pre
+    >
+    <div>
+      <p>:first-child css와 동일</p>
+      <p>:nth-child() css와 동일</p>
+      <p>:last-child css와 동일</p>
+      <p>$().first() first-child와 같다</p>
+      <p>$().eq() nth-child와 같으며 순서가 0부터 시작한다</p>
+      <p>$().last() last-child와 같다</p>
+    </div>
+    <h1>탐색선택자</h1>
+    <h2>css</h2>
+    <ul id="nav">
+      <li>nav1</li>
+      <li>nav2</li>
+      <li>nav3</li>
+      <li>nav4</li>
+      <li>nav5</li>
+      <li>nav6</li>
+      <li>nav7</li>
+    </ul>
+    <ol class="cssList">
+      <li>cssList1</li>
+      <li>cssList2</li>
+      <li>cssList3</li>
+      <li>cssList4</li>
+      <li>cssList5</li>
+      <li>cssList6</li>
+      <li>cssList7</li>
+    </ol>
+    <h2>jQuery</h2>
+    <ul class="menu">
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+      <li>menu4</li>
+      <li>menu5</li>
+      <li>menu6</li>
+      <li>menu7</li>
+    </ul>
+    <ol class="list">
+      <li>list1</li>
+      <li>list2</li>
+      <li>list3</li>
+      <li>list4</li>
+      <li>list5</li>
+      <li>list6</li>
+      <li>list7</li>
+    </ol>
+
+    <dl>
+      <dt>정의형제목</dt>
+      <dd>정의형목록1</dd>
+      <dd>정의형목록2</dd>
+      <dd>정의형목록3</dd>
+    </dl>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script/05-selector.js"></script>
+  </body>
+</html>

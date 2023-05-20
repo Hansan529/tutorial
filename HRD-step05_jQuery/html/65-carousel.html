@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/reset.css" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <style>
+      .item {
+        max-width: 1260px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .item__inner {
+        background: seagreen;
+      }
+      .item__list {
+        display: flex;
+        width: calc(800% / 3);
+      }
+      .item__list > li {
+        padding: 10px;
+        width: calc(100% / 8);
+      }
+      .item__list img {
+        width: 100%;
+      }
+      .arrow > li > a {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .arrow > .left > a {
+        left: -50px;
+      }
+      .arrow > .right > a {
+        right: -50px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./">./root</a>
+    <h1>carousel banner</h1>
+    <p>여러개의 배너가 한꺼번에 보이도록 하는 것을 뜻한다.</p>
+    <div class="item">
+      <div class="item__inner">
+        <ul class="item__list">
+          <li class="list-1">
+            <img
+              src="https://via.placeholder.com/1000/00ff00/000000.jpg?text=lorem+1"
+              alt="lorem"
+            />
+          </li>
+          <li class="list-2">
+            <img
+              src="https://via.placeholder.com/1000/00ff00/000000.jpg?text=lorem+2"
+              alt="lorem"
+            />
+          </li>
+          <li class="list-3">
+            <img
+              src="https://via.placeholder.com/1000/00ff00/000000.jpg?text=lorem+3"
+              alt="lorem"
+            />
+          </li>
+          <li class="list-4">
+            <img
+              src="https://via.placeholder.com/1000/00ff00/000000.jpg?text=lorem+4"
+              alt="lorem"
+            />
+          </li>
+          <li class="list-5">
+            <img
+              src="https://via.placeholder.com/1000/00ff00/000000.jpg?text=lorem+5"
+              alt="lorem"
+            />
+          </li>
+          <li class="list-6">
+            <img
+              src="https://via.placeholder.com/1000/00ff00/000000.jpg?text=lorem+6"
+              alt="lorem"
+            />
+          </li>
+          <li class="list-7">
+            <img
+              src="https://via.placeholder.com/1000/00ff00/000000.jpg?text=lorem+7"
+              alt="lorem"
+            />
+          </li>
+          <li class="list-8">
+            <img
+              src="https://via.placeholder.com/1000/00ff00/000000.jpg?text=lorem+8"
+              alt="lorem"
+            />
+          </li>
+        </ul>
+      </div>
+      <ul class="arrow item__arrow">
+        <li class="left">
+          <a href="#"
+            ><img
+              src="https://via.placeholder.com/30/ffffff/000000.jpg?text=<"
+              alt="btn"
+          /></a>
+        </li>
+        <li class="right">
+          <a href="#"
+            ><img
+              src="https://via.placeholder.com/30/ffffff/000000.jpg?text=>"
+              alt="btn"
+          /></a>
+        </li>
+      </ul>
+      <div class="play">
+        <a href="#"
+          ><img
+            src="https://via.placeholder.com/20/000000/ffffff.jpg?text=btn"
+            alt="a"
+        /></a>
+      </div>
+    </div>
+    <script src="../script/65-carousel.js"></script>
+  </body>
+</html>
