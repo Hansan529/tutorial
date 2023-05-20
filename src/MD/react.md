@@ -329,3 +329,61 @@ const MemorizedBtn = React.memo(Btn);
 ```
 
 이후에는 &quot;변경 저장&quot;, &quot;확인&quot;, &quot;완료&quot;만 렌더링 되는 모습을 볼 수 있다.
+
+### PropType
+
+text에 String이 아닌, Number가 입력되고, Boolean이 입력되면 원치 않은 결과를 얻을 수 있다보니, 유효성 검사가 필요하다.  
+그래서, React의 PropType을 사용해 검사를 실시한다.
+
+```html
+<script src="https://unpkg.com/prop-types@15.8.1/prop-types.js"></script>
+```
+
+```js
+Btn.propTypes = {
+  text: PropTypes.string.isRequried,
+  fontSize: PropTypes.number,
+  submit: PropTypes.bool,
+};
+```
+
+다음과 같이 지정하면, text는 string에 필수로 필요하며, fontSize는 Number, submit은 boolean만 입력이 가능하다.  
+다른 여러가지 유효성 검사 프로퍼티는 다음과 같다.
+
+```js
+MyComponent.propTypes = {
+  // optional 선택사항
+  optionArray: PropTypes.array,
+  optionalBool: PropTypes.bool,
+  optionalFunc: PropTypes.func,
+  optionalNumber: PropTypes.number,
+  optionalObject: PropTypes.object,
+  optionalString: PropTypes.string,
+  optionalSymbol: PropTypes.symbol,
+
+  // 렌더링할 수 있는 모든 것: 숫자, 문자열, 요소 또는 배열
+  optionalNode: PropTypes.node,
+
+  // Element인지 검사
+  optionalElement: PropTypes.element,
+
+  optionalMessage: PropTypes.instanceOf(Message),
+
+  // 속성이 News 또는 Photos 중 하나
+  optionalEnum: PropTypes.oneOf(["News", "Photos"]),
+
+  ...
+};
+```
+
+[React PropTypes](https://reactjs-kr.firebaseapp.com/docs/typechecking-with-proptypes.html) &larr; 다음 사이트에서 자세히 확인 가능함
+
+### Default Value
+
+컴포넌트를 불러올 때, 프로퍼티를 지정하지 않을 경우 입력될 기본값을 설정한다.
+
+```js
+const Btn = ({ text, fontSize = 14, submit, changeValue, value }) => {};
+```
+
+fontSize 속성이 없을 경우 14로 지정된다.

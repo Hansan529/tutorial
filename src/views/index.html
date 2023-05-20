@@ -21,7 +21,7 @@
     ></script>
     <script type="text/babel">
       const root = ReactDOM.createRoot(document.getElementById("root"));
-      const Btn = ({ text, fontSize, submit, changeValue, value }) => {
+      const Btn = ({ text, fontSize = 14, submit, changeValue, value }) => {
         return (
           <button
             onClick={changeValue}
