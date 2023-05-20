@@ -1,0 +1,186 @@
+@media screen and (max-width: 767px) {
+  /* hidden */
+  nav,
+  .gnb > li:first-child,
+  .gnb > li:nth-child(2),
+  .arrow-btn,
+  .scroll-ani,
+  .service-list > li > a > .show-title,
+  .partner-wrap,
+  .award-wrap,
+  .footer-top {
+    display: none;
+  }
+  /* block */
+  .pager {
+    display: block;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .pager > li {
+    float: left;
+    margin: 0 5px;
+  }
+  .pager > li > a {
+    display: block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    text-indent: -9999em;
+  }
+  .pager > .active > a {
+    background: rgba(255, 255, 255, 1);
+  }
+  .service-list,
+  .portfolio-list {
+    display: block;
+  }
+  /* font-size */
+  body {
+    font-size: 12px;
+  }
+
+  /* margin, padding, width, height */
+  main {
+    overflow: hidden;
+  }
+  main section {
+    padding: 40px 0;
+  }
+  main .title {
+    font-size: 2.3em;
+  }
+  main .title + p {
+    width: 90%;
+  }
+  main section ul {
+    display: block;
+  }
+  main section ul > li {
+    width: 100% !important;
+  }
+  .inner {
+    padding: 0 20px;
+  }
+
+  /*^ header */
+  .logo {
+    width: 95px;
+  }
+  .header-inner {
+    padding: 0 20px;
+    width: 100%;
+    height: 80px;
+  }
+
+  /*^ main */
+  .main-banner {
+    height: 500px;
+    position: relative;
+  }
+  .banner {
+    height: 100%;
+  }
+  .banner > li > .inner {
+    width: calc(100% - 40px);
+    padding-left: 20px;
+  }
+  .banner > li > .inner h2 {
+    font-size: 2.5em;
+  }
+  .banner > li:first-child > .inner h2 {
+    letter-spacing: 0;
+  }
+  .banner > li:first-child::after {
+    height: 100%;
+  }
+  .banner > li:nth-child(2)::after {
+    width: 120%;
+    background-position: center;
+    background-size: contain;
+    top: unset;
+    right: 0;
+    bottom: 0;
+    transform: translate(-50%, 0);
+  }
+  .banner > li:nth-child(3)::after {
+    width: 100%;
+    background-position: 120% 90%, 100%, 150% 100%;
+    background-size: 75%, 70%, 80%;
+    top: unset;
+    left: 0;
+    transform: translate(0, 0);
+  }
+
+  /** 서비스 */
+  .service-list > li.on,
+  .service-list > li {
+    width: 100%;
+    margin: 20px 0;
+  }
+  .service-list > li > a {
+    height: calc(100vw - 40px);
+  }
+  .service-list > li > a .text-box {
+    display: block;
+    padding: 30px 20px;
+  }
+  /** 포트폴리오 */
+  .portfolio-list > li {
+    width: 100%;
+    margin: 0 0 40px;
+  }
+  .portfolio-list > li .text-box {
+    width: 90%;
+  }
+  .portfolio-list > li .text-box > P {
+    margin: 10px 0;
+  }
+
+  /*^ footer */
+  .footer-bottom .inner {
+    display: block;
+  }
+  .address-wrap {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .footer-bottom address {
+    display: block;
+    width: 100%;
+  }
+  .footer-bottom address > div {
+    gap: 20px;
+  }
+  .footer-bottom address > div:nth-child(2n + 1),
+  .footer-bottom address > div:nth-child(2n) {
+    width: 100%;
+  }
+  .footer-bottom address > div > strong {
+    flex: 1;
+  }
+  .footer-bottom address > div > span {
+    flex: 3;
+  }
+  .footer-bottom address > div:last-child {
+    white-space: normal;
+  }
+  .foot-link {
+    text-align: center;
+  }
+  .foot-link > .info-list {
+    width: 60%;
+    display: inline-block;
+    text-align: center;
+    color: #888;
+  }
+  .foot-link > .info-list > li {
+    display: inline-block;
+  }
+  .copy {
+    color: #888;
+  }
+}
