@@ -1,0 +1,15 @@
+# package
+node_modules/
+.db/
+
+# env file
+.env
+
+# styles
+scss/
+*.scss
+
+# setting
+*.yaml
+assets/
+build/
