@@ -402,7 +402,7 @@ CSS를 모든 영역에 적용하고 싶지 않기 때문에, 모듈러 형식�
 .btn {
   color: #fff;
   background-color: tomato;
-  }
+}
 ```
 
 ```js
@@ -420,4 +420,24 @@ Button.propTypes = {
 export default Button;
 ```
 
-className이 Button_btn__F4YIC 처럼 랜덤으로 변하며, 해당  스타일이 적용된다.
+className이 Button_btn\_\_F4YIC 처럼 랜덤으로 변하며, 해당 스타일이 적용된다.
+
+물론 css의 이름이 같아도 문제는 없다.
+
+```js
+// Button.module.css
+import styles from "./Button.module.css";
+
+function Button({ text }) {
+  return <button className={styles.title}></button>;
+}
+
+// App.module.css
+import styles from "./App.module.css";
+
+function Button({ text }) {
+  return <button className={styles.title}></button>;
+}
+```
+
+결과는 App.title**@@@, Button_title**@@@ 랜덤으로 나오기 때문에 CSS 클래스가 같아도 문제 없다.
