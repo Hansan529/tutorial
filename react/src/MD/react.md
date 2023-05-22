@@ -387,3 +387,37 @@ const Btn = ({ text, fontSize = 14, submit, changeValue, value }) => {};
 ```
 
 fontSize 속성이 없을 경우 14로 지정된다.
+
+---
+
+<br>
+
+## CSS Module
+
+CSS를 모든 영역에 적용하고 싶지 않기 때문에, 모듈러 형식으로 사용한다.
+
+`Button.js`, `src/Button.module.css`
+
+```css
+.btn {
+  color: #fff;
+  background-color: tomato;
+  }
+```
+
+```js
+import PropTypes from "prop-types";
+import styled from "./Button.module.css";
+
+function Button({text}){
+return <button className={styled.btn}><{text}/button>;
+}
+
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+}
+
+export default Button;
+```
+
+className이 Button_btn__F4YIC 처럼 랜덤으로 변하며, 해당  스타일이 적용된다.
