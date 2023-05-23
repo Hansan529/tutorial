@@ -598,3 +598,52 @@ function Button({ text }) {
 ```
 
 결과는 App.title**@@@, Button_title**@@@ 랜덤으로 나오기 때문에 CSS 클래스가 같아도 문제 없다.
+
+<br>
+
+---
+
+#### TODO 만들어보기
+
+```js
+import { useState } from "react";
+
+function App() {
+  const [toDo, setToDo] = useState("");
+  const [toDos, setToDos] = useState([]);
+  const onChange = (e) => setToDo(e.target.value);
+  const onSubmit = (e) => {
+    e.preventDeafult();
+    if (toDo === "") {
+      return;
+    }
+    setToDo("");
+    setToDos((currentArray) => [toDo, ...currentArray]);
+  };
+  const onClick = (e) => {
+    const idx = parseInt(e.target.className);
+    setToDos(toDos.filter((item, toDoIndex) => idx !== toDoIndex));
+  }
+  return (
+    <div>
+      <h1>할 일 ({toDos.length})</h1>
+      <form onSubmit={onSubmit}>
+        <input onChange={onChange} value={toDo} />
+        <button>추가</button>
+      </form>
+      <hr>
+      <ul>
+      {toDos.map((item, index) => {
+        <li key={index}>
+          <span>{item}</span>
+          <button onClick={onClick} className={index}>X</button>
+        </li>
+      })}
+      </ul>
+    </div>
+  );
+}
+```
+
+toDo를 submit하면, input 요소의 value를 초기화하기 위해 toDo를 empty하고, toDos 배열에 toDo를 추가한다.  
+삭제 버튼을 누르면, className을 정수형으로 변경하고, toDos에서 filter로 idx 번째를 제외한 나머지를 얻는다. 해당 값을 저장한다.
