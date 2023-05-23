@@ -325,6 +325,19 @@ const onClick = setValue("완료");
 Btn 컴포넌트에 지정한 onClick는 props의 이름일 뿐이다. `props.onClick: setValue("완료")` 가 되는 것이다.  
 changeValue가 이벤트를 추가 하는 것이 아닌, Btn의 button에 직접 지정해주어야 이벤트가 추가되는 형식이다.
 
+추가로 배열 안에 추가하려면 다음과 같이 해주어야한다.
+
+```js
+const [value, setValue] = React.useState([]);
+const onClick = (e) {
+  e.preventDefault();
+  setValue((currentArray) => [value, ...currentArray]);
+  };
+```
+
+만약 currentArray가 `[1,2,3,4,5]` 였고, value가 `[0,-1]` 일 경우, 해당 함수 대신 `[value, currentArray]`로 진행할 경우  
+`[0, -1, [1,2,3,4,5]]`가 된다. 그래서 안으로 포함시키기 위해 `...`을 입력해 포함시키면 `[0, -1, 1, 2, 3, 4, 5]` 의 결과를 얻을 수 있다.
+
 onClick을 changeValue로 변경하면 이해하기 더 쉬울 것이다.
 
 ```js
