@@ -386,27 +386,22 @@ state가 변할 때 마다, 렌더링은 계속 실행되고, 한 번만 실행�
 
 ```js
 console.log("렌더링");
-useEffect(()=> console.log("검색: ", keyword), [keyword]);
+useEffect(() => console.log("검색: ", keyword), [keyword]);
 
 <div>
-  <input
-    type="text"
-    placeholder="검색"
-    value={keyword}
-    onChange={onChange}
-  />
+  <input type="text" placeholder="검색" value={keyword} onChange={onChange} />
   <button onClick={onClick}>클릭</button>
- </div>
+</div>;
 ```
 
 첫 렌더링
 
 ```
 렌더링
-검색: 
+검색:
 ```
 
-input Change 시 
+input Change 시
 
 ```
 렌더링
@@ -430,6 +425,52 @@ button 클릭으로 인해 state가 변경 될 때
 렌더링
 렌더링
 ```
+
+별도의 컴포넌트를 불러 올 때도 사용 가능하다.
+
+```js
+function Load() {
+  useEffect(() => {
+    console.log("여기야 :)");
+    return () => console.log("없어졌어 :(");
+  }, []);
+  return <h2>안녕!</h2>;
+}
+
+function App() {
+  const [showing, setShowing] = useState(false);
+  const onClick = () => setShowing((prev) => !prev);
+  return (
+    <div>
+      {showing ? <Load /> : null}
+      <button onClick={onClick}>{showing ? "숨어" : "나와"}</button>
+    </div>
+  );
+}
+```
+
+btn은 기본적으로 `나와`를 출력하며, 누를 경우 Load가 불러와지고, useEffect로 인해 `여기야 :)` 를 볼 수 있다.  
+null로 변경하면서 Load를 지웠을 때, `없어졌어 :(` 를 얻을 수 있다.
+
+**create, destory 2개의 상태에 따른 실행 요소를 선택 할 수 있다.**
+
+이를 `cleanup function` 이라고 한다.
+
+```js
+function Load() {
+  function destoryedFn() {
+    console.log("없어졌어 :(");
+  }
+  function effectFn() {
+    console.log("여기야 :)");
+    return destoryedFn;
+  }
+  useEffect(effectFn, []);
+  return <h2>안녕!</h2>;
+}
+```
+
+다음처럼 함수를 분리해서 사용 할 수 있다.
 
 <br>
 
