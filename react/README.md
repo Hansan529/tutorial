@@ -647,3 +647,51 @@ function App() {
 
 toDo를 submit하면, input 요소의 value를 초기화하기 위해 toDo를 empty하고, toDos 배열에 toDo를 추가한다.  
 삭제 버튼을 누르면, className을 정수형으로 변경하고, toDos에서 filter로 idx 번째를 제외한 나머지를 얻는다. 해당 값을 저장한다.
+
+#### Bitcoin 뷰어
+
+```js
+function App() {
+  const [loading, setLoading] = useState(true);
+  const [coins, setCoins] = useState([]);
+  const [money, setMoney] = useState(0);
+  const onChange = (e) => setMoney(e.target.value);
+  useEffect(() => {
+    fetch("https://api.coinpaprika.com/v1/tickers")
+      .then((response) => response.json())
+      .then((json) => {
+        setCoins(json);
+        setLoading(false);
+      });
+  }, []);
+  return (
+    <div>
+      <h1>비트코인 {loading ? null : `(${coins.length})`}</h1>
+      {loading ? (
+        <strong>로딩 중</strong>
+      ) : (
+        <div>
+          <input
+            type="number"
+            onChange={onChange}
+            value={money}
+            placeholder="보유한 달러"
+          />
+          <select>
+            {coins.map((item, index) => {
+              <option key={index} value={item}>
+                {item.name} ({item.symbol}) : {item.quotes.USD.price} [
+                {money / item.quotes.USD.price}]
+              </option>;
+            })}
+          </select>
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+API를 호출하는데, 1회만 호출하도록 하기 위해서, useEffect를 사용했고, JSON 형태로 받고, 해당 json을 coins State에 저장하기 위해 setCoins에 json을 붙여넣어준다. 로딩이 기본적으로 `true`이기 때문에 `false`로 변경해준다.
+
+그래서, 로딩 중에는 본문이 나오지 않도록 설정하고, 로딩이 마치면 목록을 불러오도록 한다.
