@@ -695,3 +695,145 @@ function App() {
 API를 호출하는데, 1회만 호출하도록 하기 위해서, useEffect를 사용했고, JSON 형태로 받고, 해당 json을 coins State에 저장하기 위해 setCoins에 json을 붙여넣어준다. 로딩이 기본적으로 `true`이기 때문에 `false`로 변경해준다.
 
 그래서, 로딩 중에는 본문이 나오지 않도록 설정하고, 로딩이 마치면 목록을 불러오도록 한다.
+
+---
+
+#### 영화
+
+```js
+// ./routes/Home
+import { useState, useEffect } from "react";
+import Movie from "../Component/Movie";
+
+function Home() {
+  const [loading, setLoading] = useState(true);
+  const [movies, setMovies] = useState([]);
+  const date = new Date();
+  const dateString = date
+    // 한국 시간으로 현재 날짜 숫자값 얻기
+    .toLocaleDateString("ko-KR", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    })
+    // .(dot) 과 \s 공백은 (/g 전체) ""(empty)로 변경시킨다. 2023. 05. 25 -> 20230525
+    .replace(/\.|\s/g, "");
+  const getMovies = async () => {
+    const json =
+      await // fetch 요청으로 json을 받았고, json에 json 타입으로 저장함.
+      (
+        await fetch(
+          `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=${
+            dateString - 1
+          }`
+        )
+      ).json();
+    // json의 boxOfficeResult.dailyBoxOfficeList에 대한 목록을 Movies에 저장함
+    setMovies(json.boxOfficeResult.dailyBoxOfficeList);
+    // 로딩 완료
+    setLoading(false);
+  };
+  useEffect(() => {
+    getMovies();
+  }, []);
+
+  return (
+    <div>
+      <h1>최신 영화</h1>
+      {loading ? (
+        <h1>로딩 중...</h1>
+      ) : (
+        <div>
+          {movies.map((movie) => (
+            // Movie Component에 해당 값들을 전달한다.
+            <Movie
+              key={parseInt(movie.movieCd)}
+              rank={parseInt(movie.rank)}
+              movieNm={movie.movieNm}
+              openDt={parseInt(movie.openDt)}
+              audiCnt={parseInt(movie.audiCnt)}
+              audiAcc={parseInt(movie.audiAcc)}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default Home;
+```
+
+일별 박스오피스 값들을 받기 위해서, fetch API를 사용해 **movies**에 저장하고, **useEffect**로 한 번만 실행하도록 한다.  
+삼항연산자를 사용해 loading이 false라면 Movie Component를 실행한다. **map**을 사용했으니 key 값을 지정해주고, `rank, movieNm, openNm, openDt, audiCnt, audiAcc` 값을 해당 PropTypes에 맞도록  
+변환해서 전달한다.
+
+<br>
+
+```js
+// ./Component/Movie
+import PropTypes from "prop-types";
+// 전달 받을 요소를 지정한다.
+function Movie({ rank, movieNm, openDt, audiCnt, audiAcc }) {
+  return (
+    <li>
+      {rank}. <h2>{movieNm}</h2>
+      <div>
+        [{openDt}] 관객 수 {audiCnt}명, 누적 {audiAcc}명
+      </div>
+    </li>
+  );
+}
+
+// 해당 요소의 타입을 설정한다.
+Movie.propTypes = {
+  rank: PropTypes.number.isRequired,
+  movieNm: PropTypes.string.isRequired,
+  audiCnt: PropTypes.number.isRequired,
+  audiAcc: PropTypes.number.isRequired,
+};
+
+export default Movie;
+```
+
+**prop-types**를 사용해서 정보를 받을 타입을 지정한다.  
+전달받은 매개변수를 사용해서 나열한다.
+
+---
+
+<br>
+
+#### Router
+
+현재는 단일 페이지에서만 보는데, 다른 페이지로 이동하기 위해서 Router 설정을 할 것이다.  
+사용하기 쉽도록, 재사용 할 경우 편리하도록 별도의 Component를 생성했으니 사용한다.
+
+```js
+// App
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Home";
+import Detail from "./Detail";
+
+// 경로, 객체 설정
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/movie",
+    element: <Detail />,
+  },
+]);
+
+function App() {
+  // router에 지정한 요소 연결
+  return <RouterProvider router={router} />;
+}
+```
+
+Router를 설정하기 위해서 **react-router-dom**에서 2가지 요소를 불러온다.
+
+path로 주소를 설정하고, 렌더링할 객체 또는 컴포넌트를 설정해준다.
+
+RouterProvider를 통해서 Router를 개통한다.
