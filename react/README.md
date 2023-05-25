@@ -723,6 +723,7 @@ function Home() {
       await // fetch 요청으로 json을 받았고, json에 json 타입으로 저장함.
       (
         await fetch(
+          /* ** 해당 key는 예시용 키임 ** */
           `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=${
             dateString - 1
           }`
