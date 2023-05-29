@@ -603,7 +603,7 @@ function Button({ text }) {
 
 ---
 
-#### TODO 만들어보기
+## TODO 만들어보기
 
 ```js
 import { useState } from "react";
@@ -648,7 +648,11 @@ function App() {
 toDo를 submit하면, input 요소의 value를 초기화하기 위해 toDo를 empty하고, toDos 배열에 toDo를 추가한다.  
 삭제 버튼을 누르면, className을 정수형으로 변경하고, toDos에서 filter로 idx 번째를 제외한 나머지를 얻는다. 해당 값을 저장한다.
 
-#### Bitcoin 뷰어
+---
+
+<br>
+
+## Bitcoin 뷰어
 
 ```js
 function App() {
@@ -698,7 +702,9 @@ API를 호출하는데, 1회만 호출하도록 하기 위해서, useEffect를 �
 
 ---
 
-#### 영화
+<br>
+
+## 영화 목록 나열해보기
 
 ```js
 // ./routes/Home
@@ -800,11 +806,9 @@ export default Movie;
 **prop-types**를 사용해서 정보를 받을 타입을 지정한다.  
 전달받은 매개변수를 사용해서 나열한다.
 
----
-
 <br>
 
-#### Router
+### - Router
 
 현재는 단일 페이지에서만 보는데, 다른 페이지로 이동하기 위해서 Router 설정을 할 것이다.  
 사용하기 쉽도록, 재사용 할 경우 편리하도록 별도의 Component를 생성했으니 사용한다.
@@ -838,3 +842,54 @@ Router를 설정하기 위해서 **react-router-dom**에서 2가지 요소를 �
 path로 주소를 설정하고, 렌더링할 객체 또는 컴포넌트를 설정해준다.
 
 RouterProvider를 통해서 Router를 개통한다.
+
+<br>
+
+### - Link
+
+제목을 click 했을 때, **/movie**로 이동하기 위해서는 어떻게 해야 할 까? HTML에서 a 태그를 사용하는 방법이 있을 거다.  
+물론 틀린 건 아니지만, 아마 새로고침이 될 것이다.
+
+React는 서버단에서 렌더링하기 때문에, 유저가 새로고침을 하지 않아도 된다.
+
+이를 위해 **react-router-dom**의 **Link**를 사용한다.
+
+```js
+import { Link } from "react-router-dom";
+
+function Movie(...){
+  ...
+  <h2><Link to={`/movie/${id}`}>{movieNm}</Link></h2>
+}
+```
+
+`<a href="/movie"></a>` &rarr; `<Link to="/movie"></Link>`  
+구성은 똑같다.
+
+<br>
+
+### - Params
+
+무작위 값을 주소로 변환하는 파라미터를 사용해 게시글 고유의 내용을 표시한다.
+
+```js
+// App
+...
+{
+  path: "/movie/:id",
+  element: <Detail />
+}
+
+// Detail
+import { useParams } from "react-router-dom";
+
+function Detail() {
+  const { id } = useParams();
+  console.log(id);
+}
+```
+
+해당 링크를 타고 이동했을 때, id의 값을 알 수 있다. Express의 **req.params**와 같다.  
+useParams는 {id: 'value'} 를 반환하는데, id는 :id 로 지정되는 것이라 다른 파라미터로 변경하면 그대로 변한다.
+
+- ex `/movie/:movieId` &rarr; **{movieId: '1234567'}**
