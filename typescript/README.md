@@ -124,7 +124,7 @@ player.age = 21;
 
 함수에도 마찬가지로, 매개 변수는 string 타입을 받으면서, return하는 객체의 타입은 Player 타입으로 설정했다. (name String, age number)
 
-함수를 많이 사용하는 Arrow Function으로 변경해보면 다음과 같다.
+- 함수를 많이 사용하는 Arrow Function으로 변경해보면 다음과 같다.
 
 ```js
 const playerMaker = (name: string): Player => ({ name });
@@ -150,3 +150,17 @@ userName.name = "xxan";
 ```
 
 name은 변경 할 수 없다는 오류를 리턴해준다.
+
+<br>
+
+### Q4. 배열 요소마다 타입이 다른 경우에는 어떻게 명시해야하는지?
+
+Tuple을 이용해서 타입을 명시해준다.
+
+Tuple은 배열을 생성 할 수 있는데, 최소한의 길이와 특정 위치에 특정 타입이 있어야한다.
+
+```js
+const a: [string, number, boolean] = ["text", 1, false];
+```
+
+3개의 argument가 필요하면서, 순서대로 string, number, boolean이어야 오류가 없이 return 된다.
