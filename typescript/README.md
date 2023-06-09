@@ -253,3 +253,56 @@ const add: Add = (a, b) => a + b;
 ```
 
 add의 타입이 `(number, number) => number`가 된다.
+
+<br>
+
+## 타입스크립트 overloading(오버로딩)
+
+하나의 타입에 여러개의 Call Signature가 있는 경우를 뜻한다.
+
+```js
+type Add = {
+  (a: number, b: number) : number
+  (a: number, b: string) : number
+};
+```
+
+`(a: number, b: string|number ) number` 가 된다.
+
+```js
+const add: Add = (a, b) => {
+  if (typeof b === "string") return a;
+  return a + b;
+};
+```
+
+서로 다를 수 있는 타입이니, + 연산자는 사용할 수 없어서, typeof를 통해 string인지 체크하고 true일 경우  
+a를 return 시킨다. number일 경우 "a + b"를 한다.
+
+```ts
+// string과 object가 있어야 함
+type Config = {
+  path: string;
+  config: object;
+};
+
+type Push = {
+  // (push 함수에서 별도로 return 하는 요소가 없기 때문에 return을 void로 지정함)
+  // string이 들어오면
+  (path: string): void;
+  // Object가 들어오면 Config 타입으로
+  (config: Config): void;
+};
+
+// string | Config(object) - return 하는 요소 없음
+const push: Push = (config) => {
+  // config가 string일 경우
+  if (typeof config === "string") {
+    console.log(config);
+  } else {
+    console.log(config);
+  }
+};
+```
+
+유저에게 정보를 return할 필요가 없을 때 타입을 void로 지정하고, return하는 요소가 있다면 타입을 지정해준다.
