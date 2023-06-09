@@ -306,3 +306,44 @@ const push: Push = (config) => {
 ```
 
 유저에게 정보를 return할 필요가 없을 때 타입을 void로 지정하고, return하는 요소가 있다면 타입을 지정해준다.
+
+<br>
+
+## 타입스크립트 Polymorphism / generic
+
+### generic type
+
+타입에 대해 Placeholder를 사용할 수 있다. 이는 Call Signature를 작성할 때, 받을 타입을 모를 경우 사용한다.
+
+```ts
+type SuperPrint = {
+  <T>(arr: T[]): T;
+};
+
+const superPrint: SuperPrint = (arr) => arr[0];
+
+// const superPrint: <number>(arr: number[]) => number
+superPrint([1, 2, 3, 4]);
+
+// const superPrint: <string>(arr: string[]) => string
+superPrint(["1", "2", "3"]);
+
+// const superPrint: <boolean>(arr: boolean[]) => boolean
+superPrint([true, false, true]);
+
+// const superPrint: <string | number | boolean>(arr: (string | number | boolean)[]) => string | number | boolean
+superPrint([1, "2", true]);
+```
+
+임의의 이름으로 지정한 후, Type에도 설정해주면, Typescript에서 추측한 타입으로 변경한다.  
+return한 값이 있기 때문에, **generic type**에서 return 타입을 일치시켜준다.
+
+- 결국 다음과 같은 코드를 작성하지 않아도 된다는 것이다.
+
+```ts
+type SuperPrint = {
+  (arr: number[]): number;
+  (arr: boolean[]): boolean;
+  (arr: string[]): string;
+};
+```
