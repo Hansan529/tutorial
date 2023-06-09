@@ -129,3 +129,20 @@ const playerMaker = (name: string): Player => ({ name });
 ```
 
 return을 하기 위해서 {} 객체 밖에 ()로 한번 더 감싸줘야 값을 얻을 수 있다.
+
+### Q3. 객체 요소를 수정할 수 없도록 하는 방법이 있는가?
+
+readonly Property를 추가하면 수정이 불가능하고, 읽기만 가능하도록 할 수 있다.
+
+```js
+type Player = {
+  readonly name: string,
+  age?: number
+}
+
+const userName = playerMaker("hxan");
+userName.age = 15;
+userName.name = "xxan";
+```
+
+name은 변경 할 수 없다는 오류를 리턴해준다.
