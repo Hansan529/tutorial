@@ -238,3 +238,18 @@ function hello(name: string | number) {
 마지막은 never가 된다.
 
 **void는 함수가 실행되고 반환을 하지만 값이 없는 경우이고, never는 함수가 반환되지 않는 경우에 사용된다.**
+
+<br>
+
+## 타입스크립트 Call Signature
+
+함수를 hover 했을 경우 나오는 텍스트, 인수의 타입, 반환 타입에 대해 알려주는 요소이다.
+
+```js
+// Call Signature
+type Add = (a: number, b: number) => number;
+
+const add: Add = (a, b) => a + b;
+```
+
+add의 타입이 `(number, number) => number`가 된다.
