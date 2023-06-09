@@ -72,3 +72,60 @@ let f: number[] = [];
 
 기본적으로, TypeScriipt가 알아서 추론을 하기 때문에 명시적으로 선언을 해주지 않아도 된다.  
 물론 빈 배열에 특정한 타입만 가능하도록 하려면 명시적으로 표기해주어야 한다.
+
+### Q1. 객체에 선택적 요소에 대한 타입 지정은?
+
+객체에 있을 수도 있으면서, 없을 수도 있는 요소에 대한 설정이다.
+
+```js
+const player = {
+  name: string,
+  age?: number
+} = {
+  name: "First Name"
+}
+```
+
+player 객체는 `name: string, age? : number | undefined` 로 타입이 지정된다.
+
+`if(player.age && player.age < 10){}` 과 같이 undefined인지 체크한 뒤에 사용할 수 있다.
+
+### Q2. 여러개를 사용하려면 명시적 타입 선언을 계속 해야 하나?
+
+반복되는 타입 명명은 Alias (별칭) 타입을 생성 할 수 있다.
+
+```js
+type Player = {
+  name: string,
+  age?: number,
+};
+
+const first: Player = {
+  name: "First Name",
+};
+const last: Player = {
+  name: "Last Name",
+  age: 11,
+};
+```
+
+객체의 이름의 첫번째는 대문자로 한 뒤에 생성시켜준다. 코드의 반복을 줄이고, 가독성이 좋아진다.
+
+```js
+function playerMaker(name: string): Player {
+  return { name };
+}
+
+const player = playerMaker("hxan");
+player.age = 21;
+```
+
+함수에도 마찬가지로, 매개 변수는 string 타입을 받으면서, return하는 객체의 타입은 Player 타입으로 설정했다. (name String, age number)
+
+함수를 많이 사용하는 Arrow Function으로 변경해보면 다음과 같다.
+
+```js
+const playerMaker = (name: string): Player => ({ name });
+```
+
+return을 하기 위해서 {} 객체 밖에 ()로 한번 더 감싸줘야 값을 얻을 수 있다.
