@@ -164,3 +164,77 @@ const a: [string, number, boolean] = ["text", 1, false];
 ```
 
 3개의 argument가 필요하면서, 순서대로 string, number, boolean이어야 오류가 없이 return 된다.
+
+<br>
+
+---
+
+## 타입스크립트 타입
+
+타입에서 여러개가 있지만 any, void, never, unknown를 설명하자면
+
+any는 TypeScript를 벗어나 자바스크립트처럼 성립되지 않는 요소를 그냥 실행시킬 수 있도록 한다.
+
+```js
+const a: any[] = [1, 2, 3, 4];
+const b: any = false;
+
+a + b;
+```
+
+다음과 같이 올바르지 않은 타입인데도 오류가 없다. 물론 이렇게 되면, Typescript를 사용하지 않기 때문에 비추천
+
+<br>
+
+unknown은 예를 들어 API를 요청했을 경우, response 되는 값의 타입을 모를 경우에 사용한다.
+
+type을 체크한 후에 그에 따라 실행하는 함수를 다르게 한다.
+
+```js
+let a: unknown;
+
+if (typeof a === "number") {
+  let b = a + 2;
+}
+if (typeof a === "string") {
+  a.toUpperCase();
+}
+```
+
+<br>
+
+void return 하지 않는 요소에 대한 타입이다.
+
+```js
+// function hello(): void
+function hello() {
+  console.log("a");
+}
+```
+
+Typescript가 자동으로 void라고 지정한다.  
+void이기 때문에, `a.toUpperCase()`와 같이 코드를 작성하면 오류가 발생한다.
+
+<br>
+
+nerver 절대로 return을 하지 않는다.
+
+```js
+function hello(name: string | number) {
+  if (typeof name === "string") {
+    // name: string
+    name;
+  } else if (typeof name === "number") {
+    // name: number
+    name;
+  } else {
+    // name: never
+    name;
+  }
+}
+```
+
+2가지의 매개변수 타입으로 인수를 받는데, if 함수로 이미 string과 number에 대한 조건을 마쳤기 때문에,  
+마지막은 never가 된다.
+
+**void는 함수가 실행되고 반환을 하지만 값이 없는 경우이고, never는 함수가 반환되지 않는 경우에 사용된다.**
