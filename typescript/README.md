@@ -53,3 +53,22 @@ txt.hello;
 
 txt.hello의 밑줄로 "Property 'hello' does not exist on type '{name: string; }" 이라고,
 객체의 요소에 없다는 말을 해준다. 자바스크립트였다면 일단 실행시키고, 없다는 오류를 리턴 했을 텐데 말이다.
+
+```js
+// let a: any
+let a;
+// let b: string
+let b = "";
+// let c: boolean
+let c = false;
+
+// let d: any[]
+let d = [];
+// let e: number[]
+let e = [1];
+// let f: number[]
+let f: number[] = [];
+```
+
+기본적으로, TypeScriipt가 알아서 추론을 하기 때문에 명시적으로 선언을 해주지 않아도 된다.  
+물론 빈 배열에 특정한 타입만 가능하도록 하려면 명시적으로 표기해주어야 한다.
