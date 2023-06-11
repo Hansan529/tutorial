@@ -347,3 +347,64 @@ type SuperPrint = {
   (arr: string[]): string;
 };
 ```
+
+**Generic Type**에서도 마찬가지로 여러개의 인수를 설정할 수 있다.
+
+`<T,M>(a: T[], b:M) => T`
+
+<br>
+
+---
+
+## 타입스크립트 Class
+
+추상 클래스는 다른 클래스가 상속받을 수 있는 클래스이다.
+
+```ts
+abstract class User {
+  constructor(
+    private firstName: string,
+    private lastName: string,
+    public nickname: string
+  ) {}
+}
+
+class Player extends User {}
+
+const hxan = new Player("han", "san", "산");
+
+hxan.nickname;
+```
+
+추상 클래스를 사용하지 않았다면 Player class에서 `consturctor`를 입력해야 했지만, `abstract` 추상 클래스를 사용해서 상속받아 사용하였다.  
+단, 추상 클래스는 새로운 인스턴스를 만들 수는 없다.
+
+`const hxan = new User("han","san","산")` 이라고 변경해보면, 추상 클래스는 만들 수 없다고 나온다.
+
+클래스에 `private, public`의 차이는 **참조가 가능한지, 불가능한지**에 대한 속성이다. private로 지정했으면, 참조가 안된다.  
+`hxan.firstName` 을 하면, typescript는 오류를 리턴할 거다.
+
+property 만이 아니라 method에서도 작동한다.
+
+```ts
+abstract class User {
+  constructor(
+    ...
+  ) {}
+  private getFullName(){
+    return `${this.firstName} ${this.lastName}`
+  }
+}
+
+// hxan.getFullName()
+```
+
+getFullName을 사용할 수 없다. 상속을 받았는데도 해당 요소를 사용할 수 없다.
+
+그래서 상속을 받은 클래스에서는 사용 할 수 있도록 하려면 `protected` 를 사용하면 된다.
+
+| 구분      | 선언한 클래스 내 | 상속받은 클래스 내 | 인스턴스 |
+| --------- | ---------------- | ------------------ | -------- |
+| private   | O                | X                  | X        |
+| protected | O                | O                  | X        |
+| public    | O                | O                  | O        |
