@@ -562,6 +562,22 @@ dict.def("bibimbap");
 
 <br>
 
+### Static
+
+자바스크립트에 있는 기능이다.
+
+```ts
+class Dict = {
+  static x = 0;
+  ...
+}
+
+// 0
+Dict.x
+```
+
+<br>
+
 ---
 
 ## 타입스크립트 특정 값
@@ -583,3 +599,116 @@ const hxanPlayer: TeamPlay = {
 ```
 
 group이 A, B, C중 1개여야만 가능하도록 설정이 가능하다. `number` 처럼 다른 타입도 가능하다
+
+<br>
+
+---
+
+## 타입스크립트 Interfaces
+
+type은 옵션을 설정하거나, 오브젝트의 모양을 설명하는데, 오브젝트의 모양을 설명하는 다른 방법인 `interfaces`가 있다.
+
+```ts
+interface TeamPlay {
+  name: string;
+  group: Group;
+}
+```
+
+오로지 오브젝트의 모양을 설명하는 용도이다.
+
+`interface`는 extends가 가능하다.
+
+```ts
+interface User {
+  name: string;
+}
+
+interface Player extends User {
+  os: string;
+}
+
+const hxan: Player = {
+  name: "hxan",
+  os: "Mac OS",
+};
+```
+
+상속되어 `Player`에서도 `name`을 사용할 수 있다. 마치 `Class` 처럼  
+type도 가능은 하지만 약간 다르다.
+
+```ts
+type User = {
+  name: string;
+};
+
+type Player = User & {
+  os: string;
+};
+```
+
+하나의 인터페이스 이름으로 여러번 작성해도 타입스크립트가 알아서 합쳐준다.
+
+```ts
+interface User {
+  name: string;
+}
+interface User {
+  firstName: string;
+}
+
+const hxan: User = {
+  firstName: "han"
+  name: "san",
+};
+```
+
+또한 추상 클래스인 `abstract class`는 생성하면, 인스턴스로 만들 수 없지만 JS에서는 `class`로 변환된다  
+청사진을 만들었는데, 이를 코드로 변환시키는 것이다. 이 때 `interface`를 사용한다.
+
+`interface`는 컴파일 하면 JS로 변경되지 않고 사라진다.
+
+```ts
+abstract class User {
+  constructor(protected firstName: string, protected lastName: string) {}
+  abstract fullName(): string;
+}
+
+class Player extends User {
+  fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+```
+
+```ts
+interface User {
+  firstName: string;
+  lastName: string;
+  fullName(): string;
+}
+
+class Player implements User {
+  constructor(public firstName: string, public lastName: string) {}
+  fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+```
+
+`Player`가 `User`를 상속받는다는 걸 타입스크립트에게 알려주기 위해서 `implements`를 사용한다.  
+`interface`를 상속하려면 `private, property`가 아닌 `public`으로 지정해주어야 한다.
+
+return 요소를 인터페이스로 하면 `new ClassName`이 아닌, 인터페이스에 있는 요소를 입력해주면 된다.
+
+```ts
+function addUser(user: User): User {
+  return {
+    firstName: "han",
+    lastName: "san",
+    fullName: () => "xx",
+  };
+}
+```
+
+interface끼리 상속받을때는 `extends`를 사용하며, class에 상속 받을 때는 `implements`를 사용한다.
