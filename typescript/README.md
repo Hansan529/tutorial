@@ -559,3 +559,27 @@ Dict: {
 dict.def("bibimbap");
 // "밥에 각종 나물을 넣고 장을 넣어서 비벼 먹는 요리"
 ```
+
+<br>
+
+---
+
+## 타입스크립트 특정 값
+
+기존에는 타입만 지정했지만, 특정 값 이어야만 가능하도록 설정이 가능하다.
+
+```ts
+type Group = "A" | "B" | "C";
+
+type TeamPlay = {
+  name: string;
+  group: Group;
+};
+
+const hxanPlayer: TeamPlay = {
+  name: "hxan",
+  group: "A",
+};
+```
+
+group이 A, B, C중 1개여야만 가능하도록 설정이 가능하다. `number` 처럼 다른 타입도 가능하다
