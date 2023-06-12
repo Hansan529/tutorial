@@ -167,6 +167,45 @@ const a: [string, number, boolean] = ["text", 1, false];
 
 <br>
 
+### Q5. 비슷한 값들끼리 묶기위해선 어떻게 해야 하는지?
+
+```ts
+enum Os {
+  Window,
+  Ios,
+  Android,
+}
+```
+
+`(enum member) Os.Window = 0`, `... Ios = 1`, `... Android = 2`과 같이 사용이 가능하다.
+
+임의의 number로 지정해 줄 수 있고, string으로 할 수도 있다.
+
+```ts
+enum Os {
+  Window = 3,
+  Ios = 10,
+  Android,
+}
+
+enum Os {
+  Window = "win",
+  Ios = "ios",
+  Android = "and",
+}
+```
+
+`console.log(Os[3])` `Window` / `console.log(Os['Ios'])` `10` 처럼 지정이 가능하다.  
+이를 타입으로 지정도 가능하다.
+
+```ts
+let myOs: Os;
+
+myOs = Os.Window;
+```
+
+<br>
+
 ---
 
 ## 타입스크립트 타입
@@ -408,3 +447,27 @@ getFullName을 사용할 수 없다. 상속을 받았는데도 해당 요소를 
 | private   | O                | X                  | X        |
 | protected | O                | O                  | X        |
 | public    | O                | O                  | O        |
+
+<br>
+
+배열에 대해 특수 타입만 지정한다.
+
+```ts
+type Words = {
+  [key: string]: string;
+};
+```
+
+<br>
+
+다른 메소드에서도 사용하려면 class 안에 constructor 안에 지정하지 않고,  
+initializer 없이 선언하고 constructor를 수동으로 초기화시켜준다.
+
+```ts
+class Dict {
+  private words: Words;
+  constructor() {
+    this.words = {};
+  }
+}
+```
