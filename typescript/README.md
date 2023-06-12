@@ -471,3 +471,91 @@ class Dict {
   }
 }
 ```
+
+---
+
+- 사전
+
+```ts
+// 타입: 문자열, 문자열
+type Words = {
+  [key: string]: string
+}
+
+class Dict = {
+  // 타입을 Words로 설정
+  private words: Words
+  // words 초기화
+  constructor(){
+    this.words = {}
+  }
+  // 매개변수는 term, def 모두 string으로 2가지가 필수
+  add(word: Word){
+    // words에서 word.term이 없다면 word 추가
+    if(this.words[word.term] === undefined){
+      this.words[word.term] = word.def
+    }
+  }
+  // words에서 term을 찾아서 반환
+  def(term: string){
+    return this.words[term]
+  }
+  // undefined가 아닐 경우(일치) 해당 단어 삭제
+  del(word: Word){
+    if(this.words[word.term] !== undefined){
+      delete this.words[word.term]
+    }
+  }
+  // words를 업데이트
+  update(word: Word){
+    if(this.words[word.term] !== undefined){
+      this.words[word.term] = word.def
+    }
+  }
+}
+
+class Word = {
+  constructor(
+    public term: string,
+    public def: string,
+  ){}
+}
+
+const bibimbap = new Word("Bibimbap", "밥에 각종 나물을 넣고 장을 넣어서 비벼 먹는 요리")
+
+const dict = new Dict()
+```
+
+`words`에서 `[key:string]`은 `term`이 되고, `string`은 `def`가 된다.
+
+```ts
+dict.add(bibimbap);
+
+/* 
+Dict: {
+  "words": {
+    "Bibimbap": "밥에 각종 나물을 넣고 장을 넣어서 비벼 먹는 요리"
+  }
+}
+*/
+
+dict.del(bibimbap);
+
+/* 
+Dict: {
+  "words": {}
+} */
+
+const bibimbapUpdate = new Word("Bibimbap", "나물 비벼먹는 요리");
+dict.update(bibimbapUpdate);
+
+/* 
+Dict: {
+  "words": {
+    "Bibimbap": "나물 비벼먹는 요리"
+  }
+} */
+
+dict.def("bibimbap");
+// "밥에 각종 나물을 넣고 장을 넣어서 비벼 먹는 요리"
+```
