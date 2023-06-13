@@ -362,7 +362,7 @@ type SuperPrint = {
 const superPrint: SuperPrint = (arr) => arr[0];
 
 // const superPrint: <number>(arr: number[]) => number
-superPrint([1, 2, 3, 4]);
+superPrint<number>([1, 2, 3, 4]);
 
 // const superPrint: <string>(arr: string[]) => string
 superPrint(["1", "2", "3"]);
@@ -457,6 +457,31 @@ type Words = {
   [key: string]: string;
 };
 ```
+
+**몇 개를 받을지는 모르는 상태에서 사용한다. n개만큼 타입을 만드는건 코드가 너무 길어지기 때문에 다음과 같이 사용한다.**
+
+```ts
+type Score = 'A' | 'B' | 'C' | 'F';
+
+interface User {
+  name: string;
+  age: number;
+  gender? : string;
+  readonly birthYear: number;
+  [key: number]: Score;
+}
+
+let user: User = {
+  name: "hxan",
+  age: 23,
+  birthYear: 2001,
+  1: 'A'
+  2: 'F'
+  3: 'C'
+}
+```
+
+여러개의 number 값을 받아 작성할 수 있다.
 
 <br>
 
@@ -681,6 +706,10 @@ class Player extends User {
 }
 ```
 
+<br>
+
+### interface가 클래스를 정의하는법
+
 ```ts
 interface User {
   firstName: string;
@@ -712,3 +741,19 @@ function addUser(user: User): User {
 ```
 
 interface끼리 상속받을때는 `extends`를 사용하며, class에 상속 받을 때는 `implements`를 사용한다.
+
+<br>
+
+### interface로 함수를 만들기
+
+```ts
+interface Add {
+  (num1: number, num2: number): number;
+}
+
+const add: Add = (x, y) => {
+  return x + y;
+};
+```
+
+add의 x,y는 `number` 가 된다. 즉 num1, num2라고 지정해도 다르게 사용해도 된다.
