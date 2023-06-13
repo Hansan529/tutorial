@@ -757,3 +757,210 @@ const add: Add = (x, y) => {
 ```
 
 add의 x,y는 `number` 가 된다. 즉 num1, num2라고 지정해도 다르게 사용해도 된다.
+
+<br>
+
+---
+
+## 타입스크립트 유틸리티 타입
+
+- keyof를 사용하면 key 값들을 union 형태로 받을 수 있다.
+
+```ts
+// keyof
+interface User {
+  id: number;
+  name: string;
+  age: number;
+  gender: "m" | "f";
+}
+
+type UserKey = keyof User; // 'id' | 'name' | 'age' | 'gender'
+
+const uk: UserKey = "age";
+```
+
+<br>
+
+- **Partial<T>** 을 사용해 필수가 아닌 선택적 요소로 받는다.
+
+```ts
+interface User {
+  id: number;
+  name: string;
+  age: number;
+  getnder: "m" | "f";
+}
+
+// Partial을 적용하면 다음과 같이 적용된다.
+// interface User {
+//   id?: number;
+//   name?: string;
+//   age?: number;
+//   getnder?: "m" | "f";
+// }
+
+let admin: Partial<User> = {
+  id: 1,
+  name: "xan",
+};
+```
+
+<br>
+
+- Required
+
+모든 요소가 필수가 되도록 설정한다.
+
+```ts
+interface User {
+  id?: number;
+  name?: string;
+  age?: number;
+  gender?: "m" | "f";
+}
+
+// interface User {
+//   id: number;
+//   name: string;
+//   age: number;
+//   gender: "m" | "f";
+// }
+
+let admin: Required<User> = {
+  id: 1,
+  name: "hxan",
+  age: 20,
+  gender: "m",
+};
+```
+
+<br>
+
+- Readonly
+
+읽기 전용으로 변경해 수정할 수 없도록 한다.
+
+```ts
+interface User {
+  id: number;
+  name: string;
+  age?: number;
+  gender?: "m" | "f";
+}
+
+let admin: Readonly<User> = {
+  id: 1,
+  name: "hxan",
+};
+
+// admin.id = 5
+```
+
+<br>
+
+- Record<K,T>
+
+key 값을 가져와 T 타입을 설정해 사용한다.
+
+```ts
+// interface Score {
+//   '1': 'A':'B':'C':'D':'F';
+//   '2': 'A':'B':'C':'D':'F';
+//   '3': 'A':'B':'C':'D':'F';
+//   '4': 'A':'B':'C':'D':'F';
+// }
+
+type Grade = "1" | "2" | "3" | "4";
+type Score = "A" | "B" | "C" | "D" | "F";
+
+const score: Record<Grade, Score> = {
+  1: "A",
+  2: "C",
+  3: "D",
+  4: "B",
+};
+```
+
+```ts
+interface User {
+  id: number;
+  name: string;
+  age: number;
+}
+
+function isVaild(user: User) {
+  const result: Record<keyof User, boolean> = {
+    id: user.id > 0,
+    name: user.name !== "",
+    age: user.age > 0,
+  };
+  return result;
+}
+```
+
+<br>
+
+- Pick
+
+일부 원하는 요소만 가져와서 사용한다.
+
+```ts
+interface User {
+  id: number;
+  name: string;
+  age: number;
+}
+
+// User interface에서 id와 name을 가져와서 사용한다.
+const admin: Pick<User, "id" | "name"> = {
+  id: 0,
+  name: "xan",
+};
+```
+
+<br>
+
+- Omit<T,type>
+
+특정 요소만 제외한 나머지를 가져온다.
+
+```ts
+interface User {
+  id: number;
+  name: string;
+  age: number;
+}
+
+const admin: Omit<User, "name"> = {
+  id: 0,
+  age: 23,
+};
+```
+
+<br>
+
+- Exclude<T1, T2>
+
+T1에서 T2를 제외하고 사용한다.  
+Omit은 Proprty를 제외하고 Exclude는 type으로 제거한다.
+
+```ts
+type T1 = string | number | boolean;
+
+// type T2 = string
+type T2 = Exclude<T1, number | boolean>;
+```
+
+<br>
+
+- NonNullable<Type>
+
+null과 undefined를 제외한 타입을 생성한다.
+
+```ts
+type T1 = string | null | undefined | void;
+
+// type T2 = string | void;
+type T2 = NonNullable<T1>;
+```
