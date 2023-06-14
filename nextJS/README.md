@@ -186,3 +186,75 @@ module을 적용할 tsx에서 `style` 태그를 사용한 뒤, `jsx`를 작성�
 ```
 
 **이건 module.css에서는 불가능하다!**
+
+<br>
+
+## RootLayout
+
+`RootLayout`은 `_app.tsx` 및 `_document.tsx`를 대체한다.  
+global css를 적용하기 위해서 `_app.tsx`에서 적용시키던 걸, `layout.tsx` 에서 적용시킬 수 있는 것이다.
+
+```ts
+/* app/layout.tsx */
+
+// 전체 설정 CSS
+import "./globals.css";
+// Metadata 타입 불러오기
+import { Metadata } from "next";
+// font 설정
+import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"] });
+
+// children 타입 설정
+interface Props {
+  children: React.ReactNode;
+}
+// metaData 설정
+export const metadata: Metadata = {
+  title: "NextJS로 만든 페이지",
+  description: "NEXT.JS로 SSR, CSR을 사용해보자",
+};
+
+// RootLayout 구성요소의 매개변수 children (page.tsx)
+export default function RootLayout({ children }: Props) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
+    </html>
+  );
+}
+```
+
+```ts
+/* app/dashboard/layout.tsx */
+
+interface Props {
+  children: React.ReactNode;
+}
+
+export default function Dashboard({ children }: Props) {
+  return <section>{children}</section>;
+}
+```
+
+`/dashboard`에 접속하면 `page.tsx`가 {children} 에 대입되어 결국 `section` 태그 안에 들어가게 된다.
+
+`children`와 함께 다른 컴포넌트를 불러와서 사용할 수 있다.
+
+```ts
+import Settings from "./Settings";
+
+export default function Dashboard({ children }: Props){
+  return (
+    <>
+      <Settings />
+      <section>{children}</section>
+    <>
+  )
+}
+```
+
+다음과 같이, 별도의 wrap 없이 하나로 묶기 위해 &lt;&gt; 를 사용했고,  
+`Settings` 컴포넌트를 불러와 붙여넣을 수 있다.
+
+### **app/layout.tsx와 app/dashboard/layout.tsx는 중첩된다**
