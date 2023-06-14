@@ -164,7 +164,7 @@ export default function Style() {
 ```
 
 module을 적용할 tsx에서 `style` 태그를 사용한 뒤, `jsx`를 작성한다. `Link`를 a 태그로 스타일을 부여하려면  
-`global` 이라고 추가해야 적용이 된다.
+`global` 이라고 추가해야 적용이 된다. [*문제는 모든 컴포넌트에 적용되어서 module의 의미가 퇴색된다*]
 
 그 후, css문과 동일하게 작성하면 된다.
 
@@ -176,7 +176,7 @@ module을 적용할 tsx에서 `style` 태그를 사용한 뒤, `jsx`를 작성�
 다만 `style jsx`는 특징이 javascript문이기 때문에 prop을 받을 수 있다.
 
 ```ts
-<style jsx global>
+<style jsx>
   {`
     a {
       color: ${props.color};
