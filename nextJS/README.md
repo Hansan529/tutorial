@@ -172,3 +172,17 @@ module을 적용할 tsx에서 `style` 태그를 사용한 뒤, `jsx`를 작성�
 
 **import styles from `./*.module.css`**와 적용은 동일한데, 전자는 적용하고자 하는 요소마다  
 `className`을 지정해주어야 하지만 후자는 **전체 지정** 및 **개별 지정**이 가능하다.
+
+다만 `style jsx`는 특징이 javascript문이기 때문에 prop을 받을 수 있다.
+
+```ts
+<style jsx global>
+  {`
+    a {
+      color: ${props.color};
+    }
+  `}
+</style>
+```
+
+**이건 module.css에서는 불가능하다!**
