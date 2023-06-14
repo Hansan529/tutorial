@@ -139,3 +139,36 @@ pages/
 ```
 
 `/dashboard` 가 경로가 된다.
+
+<br>
+
+## Styles JSX
+
+별도 모듈 CSS가 아닌, tsx (js) 안에서도 모듈 방식으로 적용하는 방법
+
+```ts
+export default function Style() {
+  return (
+    <div>
+      <Link href="/">Home</Link>
+      <style jsx global>
+        {`
+          a {
+            color: red;
+          }
+        `}
+      </style>
+    </div>
+  );
+}
+```
+
+module을 적용할 tsx에서 `style` 태그를 사용한 뒤, `jsx`를 작성한다. `Link`를 a 태그로 스타일을 부여하려면  
+`global` 이라고 추가해야 적용이 된다.
+
+그 후, css문과 동일하게 작성하면 된다.
+
+해당 스타일은 다른 컴포넌트 파일에는 적용되지 않는 별도의 분리된 스타일이다.
+
+**import styles from `./*.module.css`**와 적용은 동일한데, 전자는 적용하고자 하는 요소마다  
+`className`을 지정해주어야 하지만 후자는 **전체 지정** 및 **개별 지정**이 가능하다.
