@@ -3,20 +3,21 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import styles from "./page.module.css";
+
 export default function NavBar() {
   const pathname = usePathname();
   return (
     <nav>
-      <Link href="/">Home</Link>
-      <Link href="/dashboard">Dashboard</Link>
-      <style jsx global>{`
-        nav {
-          background-color: skyblue;
-        }
-        a {
-          color: red;
-        }
-      `}</style>
+      <Link className={pathname === "/" ? styles.active : undefined} href="/">
+        Home
+      </Link>
+      <Link
+        className={pathname === "/dashboard" ? styles.active : undefined}
+        href="/dashboard"
+      >
+        Dashboard
+      </Link>
     </nav>
   );
 }
