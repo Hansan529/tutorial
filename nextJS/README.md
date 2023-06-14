@@ -4,8 +4,6 @@ NextJS는 React의 프레임워크이다.
 
 규칙이 이미 정해져 있어서 해당 규칙에 맞는 사용처에 사용만 하면 된다.
 
-또한 React는 CSR(Client-Side-Rendering)dlau, NextJS는 SSR(Server-Side-Rendering)이다.
-
 - CSR
   React는 HTML 파일이 비어있는데, Javascript로 해당 HTML을 채우는 것으로  
   처음 렌더링이 되지 않는 경우 빈 화면을 보다가, 렌더링이 완료되면 원하는 화면을 볼 수 있다.
@@ -28,6 +26,12 @@ NextJS는 React의 프레임워크이다.
   서버에서 이미 렌더링하기 때문에 로딩이 오래걸리면 빈 화면을 볼 수 있음.  
   변경이 있는 경우 매 번 새롭게 로딩하기 때문에 서버 부하가 큼  
   페이지를 요청할 때 마다 새로고침이 된다. (UX 감소)
+
+React는 CSR인데, SEO에 취약하기 때문에 기초 렌더를 한 SSR 을 사용해 NextJS로  
+React가 필요하지 않는 기본 HTML을 채우고, 렌더가 완료되면 그 후부터 React로 CSR 방식으로 유연하게 사용하도록 하는게  
+NextJS이다.
+
+**CSR의 장점을 사용하기 위해 SSR 형식을 사용해 단점을 보완해주는 프레임워크이다.**
 
 ---
 
@@ -125,3 +129,13 @@ export default function DashboardLayout({
   </body>
 </html>
 ```
+
+_이전 버전에는 pages/ 에 파일 명이 Router였다._
+
+```
+pages/
+  index.tsx
+  dashboard.tsx
+```
+
+`/dashboard` 가 경로가 된다.
