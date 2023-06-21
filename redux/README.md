@@ -242,3 +242,15 @@ render();
 
 `함수 render`는 `store.getState()` 를 통해 현재의 state 값을 불러와 사용하기 때문에, 어느곳에서든 사용이 가능해서,  
 subscribe에 render 함수를 넣으면, state가 변경되면 render 함수가 재실행 될 것이다.
+
+### Concat
+
+배열을 복제하기 위해서 사용한다.
+
+```js
+const original = [{original: true}];
+const contents = [{id: 1}, {name: "xan"}]
+
+const newContents = original.concat(contents);
+// newContents = [{original: true}, {id: 1}, {name: "xan"}]
+```
