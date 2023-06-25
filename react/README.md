@@ -893,3 +893,40 @@ function Detail() {
 useParams는 {id: 'value'} 를 반환하는데, id는 :id 로 지정되는 것이라 다른 파라미터로 변경하면 그대로 변한다.
 
 - ex `/movie/:movieId` &rarr; **{movieId: '1234567'}**
+
+<br>
+
+## useNavigate
+
+상태를 보존하고, 새로고침 없이 홈페이지를 이동할 때 필요하다.
+
+기존에 홈페이지 경로를 이동하기 위해서는 `window.location.href` 를 사용했다.
+
+```js
+const onClick = () => {
+  window.location.href = "/";
+}
+```
+
+하지만, 그럴 경우 `redux` 에서 상태 유지를 한 것을 새로고침하면서 기본값으로 돌아가기 때문에, `useNavigate`를 사용해 이동한다.
+
+기존에는 `useHistory()` 였지만, `react-router-dom` 패키지가 업데이트하면서 `useNavigate`로 변경되었다.
+
+```js
+import { useNavigate/*, useHistory*/ } from "react-router-dom";
+
+// const history = useHistory();
+const navigate = useNavigate();
+
+const onClick = () => {
+  // history.push('/');
+  navigate('/');
+}
+
+const test = () => {
+  navigate(-1);
+  // navigate(-2);
+}
+```
+
+`navigate`에 직접적인 경로를 넣어도 되고, number value를 넣어서 인덱스로 처리, 이전페이지 같은 동작이 가능하다.
