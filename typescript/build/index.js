@@ -25,3 +25,44 @@ const typeReasoning = 1; // const typeReasoning: number = 1
 let tuple;
 tuple = [1, 'text'];
 tuple[1].toUpperCase();
+let interfaceUser = {
+    name: 'userName',
+    age: 20,
+    birthYear: 2000,
+    1: 'A',
+    2: 'B',
+    // 3: 'a',
+};
+interfaceUser.age = 10;
+interfaceUser.gender = 'male';
+const benz = {
+    color: 'white',
+    wheels: 4,
+    start() {
+        console.log('Start');
+    },
+    door: 5,
+    stop() {
+        console.log('Stop');
+    },
+};
+const carToy = {
+    color: 'red',
+    wheels: 4,
+    start() {
+        console.log('놀이');
+    },
+    count: 3,
+    price: 2000,
+};
+// Class가 상속받을 경우 implements를 사용
+class Bmw {
+    constructor(c) {
+        this.wheels = 4;
+        this.color = c;
+    }
+    start() {
+        console.log('go...');
+    }
+}
+const bmwTest = new Bmw('green');

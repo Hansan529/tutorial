@@ -26,3 +26,83 @@ const typeReasoning = 1; // const typeReasoning: number = 1
 let tuple: [number, string];
 tuple = [1, 'text'];
 tuple[1].toUpperCase();
+
+//
+type Score = 'A' | 'B' | 'C' | 'F';
+
+// interface
+interface User {
+  name: string;
+  age: number;
+  gender?: string; // 선택적 입력
+  readonly birthYear: number; // 읽기 전용
+  [grade: number]: Score; // [key] : value 여러개를 입력 기능
+}
+
+let interfaceUser: User = {
+  name: 'userName',
+  age: 20,
+  birthYear: 2000,
+  1: 'A',
+  2: 'B',
+  // 3: 'a',
+};
+
+interfaceUser.age = 10;
+interfaceUser.gender = 'male';
+// interfaceUser.birthYear = 1990; // 읽기 전용은 수정 불가능
+
+interface Car {
+  color: string;
+  wheels: number;
+  start(): void;
+}
+interface Toy {
+  count: number;
+}
+
+// interface가 상속받을 경우 extends를 사용
+interface Benz extends Car {
+  door: number;
+  stop(): void;
+}
+
+const benz: Benz = {
+  color: 'white',
+  wheels: 4,
+  start() {
+    console.log('Start');
+  },
+  door: 5,
+  stop() {
+    console.log('Stop');
+  },
+};
+
+// interface가 여러개를 상속
+interface CarToy extends Car, Toy {
+  price: number;
+}
+
+const carToy: CarToy = {
+  color: 'red',
+  wheels: 4,
+  start() {
+    console.log('놀이');
+  },
+  count: 3,
+  price: 2000,
+};
+
+// Class가 상속받을 경우 implements를 사용
+class Bmw implements Car {
+  color;
+  wheels = 4;
+  constructor(c: string) {
+    this.color = c;
+  }
+  start() {
+    console.log('go...');
+  }
+}
+const bmwTest: Bmw = new Bmw('green');
