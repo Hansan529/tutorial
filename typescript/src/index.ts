@@ -155,3 +155,64 @@ class ExtendsAbstract extends AbstractClass {
 
 const abc2 = new ExtendsAbstract(23);
 abc2.fnc();
+
+// * Generic
+function getSize<T>(arr: T[]): number {
+  return arr.length;
+}
+
+const arr1 = [1, 2, 3];
+getSize<number>(arr1);
+
+const arr2 = ['1', '2', '3', '4', '5', '6'];
+getSize<string>(arr2);
+
+const arr3 = [true, false, false, true];
+getSize<boolean>(arr3);
+
+const arr4 = [{}, {}, {}];
+getSize(arr4);
+
+interface Mobile<T> {
+  name: string;
+  price: number;
+  options: T;
+}
+
+const mobile1: Mobile<object> = {
+  name: '갤럭시',
+  price: 1000000,
+  options: {
+    color: 'white',
+    sale: false,
+  },
+};
+
+const mobile2: Mobile<string> = {
+  name: '아이폰',
+  price: 1500000,
+  options: 'normal',
+};
+
+// ---
+
+interface Tablet<T> {
+  name: string;
+  price: number;
+  pixel: string;
+  inch: number;
+  options: T;
+}
+
+const tablet1 = {
+  name: 'a',
+  price: 1000,
+  pixel: '100000',
+  inch: 19.2,
+};
+
+function showInch<T extends { inch: number }>(data: T): number {
+  return data.inch;
+}
+
+showInch(tablet1);

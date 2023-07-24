@@ -99,3 +99,38 @@ class ExtendsAbstract extends AbstractClass {
 }
 const abc2 = new ExtendsAbstract(23);
 abc2.fnc();
+// * Generic
+function getSize(arr) {
+    return arr.length;
+}
+const arr1 = [1, 2, 3];
+getSize(arr1);
+const arr2 = ['1', '2', '3', '4', '5', '6'];
+getSize(arr2);
+const arr3 = [true, false, false, true];
+getSize(arr3);
+const arr4 = [{}, {}, {}];
+getSize(arr4);
+const mobile1 = {
+    name: '갤럭시',
+    price: 1000000,
+    options: {
+        color: 'white',
+        sale: false,
+    },
+};
+const mobile2 = {
+    name: '아이폰',
+    price: 1500000,
+    options: 'normal',
+};
+const tablet1 = {
+    name: 'a',
+    price: 1000,
+    pixel: '100000',
+    inch: 19.2,
+};
+function showInch(data) {
+    return data.inch;
+}
+showInch(tablet1);
