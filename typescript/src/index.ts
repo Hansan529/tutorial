@@ -106,3 +106,31 @@ class Bmw implements Car {
   }
 }
 const bmwTest: Bmw = new Bmw('green');
+
+// Type 유니온 교차 타입
+type Re = 'A' | 'B' | 'C';
+
+interface ReInterface {
+  name: string;
+  grade: Re;
+}
+const union: ReInterface = {
+  name: '이름',
+  grade: 'A',
+};
+
+// static
+class Gender {
+  gender;
+  static age = 19;
+  constructor(gender: string) {
+    this.gender = gender;
+  }
+  getGender() {
+    console.log(this.gender);
+    console.log(Gender.age);
+  }
+}
+
+const abc = new Gender('male');
+abc.getGender();

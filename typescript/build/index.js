@@ -66,3 +66,20 @@ class Bmw {
     }
 }
 const bmwTest = new Bmw('green');
+const union = {
+    name: '이름',
+    grade: 'A',
+};
+// static
+class Gender {
+    constructor(gender) {
+        this.gender = gender;
+    }
+    getGender() {
+        console.log(this.gender);
+        console.log(Gender.age);
+    }
+}
+Gender.age = 19;
+const abc = new Gender('male');
+abc.getGender();

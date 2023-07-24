@@ -13,13 +13,13 @@ function divide(a, b) {
   return a / b;
 }
 
-const txt = { name: "hxan" };
+const txt = { name: 'hxan' };
 ```
 
 divide에 1개의 인수만 입력해서 함수를 사용해보면
 
 ```js
-divide("xxxxx");
+divide('xxxxx');
 NaN;
 ```
 
@@ -44,7 +44,7 @@ NaN;
 
 ```js
 const txt = {
-  name: "ABC",
+  name: 'ABC',
 };
 
 txt.name;
@@ -58,7 +58,7 @@ txt.hello의 밑줄로 "Property 'hello' does not exist on type '{name: string; 
 // let a: any
 let a;
 // let b: string
-let b = "";
+let b = '';
 // let c: boolean
 let c = false;
 
@@ -103,10 +103,10 @@ type Player = {
 };
 
 const first: Player = {
-  name: "First Name",
+  name: 'First Name',
 };
 const last: Player = {
-  name: "Last Name",
+  name: 'Last Name',
   age: 11,
 };
 ```
@@ -118,7 +118,7 @@ function playerMaker(name: string): Player {
   return { name };
 }
 
-const player = playerMaker("hxan");
+const player = playerMaker('hxan');
 player.age = 21;
 ```
 
@@ -160,7 +160,7 @@ Tuple을 이용해서 타입을 명시해준다.
 Tuple은 배열을 생성 할 수 있는데, 최소한의 길이와 특정 위치에 특정 타입이 있어야한다.
 
 ```js
-const a: [string, number, boolean] = ["text", 1, false];
+const a: [string, number, boolean] = ['text', 1, false];
 ```
 
 3개의 argument가 필요하면서, 순서대로 string, number, boolean이어야 오류가 없이 return 된다.
@@ -189,9 +189,9 @@ enum Os {
 }
 
 enum Os {
-  Window = "win",
-  Ios = "ios",
-  Android = "and",
+  Window = 'win',
+  Ios = 'ios',
+  Android = 'and',
 }
 ```
 
@@ -232,10 +232,10 @@ type을 체크한 후에 그에 따라 실행하는 함수를 다르게 한다.
 ```js
 let a: unknown;
 
-if (typeof a === "number") {
+if (typeof a === 'number') {
   let b = a + 2;
 }
-if (typeof a === "string") {
+if (typeof a === 'string') {
   a.toUpperCase();
 }
 ```
@@ -247,7 +247,7 @@ void return 하지 않는 요소에 대한 타입이다.
 ```js
 // function hello(): void
 function hello() {
-  console.log("a");
+  console.log('a');
 }
 ```
 
@@ -260,10 +260,10 @@ nerver 절대로 return을 하지 않는다.
 
 ```js
 function hello(name: string | number) {
-  if (typeof name === "string") {
+  if (typeof name === 'string') {
     // name: string
     name;
-  } else if (typeof name === "number") {
+  } else if (typeof name === 'number') {
     // name: number
     name;
   } else {
@@ -310,7 +310,7 @@ type Add = {
 
 ```js
 const add: Add = (a, b) => {
-  if (typeof b === "string") return a;
+  if (typeof b === 'string') return a;
   return a + b;
 };
 ```
@@ -336,7 +336,7 @@ type Push = {
 // string | Config(object) - return 하는 요소 없음
 const push: Push = (config) => {
   // config가 string일 경우
-  if (typeof config === "string") {
+  if (typeof config === 'string') {
     console.log(config);
   } else {
     console.log(config);
@@ -365,13 +365,13 @@ const superPrint: SuperPrint = (arr) => arr[0];
 superPrint<number>([1, 2, 3, 4]);
 
 // const superPrint: <string>(arr: string[]) => string
-superPrint(["1", "2", "3"]);
+superPrint(['1', '2', '3']);
 
 // const superPrint: <boolean>(arr: boolean[]) => boolean
 superPrint([true, false, true]);
 
 // const superPrint: <string | number | boolean>(arr: (string | number | boolean)[]) => string | number | boolean
-superPrint([1, "2", true]);
+superPrint([1, '2', true]);
 ```
 
 임의의 이름으로 지정한 후, Type에도 설정해주면, Typescript에서 추측한 타입으로 변경한다.  
@@ -410,7 +410,7 @@ abstract class User {
 
 class Player extends User {}
 
-const hxan = new Player("han", "san", "산");
+const hxan = new Player('han', 'san', '산');
 
 hxan.nickname;
 ```
@@ -571,7 +571,7 @@ Dict: {
   "words": {}
 } */
 
-const bibimbapUpdate = new Word("Bibimbap", "나물 비벼먹는 요리");
+const bibimbapUpdate = new Word('Bibimbap', '나물 비벼먹는 요리');
 dict.update(bibimbapUpdate);
 
 /* 
@@ -581,7 +581,7 @@ Dict: {
   }
 } */
 
-dict.def("bibimbap");
+dict.def('bibimbap');
 // "밥에 각종 나물을 넣고 장을 넣어서 비벼 먹는 요리"
 ```
 
@@ -589,7 +589,7 @@ dict.def("bibimbap");
 
 ### Static
 
-자바스크립트에 있는 기능이다.
+정적 타입을 사용하는 Public이 아닌 접근 방법이다.
 
 ```ts
 class Dict = {
@@ -601,6 +601,8 @@ class Dict = {
 Dict.x
 ```
 
+static x 를 사용하기 위해서는 `this`가 아닌, class Name을 객체로 사용해야 한다.
+
 <br>
 
 ---
@@ -610,7 +612,7 @@ Dict.x
 기존에는 타입만 지정했지만, 특정 값 이어야만 가능하도록 설정이 가능하다.
 
 ```ts
-type Group = "A" | "B" | "C";
+type Group = 'A' | 'B' | 'C';
 
 type TeamPlay = {
   name: string;
@@ -618,8 +620,8 @@ type TeamPlay = {
 };
 
 const hxanPlayer: TeamPlay = {
-  name: "hxan",
-  group: "A",
+  name: 'hxan',
+  group: 'A',
 };
 ```
 
@@ -654,8 +656,8 @@ interface Player extends User {
 }
 
 const hxan: Player = {
-  name: "hxan",
-  os: "Mac OS",
+  name: 'hxan',
+  os: 'Mac OS',
 };
 ```
 
@@ -733,9 +735,9 @@ return 요소를 인터페이스로 하면 `new ClassName`이 아닌, 인터페�
 ```ts
 function addUser(user: User): User {
   return {
-    firstName: "han",
-    lastName: "san",
-    fullName: () => "xx",
+    firstName: 'han',
+    lastName: 'san',
+    fullName: () => 'xx',
   };
 }
 ```
@@ -772,12 +774,12 @@ interface User {
   id: number;
   name: string;
   age: number;
-  gender: "m" | "f";
+  gender: 'm' | 'f';
 }
 
 type UserKey = keyof User; // 'id' | 'name' | 'age' | 'gender'
 
-const uk: UserKey = "age";
+const uk: UserKey = 'age';
 ```
 
 <br>
@@ -789,7 +791,7 @@ interface User {
   id: number;
   name: string;
   age: number;
-  getnder: "m" | "f";
+  getnder: 'm' | 'f';
 }
 
 // Partial을 적용하면 다음과 같이 적용된다.
@@ -802,7 +804,7 @@ interface User {
 
 let admin: Partial<User> = {
   id: 1,
-  name: "xan",
+  name: 'xan',
 };
 ```
 
@@ -817,7 +819,7 @@ interface User {
   id?: number;
   name?: string;
   age?: number;
-  gender?: "m" | "f";
+  gender?: 'm' | 'f';
 }
 
 // interface User {
@@ -829,9 +831,9 @@ interface User {
 
 let admin: Required<User> = {
   id: 1,
-  name: "hxan",
+  name: 'hxan',
   age: 20,
-  gender: "m",
+  gender: 'm',
 };
 ```
 
@@ -846,12 +848,12 @@ interface User {
   id: number;
   name: string;
   age?: number;
-  gender?: "m" | "f";
+  gender?: 'm' | 'f';
 }
 
 let admin: Readonly<User> = {
   id: 1,
-  name: "hxan",
+  name: 'hxan',
 };
 
 // admin.id = 5
@@ -871,14 +873,14 @@ key 값을 가져와 T 타입을 설정해 사용한다.
 //   '4': 'A':'B':'C':'D':'F';
 // }
 
-type Grade = "1" | "2" | "3" | "4";
-type Score = "A" | "B" | "C" | "D" | "F";
+type Grade = '1' | '2' | '3' | '4';
+type Score = 'A' | 'B' | 'C' | 'D' | 'F';
 
 const score: Record<Grade, Score> = {
-  1: "A",
-  2: "C",
-  3: "D",
-  4: "B",
+  1: 'A',
+  2: 'C',
+  3: 'D',
+  4: 'B',
 };
 ```
 
@@ -892,7 +894,7 @@ interface User {
 function isVaild(user: User) {
   const result: Record<keyof User, boolean> = {
     id: user.id > 0,
-    name: user.name !== "",
+    name: user.name !== '',
     age: user.age > 0,
   };
   return result;
@@ -913,9 +915,9 @@ interface User {
 }
 
 // User interface에서 id와 name을 가져와서 사용한다.
-const admin: Pick<User, "id" | "name"> = {
+const admin: Pick<User, 'id' | 'name'> = {
   id: 0,
-  name: "xan",
+  name: 'xan',
 };
 ```
 
@@ -932,7 +934,7 @@ interface User {
   age: number;
 }
 
-const admin: Omit<User, "name"> = {
+const admin: Omit<User, 'name'> = {
   id: 0,
   age: 23,
 };
