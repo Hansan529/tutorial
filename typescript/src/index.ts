@@ -134,3 +134,24 @@ class Gender {
 
 const abc = new Gender('male');
 abc.getGender();
+
+// abstract
+abstract class AbstractClass {
+  age: number;
+  constructor(age: number) {
+    this.age = age;
+  }
+  abstract fnc(): void;
+}
+
+class ExtendsAbstract extends AbstractClass {
+  constructor(age: number) {
+    super(age);
+  }
+  fnc() {
+    console.log('age: ', this.age);
+  }
+}
+
+const abc2 = new ExtendsAbstract(23);
+abc2.fnc();
