@@ -125,6 +125,11 @@ mysql> SELECT id, title, created FROM name_table WHERE title='MySQL';
 - 정렬 읽기
 
 ```bash
++----+-------+--------------+---------------------+
+| id | title | description  | created             |
++----+-------+--------------+---------------------+
+|  1 | Title |      본문     | 2023-08-03 14:25:33 |
++----+-------+--------------+---------------------+
 mysql> SELECT id, title, created FROM name_table ORDER BY id DESC;
 
 +----+--------+---------------------+
@@ -145,4 +150,75 @@ mysql> SELECT id, title, created FROM name_table ORDER BY id DESC LIMIT 1;
 +----+--------+---------------------+
 |  2 | ORACLE | 2023-08-03 14:40:25 |
 +----+--------+---------------------+
+```
+
+- 테이블 분리
+
+```bash
+mysql> SELECT * FROM author;
+
++----+--------+---------------------------+
+| id | name   | profile                   |
++----+--------+---------------------------+
+|  1 | egoing | developer                 |
+|  2 | duru   | database administrator    |
+|  3 | taeho  | data scientist, developer |
++----+--------+---------------------------+
+
+mysql> SELECT * FROM topic;
+
++----+------------+-------------------+---------------------+-----------+
+| id | title      | description       | created             | author_id |
++----+------------+-------------------+---------------------+-----------+
+|  1 | MySQL      | MySQL is...       | 2018-01-01 12:10:11 |         1 |
+|  2 | Oracle     | Oracle is ...     | 2018-01-03 13:01:10 |         1 |
+|  3 | SQL Server | SQL Server is ... | 2018-01-20 11:01:10 |         2 |
+|  4 | PostgreSQL | PostgreSQL is ... | 2018-01-23 01:03:03 |         3 |
+|  5 | MongoDB    | MongoDB is ...    | 2018-01-30 12:31:03 |         1 |
++----+------------+-------------------+---------------------+-----------+
+
+mysql> SELECT topic.id AS topic_id, title, description, created, name, profile FROM topic LEFT JOIN author ON topic.author_id = author.id;
+
++----------+------------+-------------------+---------------------+--------+---------------------------+
+| TOPIC_ID | title      | description       | created             | name   | profile                   |
++----------+------------+-------------------+---------------------+--------+---------------------------+
+|        1 | MySQL      | MySQL is...       | 2018-01-01 12:10:11 | egoing | developer                 |
+|        2 | Oracle     | Oracle is ...     | 2018-01-03 13:01:10 | egoing | developer                 |
+|        3 | SQL Server | SQL Server is ... | 2018-01-20 11:01:10 | duru   | database administrator    |
+|        4 | PostgreSQL | PostgreSQL is ... | 2018-01-23 01:03:03 | taeho  | data scientist, developer |
+|        5 | MongoDB    | MongoDB is ...    | 2018-01-30 12:31:03 | egoing | developer                 |
++----------+------------+-------------------+---------------------+--------+---------------------------+
+```
+
+## Update
+
+- 업데이트
+
+**WHERE문을 작성하지 않으면 모든 데이터베이스의 값이 변하니 주의**
+
+```bash
+mysql> UPDATE name_table SET title='SQL' WHERE id=2;
+mysql> SELECT * FROM name_table;
+
++----+-------+--------------+---------------------+
+| id | title | description  | created             |
++----+-------+--------------+---------------------+
+|  1 | Title |      본문     | 2023-08-03 14:25:33 |
+|  2 | SQL   |      본문     | 2023-08-03 14:25:33 |
++----+-------+--------------+---------------------+
+```
+
+## DELETE
+
+- 삭제
+
+```bash
+mysql> DELETE FROM name_table WHERE id=2;
+mysql> SELECT * FROM name_table;
+
++----+-------+--------------+---------------------+
+| id | title | description  | created             |
++----+-------+--------------+---------------------+
+|  1 | Title |      본문     | 2023-08-03 14:25:33 |
++----+-------+--------------+---------------------+
 ```
