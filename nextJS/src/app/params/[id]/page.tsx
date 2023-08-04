@@ -1,5 +1,7 @@
 'use client';
 
+import styles from './params.module.scss';
+
 type Page = {
   params: { id: string };
 };
@@ -7,7 +9,10 @@ type Page = {
 export default function Page({ params }: Page) {
   return (
     <>
-      <p>params: {params.id}</p>
+      <p style={{ color: styles.testColor }} className={styles.test}>
+        params: {params.id}
+      </p>
+      <img src="/next.svg" alt="" />
     </>
   );
 }

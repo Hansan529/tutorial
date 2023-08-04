@@ -1,0 +1,11 @@
+.test {
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
+}
+
+$test-color: #fff000;
+
+:export {
+  testColor: $test-color;
+}
