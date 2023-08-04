@@ -187,6 +187,46 @@ module을 적용할 tsx에서 `style` 태그를 사용한 뒤, `jsx`를 작성�
 
 **이건 module.css에서는 불가능하다!**
 
+## SCSS extensions
+
+CSS의 전처리기인 SASS/SCSS 를 사용하는 것이 더욱 편리하기 때문에, 설정을 해주었다.
+
+- 현재 프로젝트에 SASS 설치
+
+```bash
+$ npm install --save-dev sass
+$ yarn add sass --dev
+```
+
+- `next.config.js` 컴파일 작성
+
+```js
+const path = require('path');
+
+module.exports = {
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
+};
+```
+
+- SASS 변수를 export
+
+```scss
+$test-color: #fff000;
+
+:export {
+  testColor: $test-color;
+}
+```
+
+```tsx
+import styles from "./scss.module.scss";
+
+...
+return <h1 style={{color: styles.testColor}}>Yellow</h1>
+```
+
 <br>
 
 ## RootLayout

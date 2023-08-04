@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import './globals.css';
 import { Metadata } from 'next';
 
@@ -15,7 +16,7 @@ export default function RootLayout({ children }: Props) {
       <body>
         <header>Layout Header</header>
         <h1>
-          <a href="/">Web</a>
+          <Link href="/">Web</Link>
         </h1>
         {children}
         <footer>Layout Footer</footer>

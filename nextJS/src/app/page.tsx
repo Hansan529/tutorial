@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import './page.module.css';
+import styles from './page.module.css';
 import NavBar from './components/page';
 
 export default function Home() {
