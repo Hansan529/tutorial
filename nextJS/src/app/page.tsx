@@ -1,12 +1,13 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import NavBar from "./components/page";
+import Image from 'next/image';
+import './page.module.css';
+import NavBar from './components/page';
 
 export default function Home() {
   return (
-    <div>
-      <NavBar />
-    </div>
+    <>
+      {/* <NavBar /> */}
+      <h2>NextJS 개발</h2>
+    </>
   );
 }
 

@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import NavBar from "../components/page";
+import React, { useState } from 'react';
+import NavBar from '../components/page';
 
 type Props = {};
 
-export default function ttest({}: Props) {
+export default function test({}: Props) {
   const [counter, setCounter] = useState(0);
   return (
     <>
