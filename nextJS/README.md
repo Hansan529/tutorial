@@ -339,8 +339,8 @@ type Page = {
 }
 
  export default function Page({params}: Page){
- return (
- <>
+   return (
+     <>
  <h2>{params.id}</h2>
  </h2>)
  }
@@ -361,3 +361,55 @@ export default function Page({ params }: Page) {
   return <>{pathname}</>; // "params/123"
 }
 ```
+
+## API 구현
+
+- api 폴더를 생성해 API를 관리하겠습니다.
+
+```
+  ├── src
+  │   └── app
+  │       ├── api
+  │       │   └── route.tsx
+  ...
+```
+
+- NextRequest 및 NextResponse로 결과를 반환한다.
+
+```tsx
+// route.tsx
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/users', {
+    next: { revalidate: 60 }, // 재검증 60초 (선택사항)
+  });
+  const data = await res.json();
+  return NextResponse.json({ data });
+}
+```
+
+`route.tsx` 파일은 server 상에서 작동해서 `console.log`를 시도하면, 콘솔에서 로그가 나오는 것을 볼 수 있다.
+
+- 다른 페이지에서 해당 경로로 데이터를 요청할 경우 결과 값을 받아 볼 수 있다.
+
+```tsx
+export default function Page() {
+  const res = await fetch('/api');
+  const data = await res.json();
+  return <>{data}</>;
+}
+```
+
+## Server Component / Client Component
+
+expressjs / react 와 같이  
+서로의 역할이 다르다.
+
+`page.tsx` 파일에서 **'use client'** 라는 텍스트가 없다면 해당 파일은 Server Component가 되면서 서버 상에서 작동하게 된다.
+
+그러므로 React 명령어인 on, use 명령어들을 사용 할 수 없다. express에서도 사용을 못하는 것과 같다.
+
+그래서 동적이지 않은, 정적인 정보를 전달할 때 서버 컴포넌트로 구성하고, 동적인 정보가 있을 경우 use client 를 추가해 사용한다.
+
+즉 모든 페이지는 정적으로 구성되고, 그 중에서 사용자와의 상호작용이 있는 요소는 동적으로 처리한다.
