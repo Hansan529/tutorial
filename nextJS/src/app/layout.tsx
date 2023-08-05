@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import './globals.css';
 import { Metadata } from 'next';
+import { Control } from './Control';
 
 interface Props {
   children: React.ReactNode;
@@ -19,6 +20,8 @@ export default function RootLayout({ children }: Props) {
           <Link href="/">Web</Link>
         </h1>
         {children}
+        <Control />
+        {process.env.ENV}
         <footer>Layout Footer</footer>
       </body>
     </html>

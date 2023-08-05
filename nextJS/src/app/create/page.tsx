@@ -1,12 +1,14 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 interface FormEvent extends React.FormEvent<HTMLFormElement> {
   target: HTMLFormElement;
 }
 
-export default function Page() {
+export default function Create({ props }) {
+  const router = useRouter();
   const [input, setInput] = useState({
     title: '',
     body: '',
@@ -19,10 +21,11 @@ export default function Page() {
       ...prev,
       [name]: value,
     }));
-    console.log(input);
   };
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    props.push(input);
+    router.refresh();
     // fetch
   };
   const onChange = () => {};
