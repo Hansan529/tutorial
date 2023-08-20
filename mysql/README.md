@@ -17,14 +17,14 @@ DBSM로 표 형태로 데이터를 확인할 수 있다.
 
 데이터베이스 / 테이블 로 나뉘는데, NoSQL에서의 모델과 스키마와 같다.
 
-```bash
-mysql> CREATE DATABASE name;
+```sql
+CREATE DATABASE name;
 ```
 
 데이터를 담아 둘 데이터베이스를 생성해주며, 데이터베이스들을 확인하는 방법은 다음과 같다.
 
-```bash
-mysql> SHOW DATABASES;
+```sql
+SHOW DATABASES;
 ```
 
 | Database           |
@@ -37,8 +37,8 @@ mysql> SHOW DATABASES;
 
 데이터들이 입력될 스키마를 생성해준다.
 
-```bash
-mysql> CREATE TABLE name_table(
+```sql
+CREATE TABLE name_table(
     id INT(11) NOT NULL AUTO_INCREMENT,
     title VARCHAR(100) NOT NULL,
     description TEXT NULL,
@@ -64,17 +64,17 @@ mysql> CREATE TABLE name_table(
 
 ## CREATE
 
-```bash
-mysql> USE name;
-mysql> INSERT INTO name_table(title, description, created) VALUES('Title', '본문', NOW());
+```sql
+USE name;
+INSERT INTO name_table(title, description, created) VALUES('Title', '본문', NOW());
 ```
 
 ## READ
 
 ### Table 확인
 
-```bash
-mysql> DESC name_table;
+```sql
+DESC name_table;
 ```
 
 
@@ -93,8 +93,8 @@ mysql> DESC name_table;
 
 ### 데이터 확인
 
-```bash
-mysql> SELECT * FROM name_table;
+```sql
+SELECT * FROM name_table;
 ```
 
 <details>
@@ -112,8 +112,8 @@ mysql> SELECT * FROM name_table;
 
 ### 특정 열만 읽기
 
-```bash
-mysql> SELECT id, title, created FROM name_table;
+```sql
+SELECT id, title, created FROM name_table;
 ```
 
 <details>
@@ -129,8 +129,8 @@ mysql> SELECT id, title, created FROM name_table;
 
 ### 특정 값만 읽기
 
-```bash
-mysql> SELECT id, title, created FROM name_table WHERE title='MySQL';
+```sql
+SELECT id, title, created FROM name_table WHERE title='MySQL';
 ```
 
 <details>
@@ -150,8 +150,8 @@ mysql> SELECT id, title, created FROM name_table WHERE title='MySQL';
 |  2 | ORACLE | 2023-08-03 14:40:25 |
 |  1 | MySQL  | 2023-08-03 14:25:33 |
 
-```bash
-mysql> SELECT id, title, created FROM name_table ORDER BY id DESC;
+```sql
+SELECT id, title, created FROM name_table ORDER BY id DESC;
 ```
 
 <details>
@@ -167,8 +167,8 @@ mysql> SELECT id, title, created FROM name_table ORDER BY id DESC;
 
 ### 최대 읽을 개수 설정
 
-```bash
-mysql> SELECT id, title, created FROM name_table ORDER BY id DESC LIMIT 1;
+```sql
+SELECT id, title, created FROM name_table ORDER BY id DESC LIMIT 1;
 ```
 
 <details>
@@ -201,8 +201,8 @@ mysql> SELECT id, title, created FROM name_table ORDER BY id DESC LIMIT 1;
 |  4 | PostgreSQL | PostgreSQL is ... | 2018-01-23 01:03:03 |         3 |
 |  5 | MongoDB    | MongoDB is ...    | 2018-01-30 12:31:03 |         1 |
 
-```bash
-mysql> SELECT topic.id AS topic_id, title, description, created, name, profile FROM topic LEFT JOIN author ON topic.author_id = author.id;
+```sql
+SELECT topic.id AS topic_id, title, description, created, name, profile FROM topic LEFT JOIN author ON topic.author_id = author.id;
 ```
 <details>
     
@@ -228,8 +228,8 @@ mysql> SELECT topic.id AS topic_id, title, description, created, name, profile F
 |        4 | PostgreSQL | PostgreSQL is ... | 2018-01-23 01:03:03 | taeho  | data scientist, developer |
 |        5 | MongoDB    | MongoDB is ...    | 2018-01-30 12:31:03 | egoing | developer                 |
 
-```bash
-mysql> ALTER TABLE name_table ADD COLUMN ex_column VARCHAR(20) NULL;
+```sql
+ALTER TABLE name_table ADD COLUMN ex_column VARCHAR(20) NULL;
 ```
 <details>
     
@@ -249,8 +249,8 @@ mysql> ALTER TABLE name_table ADD COLUMN ex_column VARCHAR(20) NULL;
 
 ### 테이블 칼럼 변경
 
-```bash
-mysql> ALTER TABLE name_table MODIFY COLUMN title VARCHAR(20) NOT NULL;
+```sql
+ALTER TABLE name_table MODIFY COLUMN title VARCHAR(20) NOT NULL;
 ```
 
 <details>
@@ -264,8 +264,8 @@ mysql> ALTER TABLE name_table MODIFY COLUMN title VARCHAR(20) NOT NULL;
 
 ### 테이블 칼런 (이름) 변경
 
-```bash
-mysql> ALTER TABLE name_table CHANGE COLUMN title Title VARCHAR(16) NOT NULL;
+```sql
+ALTER TABLE name_table CHANGE COLUMN title Title VARCHAR(16) NOT NULL;
 ```
 
 <details>
@@ -288,9 +288,9 @@ mysql> ALTER TABLE name_table CHANGE COLUMN title Title VARCHAR(16) NOT NULL;
 |  1 | Title |      본문     | 2023-08-03 14:25:33 |
 |  2 | SQL   |      본문     | 2023-08-03 14:25:33 |
 
-```bash
-mysql> UPDATE name_table SET title='NOSQL' WHERE id=2;
-mysql> SELECT * FROM name_table;
+```sql
+UPDATE name_table SET title='NOSQL' WHERE id=2;
+SELECT * FROM name_table;
 ```
 
 <details>
@@ -306,8 +306,8 @@ mysql> SELECT * FROM name_table;
 
 ### 테이블 이름 변경
 
-```bash
-mysql> ALTER TABLE name_table RENAME change_name;
+```sql
+ALTER TABLE name_table RENAME change_name;
 ```
 
 <br>
@@ -321,9 +321,9 @@ mysql> ALTER TABLE name_table RENAME change_name;
 |  1 | Title |      본문     | 2023-08-03 14:25:33 |
 |  2 | SQL   |      본문     | 2023-08-03 14:25:33 |
 
-```bash
-mysql> DELETE FROM name_table WHERE id=2;
-mysql> SELECT * FROM name_table;
+```sql
+DELETE FROM name_table WHERE id=2;
+SELECT * FROM name_table;
 ```
 
 <details>
@@ -342,8 +342,8 @@ mysql> SELECT * FROM name_table;
 |----|-------|--------------|---------------------|
 |  1 | Title |      본문     | 2023-08-03 14:25:33 |
 
-```bash
-mysql> ALTER TABLE name_table DROP COLUMN created;
+```sql
+ALTER TABLE name_table DROP COLUMN created;
 ```
 
 <details>
@@ -353,3 +353,24 @@ mysql> ALTER TABLE name_table DROP COLUMN created;
 |  1 | Title |      본문     |
 
 </details>
+
+### 테이블 삭제
+
+```sql
+DROP TABLE [name]
+```
+
+```sql
+DROP TABLE if exists [name]
+```
+
+테이블이 존재할 경우 삭제하도록 하여 에러 방지
+
++ `DROP TABLE if exists emp`
++ 참조하는 테이블 삭제
+
+### 데이터베이스 삭제
+
+```sql
+DROP DATABASE [name]
+```
