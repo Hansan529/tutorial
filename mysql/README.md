@@ -69,6 +69,22 @@ USE name;
 INSERT INTO name_table(title, description, created) VALUES('Title', '본문', NOW());
 ```
 
+유저 생성
+
+```sql
+CREATE USER name; -- 유저만 생성
+CREATE USER name@localhost IDENTIFIED BY 'password'; -- 유저를 추가하면서 패스워드 지정
+CREATE USER 'name'@'%' IDENTIFIED BY 'password'; -- '%'의 의미는 외부에서의 접근을 허용
+
+-- or
+
+INSERT INTO name (Host, User, Password) VALUES ('localhost', '아이디', password('password'));
+INSERT INTO name (Host, User, Password) VALUES ('%', '아이디', password('password'));
+FLUSH privileges; -- 변경 사항을 적용
+```
+
+
+
 ## READ
 
 ### Table 확인
@@ -245,6 +261,14 @@ ALTER TABLE name_table ADD COLUMN ex_column VARCHAR(20) NULL;
 
 <br>
 
+### 사용자 권한 확인
+
+```sql
+SHOW GRANTS FOR ID@localhost;
+SHOW GRANTS FOR ID@'%';
+SHOW GRANTS FOR ID@'0.0.0.0';
+```
+
 ## Update
 
 ### 테이블 칼럼 변경
@@ -312,6 +336,21 @@ ALTER TABLE name_table RENAME change_name;
 
 <br>
 
+### 유저 외부 접근 허용
+
+```sql
+GRANT ALL PRIVILEGES ON DB.TABLE TO 계정ID@host IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON DB.* TO 계정ID@localhost IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON DB.* TO 계정ID@'%' IDENTIFIED BY 'password';
+```
+
+### 특정 권한 허용
+
+```sql
+GRANT SELECT, INSERT, UPDATE ON DB.* TO ID@localhost; -- IDENTIFIY BY를 지정하지 않으면 비밀번호는 변경하지 않음
+FLUSH PRIVILEGES;
+```
+
 ## DELETE
 
 ### 삭제
@@ -373,4 +412,17 @@ DROP TABLE if exists [name]
 
 ```sql
 DROP DATABASE [name]
+```
+
+### 유저 삭제
+
+```sql
+DROP USER '사용자ID'@localhost;
+DELETE FROM user WHERE user = '사용자ID'; 
+```
+
+### 유저 권한 삭제
+
+```sql
+REVOKE ALL ON DB.TABLE FROM ID;
 ```
