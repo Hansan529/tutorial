@@ -808,9 +808,12 @@ export default Movie;
 
 <br>
 
-### - Router
+## React-router-dom
 
-현재는 단일 페이지에서만 보는데, 다른 페이지로 이동하기 위해서 Router 설정을 할 것이다.  
+<details>
+  <summary>Router</summary>
+
+현재는 단일 페이지에서만 보는데, 다른 페이지로 이동하기 위해서 Router 설정을 할 것이다.
 사용하기 쉽도록, 재사용 할 경우 편리하도록 별도의 Component를 생성했으니 사용한다.
 
 ```js
@@ -842,17 +845,136 @@ Router를 설정하기 위해서 **react-router-dom**에서 2가지 요소를 �
 path로 주소를 설정하고, 렌더링할 객체 또는 컴포넌트를 설정해준다.
 
 RouterProvider를 통해서 Router를 개통한다.
+</details>
 
-<br>
+<details>
+  <summary>Error page</summary>
 
-### - Link
+사용자에게 정보를 전달하기 위해 에러 페이지를 설정한다.
+
+- error-page
+
+```js
+import { useRouterError } from "react-router-dom";
+
+export default function ErrorPage() {
+  const error = useRouteError();
+  console.error(error);
+
+  return (
+    <div>
+      <h1>문제 발생</h1>
+      <p>
+        <i>{error.statusText || error.message}</i>
+      </p>
+    </div>
+  );
+};
+```
+
+- main
+
+```js
+import ErrorPage from './error-page';
+
+const router = createBrowserRouter([
+  {
+    path: '/';
+    element: <Root />,
+    errorElement: <ErrorPage />,
+  },
+]);
+
+...
+```
+
+에러 페이지 설정을 추가하면 접근 불가능한 경로로 접근할 경우 `error-page` 페이지로 이동한다.
+</details>
+
+<details>
+    <summary>Children</summary>
+
+Root
+
+```jsx
+import { Outlet } from 'react-router';
+
+export default function Root() {
+    return (
+    <>
+        <div id="sidebar">
+        <h1>라우터 루트</h1>
+        <div>
+            <form id="search-form" role="search">
+            <input
+                id="q"
+                aria-label="Search contacts"
+                placeholder="Search"
+                type="search"
+                name="q"
+            />
+            <div
+                id="search-spinner"
+                aria-hidden
+                hidden={true}
+            />
+            <div
+                className="sr-only"
+                aria-live="polite"
+            ></div>
+            </form>
+            <form method="post">
+            <button type="submit">New</button>
+            </form>
+        </div>
+        <nav>
+            <ul>
+            <li>
+                <a href={`/contacts/1`}>Your Name</a>
+            </li>
+            <li>
+                <a href={`/contacts/2`}>Your Friend</a>
+            </li>
+            </ul>
+        </nav>
+        </div>
+        <hr />
+        <div id="detail">
+            <Outlet />
+        </div>
+    </>
+    );
+}
+```
+
+index.js
+
+```jsx
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: 'test/:id',
+        element: <div>테스트</div>,
+      },
+    ]
+  },
+])
+```
+
+Outlet 통해서 children 요소의 라우트에 접근 했을 경우 `http://example.com/test/123` element 가 `<Root />` 하위 레이어에서 포함되어 확인 된다.
+</details>
+
+<details>
+  <summary>Link</summary>
 
 제목을 click 했을 때, **/movie**로 이동하기 위해서는 어떻게 해야 할 까? HTML에서 a 태그를 사용하는 방법이 있을 거다.  
 물론 틀린 건 아니지만, 아마 새로고침이 될 것이다.
 
 React는 서버단에서 렌더링하기 때문에, 유저가 새로고침을 하지 않아도 된다.
-
-이를 위해 **react-router-dom**의 **Link**를 사용한다.
 
 ```js
 import { Link } from "react-router-dom";
@@ -865,6 +987,7 @@ function Movie(...){
 
 `<a href="/movie"></a>` &rarr; `<Link to="/movie"></Link>`  
 구성은 똑같다.
+</details>
 
 <br>
 
